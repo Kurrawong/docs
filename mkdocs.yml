@@ -1,0 +1,43 @@
+site_name: KurrawongAI docs
+copyright: Copyright &copy; KurrawongAI, 2024
+extra:
+  generator: false
+extra_css:
+  - stylesheets/extra.css
+markdown_extensions:
+  - md_in_html
+  - admonition
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+theme:
+  name: material
+  favicon: assets/favicon.png
+  palette:
+    scheme: youtube
+  logo: assets/classes-icon.svg
+  features:
+    - navigation.indexes
+    - toc.follow
+  # custom_dir: overrides
+nav:
+    - 'index.md'
+    - 'KAI Tools':
+        - 'tools/index.md'
+        - 'Kurra': 'tools/kurra.md'
+        - 'Labelify': 'tools/labelify.md'
+        - 'OGC Tests': 'tools/ogc-tests.md'
+        - 'Prefix Lookup': 'tools/prefix-lookup.md'
+        - 'ProvWorkflow': 'tools/provworkflow.md'
+        - 'pyLODE': 'tools/pylode.md'
+        - 'RDF Converter': 'tools/rdf-converter.md'
+        - 'RDF Merger': 'tools/rdf-merger.md'
+        - 'SHACL Validator': 'tools/shacl-validator.md'
+        - 'SPARQL Parser': 'tools/sparql-parser.md'
+        - 'VocEdit': 'tools/vocedit.md'
+        - 'VocExcel': 'tools/vocexcel.md'
+    - '3rd Party Products':
+        - 'Fuseki': '3rdparty/fuseki.md'
+
+# SVG resizer: https://svg-converter.com/resize
