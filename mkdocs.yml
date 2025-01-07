@@ -8,9 +8,6 @@ markdown_extensions:
   - md_in_html
   - admonition
   - attr_list
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.snippets
   - pymdownx.superfences:
       custom_fences:
@@ -43,6 +40,7 @@ nav:
               - 'App Service': 'prez/deploying/azure/appservice.md'
               - 'Container': 'prez/deploying/azure/container.md'
         - 'Developers': 'prez/developers.md'
+    - 'Olis': 'olis.md'
     - 'KAI Tools':
         - 'tools/index.md'
         - 'Kurra': 'tools/kurra.md'

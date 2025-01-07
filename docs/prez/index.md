@@ -1,6 +1,6 @@
 # Prez Overview
 
-![](/assets/prez.png)
+![](../assets/prez.png)
 
 Prez is a data-configurable Linked Data API framework that delivers _profiles_ of Knowledge Graph data according to the [Content Negotiation by Profile](https://w3c.github.io/dx-connegp/connegp/) standard.
 
@@ -272,9 +272,9 @@ Here are the lead developers:
 
 We love contributions to this tool and encourage you to create Issues in this repository's [Issue Tracker](https://github.com/RDFLib/prez/issues) or to submit a Pull Request!
 
-There is documentation on contributing to Prez, see [Developer Information](DeveloperInformation.md).
+There is documentation on contributing to Prez, see [Developer Information](developers.md).
 
 ## License
 
-This version of Prez and the contents of this repository are also available under the [BSD-3-Clause License](https://opensource.org/licenses/BSD-3-Clause). See [LICENSE](LICENSE.md) for details.
+This version of Prez and the contents of this repository are also available under the [BSD-3-Clause License](https://opensource.org/licenses/BSD-3-Clause).
 

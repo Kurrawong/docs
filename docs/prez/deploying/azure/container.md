@@ -30,13 +30,13 @@ graph TD
 	- Prez
 	- Prez UI
 
-> **Note:** If you need instructions on setting up an ACR and adding images to it, see the first section of [Installing Prez on Azure](Installing%20Prez%20on%20Azure.md)
+> **Note:** If you need instructions on setting up an ACR and adding images to it, see the first section of [Prez on AAS](appservice.md)
 
 ## Deployment Steps
 
 1. Create a new DevOps **project**
 
-	![](/assets/prez/deploying/azure/Pasted%20image%2020231218084143.png)
+	![](../../../assets/prez/deploying/azure/Pasted image 20231218084143.png)
 
 2. Create a **Service Connection**
 	1. Select **Project settings** from the bottom of the left menu.
@@ -51,9 +51,9 @@ graph TD
 	    - **Grant access permission to all pipelines**. (selected)
 	6. Select **Save**.
 
-    ![](/assets/prez/deploying/azure/Pasted%20image%2020231218084423.png)
+    ![](../../../assets/prez/deploying/azure/Pasted image 20231218084423.png)
 
-    _If the Service Principal account creations fails, refer to the section titled [Creating a Service Principal Account (Manually)](#Creating%20a%20Service%20Principal%20Account%20(Manually))_
+    _If the Service Principal account creations fails, refer to the section titled [Creating a Service Principal Account (Manually)](#creating-a-service-principal-account-manually)_
 
 3. Create a **Repository**
 	1. **Initialise** it using the button with a README.md and .gitignore.
@@ -62,12 +62,12 @@ graph TD
 	1. Select your Repository as the source.
 	2. Create the sample pipeline and run it to make sure that it works.
 
-    ![](/assets/prez/deploying/azure/Pasted%20image%2020231218084628.png)
+    ![](../../../assets/prez/deploying/azure/Pasted image 20231218084628.png)
 
 5. Add **Pipeline Secrets**
 	1. Open the Pipelines View (It should show your Recent Pipelines by default)
 	2. Click on **Edit** from the ellipsis menu for your pipeline
-	![](/assets/prez/deploying/azure/Pasted%20image%2020231218084732.png)
+	![](../../../assets/prez/deploying/azure/Pasted image 20231218084732.png)
 	3. Click **Variables**
 	4. Click **New Variable**
 	5. Enter the following key value pairs
@@ -129,7 +129,7 @@ graph TD
 
 You can check the status of the pipeline run from the DevOps portal.
 
-If you run into trouble, check the pipeline logs for details of where the deployment went wrong. Common issues and their solutions can be found in the [Troubleshooting](#Troubleshooting) section.
+If you run into trouble, check the pipeline logs for details of where the deployment went wrong. Common issues and their solutions can be found in the [Troubleshooting](#troubleshooting) section.
 
 ## Troubleshooting
 

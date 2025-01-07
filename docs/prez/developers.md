@@ -196,7 +196,7 @@ The following logic is used to determine the profile and mediatype to be returne
 3. If a mediatype only is requested, the default profile for the most specific class is returned, and if the requested mediatype is available for that profile, it is returned, otherwise the default mediatype for that profile is returned.
 4. If neither a profile nor mediatype is requested, the default profile for the most specific class is returned, with the default mediatype for that profile.
 
-The SPARQL query used to select the profile is given in [Appendix D](appendix-d---example-profile-and-mediatype-selection-sparql-query).
+The SPARQL query used to select the profile is given in [Appendix D](#appendix-d-example-profile-and-mediatype-selection-sparql-query).
 
 ## Focus Node Selection
 

@@ -83,13 +83,13 @@ It also sets up a Full Text search index for the following predicates
 
 > __Note:__  The `Mount Path` must be set to `/fuseki` see below image for example.
 
-![](/assets/prez/deploying/azure/Pasted%20image%2020231207122538.png)
+![](../../../assets/prez/deploying/azure/Pasted%20image%2020231207122538.png)
 
 5. Restart the app to read in the configuration values.
 
 You should be able to browse the web app and confirm that the Fuseki Interface loads and presents a single dataset called `/myds`
 
-> **Note**: see the section on [Troubleshooting](#Troubleshooting) for help if you run into any problems.
+> **Note**: see the section on [Troubleshooting](#troubleshooting) for help if you run into any problems.
 
 6. (optionally) Set the Fuseki admin password
 
@@ -97,12 +97,12 @@ You should be able to browse the web app and confirm that the Fuseki Interface l
 > 	username: admin
 > 	password: admin
 
-To change the password you need to set the ADMIN_PASSWORD environment variable. See the section on [Setting Environment Variables](#Setting%20Environment%20Variables) for help.
+To change the password you need to set the ADMIN_PASSWORD environment variable. See the section on [Setting Environment Variables](#setting-environment-variables) for help.
 
 #### 2.2 Configure the Prez Web App
 
 1. Create the Web App by following the [documentation](https://learn.microsoft.com/en-us/azure/app-service/quickstart-custom-container?tabs=dotnet&pivots=container-linux-azure-portal#3---deploy-to-azure).
-2. Set the required environment variables for Prez (see [Setting Environment Variables](#Setting%20Environment%20Variables) for help)
+2. Set the required environment variables for Prez (see [Setting Environment Variables](#setting-environment-variables) for help)
 	`SPARQL_ENDPOINT: http://<fuseki public domain>/myds`
 	`PORT: 8000`
 
@@ -110,12 +110,12 @@ To change the password you need to set the ADMIN_PASSWORD environment variable. 
 
 You should now be able to browse the Prez web app and it will present you with a response in turtle.
 
-> **Note**: see the section on [Troubleshooting](#Troubleshooting) for help if you run into any problems.
+> **Note**: see the section on [Troubleshooting](#troubleshooting) for help if you run into any problems.
 
 #### 2.3 Configure the Prez UI Web App
 
 1. Create the Web App by following the [documentation](https://learn.microsoft.com/en-us/azure/app-service/quickstart-custom-container?tabs=dotnet&pivots=container-linux-azure-portal#3---deploy-to-azure).
-2. Set the required environment variables (see [Setting Environment Variables](#Setting%20Environment%20Variables) for help)
+2. Set the required environment variables (see [Setting Environment Variables](#setting-environment-variables) for help)
 	`VITE_ENABLED_PREZS: vocprez`
 	`VITE_API_BASE_URL: http://<prez public domain>`
 	`WEBSITES_PORT: 8000`
@@ -126,7 +126,7 @@ You should now be able to browse the Prez web app and it will present you with a
 
 You should now be able to navigate to the Prez UI web app and view the Prez UI dashboard.
 
-> **Note**: see the section on [Troubleshooting](#Troubleshooting) for help if you run into any problems.
+> **Note**: see the section on [Troubleshooting](#troubleshooting) for help if you run into any problems.
 
 ## Troubleshooting
 
@@ -147,20 +147,20 @@ To set them with az cli:
 
 And to use the portal:
 
-![](/assets/prez/deploying/azure/Pasted%20image%2020231207095515.png)
+![](../../../assets/prez/deploying/azure/Pasted%20image%2020231207095515.png)
 
 ### Docker Logs
 
 If the web apps are unreachable after start up, consult the Container Provision Logs under Deployment Center > Logs.
 
-![](/assets/prez/deploying/azure/Pasted%20image%2020231207103241.png)
+![](../../../assets/prez/deploying/azure/Pasted%20image%2020231207103241.png)
 
 
 ### Container Logs
 
 If you need to access the logs from the container after it has been provisioned you will first have to turn on the __App Service logs__ (see below). Then you can view the container logs from the __Log Stream__ blade.
 
-![](/assets/prez/deploying/azure/Pasted%20image%2020231207130002.png)
+![](../../../assets/prez/deploying/azure/Pasted%20image%2020231207130002.png)
 
 ## Healthchecks
 

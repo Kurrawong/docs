@@ -57,4 +57,4 @@ task code
 
 ## License
 
-[BSD-3-Clause](https://opensource.org/license/bsd-3-clause/) license. See [LICENSE](LICENSE.md).
+[BSD-3-Clause](https://opensource.org/license/bsd-3-clause/) license.
