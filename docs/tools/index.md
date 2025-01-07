@@ -1,6 +1,6 @@
 # Tools Overview
 
-This section of the knowledge base has information about a number of [RDF](https://www.w3.org/RDF/) and [Semantic Web](https://en.wikipedia.org/wiki/Semantic_Web)-related tools that [KurrawongAI](http://kurrawong.ai/) maintains. The tools are briefly described below with further information available via the links or using the navigation pane on the left. 
+This section of the knowledge base has information about a number of [RDF](https://www.w3.org/RDF/) and [Semantic Web](https://en.wikipedia.org/wiki/Semantic_Web)-related tools that [KurrawongAI](https://kurrawong.ai/) maintains. The tools are briefly described below with further information available via the links or using the navigation pane on the left. 
 
 Some of these tools are open source, others are developed and owned by KurrawongAI. All are free to use!
 

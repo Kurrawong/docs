@@ -1,5 +1,5 @@
-site_name: KurrawongAI docs
-copyright: Copyright &copy; KurrawongAI, 2024
+site_name: ""
+copyright: Copyright &copy; KurrawongAI, 2025
 extra:
   generator: false
 extra_css:
@@ -15,8 +15,8 @@ theme:
   name: material
   favicon: assets/favicon.png
   palette:
-    scheme: youtube
-  logo: assets/classes-icon.svg
+    scheme: kai
+  logo: assets/KurrawongAI-inverted.svg
   features:
     - navigation.indexes
     - toc.follow
