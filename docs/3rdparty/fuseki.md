@@ -21,7 +21,7 @@ There are a number of tools/methods that can be used for loading data to Fuseki 
 Refer to the [Data Loading Procedures](#data-loading-procedures) section for the detailed steps required for each loading tool/method.
 
 **Traffic Light Matrix for data loading methods**
-![](/assets/fuseki-01.png)
+![](/assets/3rdparty/fuseki/fuseki-01.png)
 
 | *Matrix Notes:*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -35,7 +35,7 @@ SPARQL is recommended as a method for small additions/deletions/updates to new o
 
 One caveat is that SPARQL can be used with the tdbupdate command line utility to directly update large Fuseki TDB2 datasets, though the TDB2 dataset must be offline to do this.
 
-![](/assets/fuseki-02.png)
+![](/assets/3rdparty/fuseki/fuseki-02.png)
 
 ##### Steps to accomplish
 The [SPARQL Update specification](https://www.w3.org/TR/sparql11-update/) sets out a number of methods for updating RDF Data in Triplestores via update queries. These updates, deletes, or additions are done using the general patterns specified below, where “{ }” has been used to denote graph or triple patterns e.g. { GRAPH ?g { ?s ?p ?o } } or { ?s ?p ?o } (or equivalent expressions with IRIs or RDF Literals).
@@ -74,7 +74,7 @@ WHERE  { }
 ##### Scenarios
 The Graph Store Protocol can be used in a range of scenarios, it is generally less preferred for larger datasets. While local uploads of large files have been done successfully this is not always reliable in cloud environments.
 
-![](/assets/fuseki-03.png)
+![](/assets/3rdparty/fuseki/fuseki-03.png)
 
 ##### Steps to accomplish
 You have a new Fuseki instance without any data in it, and you want to load in a small amount of data. You have already created a new Fuseki dataset named “ds” along with the following Fuseki endpoint permission in the Fuseki configuration file.
@@ -104,7 +104,7 @@ If Fuseki has been configured with a custom shiro.ini and it is protected by bas
 ##### Scenarios
 The following scenarios are appropriate for use with the tdbloader command line utilities.
 
-![](/assets/fuseki-04.png)
+![](/assets/3rdparty/fuseki/fuseki-04.png)
 
 **Simple Deployments**
 For simple deployments where RDF Delta is not required, the preferred data loading method is to use the Jena tdb2.tdbloader command line utility to generate the database files.
@@ -134,7 +134,7 @@ The deployment stack follows a hybrid model between eventual consistency and a m
 ##### Scenarios
 RDF Delta is an appropriate solution for loading or updating all sizes of datasets, however, it requires more effort to set up than other methods. Once set up, a smaller amount of effort is required to write additional “producers” to update Fuseki.
 
-![](/assets/fuseki-05.png)
+![](/assets/3rdparty/fuseki/fuseki-05.png)
 
 **Complex deployments**
 In many scenarios, it may be necessary to incorporate the RDF Delta system into the Fuseki deployment. In this case, the tdb2.tdbloader utility is not recommended for loading new datasets, as the patch log database is the source of truth rather than the tdb2 database.

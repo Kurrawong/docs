@@ -1,7 +1,5 @@
 # Deploying Prez as an Azure App Service App
 
-#prez #prezui #fuseki #azure #azure-app-service #containerapps 
-
 This page will show you how to deploy Prez from container images to an Azure App Service App
 
 ## Overview of Azure and Prez components:
@@ -61,7 +59,7 @@ App Service Apps to Create:
 2. Prez
 3. Prez-UI
 
-> **Note**: All three apps will share the same App Service Plan
+> **Note**: All three apps will share the same App Service Plan  
 
 > **Note**: It is recommended to create the apps in order to confirm that each one is operational before moving to the next one.
 
@@ -85,7 +83,7 @@ It also sets up a Full Text search index for the following predicates
 
 > __Note:__  The `Mount Path` must be set to `/fuseki` see below image for example.
 
-![](Pasted%20image%2020231207122538.png)
+![](/assets/prez/deploying/azure/Pasted%20image%2020231207122538.png)
 
 5. Restart the app to read in the configuration values.
 
@@ -149,20 +147,20 @@ To set them with az cli:
 
 And to use the portal:
 
-![](Pasted%20image%2020231207095515.png)
+![](/assets/prez/deploying/azure/Pasted%20image%2020231207095515.png)
 
 ### Docker Logs
 
 If the web apps are unreachable after start up, consult the Container Provision Logs under Deployment Center > Logs.
 
-![](Pasted%20image%2020231207103241.png)
+![](/assets/prez/deploying/azure/Pasted%20image%2020231207103241.png)
 
 
 ### Container Logs
 
 If you need to access the logs from the container after it has been provisioned you will first have to turn on the __App Service logs__ (see below). Then you can view the container logs from the __Log Stream__ blade.
 
-![](Pasted%20image%2020231207130002.png)
+![](/assets/prez/deploying/azure/Pasted%20image%2020231207130002.png)
 
 ## Healthchecks
 

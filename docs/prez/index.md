@@ -1,7 +1,6 @@
 # Prez Overview
-#prez #prezui #catprez #spaceprez #vocprez
 
-![](Pasted%20image%2020240109123359.png)
+![](/assets/prez.png)
 
 Prez is a data-configurable Linked Data API framework that delivers _profiles_ of Knowledge Graph data according to the [Content Negotiation by Profile](https://w3c.github.io/dx-connegp/connegp/) standard.
 
@@ -28,6 +27,7 @@ The Prez API comes with several pre-configured subsystems.
 | CatPrez   | a configurable [DCAT](https://www.w3.org/TR/vocab-dcat/) catalogue view of registered resources |
 | VocPrez   | a specialised interface and APIs for the delivery of controlled term lists                      |
 | SpacePrez | a map portal into spatial data, from whole-dataset right down to individual spatial element     |
+
 ## Contents
 
 - [Installation](#installation)

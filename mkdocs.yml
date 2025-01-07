@@ -11,9 +11,18 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
 theme:
   name: material
-  favicon: assets/favicon.png
+  favicon: assets/favicon-32x32.png
   palette:
     scheme: kai
   logo: assets/KurrawongAI-inverted.svg
@@ -23,6 +32,17 @@ theme:
   # custom_dir: overrides
 nav:
     - 'index.md'
+    - 'Prez':
+        - 'prez/index.md'
+        - 'UI': 'prez/ui.md'
+        - 'Manifest': 'prez/manifest.md'
+        - 'Data Preparation': 'prez/data-preparation.md'
+        - 'Deploying':
+            - 'AWS': 'prez/deploying/aws.md'
+            - 'Azure':
+              - 'App Service': 'prez/deploying/azure/appservice.md'
+              - 'Container': 'prez/deploying/azure/container.md'
+        - 'Developers': 'prez/developers.md'
     - 'KAI Tools':
         - 'tools/index.md'
         - 'Kurra': 'tools/kurra.md'

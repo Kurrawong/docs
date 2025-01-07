@@ -36,9 +36,9 @@ graph TD
 
 1. Create a new DevOps **project**
 
-![](Pasted%20image%2020231218084143.png)
+	![](/assets/prez/deploying/azure/Pasted%20image%2020231218084143.png)
 
-3. Create a **Service Connection**
+2. Create a **Service Connection**
 	1. Select **Project settings** from the bottom of the left menu.
 	2. Select **Service connections** under **Pipelines**.
 	3. Select **Create Service connection**, select **Azure Resource Manager**, and then select **Next**.
@@ -51,23 +51,23 @@ graph TD
 	    - **Grant access permission to all pipelines**. (selected)
 	6. Select **Save**.
 
-![](Pasted%20image%2020231218084423.png)
+    ![](/assets/prez/deploying/azure/Pasted%20image%2020231218084423.png)
 
-
-\* If the Service Principal account creations fails, refer to the section titled [Creating a Service Principal Account (Manually)](#Creating%20a%20Service%20Principal%20Account%20(Manually))
+    _If the Service Principal account creations fails, refer to the section titled [Creating a Service Principal Account (Manually)](#Creating%20a%20Service%20Principal%20Account%20(Manually))_
 
 3. Create a **Repository**
 	1. **Initialise** it using the button with a README.md and .gitignore.
+
 4. Create a **Pipeline**
 	1. Select your Repository as the source.
 	2. Create the sample pipeline and run it to make sure that it works.
 
-![](Pasted%20image%2020231218084628.png)
+    ![](/assets/prez/deploying/azure/Pasted%20image%2020231218084628.png)
 
-1. Add **Pipeline Secrets**
+5. Add **Pipeline Secrets**
 	1. Open the Pipelines View (It should show your Recent Pipelines by default)
 	2. Click on **Edit** from the ellipsis menu for your pipeline
-	![](Pasted%20image%2020231218084732.png)
+	![](/assets/prez/deploying/azure/Pasted%20image%2020231218084732.png)
 	3. Click **Variables**
 	4. Click **New Variable**
 	5. Enter the following key value pairs
@@ -76,7 +76,7 @@ graph TD
 		`ACR_USERNAME: <the admin username for your Azure Container Registry.`
 		`ACR_PASSWORD: <the admin password for your Azure Container Regsitry`
 
-> **Note:** The ACR admin username and password can be found in the Azure portal under `Settings > Access Keys` when viewing the ACR resource.
+	    > **Note:** The ACR admin username and password can be found in the Azure portal under `Settings > Access Keys` when viewing the ACR resource.
 
 6. Clone the DevOps **repository**
 7. Remove the `azure-pipelines.yml` file created by the sample pipeline
@@ -86,43 +86,43 @@ graph TD
 	3. `deploy.parameters.dev.json`
 	4. `config.ttl`
 
-> **Note:** The files are available [here](https://github.com/Kurrawong/demo-files/tree/0229c9a7a15a8a22a7b5238110ece23bf6ac8211/prez-deploy-azure-pipeline)
+	> **Note:** The files are available [here](https://github.com/Kurrawong/demo-files/tree/0229c9a7a15a8a22a7b5238110ece23bf6ac8211/prez-deploy-azure-pipeline)
 
 9. **Copy the files** to your DevOps repository.
 10. Open the `deploy.parameters.dev.json` file and fill in the parameter values.
 		_you will need to remove all the comments from the file before pushing_
 
-```json
-{
-...
-
-"parameters": {
-  "STGname": {
-    "value": "" // Name for the Storage Account
-  },
-  "FSname": {
-    "value": "" // Name for the File share to mount to the fuseki container.
-  },
-
-...
-```
+	```json
+	{
+	...
+	
+	"parameters": {
+	  "STGname": {
+		"value": "" // Name for the Storage Account
+	  },
+	  "FSname": {
+		"value": "" // Name for the File share to mount to the fuseki container.
+	  },
+	
+	...
+	```
 
 11. Open the `azure-pipelines.yml` file and provide values for the following variables:
-		- `azureServiceConnection`
-		- `resourceGroupName`
-		- `location`
+    * `azureServiceConnection`
+	* `resourceGroupName`
+	* `location`
 
-```yaml [azure-pipelines.yml]
-...
-
-variables:
-  ...
-  azureServiceConnection: '<service connection name'
-  resourceGroupName: '<rg name>'
-  location: '<location>'
-
-...
-```
+	```yaml
+	...
+	
+	variables:
+	  ...
+	  azureServiceConnection: '<service connection name'
+	  resourceGroupName: '<rg name>'
+	  location: '<location>'
+	
+	...
+	```
 
 12. **Commit and Push the new files** to the Azure DevOps Repository.
 		This should trigger a pipeline run to create the resources.
@@ -158,13 +158,13 @@ Be sure to substitute the placeholders with appropriate values
 
 | placeholder | details                                                           |
 | ----------- | ----------------------------------------------------------------- |
-| <sp_name>    | Provide a name for the Service Principal Account                  |
-| <sub_id>    | ID of the subscription to create the service principal account in |
+| `<sp_name>` | Provide a name for the Service Principal Account                  |
+| `<sub_id>`  | ID of the subscription to create the service principal account in |
 
-> __Note:__ for all the available parameters see: https://learn.microsoft.com/en-us/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac
+> __Note:__ for all the available parameters see: <https://learn.microsoft.com/en-us/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac>
 
 This will create a new Service Principal account with the contributor role for the specified subscription. This authorizes the account to create and manage resources inside that subscription.
 
 After it is created you will need to get the **appID**, **password**, and **tenantID** associated with the new Service Principal account and pass them into the form after Step 4 of the **Create a Service Connection** Instructions. Noting that you will need to select **service principal (manual)** instead of **service principal (automatic)**.
 
-For more information on creating the account, see this article: https://azuredevopslabs.com/labs/devopsserver/azureserviceprincipal/
+For more information on creating the account, see this article: <https://azuredevopslabs.com/labs/devopsserver/azureserviceprincipal/>

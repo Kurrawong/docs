@@ -16,7 +16,7 @@ The standards are:
 
 > Note that only the Features API Part 1 Core is currently implemented.
 
-The official test suite for the Features API Part 1 can be found [here]([ets-ogcapi-features10](https://github.com/opengeospatial/ets-ogcapi-features10)) and Part 2 [here]([ets-ogcapi-features10-part2](https://github.com/opengeospatial/ets-ogcapi-features10-part2)).
+The official test suite for the Features API Part 1 can be found [here]((https://github.com/opengeospatial/ets-ogcapi-features10) and Part 2 [here](https://github.com/opengeospatial/ets-ogcapi-features10-part2).
 
 ## How to get it
 The test suite is available on PyPi, and can be installed in the usual way.

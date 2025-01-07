@@ -55,10 +55,8 @@ Human-readable form:
 Machine-readable form:
 
 ```
---8<-- "manifest/mrr.ttl"
+--8<-- "/assets/prez/manifest/mrr.ttl"
 ```
-
---8<-- "mrr.ttl"
 
 The IRI for automatic retrieval of this vocabulary file is: <https://prez.dev/ManifestResourceRoles>.
 
@@ -68,7 +66,7 @@ The IRI for automatic retrieval of this vocabulary file is: <https://prez.dev/Ma
 This simple [SHACL](https://www.w3.org/TR/shacl/) validator "Shapes" file can be used by SHACL validation software to test the validity of a Manifest RDF file with respect to this model:
 
 ```
---8<-- "manifest/validator.ttl"
+--8<-- "/assets/prez/manifest/validator.ttl"
 ```
 
 The IRI for automatic retrieval of this Shapes file is: <https://prez.dev/manifest/validator>.
@@ -131,11 +129,7 @@ which renders as:
 
 ### Loader
 
-==_In Progress_==
-
-The `loader.py` Python script in this documentation's repository creates a 
-
-* <https://github.com/Kurrawong/prez.dev/blob/main/manifest/loader.py>
+The `loader.py` Python script loads the content of a Manifest into either a single trig file (a multi-graph RDF file) or an RDF database via a SPARQL Endpoint.
 
 ## Examples
 
@@ -143,15 +137,15 @@ See the simple and always up-to-date [KurrawongAI Demo Vocabularies manifest](ht
 
 Full:
 ```
---8<-- "manifest/example01.ttl"
+--8<-- "/assets/prez/manifest/manifest.ttl"
 ```
 
 Partial:
 ```
---8<-- "manifest/example02.ttl"
+--8<-- "/assets/prez/manifest/manifest-invalid-01.ttl"
 ```
 
 Invalid (second Resource Descriptor does not indicate a role)
 ```
---8<-- "manifest/example03.ttl"
+--8<-- "/assets/prez/manifest/manifest-invalid-01.ttl"
 ```
