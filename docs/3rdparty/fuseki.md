@@ -1,26 +1,27 @@
 # Fuseki
 
-[Fuseki](https://jena.apache.org/documentation/fuseki2/) is an [Apache Software Foundation](https://apache.org/) free and open source product that is part of the [Jena](https://jena.apache.org/) RDF framework. It is a database system that implements the [SPARQL Protocol](https://www.w3.org/TR/sparql11-protocol/) which means you can run Fuseki to expose RDF data.
+[Fuseki](https://jena.apache.org/documentation/fuseki2/) is an [Apache Software Foundation](https://apache.org/) free and open source product that is part of the [Jena](https://jena.apache.org/) RDF framework. It is a database system that implements the [SPARQL Protocol](https://www.w3.org/TR/sparql11-protocol/) which means you can run Fuseki to expose RDF data.
 
 KurrawongAI has extensive experience in deploying Fuseki for clients and can also provide a range of Fuseki support services. To find out more, visit our [website](https://kurrawong.ai/products/fuseki/).
 
 This guide outlines the various Fuseki data loading methods available and provides detailed procedures for each.
 ## Contents
 
-- [[#Data Loading Methods]]
+- [Data Loading Methods](#data-loading-methods)
 - Data Loading Procedures
-	- [[#SPARQL]]
-	- [[#Kurra CLI - Graph Store Protocol]]
-	- [[#tdbloader]]
-	- [[#RDF Delta]]
+	- [SPARQL](#sparql)
+	- [Kurra CLI - Graph Store Protocol](#kurra-cli-graph-store-protocol)
+	- [tdbloader](#tdbloader)
+	- [RDF Delta](#rdf-delta)
+  
 ## Data Loading Methods
 
 There are a number of tools/methods that can be used for loading data to Fuseki databases. Both the size of the database and the dataset being loaded will dictate which method is most suitable, as indicated in the Traffic Light Matrix and related notes below.
 
-Refer to the [[#Data Loading Procedures]] section for the detailed steps required for each loading tool/method.
+Refer to the [Data Loading Procedures](#data-loading-procedures) section for the detailed steps required for each loading tool/method.
 
 **Traffic Light Matrix for data loading methods**
-![[Pasted image 20241219170631.png]]
+![](/assets/fuseki-01.png)
 
 | *Matrix Notes:*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -34,7 +35,7 @@ SPARQL is recommended as a method for small additions/deletions/updates to new o
 
 One caveat is that SPARQL can be used with the tdbupdate command line utility to directly update large Fuseki TDB2 datasets, though the TDB2 dataset must be offline to do this.
 
-![[Pasted image 20241219170606.png]]**
+![](/assets/fuseki-02.png)
 
 ##### Steps to accomplish
 The [SPARQL Update specification](https://www.w3.org/TR/sparql11-update/) sets out a number of methods for updating RDF Data in Triplestores via update queries. These updates, deletes, or additions are done using the general patterns specified below, where “{ }” has been used to denote graph or triple patterns e.g. { GRAPH ?g { ?s ?p ?o } } or { ?s ?p ?o } (or equivalent expressions with IRIs or RDF Literals).
@@ -58,14 +59,14 @@ DELETE DATA { }
 Deletion of data based on existing data in the graph:
 ```
 DELETE { }  
-WHERE  { }
+WHERE  { }
 ```
 
 Update of data based on existing data in the graph:
 ```
-DELETE  { }
-INSERT  { }
-WHERE  { }
+DELETE  { }
+INSERT  { }
+WHERE  { }
 ```
 
 ### Kurra CLI - Graph Store Protocol
@@ -73,13 +74,16 @@ WHERE  { }
 ##### Scenarios
 The Graph Store Protocol can be used in a range of scenarios, it is generally less preferred for larger datasets. While local uploads of large files have been done successfully this is not always reliable in cloud environments.
 
-![[Pasted image 20241219171416.png]]
+![](/assets/fuseki-03.png)
 
 ##### Steps to accomplish
 You have a new Fuseki instance without any data in it, and you want to load in a small amount of data. You have already created a new Fuseki dataset named “ds” along with the following Fuseki endpoint permission in the Fuseki configuration file.
 
-`:service_tdb_all  rdf:type  fuseki:Service ;`
-       `fuseki:endpoint  [ fuseki:operation  fuseki:gsp-rw ] .`
+```
+:service_tdb_all  
+	a  fuseki:Service ;  
+	fuseki:endpoint  [ fuseki:operation  fuseki:gsp-rw ] .
+```
 
 The above sets the Fuseki service with gsp-rw, which allows read and write operations on the unnamed Graph Store Protocol endpoint. Assuming the Fuseki instance is available at localhost:3030, the above “ds” dataset will be available at [http://localhost:3030/ds](http://localhost:3030/ds) with both read and write capabilities available.
 
@@ -91,7 +95,7 @@ The kurra command is now available. Use the **fuseki upload** subcommand to uplo
 
 `kurra fuseki upload background-resources/ http://localhost:3030/ds -u admin -p fuseki`
 
-The tool can upload RDF data from both directories or individual files on the filesystem. In the above example, we are uploading all files from the *background-resources* directory.  
+The tool can upload RDF data from both directories or individual files on the filesystem. In the above example, we are uploading all files from the *background-resources* directory.  
 
 If Fuseki has been configured with a custom shiro.ini and it is protected by basic authentication, you can add the -u and -p flags to specify the username and password, respectively.
 
@@ -100,7 +104,7 @@ If Fuseki has been configured with a custom shiro.ini and it is protected by bas
 ##### Scenarios
 The following scenarios are appropriate for use with the tdbloader command line utilities.
 
-![[Pasted image 20241219171956.png]]
+![](/assets/fuseki-04.png)
 
 **Simple Deployments**
 For simple deployments where RDF Delta is not required, the preferred data loading method is to use the Jena tdb2.tdbloader command line utility to generate the database files.
@@ -110,7 +114,7 @@ For simple deployments where RDF Delta is not required, the preferred data loadi
 - It uses the same module that Jena uses internally to create database files but is decoupled from the HTTP server, and is thus faster because it does not need to allow for handling of requests while the generation is in progress.
 
 *Disadvantages*
-- Requires the orchestration of another component (the tdb2-generation image), and 
+- Requires the orchestration of another component (the tdb2-generation image), and 
 - is not preferable for making additions or updates to the data after the initial generation. And thus may only ever be used once.
 
 ##### Steps to accomplish
@@ -130,7 +134,7 @@ The deployment stack follows a hybrid model between eventual consistency and a m
 ##### Scenarios
 RDF Delta is an appropriate solution for loading or updating all sizes of datasets, however, it requires more effort to set up than other methods. Once set up, a smaller amount of effort is required to write additional “producers” to update Fuseki.
 
-![[Pasted image 20241219173216.png]]
+![](/assets/fuseki-05.png)
 
 **Complex deployments**
 In many scenarios, it may be necessary to incorporate the RDF Delta system into the Fuseki deployment. In this case, the tdb2.tdbloader utility is not recommended for loading new datasets, as the patch log database is the source of truth rather than the tdb2 database.
@@ -144,7 +148,7 @@ In many scenarios, it may be necessary to incorporate the RDF Delta system into 
 
 ##### Submitting RDF patch logs to the RDF Delta Server
 
-RDF Delta comes with a suite of [command line tools](https://afs.github.io/rdf-delta/cmds.html) that aid in performing actions against the RDF Delta Server, including adding new RDF patch logs.  
+RDF Delta comes with a suite of [command line tools](https://afs.github.io/rdf-delta/cmds.html) that aid in performing actions against the RDF Delta Server, including adding new RDF patch logs.  
 
 Append a new patch log to a dataset.
 `dcmd get --server URL --dsrc NAME PATCH ...`
@@ -198,7 +202,7 @@ There may be multiple event streams in the data flow, but there’s usually just
 	The message body consists of a line-separated listing of URLs of the location of the RDF patch log or payload. The consumer performs a request to each URL, processes it, and submits it to the RDF Delta Server.
 
 > **Note:**
-> This specification is currently incomplete. Ideally the header also contains metadata about the kind of mime type of each URL. It may be a requirement that all documents at each URL must be compressed using a specific compression algorithm  to reduce data transfer bandwidth.
+> This specification is currently incomplete. Ideally the header also contains metadata about the kind of mime type of each URL. It may be a requirement that all documents at each URL must be compressed using a specific compression algorithm  to reduce data transfer bandwidth.
 
 
 ###### Message - SPARQL Update
