@@ -46,6 +46,7 @@ nav:
         - 'Labelify': 'tools/labelify.md'
         - 'OGC Tests': 'tools/ogc-tests.md'
         - 'Prefix Lookup': 'tools/prefix-lookup.md'
+        - 'Prez Manifest': 'tools/prezmanifest.md'
         - 'ProvWorkflow': 'tools/provworkflow.md'
         - 'pyLODE': 'tools/pylode.md'
         - 'RDF Converter': 'tools/rdf-converter.md'

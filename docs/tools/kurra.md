@@ -1,60 +1,25 @@
-# Kurrawong Python Library
+# kurra Python Library
 
-#kurra #fuseki #python #cli
+kurra is a Python library and command line application that provides commonly-required functionality when working with 
+RDF files and databases.
 
-kurra is a Python library of common code and CLI apps shared across Kurrawong projects and infrastructure. 
+This library uses the [RDFLib](https://pypi.org/project/rdflib/) under-the-hood to process 
+[RDF](https://www.w3.org/RDF/) data. It supplies functions to:
 
-It can be downloaded and installed here:
-	https://github.com/Kurrawong/kurrawong-python
+* manipulate local RDF files
+* send commands to RDF databases - "triplestores"
+* SPARQL query files or databases
 
-## CLI Features
+kurra has detailed documentation for installation and use at its repository's home page:
 
-## `kurra format`
+* **<https://github.com/Kurrawong/kurra>**
 
-Format Turtle files using RDFLib's `longturtle` format.
+!!! note
 
-### `kurra fuseki`
+    kurra is a dependency of other KurrawongAI tooling, such as [labelify](labelify.md) & 
+	[prez-manifest](../prez/manifest.md).
 
-A set of commands to interface with a Fuseki server.
+### More info
 
-#### `kurra fuseki dataset list`
-
-Get a list of Fuseki datasets.
-
-#### `kurra fuseki dataset create`
-
-Create a new Fuseki dataset.
-
-#### `kurra fuseki upload`
-
-Upload a file or a directory of files with an RDF file extension.
-
-#### `kurra fuseki clear`
-
-Clear a named graph or clear all graphs.
-
-## Installation
-
-View the [releases](https://github.com/Kurrawong/kurrawong-python/releases) page and install using the source code (zip) link.
-
-```bash
-pip install https://github.com/Kurrawong/kurrawong-python/archive/refs/tags/0.1.0.zip
-```
-
-## Development
-
-Install the Poetry project and its dependencies.
-
-```bash
-task install
-```
-
-Format code.
-
-```bash
-task code
-```
-
-## License
-
-[BSD-3-Clause](https://opensource.org/license/bsd-3-clause/) license.
+* [KurrawongAI Service > Tools](https://kurrawong.ai/services/tools) 
+    * for more information on our specialised Knowledge Graph tooling support. 
