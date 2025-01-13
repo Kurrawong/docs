@@ -2,34 +2,27 @@
 
 ![](../assets/prez.png)
 
-Prez is a data-configurable Linked Data API framework that delivers _profiles_ of Knowledge Graph data according to the [Content Negotiation by Profile](https://w3c.github.io/dx-connegp/connegp/) standard.
+Prez is a data-configurable Linked Data API that delivers _profiles_ of Knowledge Graph data according to the [Content Negotiation by Profile](https://w3c.github.io/dx-connegp/connegp/) standard.
 
 Prez is used to publish:
 
 - lists of managed vocabularies
-- highly configurable catalogues of digital resources
+- catalogues of digital resources - highly configurable
 - spatial reference datasets
 
 While being open source, Prez is mostly maintained by [KurrawongAI](https://kurrawong.ai) who provide professional services to assist with its use.
 
 >**Where's the UI?**
 >
->Prez delivers data only - usually [RDF](https://en.wikipedia.org/wiki/Resource_Description_Framework) but could be GeoJSON, XML etc. - and it delivers a special form of RDF which includes labels for all objects and predicates Prez can find in its database.
+> Prez delivers data only - usually [RDF](https://en.wikipedia.org/wiki/Resource_Description_Framework) but also GeoJSON, XML etc. - and it delivers a special form of its data which includes all the labels needed for human-readable display.
 >
->If you want a UI that can render Prez labelled RDF as HTML and other fancy graphical widgets, see the [Prez UI](https://github.com/RDFLib/prez-ui).
-
-#### Prez API Subsystems
-
-The Prez API comes with several pre-configured subsystems.
-
-| Subsystem | Description                                                                                     |
-| --------- | ----------------------------------------------------------------------------------------------- |
-| CatPrez   | a configurable [DCAT](https://www.w3.org/TR/vocab-dcat/) catalogue view of registered resources |
-| VocPrez   | a specialised interface and APIs for the delivery of controlled term lists                      |
-| SpacePrez | a map portal into spatial data, from whole-dataset right down to individual spatial element     |
+> If you want a UI that can render data as HTML and other fancy graphical widgets, see [Prez UI](ui.md).
+> 
+> Other UIs can be made for Prez too: you don't only have to use PrezUI.
 
 ## Contents
 
+- [Demo](#demo)
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Running](#running)
@@ -39,7 +32,33 @@ The Prez API comes with several pre-configured subsystems.
 - [Contributing](#contributing)
 - [License](#license)
 
+## Demo
+
+We maintain a demonstration instance of Prez + PrezUI online at:
+
+**<https://demo.dev.kurrawong.ai>**
+
+There you will see a system delivering multiple catalogues of demonstration content and real content from projects re-delivered here for testing. 
+
+Browse that system's catalogues - <https://demo.dev.kurrawong.ai/catalogs> - or search it - <https://demo.dev.kurrawong.ai/search> - to get a sense of what Prez can do.
+
 ## Installation
+
+You can run Prez, PrezUI and required databases on your computer either "directly" - using the application's code - or you can use Docker containers we supply for each of the parts.
+
+To see something like [the Demo prez instance](#demo) running, you will need to run:
+
+1. **an RDF database** - we recommend [Fuseki](../3rdparty/fuseki.md) but you can use others that support SPARQL
+2. **Prez**
+3. **PrezUI**
+
+### Running directly
+
+#### Fuseki
+
+See [running Fuseki](../3rdparty/fuseki.md#running).
+
+#### Prez
 
 To get a copy of Prez on your computer, run:
 
@@ -59,16 +78,33 @@ poetry install
 
 > **Note:** Poetry must be installed on the system. To check if you have Poetry installed run `poetry --version`. For tips on installing and managing specific dependency groups check the [documentation](https://python-poetry.org/docs/managing-dependencies/).
 
+You will need to configure Prez to "see" the SPARQL Endpoint delivered by Fuseki or your other RDF database. See [configuration - SPARQL Endpoint](#sparql-endpoint-configuration) below.
+
+#### PrezUI
+
+See the [PrezUI Installation section](ui.md#installation).
+
+### Running Containers
+
+#### Fuseki
+
+#### Prez
+
+#### Prez UI
+
 ## Configuration
 
-The following Environment Variables can be used to configure Prez:
-**In most cases all that is required is the SPARQL_ENDPOINT variable.**
+The following Environment Variables can be used to configure Prez.
+
+!!! note
+
+    **In most cases all that is required to be set is the SPARQL_ENDPOINT variable.**
 
 These can be set in a '.env' file which will get read in via python-dotenv. Alternatively, set them directly in the environment from which Prez is run.
 
 #### SPARQL Endpoint Configuration
 
-- **`sparql_endpoint`**: Read-only SPARQL endpoint for Prez. Default is `None`.
+- **`sparql_endpoint`**: Read-only SPARQL endpoint for Prez.
 - **`sparql_username`**: A username for the Prez SPARQL endpoint, if required by the RDF DB. Default is `None`.
 - **`sparql_password`**: A password for the Prez SPARQL endpoint, if required by the RDF DB. Default is `None`.
 
