@@ -37,8 +37,7 @@ nav:
         - 'Deploying':
             - 'AWS': 'prez/deploying/aws.md'
             - 'Azure':
-              - 'App Service': 'prez/deploying/azure/appservice.md'
-              - 'Container': 'prez/deploying/azure/container.md'
+              - 'App Service Deployment': 'prez/deploying/azure/appservice.md'
         - 'Developers': 'prez/developers.md'
     - 'Olis': 'olis.md'
     - 'KAI Tools':
