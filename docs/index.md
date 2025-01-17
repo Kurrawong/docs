@@ -8,7 +8,7 @@ We also provide user-tailored documentation for many clients too, just to them. 
 
 ## Getting Around
 
-Information in the knowledge base can be discovered in the following ways:
+Information in the knowledge base can be discovered in the two following ways:
 
 1. Using the Navigation Panel
     - The navigation panel provides a familiar, tree-like structure from which the knowledge base can be explored.
