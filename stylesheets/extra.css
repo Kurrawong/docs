@@ -1,0 +1,19 @@
+[data-md-color-scheme="kai"] {
+  --md-primary-fg-color:        black;
+  --md-primary-fg-color--light: grey;
+  --md-primary-fg-color--dark:  lightgrey;
+}
+/* #1B1B1B */
+
+
+#kurrawongai-docs {
+      display: none;
+}
+
+a {
+    color: #3366ff!important;
+}
+
+.md-footer a {
+    color: white!important;
+}
