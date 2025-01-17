@@ -17,7 +17,7 @@ Information in the knowledge base can be discovered in the following ways:
 
 ## About Us
 
-[KurrawongAI](https://kurrawong.ai) is a small, Australian-based company enabling organisations to take control of their data.
+[KurrawongAI](https://kurrawong.ai) is a small, Australian-based, company enabling organisations to take control of their data.
 
 We use data modelling, data governance and data systems implementation expertise, all based on [Semantic Web](https://www.w3.org/standards/semanticweb/) and [Knowledge Graph](https://en.wikipedia.org/wiki/Knowledge_graph) principles, to ensure data is in the richest, most open and most extensible form it can be.
 
