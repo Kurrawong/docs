@@ -530,7 +530,7 @@ VocEdit does not store vocabulary data in a database - it simply creates a file 
 
 ### Edit with VocEdit
 
-We will edit the <a href="https://linked.data.gov.au/def/road-travel-direction" target="_blank" rel="noopener noreferrer">Road Travel Direction</a> vocabulary.
+We will edit the <a href="vocabularies-qsi/road-travel-directions.ttl" target="_blank" rel="noopener noreferrer">Road Travel Direction</a> vocabulary.
 
 - download the _VocPub > Turtle_ file to your desktop
 - Open <a href="https://vocedit.dev.kurrawong.ai/" target="_blank" rel="noopener noreferrer">VocEdit</a> in _Chrome_ browser.
