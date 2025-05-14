@@ -17,6 +17,8 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.mark
   - pymdownx.tilde
+  - toc:
+      toc_depth: "3"
 theme:
   name: material
   favicon: assets/favicon-32x32.png
@@ -25,37 +27,41 @@ theme:
   logo: assets/KurrawongAI-inverted.svg
   features:
     - navigation.indexes
+    # - navigation.expand
     - toc.follow
   # custom_dir: overrides
 nav:
     - 'index.md'
-    - 'Prez':
-        - 'prez/index.md'
-        - 'UI': 'prez/ui.md'
-        - 'Manifest': 'prez/manifest.md'
-        - 'Data Preparation': 'prez/data-preparation.md'
-        - 'Deploying':
-            - 'AWS': 'prez/deploying/aws.md'
-            - 'Azure':
-              - 'App Service Deployment': 'prez/deploying/azure/appservice.md'
-        - 'Developers': 'prez/developers.md'
-    - 'Olis': 'olis.md'
-    - 'KAI Tools':
-        - 'tools/index.md'
-        - 'Kurra': 'tools/kurra.md'
-        - 'Labelify': 'tools/labelify.md'
-        - 'OGC Tests': 'tools/ogc-tests.md'
-        - 'Prefix Lookup': 'tools/prefix-lookup.md'
-        - 'Prez Manifest': 'tools/prezmanifest.md'
-        - 'ProvWorkflow': 'tools/provworkflow.md'
-        - 'pyLODE': 'tools/pylode.md'
-        - 'RDF Converter': 'tools/rdf-converter.md'
-        - 'RDF Merger': 'tools/rdf-merger.md'
-        - 'SHACL Validator': 'tools/shacl-validator.md'
-        - 'SPARQL Parser': 'tools/sparql-parser.md'
-        - 'VocEdit': 'tools/vocedit.md'
-        - 'VocExcel': 'tools/vocexcel.md'
-    - '3rd Party Products':
-        - 'Fuseki': '3rdparty/fuseki.md'
+    - Products:
+        - 'Prez':
+            - 'products/prez/index.md'
+            - 'UI': 'products/prez/ui.md'
+            - 'Manifest': 'products/prez/manifest.md'
+            - 'Data Preparation': 'products/prez/data-preparation.md'
+            - 'Deploying':
+                - 'AWS': 'products/prez/deploying/aws.md'
+                - 'Azure':
+                  - 'App Service Deployment': 'products/prez/deploying/azure/appservice.md'
+            - 'Developers': 'products/prez/developers.md'
+        - 'Olis': 'products/olis.md'
+        - 'KAI Tools':
+            - 'products/tools/index.md'
+            - 'Kurra': 'products/tools/kurra.md'
+            - 'Labelify': 'products/tools/labelify.md'
+            - 'OGC Tests': 'products/tools/ogc-tests.md'
+            - 'Prefix Lookup': 'products/tools/prefix-lookup.md'
+            - 'Prez Manifest': 'products/tools/prezmanifest.md'
+            - 'ProvWorkflow': 'products/tools/provworkflow.md'
+            - 'pyLODE': 'products/tools/pylode.md'
+            - 'RDF Converter': 'products/tools/rdf-converter.md'
+            - 'RDF Merger': 'products/tools/rdf-merger.md'
+            - 'SHACL Validator': 'products/tools/shacl-validator.md'
+            - 'SPARQL Parser': 'products/tools/sparql-parser.md'
+            - 'VocEdit': 'products/tools/vocedit.md'
+            - 'VocExcel': 'products/tools/vocexcel.md'
+        - '3rd Party':
+            - 'Fuseki': 'products/3rdparty/fuseki.md'
+    - Concepts:
+        - 'Vocabs': 'concepts/vocabs.md'
 
 # SVG resizer: https://svg-converter.com/resize
