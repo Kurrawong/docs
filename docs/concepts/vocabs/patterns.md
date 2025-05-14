@@ -1,8 +1,21 @@
-# Vocabulary Concepts
+# Vocabulary Patterns
 
-This page documents some concepts related to vocabularies and links to particular vocabulary products when appropriate.
+> ***Scope***
+>
+> This content is in intended to convey Best Practice patterns in vocabulary content
 
-All the patterns documented here assume the use of the [SKOS data model](https://www.w3.org/TR/skos-primer/) for vocabulary content and [Semantic Web](https://en.wikipedia.org/wiki/Semantic_Web) methods for data management and access. 
+>
+> ***Audience***
+>
+> Technical vocabulary creators.
+> 
+> All the patterns documented here assume the use of the [SKOS data model](https://www.w3.org/TR/skos-primer/) for vocabulary content and [Semantic Web](https://en.wikipedia.org/wiki/Semantic_Web) methods for data management and access. 
+>
+> ***Outcome***
+>
+> Technical vocabulary creators should learn both what KurrawongAI considers to be Best Practice for certain aspects of vocabulary content and also how KurrawongAI and other vocabulary creation and publication tools support the pattern.
+>
+> ---
 
 ## Images
 

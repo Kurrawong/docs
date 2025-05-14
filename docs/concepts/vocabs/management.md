@@ -1,8 +1,6 @@
 
 # Vocabulary Management
 
-
-
 >
 >***Scope***
 >
@@ -23,7 +21,6 @@
 
 > 📝 _Notes that summarise content at the end of a module._
 
-
 ## An Introduction to Vocabularies
 As languages speakers, we have developed the categorization of "things" as a means to both understand and communicate our experience of the world. The sheer volume of data that we interact with has necessitated approaches to using our shared understanding of language and naming. Particularly when using information as part of large-scale data holdings, it can be beneficial to encourage consistency through the use of controlled vocabularies.
 
@@ -40,7 +37,7 @@ In this section we will introduce some common vocabulary types. By introducing s
 
 Glossary are a very common form of vocabulary found in many print and web resources. A glossary is a list of concepts, expressed by natural language terms (we will refer to _terms_ and _labels_ interchangeably) with added definitions.
 
-  <img src="docs/assets/glossaryPic.png" alt="Glossary Picture" style="width:40%;">
+<img src="../assets/glossaryPic.png" alt="Glossary Picture" style="width:40%;">
 
 Each concept in a Glossary has at least one label and one definition. Some glossaries include _see_ references that direct a user to a preferred term. This _equivalence_ mapping is a common feature in more complex vocabulary types such as in a **thesaurus** that we will look at below. But first we will look at vocabularies that include hierarchy relationships.
 
@@ -267,7 +264,6 @@ Let's put this into a narrative form:
 
 _We know that some roads are closed on a seasonal basis, but we don't know what portion of these are one lane roads. But we do have data about the seasonality of 'One Way From Two' roads, also called 'One way with vector' roads. Because these roads are defined as a type of One Way road [defined as `skos:narrower`], we can infer information about seasonal road closures for one lane roads._
 
-
 ## Vocabulary properties
 
 Vocabularies contain, as a minimum: _labels_, _definitions_ and _identifiers_
@@ -428,7 +424,6 @@ A `skos:historyNote` is a useful property for vocabulary managers to track decis
 
 💡 **Tip:** When writing notes, use plain text only and limit paragraph breaks where possible.
 
-
 ## Concept scheme
 
 A Concept scheme is some metadata about the vocabulary as a whole - the vocabulary title (`skos:prefLabel`), a definition (`skos:definition`), and a unique identifier are minimum requirements. All vocabularies must have a Concept scheme, and the Concept scheme should include:
@@ -555,7 +550,6 @@ We will test the file that we just edited using a KurrawongAI <a href="https://t
 - Edit the data: remove ``skos:definition`` from ``skos:conceptScheme`` triple.
 - paste the edited turtle code into the editor
 - Validate > _1 violation!_. Note that details of the relevant specification are given in the warning.
-
 
 ## Reuse existing vocabularies
 
@@ -708,8 +702,7 @@ srti:clockwise
 - **Go to** Project > Save
 - **Navigate** to the `road-travel-directions.ttl` file, open it, and note that there is a new `skos:broader` relationship.
 
-
-# References and Further Reading
+## References and Further Reading
 
 * AGLDWG. (n.d.). VocPub profile specification. Retrieved April 17, 2025, from https://agldwg.github.io/vocpub-profile/specification.html
 * W3C (n.d.). QSKOS. Retrieved March 5, 2025, from https://www.w3.org/2001/sw/wiki/QSKOS

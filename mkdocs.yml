@@ -62,6 +62,8 @@ nav:
         - '3rd Party':
             - 'Fuseki': 'products/3rdparty/fuseki.md'
     - Concepts:
-        - 'Vocabs': 'concepts/vocabs.md'
+        - 'Vocabs':
+            - 'Management': 'concepts/vocabs/management.md'
+            - 'Patterns': 'concepts/vocabs/patterns.md'
 
 # SVG resizer: https://svg-converter.com/resize
