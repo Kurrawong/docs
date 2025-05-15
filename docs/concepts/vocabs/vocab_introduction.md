@@ -38,7 +38,7 @@ In this section we will introduce some common vocabulary types. By introducing s
 
 Glossary are a very common form of vocabulary found in many print and web resources. A glossary is a list of concepts, expressed by natural language terms (we will refer to _terms_ and _labels_ interchangeably) with added definitions.
 
-  <img src="../../vocabs/glossaryPic.png" alt="Glossary Picture" style="width:40%;">
+  <img src="../../assets/vocabs/glossaryPic.png" alt="Glossary Picture" style="width:40%;">
 
 Each concept in a Glossary has at least one label and one definition. Some glossaries include _see_ references that direct a user to a preferred term. This _equivalence_ mapping is a common feature in more complex vocabulary types such as in a **thesaurus** that we will look at below. But first we will look at vocabularies that include hierarchy relationships.
 
