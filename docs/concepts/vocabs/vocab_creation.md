@@ -34,7 +34,6 @@ In the basic structure of a vocabulary, concepts may be related to other concept
 _Limestone packstone_ `skos:broadMatch` _Packstone_
 ... where _Limestone packstone_ is a concept in the <a href="https://linked.data.gov.au/def/gswa-rock-classification-scheme" target="_blank">GSWA rock classification scheme</a>, and _Packstone_ is a concept in the <a href="http://inspire.ec.europa.eu/codelist" target="_blank" rel="noopener noreferrer">INSPIRE code list</a> register.
 
-.
 
 `skos:exactMatch` example:
 
@@ -113,7 +112,7 @@ A `skos:collection` connects to a `skos:concept` using the `skos:member` propert
 
 
 
-### Identifiers
+## Identifiers
 
 Each concept must have a unique identifier that can be looked up in an application or on the web. An IRI, or _Internationalized Resource Identifier_, is a recommended identifier type for vocabulary concepts. 
 
