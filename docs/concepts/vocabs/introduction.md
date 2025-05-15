@@ -2,29 +2,26 @@
 # Introduction to Vocabularies
 
 
-
+> ***Scope***
 >
->***Scope***
->
->This module is in intended to introduce vocabularies and to provide initial steps and guidance on starting a vocabulary with minimum elements. This module will also explain the rationale for vocabularies within the context of Knowledge Graph data management.
-
+> This module is in intended to introduce vocabularies and to provide initial steps and guidance on starting a vocabulary with minimum elements. This module will also explain the rationale for vocabularies within the context of Knowledge Graph data management.
 >
 >***Audience***
 >
->_The content is primarily targeted to managers and users (vocab owners and contributors) of established vocabularies. It is assumed that learners have some experience with using document management or version control systems, and general familiarity with data management in practice._
+> _The content is primarily targeted to managers and users (vocab owners and contributors) of established vocabularies. It is assumed that learners have some experience with using document management or version control systems, and general familiarity with data management in practice._
 >
->***Outcome***
+> ***Outcome***
 >
->_These modules are intended to provide an introduction to vocabulary creation and management, and provide initial guidance on best practice for administration and management of vocabularies within part of broader data management systems. It is recommended that users independently access other resources (see references [here](#references-and-further-reading)), as part of ongoing independent learning._
+> _These modules are intended to provide an introduction to vocabulary creation and management, and provide initial guidance on best practice for administration and management of vocabularies within part of broader data management systems. It is recommended that users independently access other resources (see references [here](#references-and-further-reading)), as part of ongoing independent learning._
 >
->----------------
+> ---
 
 > 💡 _Identifies troubleshooting tips, common errors and potential issues._
 
 > #### 🚧 _Exercises_
 
-
 ## An Introduction to Vocabularies
+
 As languages speakers, we have developed the categorization of "things" as a means to both understand and communicate our experience of the world. The sheer volume of data that we interact with has necessitated approaches to using our shared understanding of language and naming. Particularly when using information as part of large-scale data holdings, it can be beneficial to encourage consistency through the use of controlled vocabularies.
 
 When sharing information across diverse groups of people (or perhaps software applications), there is need for a common understanding of exactly what is being referred to. This is where controlled vocabularies provide a structure from which terminology applied to information can be driven from an agreed stated understanding of that concept. That understanding can be a definition for human understanding, or a machine-readable unique identifier for machine processing.
@@ -36,6 +33,7 @@ Whatever size and shape, the vocabularies mentioned in these modules are designe
 In this section we will introduce some common vocabulary types. By introducing simple and more complex vocabulary examples we will introduce some important vocabulary features.
 
 ### Glossary
+
 ... _defining terms_
 
 Glossary are a very common form of vocabulary found in many print and web resources. A glossary is a list of concepts, expressed by natural language terms (we will refer to _terms_ and _labels_ interchangeably) with added definitions.
@@ -45,6 +43,7 @@ Glossary are a very common form of vocabulary found in many print and web resour
 Each concept in a Glossary has at least one label and one definition. Some glossaries include _see_ references that direct a user to a preferred term. This _equivalence_ mapping is a common feature in more complex vocabulary types such as in a **thesaurus** that we will look at below. But first we will look at vocabularies that include hierarchy relationships.
 
 ### Taxonomies
+
 ... _a very short history_
 
 Taxonomies are vocabularies with hierarchical relationships between concepts. Conventionally, we might say that concept A is _broader_ than concept B, when the _all-some_ rule apples: All B's are A, and some A's are B. For example, _all apples are fruit, and some fruit are applies_. Therefore, _fruit_ is broader than _apples_.
@@ -98,6 +97,7 @@ We will see below in [Vocabularies in the context of knowledge graphs](#vocabula
 <br>
 
 ### Thesaurus
+
 ... _a (more) complete picture_
 
 The modern retrieval thesaurus combines the structure of a taxonomy with an additional non-hierarchical relationship and also synonym control. Thesauri establish _hierarchy_, _association_ and _equivalence_ between terms. Each can be expressed using the Simple Knowledge Organization System (SKOS) properties `skos:broader` / `skos:narrower`; `skos:relation`; and `skos:prefLabel` / `skos:altLabel` ([W3C, 2009](#references-and-further-reading)).
@@ -155,7 +155,6 @@ graph LR;
 ```
 
 The relationships between classes and concepts is often of a _subject_ nature - that is to say the class instance is _about_ the concept.
-
 
 ```mermaid
 graph LR;
@@ -267,7 +266,6 @@ Let's put this into a narrative form:
 
 _We know that some roads are closed on a seasonal basis, but we don't know what portion of these are one lane roads. But we do have data about the seasonality of 'One Way From Two' roads, also called 'One way with vector' roads. Because these roads are defined as a type of One Way road (defined as `skos:narrower`), we can infer information about seasonal road closures for one lane roads._
 
-
 ## Vocabulary properties
 
 Vocabularies contain, as a minimum: _preferred labels_, _definitions_ and _identifiers_
@@ -308,12 +306,7 @@ _Technical requirements: Chrome browser is needed to access the VocEdit tool._
 18. **Type** `"P"` - **Pest Risk Pathway** will return - select this  
 19. **Project** > **Save**
 
-
-
-
-
 The pestRiskPathway.ttl will now be updated in your local directory, with the new concept "Wind dispersal" added.
-
 
 ## Broader / Narrower
 
@@ -321,7 +314,7 @@ We have already introduced the ``skos:broader`` and ``skos:narrower`` relationsh
 
 Depending on the type and complexity of a vocabulary, there may be a requirement that all concepts are related to another concept via ``skos:broader`` property. In a taxonomy or thesaurus vocabulary project, a concept that does not have a skos:broader concept may be considered an _orphan_, unless it is a ``topConcept``. As far as the SKOS standard is concerned, there is no need for all (or any) concepts to be arranged in a hierarchy. In some cases a vocabulary will be mostly flat with selected concepts in narrower relationships to broader concepts.
 
-If a skos:concept does not have a skos:broader property, the VocPub profile requires that it must reference the relevant skos:conceptScheme IRI with the ``skos:topConcept`` property. 
+If a `skos:Concept` does not have a `skos:broader` property, the VocPub profile requires that it must reference the relevant `skos:ConceptScheme` IRI with the ``skos:topConcept`` property. 
 
 **Tip:** Broader and narrower relationships are reciprocal - that is, if A is broader than B, then B is narrower than A. For example:
 
@@ -418,22 +411,21 @@ In this exercise we will add an alternative label to a concept. You will need to
 
 ###  Top Concepts
 
-If a `skos:concept` does not have a `skos:narrower` relationship, it is automatically assumed to be a `skos:topConceptOf` a `skos:conceptScheme` and must be declared as such.
+If a `skos:Concept` does not have a `skos:narrower` relationship, it is automatically assumed to be a `skos:topConceptOf` a `skos:ConceptScheme` and must be declared as such.
 
 A concept may be moved out of the 
 
-## Concept scheme
+## Concept Scheme
 
-A Concept scheme is some metadata about the vocabulary as a whole - the vocabulary title (`skos:prefLabel`), a definition (`skos:definition`), and a unique identifier are minimum requirements. All vocabularies must have a Concept scheme, and the Concept scheme should include:
+A Concept Scheme is some metadata about the vocabulary as a whole - the vocabulary title (`skos:prefLabel`), a definition (`skos:definition`), and a unique identifier are minimum requirements. All vocabularies must have a Concept Scheme, and it should include:
 
 - an Identifier - create an IRI following the same pattern as the IRIs for concepts. For the suffix, instead of a concept ID, add a Concept scheme ID. This may be the name of the Concept scheme (the vocabulary), e.g.: - ``https://linked.data.gov.au/def/road-types``
   ... _where Road types_ is the name of the concept scheme.
 
-- a [Preferred label](http://www.w3.org/2004/02/skos/core#prefLabel) - the same property that is used for a Concept. Use a Preferred label for the name or title of the vocabulary (this may also be used for the Concept scheme ID)
-- a [Definition](http://www.w3.org/2004/02/skos/core#definition) - a definition of the Concept scheme. Use plain text only but paragraphs may be separated by newlines. Also used for Concepts
-- a [Created](http://purl.org/dc/terms/created) date. When the Concept scheme was first created. This might be automatically created by a vocabulary editor
+- a [Preferred label](http://www.w3.org/2004/02/skos/core#prefLabel) - the same property that is used for a Concept. Use a Preferred label for the name or title of the vocabulary (this may also be used for the Concept Scheme ID)
+- a [Definition](http://www.w3.org/2004/02/skos/core#definition) - a definition of the Concept Scheme. Use plain text only but paragraphs may be separated by newlines. Also used for Concepts
+- a [Created](http://purl.org/dc/terms/created) date. When the Concept Scheme was first created. This might be automatically created by a vocabulary editor
 - a [History](http://www.w3.org/2004/02/skos/core#historyNote) note - a note on the origin or history of a vocabulary - such as how or from what it was generated.
-
 
 #### 🚧 Exercise: edit a concept scheme
 
@@ -450,10 +442,9 @@ We will continue to edit the Pest Risk Pathway vocabulary, but this time we will
 
 In this module we have introduced vocabularies - different types and how they are useful. We have also used a vocabulary editing tool to create the minimum elements for a concept and a concept scheme. 
 
-# References and Further Reading
+## References and Further Reading
 
-* AGLDWG. (n.d.). VocPub profile specification. Retrieved April 17, 2025, from https://agldwg.github.io/vocpub-profile/specification.html
-* W3C (n.d.). QSKOS. Retrieved March 5, 2025, from https://www.w3.org/2001/sw/wiki/QSKOS
-* W3C (2009). SKOS reference. https://www.w3.org/TR/skos-reference/
-* W3C (2014). Turtle: Terse RDF triple language (W3C Recommendation). Retrieved from https://www.w3.org/TR/turtle/
-
+* AGLDWG. (n.d.). VocPub profile specification. Retrieved April 17, 2025, from <https://w3id.org/profile/vocpub/spec>
+* W3C (n.d.). QSKOS. Retrieved March 5, 2025, from <https://www.w3.org/2001/sw/wiki/QSKOS>
+* W3C (2009). SKOS reference. <https://www.w3.org/TR/skos-reference/>
+* W3C (2014). Turtle: Terse RDF triple language (W3C Recommendation). Retrieved from <https://www.w3.org/TR/turtle/>

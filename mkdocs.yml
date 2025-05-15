@@ -63,7 +63,7 @@ nav:
             - 'Fuseki': 'products/3rdparty/fuseki.md'
     - Concepts:
         - 'Vocabs':
-            - 'Introduction': 'concepts/vocabs/vocab_introduction.md'
+            - 'Introduction': 'concepts/vocabs/introduction.md'
             - 'Patterns': 'concepts/vocabs/patterns.md'
 
 # SVG resizer: https://svg-converter.com/resize
