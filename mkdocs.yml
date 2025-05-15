@@ -64,7 +64,6 @@ nav:
     - Concepts:
         - 'Vocabs':
             - 'Introduction': 'concepts/vocabs/vocab_introduction.md'
-            - 'Advanced':   'concepts/vocabs/vocab_creation.md'
             - 'Patterns': 'concepts/vocabs/patterns.md'
 
 # SVG resizer: https://svg-converter.com/resize
