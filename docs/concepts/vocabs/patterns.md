@@ -38,7 +38,7 @@ Conceptually, we just link an image to a Concept within a vocab using an appropr
 
 !!! note
 
-    If a Concept is actually defined by an image, it may seem appropriate link directly to the image using the [`skos:definition`](https://www.w3.org/TR/skos-reference/#definition) predicated but we advise against this as it may be invalid for certain vocabulary profiles such as [VocPub](https://w3id.org/profile/vocpub/spec) and may be hard for systems to implement. Instead use another predicate and describe how the image, indicated by the chosen predicate, is the defining part of the Concept in the definition field, in text. 
+    If a Concept is actually defined by an image, it may seem appropriate to link directly to the image using the [`skos:definition`](https://www.w3.org/TR/skos-reference/#definition) predicated but we advise against this as it may be invalid for certain vocabulary profiles such as [VocPub](https://w3id.org/profile/vocpub/spec) and may be hard for systems to implement. Instead use another predicate and describe how the image, indicated by the chosen predicate, is the defining part of the Concept in the definition field, in text. 
 
 We can also choose to use a non-SKOS predicate, especially common ones used for images, such as [`schema:image`](https://schema.org/image). This would allow the use of regular SKOS predicates, such as [`skos:definition`](https://www.w3.org/TR/skos-reference/#definition), [`skos:example`](https://www.w3.org/TR/skos-reference/#example) etc. for their common use and the image predicate is an extra.
 
@@ -53,13 +53,13 @@ The information about the images actually linked to by [`skos:example`](https://
     * e.g. a hex-encoded raster image, like a JPG
 * a Blank Node describing an image
 
-There are pros and cons to each try of information listed above. 
+There are pros and cons to each type of information listed above. 
 
-A web address is easy to record - just a predicate like [`schema:image`](https://schema.org/image) pointing to the URL - but it will break if the image disappears offline, so the vocabulary has a dependency on the image's stability to keep working.
+A _web address_ is easy to record - just a predicate like [`schema:image`](https://schema.org/image) pointing to the URL - but it will break if the image disappears offline, so the vocabulary has a dependency on the image's stability to keep working.
 
-A local file path will only work if any tool publishing the vocabulary can access and on-deliver (render) the image.
+A _local file path_ will only work if any tool publishing the vocabulary can access and on-deliver (render) the image.
 
-An embedded image stays within the vocab's source data file, which means it can't ever be lost, but could be large: the JPG image linked to in the web address bullet above is 7.5MB as a JPEG but 137MB when converted to HEX which is a form of text encoding that can be used in an RDF file. This may only be appropriate for small vector images such as icons of map symbols.
+An _embedded image_ stays within the vocab's source data file, which means it can't ever be lost, but could be large: the JPG image linked to in the web address bullet above is 7.5MB as a JPEG but 137MB when converted to HEX which is a form of text encoding that can be used in an RDF file. This may only be appropriate for small vector images such as icons of map symbols.
 
 If we want to provide more information about the image than either just its embedded content or a link to its location, we can qualify it by linking to a Blank Node from which we can then link to remote content via a URL or local file path or to embedded content. From the same Blank Node, we can then also link to other information such as captions, copyright info, etc. See Examples below.
 
