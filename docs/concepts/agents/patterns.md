@@ -81,19 +81,24 @@ PREFIX sdo: <https://schema.org/>
 .
 ```
 
-
-
-
 ## Agent to agent relationships
 
-**dcat:hadRole complex approach**
+_how do we describe the relationship between agents?_
+
+**dcat:hadRole approach**
 
 ```turtle
+PREFIX aarr: <https://data.idnau.org/pid/vocab/aarr/>
+PREFIX cs: <https://data.idnau.org/pid/vocab/aarr>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX sdo: <https://schema.org/>
+
 <https://data.idnau.org/pid/agent/abs-coatsis>
     a sdo:Organization ;
     dcterms:type <https://data.idnau.org/pid/vocab/org-indigeneity/run-by-indigenous-persons> ;
     sdo:description "The Centre of Aboriginal and Torres Strait Islander Statistics (CoATSIS) has a leadership and coordination role for national statistical activity about Aboriginal and Torres Strait Islander peoples. They engage with communities across a range of statistical activities and outputs such as the Aboriginal and Torres Strait Islander health and social surveys, the five-yearly Census, administrative data, and data integration projects."@en ;
-    dcat:relation [
+    dcat:relationship [
             dcat:hadRole aarr:partOf ;
             prov:agent <https://linked.data.gov.au/org/abs>
         ] ;
@@ -102,7 +107,7 @@ PREFIX sdo: <https://schema.org/>
 .
 ```
 
-**sdo simple approach**
+**sdo:parentOrganization approach**
 ```turtle
 <https://data.idnau.org/pid/org/caepr>
     a sdo:Organization ;
@@ -111,6 +116,8 @@ PREFIX sdo: <https://schema.org/>
     sdo:parentOrganization <https://linked.data.gov.au/org/cass> ;
     sdo:url "https://caepr.cass.anu.edu.au"^^xsd:anyURI ;
 ```
+
+
 
 
 !!! note
