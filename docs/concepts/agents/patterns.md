@@ -47,11 +47,71 @@ Some widely used agentic systems that mint identifiers include:
 
 - ORCID
 - Research Organization Registry (ROR)
-- 
+
+e.g.
+
+```turtle
+PREFIX id: <http://id.loc.gov/vocabulary/identifiers/>
+PREFIX sdo: <https://schema.org/>
+
+<https://orcid.org/0000-0001-5640-3202>
+    a sdo:Person ;
+    sdo:honorificTitle "Mr" ;
+    sdo:memberOf <https://data.idnau.org/pid/org/dewr> ;
+    sdo:url "https://www.researchgate.net/profile/Les-Kneebone"^^xsd:anyURI ;
+    sdo:name "Les Kneebone" ;
+    sdo:identifier "https://orcid.org/0000-0001-5640-3202"^^id:orcid ;
+.
+```
+
+
+In this example an ORCID has been used as the IRI. Additionally, the ORCID has been optionaly been added as sdo:identifier.
+
+```turtle
+PREFIX id: <http://id.loc.gov/vocabulary/identifiers/>
+PREFIX sdo: <https://schema.org/>
+
+<https://orcid.org/0000-0001-5640-3202>
+    a sdo:Person ;
+    sdo:honorificTitle "Mr" ;
+    sdo:memberOf <https://data.idnau.org/pid/org/dewr> ;
+    sdo:url "https://www.researchgate.net/profile/Les-Kneebone"^^xsd:anyURI ;
+    sdo:name "Les Kneebone" ;
+    sdo:identifier "https://orcid.org/0000-0001-5640-3202"^^id:orcid ;
+.
+```
 
 
 
-Conceptually, we just link an image to a Concept within a vocab using an appropriate predicate. The [SKOS Reference document's _Notes_ section](https://www.w3.org/TR/skos-reference/#notes) indicates that certain note predicates such as [`skos:example`](https://www.w3.org/TR/skos-reference/#example) might be appropriate since the don't only have to be used with text, even though they usually are.
+
+## Agent to agent relationships
+
+**dcat:hadRole complex approach**
+
+```turtle
+<https://data.idnau.org/pid/agent/abs-coatsis>
+    a sdo:Organization ;
+    dcterms:type <https://data.idnau.org/pid/vocab/org-indigeneity/run-by-indigenous-persons> ;
+    sdo:description "The Centre of Aboriginal and Torres Strait Islander Statistics (CoATSIS) has a leadership and coordination role for national statistical activity about Aboriginal and Torres Strait Islander peoples. They engage with communities across a range of statistical activities and outputs such as the Aboriginal and Torres Strait Islander health and social surveys, the five-yearly Census, administrative data, and data integration projects."@en ;
+    dcat:relation [
+            dcat:hadRole aarr:partOf ;
+            prov:agent <https://linked.data.gov.au/org/abs>
+        ] ;
+    sdo:name "Australian Bureau of Statistics Centre of Aboriginal and Torres Strait Islander Statistics" ;
+    sdo:url "https://www.abs.gov.au/about/aboriginal-and-torres-strait-islander-peoples/aboriginal-and-torres-strait-islander-engagement"^^xsd:anyURI ;
+.
+```
+
+**sdo simple approach**
+```turtle
+<https://data.idnau.org/pid/org/caepr>
+    a sdo:Organization ;
+    sdo:alternateName "CAEPR" ;
+    sdo:name "ANU Centre for Aboriginal Economic Policy Research" ;
+    sdo:parentOrganization <https://linked.data.gov.au/org/cass> ;
+    sdo:url "https://caepr.cass.anu.edu.au"^^xsd:anyURI ;
+```
+
 
 !!! note
 
