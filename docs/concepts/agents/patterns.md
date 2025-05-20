@@ -36,7 +36,7 @@ Yes we can base agent identifiers on two approaches:
 
 e.g. 
 - Catalogue specific pattens, e.g. https://data.idnau.org/pid/organization/18d04115-4633-4aed-b164-ac3c209b4307
-- CMS regulated patterns, e.g. Drupal - https://apo.org.au/person/330188
+- 
 - 
 
 #### Reusing identifiers
@@ -64,20 +64,19 @@ PREFIX sdo: <https://schema.org/>
 .
 ```
 
-
-In this example an ORCID has been used as the IRI. Additionally, the ORCID has been optionaly been added as sdo:identifier.
+In this example an ORCID has been used as the IRI. Additionally, the ORCID has been optionally been added as sdo:identifier.
 
 ```turtle
 PREFIX id: <http://id.loc.gov/vocabulary/identifiers/>
 PREFIX sdo: <https://schema.org/>
 
-<https://orcid.org/0000-0001-5640-3202>
-    a sdo:Person ;
-    sdo:honorificTitle "Mr" ;
-    sdo:memberOf <https://data.idnau.org/pid/org/dewr> ;
-    sdo:url "https://www.researchgate.net/profile/Les-Kneebone"^^xsd:anyURI ;
-    sdo:name "Les Kneebone" ;
-    sdo:identifier "https://orcid.org/0000-0001-5640-3202"^^id:orcid ;
+<https://ror.org/03y7q9t39>
+    a sdo:Organization ;
+    sdo:url "https://www.canterbury.ac.nz"^^xsd:anyURI ;
+    sdo:name "University of Canterbury" ;
+    sdo:identifier 
+       "https://ror.org/03y7q9t39"^^id:ror ,
+       "https://isni.org/isni/0000000513611983"^^id:isni ;
 .
 ```
 
