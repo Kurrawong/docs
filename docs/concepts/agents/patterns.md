@@ -53,6 +53,7 @@ e.g.
 ```turtle
 PREFIX id: <http://id.loc.gov/vocabulary/identifiers/>
 PREFIX sdo: <https://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <https://orcid.org/0000-0001-5640-3202>
     a sdo:Person ;
@@ -69,6 +70,7 @@ In this example an ORCID has been used as the IRI. Additionally, the ORCID has b
 ```turtle
 PREFIX id: <http://id.loc.gov/vocabulary/identifiers/>
 PREFIX sdo: <https://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <https://ror.org/03y7q9t39>
     a sdo:Organization ;
@@ -91,7 +93,9 @@ PREFIX aarr: <https://data.idnau.org/pid/vocab/aarr/>
 PREFIX cs: <https://data.idnau.org/pid/vocab/aarr>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX sdo: <https://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <https://data.idnau.org/pid/agent/abs-coatsis>
     a sdo:Organization ;
