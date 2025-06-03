@@ -50,7 +50,7 @@ In some cases there may be concepts in a vocabulary that we can reliably say rep
 In this exercise we will use `skos:exactMatch` to link "Animal dispersal" with the concept "Zoochory" from the [National Agriculture Library Thesaurus](https://lod.nal.usda.gov/nalt/en/).
 
 1. **Go to** [VocEdit](https://vocedit.dev.kurrawong.ai) in Chrome  
-2. **Project** > **Open** `pestRiskPath.ttl` from your local directory (*don't have the file? see the [first exercise](https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier) in Introduction to Vocabularies*)  
+2. **Project** > **Open** `pestRiskPath_training.ttl` from your local directory (*don't have the file? see the [first exercise](https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier) in Introduction to Vocabularies*)  
 3. **Select** **Animal dispersal** from under **Concepts** in the left-hand panel  
 4. **Add a new predicate** > **Properties** > **Add new predicate**  
 5. **Add a new predicate** > `"http://www.w3.org/2004/02/skos/core#exactMatch"` > **Add**  
@@ -80,7 +80,7 @@ Associating a `skos:concept` with an image that illustrates meaning is a powerfu
 We will add an image reference with a URL from Wikipedia Commons to the concept "Storm water".
 
 1. **Go to** [VocEdit](https://vocedit.dev.kurrawong.ai) in Chrome  
-2. **Project** > **Open** `pestRiskPath.ttl` from your local directory (*don't have the file? see the [first exercise](https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier) in Introduction to Vocabularies*)  
+2. **Project** > **Open** `pestRiskPath_training.ttl` from your local directory (*don't have the file? see the [first exercise](https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier) in Introduction to Vocabularies*)  
 3. **Select** **Storm water** from under **Concepts** in the left-hand panel  
 4. **Add a new predicate** > **Properties** > **Add new predicate**  
 5. **Add a new predicate** > `"https://schema.org/image"` > **Add**  
