@@ -111,7 +111,6 @@ Collections are like a non-hierarchical means of gathering Concepts. So for exam
 A `skos:collection` connects to a `skos:concept` using the `skos:member` property.
 
 
-
 ## Identifiers
 
 Each concept must have a unique identifier that can be looked up in an application or on the web. An IRI, or _Internationalized Resource Identifier_, is a recommended identifier type for vocabulary concepts. 

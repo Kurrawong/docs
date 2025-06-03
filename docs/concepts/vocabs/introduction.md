@@ -286,7 +286,8 @@ These modules will include a number of editing exercises that use the VocEdit to
 
 _Technical requirements: Chrome browser is needed to access the VocEdit tool._
 
-1. **Go to** [Download pestRiskPath_training.ttl](https://raw.githubusercontent.com/Kurrawong/demo-vocabs/main/vocabs/pestRiskPath_training.ttl)
+1. **Go to** [Download TTL](https://raw.githubusercontent.com/Kurrawong/demo-vocabs/main/vocabs/pestRiskPath_training.ttl)  
+  *(Right-click and choose “Save link as...” to download)*
 2. **Save** the file to your local directory  
 3. **Open** Chrome (if not already)  
 4. **Go to** [VocEdit](https://vocedit.dev.kurrawong.ai)  
