@@ -292,7 +292,7 @@ _Technical requirements: Chrome browser is needed to access the VocEdit tool._
 3. **Open** Chrome (if not already)  
 4. **Go to** [VocEdit](https://vocedit.dev.kurrawong.ai)  
 5. **Select** **Project** > **Open**  
-6. **Select** `pestRiskPath.ttl` from your local directory  
+6. **Select** `pestRiskPath_training.ttl` from your local directory  
 7. **Select** **+ Create concept**  
 8. **Open a new tab** and go to [UUID Generator](https://www.uuidgenerator.net)  
 9. **Copy** the UUID  
@@ -342,7 +342,7 @@ In a vocabulary, it's possible to keep adding narrower relationships by creating
 In this exercise we will add a broader relationship between two concepts. Note that once a concept has a broader relationship, it can no longer be regarded as a 'top concept' and we will remove the top concept statement accordingly.
 
 1. **Go to** [VocEdit](https://vocedit.dev.kurrawong.ai) in Chrome  
-2. **Project** > **Open** `pestRiskPath.ttl` from your local directory  
+2. **Project** > **Open** `pestRiskPath_training.ttl` from your local directory  
 3. **Select** **"Spore dispersal"** from the left-hand list of concepts  
 4. **Concept relationships - Broader** > **Add an IRI value**  
 5. **Type** `"Hos"` - **"Host plants"** will return - **select** this  
@@ -402,7 +402,7 @@ Use an ``altLabel`` to connect official or technical language with natural langu
 In this exercise we will add an alternative label to a concept. You will need to add the skos:altLabel property to VocEdit as it is not included in the default form.
 
 1. **Go to** [VocEdit](https://vocedit.dev.kurrawong.ai) in Chrome  
-2. **Project** > **Open** `pestRiskPath.ttl` from your local directory  
+2. **Project** > **Open** `pestRiskPath_training.ttl` from your local directory  
 3. **Select** **"Spore dispersal"** from the left-hand list of concepts  
 4. **Add a new predicate** > **Properties** > **Add new predicate**  
 5. **Add a new predicate** > **http://www.w3.org/2004/02/skos/core#altLabel** > **Add**  
