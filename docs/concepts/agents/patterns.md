@@ -23,21 +23,50 @@ _What kind of IRIs should we mint for agents?_
 
 ### Context
 
-Agents, be they individual persons or organizations, do not have unique names and should be uniquely identified.
+Agents, be they individual persons or organizations, cannot be reliably identified via their names and should be uniquely identified.
 
 ### Solution
 
 Yes we can base agent identifiers on two approaches:
 
-1. using a pre-arranged common pattern mandated in your catalogue profile
-2. reusing an existing known identifier for that agent 
+1. with a pre-formatted pattern minted by a catalogue system, specified in some catalogue profile
+2. by reusing an existing known identifier for that agent 
 
-#### Mandated identifier patterns
+#### Pre-formatted identifier patterns
 
 e.g. 
 - Catalogue specific pattens, e.g. https://data.idnau.org/pid/organization/18d04115-4633-4aed-b164-ac3c209b4307
 - 
 - 
+##### IRI structure
+ - Domain, subdomain etc
+ - class of agent, e.g. "/person/", "/organization/"
+ - ID 
+
+!!! note [something about suffix scheme - is a 'name' appropriate? a name does not present the same language problem as a prefLabel does for a concept ID. But name are nonetheless not unique]
+
+**name as suffix approach**
+```turtle
+<https://data.idnau.org/pid/agent/abs-coatsis>
+```
+**identifier as suffix**
+```turtle
+<https://data.idnau.org/pid/org/78-094-372-050>
+    a sdo:Organization ;
+    sdo:identifier "78 094 372 050"^^id:ausbn ;
+    sdo:name "Productivity Commission" ;
+.
+```
+**UUID as suffix**
+```turtle
+<https://data.idnau.org/pid/person/34d5d6aa-a5b7-4e3a-91f8-117ffeb474d1>
+    a sdo:Person ;
+    sdo:honorificTitle "PhD Scholar" ;
+    sdo:memberOf <https://data.idnau.org/pid/org/fses> ;
+    sdo:url "https://www.researchgate.net/profile/Sandra-Potter"^^xsd:anyURI ;
+    sdo:name "Sandra Potter" ;
+.
+```
 
 #### Reusing identifiers
 
@@ -81,6 +110,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
        "https://isni.org/isni/0000000513611983"^^id:isni ;
 .
 ```
+
+
 
 ## Agent to agent relationships
 
