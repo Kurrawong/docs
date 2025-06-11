@@ -27,17 +27,32 @@ Agents, be they individual persons or organizations, cannot be reliably identifi
 
 ### Solution
 
-Yes we can base agent identifiers on two approaches:
+Uniquely and persistently identify agents, much the same as we would identify concepts in a vocabulary. 
 
-1. with a pre-formatted pattern minted by a catalogue system, specified in some catalogue profile
+We can base a Persistent Identifier (PID) for an agent on two approaches:
+
+1. with a pre-mandated pattern that is used in a catalogue system or specified in some metadata profile
 2. by reusing an existing known identifier for that agent 
 
-#### Pre-formatted identifier patterns
+#### Pre-mandated identifier patterns
 
 e.g. 
-- Catalogue specific pattens, e.g. https://data.idnau.org/pid/organization/18d04115-4633-4aed-b164-ac3c209b4307
+##### Indigenous Data Network
+The IDN Catalogue Profile specifies an IRI structure for a PID:  
+
+* A stem or base:
+  * `https://data.idnau.org/pid/`
+* A subdirectory indicating a sub-class - for an Agent, this will usually be an Organization or a Person
+  * 'https://data.idnau.org/pid/organization/'
+  * 'https://data.idnau.org/pid/person/'
+* An identifier. This could be completely opaque (such as UUID scheme) or based on an existing identifier (such as a business identifier)
+  * 'https://data.idnau.org/pid/organization/18d04115-4633-4aed-b164-ac3c209b4307' [UUID]
+  * 
 - 
-- 
+- Linked Data PID Register - the Australian Government Linked Data Working Group (AGLDWG) maintains a PID Register for Organisations. 
+
+
+
 ##### IRI structure
  - Domain, subdomain etc
  - class of agent, e.g. "/person/", "/organization/"
@@ -119,6 +134,10 @@ _how do we describe the relationship between agents?_
 
 **dcat:hadRole approach**
 
+A relationship between agents may be expressed using a `dcat:relationship` and the type of relationship expressed using `dcat:role` and the [Agent to Agent Relationship Roles](https://data.idnau.org/pid/vocab/aarr) vocabulary.
+
+* Example: Organization to Organization relationship role.
+
 ```turtle
 PREFIX aarr: <https://data.idnau.org/pid/vocab/aarr/>
 PREFIX cs: <https://data.idnau.org/pid/vocab/aarr>
@@ -141,6 +160,30 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 .
 ```
 
+* Example: Person to Organisation relations.
+
+```turtle
+PREFIX aarr: <https://data.idnau.org/pid/vocab/aarr/>
+PREFIX cs: <https://data.idnau.org/pid/vocab/aarr>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX sdo: <https://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<https://orcid.org/0000-0002-8742-7730>
+    a sdo:Person ;
+    dcterms:type
+        sdo:Person ,
+        <https://data.idnau.org/pid/vocab/org-indigeneity/non-indigenous> ;
+    dcat:relation [
+            dcat:hadRole aarr:affiliateOf ;
+            prov:agent <https://kurrawong.ai>
+        ] ;
+    sdo:email "nick@kurrawong.ai"^^xsd:anyURI ;
+    sdo:name "Nicholas J. Car"@en ;
+
+
 **sdo:parentOrganization approach**
 ```turtle
 <https://data.idnau.org/pid/org/caepr>
@@ -150,9 +193,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sdo:parentOrganization <https://linked.data.gov.au/org/cass> ;
     sdo:url "https://caepr.cass.anu.edu.au"^^xsd:anyURI ;
 ```
-
-
-!!! note
 
 ### Discussion
 
