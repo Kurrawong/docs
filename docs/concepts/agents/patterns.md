@@ -41,10 +41,10 @@ e.g.
 The IDN Catalogue Profile specifies an IRI structure for a PID:  
 
 * A stem: `https://data.idnau.org/pid/`
-* A subdirectory indicating a sub-class - for an Agent, this will usually be an Organization or a Person, e.g. : `https://data.idnau.org/pid/organization/`; `https://data.idnau.org/pid/person/`
-* An identifier. This could be completely opaque (such as UUID scheme) or based on an existing identifier (such as a business identifier), e.g. `https://data.idnau.org/pid/organization/18d04115-4633-4aed-b164-ac3c209b4307` [UUID]
+* A subdirectory indicating a sub-class - for an Agent, this will usually be an Organization or a Person, e.g. `https://data.idnau.org/pid/organization/`; `https://data.idnau.org/pid/person/`
+* A suffix. This could be completely opaque (such as UUID scheme) or based on an existing identifier (such as a business identifier), e.g. `https://data.idnau.org/pid/organization/18d04115-4633-4aed-b164-ac3c209b4307` [UUID]
 
-#### Linked Data PID Register
+##### Linked Data PID Register
 The Australian Government Linked Data Working Group (AGLDWG) maintains a PID Register for various entities, including Organisations. An Organisation PID is made up of:
 * A stem: `https://linked.data.gov.au/` 
 * A subdirectory indicating a class, e.g. `https://linked.data.gov.au/org/`
