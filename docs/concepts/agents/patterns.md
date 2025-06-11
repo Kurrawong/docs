@@ -31,10 +31,10 @@ Uniquely and persistently identify agents, much the same as we would identify co
 
 We can base a Persistent Identifier (PID) for an agent on one of two approaches:
 
-1. with a pre-mandated pattern specified in a catalogue system or metadata profile
+1. with a pre-structured pattern specified in a catalogue system or metadata profile
 2. by reusing an existing known identifier for that agent 
 
-#### Pre-mandated identifier patterns
+#### Pre-structured identifier patterns
 
 e.g. 
 ##### Indigenous Data Network
