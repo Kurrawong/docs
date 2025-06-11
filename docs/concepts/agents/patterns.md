@@ -17,7 +17,7 @@
 >
 > ---
 
-## Identifiers
+## Constructing Agent Identifiers
 
 _What kind of Persistent Identifiers should we mint for agents?_
 
@@ -36,7 +36,7 @@ We can base a Persistent Identifier (PID) for an agent on one of two approaches:
 
 #### Pre-structured identifier patterns
 
-e.g. 
+
 ##### Indigenous Data Network
 The IDN Catalogue Profile specifies an IRI structure for a PID:  
 
@@ -46,13 +46,14 @@ The IDN Catalogue Profile specifies an IRI structure for a PID:
 
 ##### Linked Data PID Register
 The Australian Government Linked Data Working Group (AGLDWG) maintains a PID Register for various entities, including Organisations. An Organisation PID is made up of:
+
 * A stem: `https://linked.data.gov.au/` 
 * A subdirectory indicating a class, e.g. `https://linked.data.gov.au/org/`
 * An identifier, e.g. `https://linked.data.gov.au/org/abs` [Australian Bureau of Statistics]
 
 ### Reusing identifiers as a PID
 
-If an agent has an existing known identifier, such as an ORCID for persons or an ROR for Organizations, you can reuse that as a PID.
+If an agent has an existing known identifier, such as an ORCID for persons or an ROR for Organizations, you can reuse that in its entirety as a PID.
 
 Some widely used agentic systems that mint identifiers include:
 
@@ -197,6 +198,35 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sdo:parentOrganization <https://linked.data.gov.au/org/cass> ;
     sdo:url "https://caepr.cass.anu.edu.au"^^xsd:anyURI ;
 ```
+
+## Titles as Agents
+
+Some agents are not easily classified as either Person or Organization. For example a dataset or some kind of resource may be related to a title, such as a policy in a university that is managed by an 'associate provost'. Who is the associate provost? We can find out! But that person who occupies the position can (and will) change.
+
+We recommend...
+
+## Identifiers
+
+To help identify and disambiguate an agent, indicate an external identifier using schema:identifier and a code from the Identifiers vocabulary.
+
+PREFIX id: <http://id.loc.gov/vocabulary/identifiers/>
+PREFIX sdo: <https://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<https://data.idnau.org/pid/org/28-221-722-606>
+    a sdo:Organization ;
+    sdo:identifier "28 221 722 606"^^id:ausbn ;
+    sdo:name "Yothu Yindi" ;
+.
+
+<https://data.idnau.org/pid/person/6b196829-bdf7-44d0-9372-e81b787e8030>
+    a sdo:Person ;
+    sdo:memberOf <https://data.idnau.org/pid/org/cnrs> ;
+    sdo:name "Barbara Glowczewski" ;
+    sdo:identifier "0000-0002-9629-2516"^^id:orcid ;
+    sdo:sameAs <https://orcid.org/0000-0002-9629-2516> ;
+.
+
 
 ### Discussion
 
