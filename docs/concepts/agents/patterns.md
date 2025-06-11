@@ -103,7 +103,9 @@ If using a Pre-structured identifier patter, there are options for minting a suf
 - an identifier associated with the agent
 - an opaque string such as from the UUID scheme
 
+!!! note
 
+Agent names or acronyms may not be unique in the context of your database! Exercise caution when using an agent name for a PID suffix.
 
 **acronym as suffix approach**
 ```turtle
