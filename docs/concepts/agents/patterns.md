@@ -19,7 +19,7 @@
 
 ## Identifiers
 
-_What kind of IRIs should we mint for agents?_
+_What kind of Persistent Identifiers should we mint for agents?_
 
 ### Context
 
@@ -29,9 +29,9 @@ Agents, be they individual persons or organizations, cannot be reliably identifi
 
 Uniquely and persistently identify agents, much the same as we would identify concepts in a vocabulary. 
 
-We can base a Persistent Identifier (PID) for an agent on two approaches:
+We can base a Persistent Identifier (PID) for an agent on one of two approaches:
 
-1. with a pre-mandated pattern that is used in a catalogue system or specified in some metadata profile
+1. with a pre-mandated pattern specified in a catalogue system or metadata profile
 2. by reusing an existing known identifier for that agent 
 
 #### Pre-mandated identifier patterns
@@ -40,16 +40,15 @@ e.g.
 ##### Indigenous Data Network
 The IDN Catalogue Profile specifies an IRI structure for a PID:  
 
-* A stem or base:
-  * `https://data.idnau.org/pid/`
-* A subdirectory indicating a sub-class - for an Agent, this will usually be an Organization or a Person
-  * 'https://data.idnau.org/pid/organization/'
-  * 'https://data.idnau.org/pid/person/'
-* An identifier. This could be completely opaque (such as UUID scheme) or based on an existing identifier (such as a business identifier)
-  * 'https://data.idnau.org/pid/organization/18d04115-4633-4aed-b164-ac3c209b4307' [UUID]
-  * 
-- 
-- Linked Data PID Register - the Australian Government Linked Data Working Group (AGLDWG) maintains a PID Register for Organisations. 
+* A stem: `https://data.idnau.org/pid/`
+* A subdirectory indicating a sub-class - for an Agent, this will usually be an Organization or a Person, e.g. : `https://data.idnau.org/pid/organization/`; `https://data.idnau.org/pid/person/`
+* An identifier. This could be completely opaque (such as UUID scheme) or based on an existing identifier (such as a business identifier), e.g. `https://data.idnau.org/pid/organization/18d04115-4633-4aed-b164-ac3c209b4307` [UUID]
+
+#### Linked Data PID Register
+The Australian Government Linked Data Working Group (AGLDWG) maintains a PID Register for various entities, including Organisations. An Organisation PID is made up of:
+* A stem: `https://linked.data.gov.au/` 
+* A subdirectory indicating a class, e.g. `https://linked.data.gov.au/org/`
+* An identifier, e.g. `https://linked.data.gov.au/org/abs` [Australian Bureau of Statistics]
 
 
 
