@@ -34,8 +34,9 @@ We can base a Persistent Identifier (PID) for an agent on one of two approaches:
 1. with a pre-structured pattern specified in a catalogue system or metadata profile
 2. by reusing an existing known identifier for that agent 
 
-#### Pre-structured identifier patterns
 
+#### Pre-structured identifier patterns
+Agent PIDs may follow a structure mandated by some cataloguing system or metadata profile. Below are examples from the Indigenous Data Network and the Linked Data PID Register.
 
 ##### Indigenous Data Network
 The IDN Catalogue Profile specifies an IRI structure for a PID:  
@@ -51,6 +52,7 @@ The Australian Government Linked Data Working Group (AGLDWG) maintains a PID Reg
 * A subdirectory indicating a class, e.g. `https://linked.data.gov.au/org/`
 * An identifier, e.g. `https://linked.data.gov.au/org/abs` [Australian Bureau of Statistics]
 
+
 ### Reusing identifiers as a PID
 
 If an agent has an existing known identifier, such as an ORCID for persons or an ROR for Organizations, you can reuse that in its entirety as a PID.
@@ -61,7 +63,7 @@ Some widely used agentic systems that mint identifiers include:
 - Research Organization Registry (https://ror.org)
 - Australian Business Number (https://abnregistration.com.au)
 
-e.g.
+# ORCID example
 
 ```turtle
 PREFIX id: <http://id.loc.gov/vocabulary/identifiers/>
@@ -77,7 +79,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sdo:identifier "https://orcid.org/0000-0001-5640-3202"^^id:orcid ;
 .
 ```
-In this example an ORCID has been used as the IRI. Additionally, the ORCID has been optionally been added as sdo:identifier.
+In the ORCID example, an ORCID has been used as the IRI. Additionally, the ORCID has been optionally been added as sdo:identifier.
+
+* ROR example
 
 ```turtle
 PREFIX id: <http://id.loc.gov/vocabulary/identifiers/>
@@ -94,7 +98,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 .
 ```
 
-In this example, and ROR ID has been used as the IRI. Additionally, an ID from both https://ror.org and https://isni.oclc.org is also expressed as sdo:identifier.
+In the ROR example, and ROR ID has been used as the IRI. Additionally, an ID from both https://ror.org and https://isni.oclc.org is also expressed as sdo:identifier.
 
 ### PID Suffix for a Pre-structured identifier
 
