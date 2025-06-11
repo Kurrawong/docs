@@ -50,16 +50,62 @@ The Australian Government Linked Data Working Group (AGLDWG) maintains a PID Reg
 * A subdirectory indicating a class, e.g. `https://linked.data.gov.au/org/`
 * An identifier, e.g. `https://linked.data.gov.au/org/abs` [Australian Bureau of Statistics]
 
+### Reusing identifiers as a PID
+
+If an agent has an existing known identifier, such as an ORCID for persons or an ROR for Organizations, you can reuse that as a PID.
+
+Some widely used agentic systems that mint identifiers include:
+
+- Open Researcher and Contributor ID (https://orcid.org)
+- Research Organization Registry (https://ror.org)
+- Australian Business Number (https://abnregistration.com.au)
+
+e.g.
+
+```turtle
+PREFIX id: <http://id.loc.gov/vocabulary/identifiers/>
+PREFIX sdo: <https://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<https://orcid.org/0000-0001-5640-3202>
+    a sdo:Person ;
+    sdo:honorificTitle "Mr" ;
+    sdo:memberOf <https://data.idnau.org/pid/org/dewr> ;
+    sdo:url "https://www.researchgate.net/profile/Les-Kneebone"^^xsd:anyURI ;
+    sdo:name "Les Kneebone" ;
+    sdo:identifier "https://orcid.org/0000-0001-5640-3202"^^id:orcid ;
+.
+```
+In this example an ORCID has been used as the IRI. Additionally, the ORCID has been optionally been added as sdo:identifier.
+
+```turtle
+PREFIX id: <http://id.loc.gov/vocabulary/identifiers/>
+PREFIX sdo: <https://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<https://ror.org/03y7q9t39>
+    a sdo:Organization ;
+    sdo:url "https://www.canterbury.ac.nz"^^xsd:anyURI ;
+    sdo:name "University of Canterbury" ;
+    sdo:identifier 
+       "https://ror.org/03y7q9t39"^^id:ror ,
+       "https://isni.org/isni/0000000513611983"^^id:isni ;
+.
+```
+
+In this example, and ROR ID has been used as the IRI. Additionally, an ID from both https://ror.org and https://isni.oclc.org is also expressed as sdo:identifier.
+
+### PID Suffix for a Pre-structured identifier
+
+If using a Pre-structured identifier patter, there are options for minting a suffix. You might use:
+
+- a name or acronym from the agent
+- an identifier associated with the agent
+- an opaque string such as from the UUID scheme
 
 
-##### IRI structure
- - Domain, subdomain etc
- - class of agent, e.g. "/person/", "/organization/"
- - ID 
 
-!!! note [something about suffix scheme - is a 'name' appropriate? a name does not present the same language problem as a prefLabel does for a concept ID. But name are nonetheless not unique]
-
-**name as suffix approach**
+**acronym as suffix approach**
 ```turtle
 <https://data.idnau.org/pid/agent/abs-coatsis>
 ```
@@ -79,49 +125,6 @@ The Australian Government Linked Data Working Group (AGLDWG) maintains a PID Reg
     sdo:memberOf <https://data.idnau.org/pid/org/fses> ;
     sdo:url "https://www.researchgate.net/profile/Sandra-Potter"^^xsd:anyURI ;
     sdo:name "Sandra Potter" ;
-.
-```
-
-#### Reusing identifiers
-
-If an agent has an existing known identifier, you can reuse that in whole or in part for your agent record.
-
-Some widely used agentic systems that mint identifiers include:
-
-- ORCID
-- Research Organization Registry (ROR)
-
-e.g.
-
-```turtle
-PREFIX id: <http://id.loc.gov/vocabulary/identifiers/>
-PREFIX sdo: <https://schema.org/>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-
-<https://orcid.org/0000-0001-5640-3202>
-    a sdo:Person ;
-    sdo:honorificTitle "Mr" ;
-    sdo:memberOf <https://data.idnau.org/pid/org/dewr> ;
-    sdo:url "https://www.researchgate.net/profile/Les-Kneebone"^^xsd:anyURI ;
-    sdo:name "Les Kneebone" ;
-    sdo:identifier "https://orcid.org/0000-0001-5640-3202"^^id:orcid ;
-.
-```
-
-In this example an ORCID has been used as the IRI. Additionally, the ORCID has been optionally been added as sdo:identifier.
-
-```turtle
-PREFIX id: <http://id.loc.gov/vocabulary/identifiers/>
-PREFIX sdo: <https://schema.org/>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-
-<https://ror.org/03y7q9t39>
-    a sdo:Organization ;
-    sdo:url "https://www.canterbury.ac.nz"^^xsd:anyURI ;
-    sdo:name "University of Canterbury" ;
-    sdo:identifier 
-       "https://ror.org/03y7q9t39"^^id:ror ,
-       "https://isni.org/isni/0000000513611983"^^id:isni ;
 .
 ```
 
