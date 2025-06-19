@@ -236,7 +236,7 @@ We recommend...
 
 ## Identifiers
 
-To help identify and disambiguate an agent, indicate an external identifier using schema:identifier and a code from the Identifiers vocabulary.
+To help identify and disambiguate an agent, indicate an external identifier using schema:identifier and a code from the [Standard Identifiers](https://id.loc.gov/vocabulary/identifiers.html) vocabulary.
 
 PREFIX id: <http://id.loc.gov/vocabulary/identifiers/>
 PREFIX sdo: <https://schema.org/>
