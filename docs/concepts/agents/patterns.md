@@ -125,7 +125,7 @@ If using a Pre-structured identifier patter, there may be options for minting a 
 ```turtle
 <https://data.idnau.org/pid/org/78-094-372-050>
     a sdo:Organization ;
-    sdo:identifier "78 094 372 050"^^id:ausbn ;
+    sdo:identifier "78094372 50"^^id:ausbn ;
     sdo:name "Productivity Commission" ;
 .
 ```
