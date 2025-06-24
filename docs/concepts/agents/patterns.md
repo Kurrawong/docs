@@ -148,13 +148,13 @@ If using a Pre-structured identifier patter, there may be options for minting a 
 
 _how do we describe the relationship between agents?_
 
-A relationship between agents may be expressed using a `dcat:qualifiedRelationship` pattern.
+A relationship between agents may be expressed using a `dcat:qualifiedRelation` pattern.
 
 !!! note
 
     The DCAT profile includes patterns for qualified relationships between dasets and agents, and between datasets and other resources, but DCAT does not explicitiy state a pattern for qualified relationships between agents and agents. The the agent to agent pattern in this section follows the DCAT approach with some customaisation.
 
-To express a relationship between agents, the `dcat:qualifiedRelationship` property is refined with `dcat:hadRole` and a concept from the [Agent to Agent Relationship Roles](https://data.idnau.org/pid/vocab/aarr) vocabulary. The object of the statement is expressed as an sdo:sgent.
+To express a relationship between agents, the `dcat:qualifiedRelation` property is refined with `dcat:hadRole` and a concept from the [Agent to Agent Relationship Roles](https://data.idnau.org/pid/vocab/aarr) vocabulary. The object of the statement is expressed as an sdo:sgent.
 
 * Example: Organisation to Organisation relations
 
@@ -170,7 +170,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a sdo:Organization ;
     dcterms:type <https://data.idnau.org/pid/vocab/org-indigeneity/run-by-indigenous-persons> ;
     sdo:description "The Centre of Aboriginal and Torres Strait Islander Statistics (CoATSIS) has a leadership and coordination role for national statistical activity about Aboriginal and Torres Strait Islander peoples. They engage with communities across a range of statistical activities and outputs such as the Aboriginal and Torres Strait Islander health and social surveys, the five-yearly Census, administrative data, and data integration projects."@en ;
-    dcat:qualifiedRelationship [
+    dcat:qualifiedRelation [
             dcat:hadRole aarr:partOf ;
             sdo:agent <https://linked.data.gov.au/org/abs>
         ] ;
