@@ -65,7 +65,7 @@ Some widely used agentic systems that mint identifiers include:
 - Research Organization Registry (https://ror.org)
 - Australian Business Number (https://abnregistration.com.au)
 
-* ORCID example
+***ORCID example***
 
 ```turtle
 PREFIX aarr: <https://data.idnau.org/pid/vocab/aarr/>
@@ -86,7 +86,7 @@ PREFIX sdo: <https://schema.org/>
 ```
 In this example, an ORCID has been used as the IRI. Additionally, the ORCID has optionally been added as sdo:identifier. 
 
-* Example: Research Organization Registry (ROR) identifier
+***Example: Research Organization Registry (ROR) identifier***
 
 ```turtle
 PREFIX id: <http://id.loc.gov/vocabulary/identifiers/>
@@ -117,11 +117,11 @@ If using a Pre-structured identifier patter, there may be options for minting a 
     Agent names or acronyms may not be unique in the context of your database!  
     Exercise caution when using an agent name for a PID suffix.
 
-**acronym as suffix**
+***Example: acronym as suffix***
 ```turtle
 <https://data.idnau.org/pid/org/abs-coatsis>
 ```
-**identifier as suffix**
+***Example: identifier as suffix***
 ```turtle
 <https://data.idnau.org/pid/org/78-094-372-050>
     a sdo:Organization ;
@@ -129,7 +129,7 @@ If using a Pre-structured identifier patter, there may be options for minting a 
     sdo:name "Productivity Commission" ;
 .
 ```
-**UUID as suffix**
+***Example: UUID as suffix***
 ```turtle
 <https://data.idnau.org/pid/person/34d5d6aa-a5b7-4e3a-91f8-117ffeb474d1>
     a sdo:Person ;
@@ -156,8 +156,7 @@ A relationship between agents may be expressed using qualified relations pattern
     The DCAT profile includes patterns for qualified relationships between dasets and agents, and between datasets and other resources, but DCAT does not explicitiy state a pattern for qualified relationships between agents and agents. The the agent to agent pattern in this section follows the DCAT approach with some customaisation.
 
 To express a relationship between agents, the `dcat:qualifiedRelation` property identifies a `dcat:Relationship`, which is refined with `dcat:hadRole` and a concept from the [Agent to Agent Relationship Roles](https://data.idnau.org/pid/vocab/aarr) vocabulary. The object of the statement is expressed as an sdo:agent.
-
-* Example: Organisation to Organisation relations
+***Example: Organisation to Organisation relations***
 
 ```turtle
 PREFIX aarr: <https://data.idnau.org/pid/vocab/aarr/>
@@ -181,7 +180,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 .
 ```
 
-* Example: Person to Organisation relations
+***Example: Person to Organisation relations***
 
 ```turtle
 PREFIX aarr: <https://data.idnau.org/pid/vocab/aarr/>
@@ -206,7 +205,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 ```
 
-* Example: Person to Person relations
+***Example: Person to Person relations***
 
 ```turtle
 PREFIX aarr: <https://data.idnau.org/pid/vocab/aarr/>
@@ -257,7 +256,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sdo:name "Yothu Yindi" ;
 .
 
-# Australian Company Number (ACN) example
+***Example: Australian Company Number (ACN)***
 
 <https://ror.org/038sjwq14>
     a sdo:Organization ;
@@ -265,7 +264,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sdo:name "Australian Research Data Commons Limited" ;
 .
 
-# Australian Registered Body Number (ARBN) example
+***Example: Australian Registered Body Number (ARBN) example***
 
 <https://www.wikidata.org/wiki/Q781374>
     a sdo:Organization ;
@@ -273,7 +272,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sdo:name "Australian Conservation Foundation" ;
 .
 
-# ORCID example
+***Example: ORCID***
 
 <https://data.idnau.org/pid/person/6b196829-bdf7-44d0-9372-e81b787e8030>
     a sdo:Person ;
