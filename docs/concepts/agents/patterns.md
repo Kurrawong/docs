@@ -117,7 +117,7 @@ If using a Pre-structured identifier patter, there may be options for minting a 
     Agent names or acronyms may not be unique in the context of your database!  
     Exercise caution when using an agent name for a PID suffix.
 
-**acronym as suffix approach**
+**acronym as suffix**
 ```turtle
 <https://data.idnau.org/pid/org/abs-coatsis>
 ```
@@ -145,7 +145,6 @@ If using a Pre-structured identifier patter, there may be options for minting a 
 ```
 
 
-
 ## Agent to agent relationships
 
 _how do we describe the relationship between agents?_
@@ -156,7 +155,7 @@ A relationship between agents may be expressed using qualified relations pattern
 
     The DCAT profile includes patterns for qualified relationships between dasets and agents, and between datasets and other resources, but DCAT does not explicitiy state a pattern for qualified relationships between agents and agents. The the agent to agent pattern in this section follows the DCAT approach with some customaisation.
 
-To express a relationship between agents, the `dcat:qualifiedRelation` property identifies a `dcat:Relationship`, which is refined with `dcat:hadRole` and a concept from the [Agent to Agent Relationship Roles](https://data.idnau.org/pid/vocab/aarr) vocabulary. The object of the statement is expressed as an sdo:sgent.
+To express a relationship between agents, the `dcat:qualifiedRelation` property identifies a `dcat:Relationship`, which is refined with `dcat:hadRole` and a concept from the [Agent to Agent Relationship Roles](https://data.idnau.org/pid/vocab/aarr) vocabulary. The object of the statement is expressed as an sdo:agent.
 
 * Example: Organisation to Organisation relations
 
@@ -225,7 +224,7 @@ PREFIX sdo: <https://schema.org/>
     sdo:name "Les Kneebone" ;
 .
 
-'''
+```
 
 ## Titles as Agents
 
@@ -235,8 +234,9 @@ We recommend...
 
 ## Identifiers
 
-To help identify and disambiguate an agent, indicate an external identifier using schema:identifier and a code from the [Standard Identifiers](https://id.loc.gov/vocabulary/identifiers.html) vocabulary.
+To help identify and disambiguate an agent, indicate an external identifier using `sdo:identifier` and a code from the [Standard Identifiers](https://id.loc.gov/vocabulary/identifiers.html) vocabulary.
 
+```turtle
 PREFIX id: <http://id.loc.gov/vocabulary/identifiers/>
 PREFIX sdo: <https://schema.org/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -281,8 +281,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sdo:identifier "https://orcid.org/0000-0002-9629-2516"^^id:orcid ;
 .
 
-
-
+```
 
 
 
