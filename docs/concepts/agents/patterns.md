@@ -76,8 +76,9 @@ PREFIX sdo: <https://schema.org/>
 <https://orcid.org/0000-0001-5640-3202>
     a sdo:Person ;
     dcat:qualifiedRelation [
-    dcat:hadRole aarr:memberOf ;
-    sdo:agent <https://data.idnau.org/pid/org/dewr> 
+    a dcat:Relationship ;
+       dcat:hadRole aarr:memberOf ;
+       sdo:agent <https://data.idnau.org/pid/org/dewr> 
     ] ;
     sdo:name "Les Kneebone" ;
     sdo:identifier "https://orcid.org/0000-0001-5640-3202"^^id:orcid ;
@@ -134,8 +135,9 @@ If using a Pre-structured identifier patter, there may be options for minting a 
     a sdo:Person ;
     sdo:honorificTitle "PhD Scholar" ;
     dcat:qualifiedRelation [
-    dcat:hadRole aarr:memberOf ;
-    sdo:agent <https://data.idnau.org/pid/org/fses> 
+    a dcat:Relationship ;
+       dcat:hadRole aarr:memberOf ;
+       sdo:agent <https://data.idnau.org/pid/org/fses> 
     ] ;
     sdo:url "https://www.researchgate.net/profile/Sandra-Potter"^^xsd:anyURI ;
     sdo:name "Sandra Potter" ;
@@ -148,13 +150,13 @@ If using a Pre-structured identifier patter, there may be options for minting a 
 
 _how do we describe the relationship between agents?_
 
-A relationship between agents may be expressed using a `dcat:qualifiedRelation` pattern.
+A relationship between agents may be expressed using qualified relations pattern, where `dcat:qualifiedRelation` indicates a `dcat:Relationship`.
 
 !!! note
 
     The DCAT profile includes patterns for qualified relationships between dasets and agents, and between datasets and other resources, but DCAT does not explicitiy state a pattern for qualified relationships between agents and agents. The the agent to agent pattern in this section follows the DCAT approach with some customaisation.
 
-To express a relationship between agents, the `dcat:qualifiedRelation` property is refined with `dcat:hadRole` and a concept from the [Agent to Agent Relationship Roles](https://data.idnau.org/pid/vocab/aarr) vocabulary. The object of the statement is expressed as an sdo:sgent.
+To express a relationship between agents, the `dcat:qualifiedRelation` property identifies a `dcat:Relationship`, which is refined with `dcat:hadRole` and a concept from the [Agent to Agent Relationship Roles](https://data.idnau.org/pid/vocab/aarr) vocabulary. The object of the statement is expressed as an sdo:sgent.
 
 * Example: Organisation to Organisation relations
 
@@ -171,6 +173,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     dcterms:type <https://data.idnau.org/pid/vocab/org-indigeneity/run-by-indigenous-persons> ;
     sdo:description "The Centre of Aboriginal and Torres Strait Islander Statistics (CoATSIS) has a leadership and coordination role for national statistical activity about Aboriginal and Torres Strait Islander peoples. They engage with communities across a range of statistical activities and outputs such as the Aboriginal and Torres Strait Islander health and social surveys, the five-yearly Census, administrative data, and data integration projects."@en ;
     dcat:qualifiedRelation [
+       a dcat:Relationship ;
             dcat:hadRole aarr:partOf ;
             sdo:agent <https://linked.data.gov.au/org/abs>
         ] ;
@@ -194,6 +197,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         sdo:Person ,
         <https://data.idnau.org/pid/vocab/org-indigeneity/non-indigenous> ;
     dcat:qualifiedRelation [
+         a dcat:Relationship ;
             dcat:hadRole aarr:affiliateOf ;
             sdo:agent <https://kurrawong.ai>
         ] ;
@@ -214,8 +218,9 @@ PREFIX sdo: <https://schema.org/>
 <https://orcid.org/0000-0001-5640-3202>
     a sdo:Person ;
     dcat:qualifiedRelation [
-    dcat:hadRole aarr:proxyOf ;
-    sdo:agent <https://orcid.org/0000-0002-8742-7730>
+       a dcat:Relationship ;
+          dcat:hadRole aarr:proxyOf ;
+          sdo:agent <https://orcid.org/0000-0002-8742-7730>
     ] ;
     sdo:name "Les Kneebone" ;
 .
