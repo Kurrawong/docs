@@ -65,7 +65,7 @@ Some widely used agentic systems that mint identifiers include:
 - Research Organization Registry (https://ror.org)
 - Australian Business Number (https://abnregistration.com.au)
 
-# ORCID example
+* ORCID example
 
 ```turtle
 PREFIX aarr: <https://data.idnau.org/pid/vocab/aarr/>
@@ -86,7 +86,7 @@ PREFIX sdo: <https://schema.org/>
 ```
 In this example, an ORCID has been used as the IRI. Additionally, the ORCID has optionally been added as sdo:identifier. 
 
-* Research Organization Registry identifier example
+* Example: Research Organization Registry (ROR) identifier
 
 ```turtle
 PREFIX id: <http://id.loc.gov/vocabulary/identifiers/>
