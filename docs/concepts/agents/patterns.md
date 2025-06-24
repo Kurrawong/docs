@@ -86,7 +86,7 @@ PREFIX sdo: <https://schema.org/>
 ```
 In this example, an ORCID has been used as the IRI. Additionally, the ORCID has optionally been added as sdo:identifier. 
 
-* ROR example
+* Research Organization Registry identifier example
 
 ```turtle
 PREFIX id: <http://id.loc.gov/vocabulary/identifiers/>
