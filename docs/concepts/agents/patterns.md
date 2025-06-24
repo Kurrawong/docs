@@ -225,6 +225,8 @@ PREFIX sdo: <https://schema.org/>
     sdo:name "Les Kneebone" ;
 .
 
+'''
+
 ## Titles as Agents
 
 Some agents are not easily classified as either Person or Organization. For example a dataset or some kind of resource may be related to a title, such as a policy in a university that is managed by an 'associate provost'. Who is the associate provost? We can find out! But that person who occupies the position can (and will) change.
