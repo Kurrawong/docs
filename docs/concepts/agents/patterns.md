@@ -40,12 +40,12 @@ Agent PIDs may follow a structure mandated by some cataloguing system or metadat
 The IDN Catalogue Profile specifies an IRI structure for a PID:  
 
 * A stem: `https://data.idnau.org/pid/`
-* A subdirectory indicating a sub-class - for an agent, this will usually be an organisation or a person, indicated by /org/ and /person/ respectively:
+* A subdirectory indicating a sub-class - for an agent, this will usually be an organisation or a person, indicated by `/org/` and `/person/` respectively:
  - `https://data.idnau.org/pid/org/`
  - `https://data.idnau.org/pid/person/`
-* A suffix. This might be completely opaque (such as from the UUID scheme) or based on an existing identifier for the agent (see [](#pid-suffix-for-a-pre-structured-identifier)), e.g. 
+* A suffix. This might be completely opaque (such as from the UUID scheme) or based on an existing identifier for the agent (see [](#reusing-identifiers-as-a-pid)), e.g. 
  - `https://data.idnau.org/pid/org/18d04115-4633-4aed-b164-ac3c209b4307` [UUID suffix]
- - `https://data.idnau.org/pid/person/34d5d6aa-a5b7-4e3a-91f8-117ffeb474d1`
+ - `https://data.idnau.org/pid/person/34d5d6aa-a5b7-4e3a-91f8-117ffeb474d1` [UUID suffix]
 
 ##### Linked Data PID Register
 The Australian Government Linked Data Working Group (AGLDWG) maintains a [PID Register](https://catalogue.linked.data.gov.au) for various entities, including Organisations. In this registry, an Organisation PID is made up of:
@@ -57,7 +57,7 @@ The Australian Government Linked Data Working Group (AGLDWG) maintains a [PID Re
 
 ### Reusing identifiers as a PID
 
-If an agent has an existing known identifier, such as an ORCID for persons or an ROR for Organizations, you can reuse that in its entirety as a PID.
+If an agent has an existing known identifier, such as an ORCID for persons or a Research Organization Registry ID for Organizations, you can reuse that in its entirety as a PID.
 
 Some widely used agentic systems that mint identifiers include:
 
@@ -156,6 +156,7 @@ A relationship between agents may be expressed using qualified relations pattern
     The DCAT profile includes patterns for qualified relationships between dasets and agents, and between datasets and other resources, but DCAT does not explicitiy state a pattern for qualified relationships between agents and agents. The the agent to agent pattern in this section follows the DCAT approach with some customaisation.
 
 To express a relationship between agents, the `dcat:qualifiedRelation` property identifies a `dcat:Relationship`, which is refined with `dcat:hadRole` and a concept from the [Agent to Agent Relationship Roles](https://data.idnau.org/pid/vocab/aarr) vocabulary. The object of the statement is expressed as an sdo:agent.
+
 ***Example: Organisation to Organisation relations***
 
 ```turtle
@@ -224,13 +225,13 @@ PREFIX sdo: <https://schema.org/>
 .
 
 ```
-
+<!-- WIP
 ## Titles as Agents
 
 Some agents are not easily classified as either Person or Organization. For example a dataset or some kind of resource may be related to a title, such as a policy in a university that is managed by an 'associate provost'. Who is the associate provost? We can find out! But that person who occupies the position can (and will) change.
 
 We recommend...
-
+-->
 ## Identifiers
 
 To help identify and disambiguate an agent, indicate an external identifier using `sdo:identifier` and a code from the [Standard Identifiers](https://id.loc.gov/vocabulary/identifiers.html) vocabulary.
@@ -240,7 +241,7 @@ PREFIX id: <http://id.loc.gov/vocabulary/identifiers/>
 PREFIX sdo: <https://schema.org/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-# Research Organization Registry (ROR) example:
+# Example: Research Organization Registry (ROR)
 
 <https://linked.data.gov.au/org/und>
     a sdo:Organization ;
@@ -248,7 +249,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sdo:identifier "https://ror.org/02stey378"^^id:ror ;
 .
 
-# Australian Business Number example:
+# Example: Australian Business Number
 
 <https://data.idnau.org/pid/org/28-221-722-606>
     a sdo:Organization ;
@@ -256,7 +257,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sdo:name "Yothu Yindi" ;
 .
 
-***Example: Australian Company Number (ACN)***
+# Example: Australian Company Number (ACN)
 
 <https://ror.org/038sjwq14>
     a sdo:Organization ;
@@ -264,7 +265,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sdo:name "Australian Research Data Commons Limited" ;
 .
 
-***Example: Australian Registered Body Number (ARBN) example***
+# Example: Australian Registered Body Number (ARBN) example
 
 <https://www.wikidata.org/wiki/Q781374>
     a sdo:Organization ;
@@ -272,7 +273,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sdo:name "Australian Conservation Foundation" ;
 .
 
-***Example: ORCID***
+# Example: ORCID
 
 <https://data.idnau.org/pid/person/6b196829-bdf7-44d0-9372-e81b787e8030>
     a sdo:Person ;
@@ -281,13 +282,3 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 .
 
 ```
-
-
-
-### Discussion
-
-### Related
-
-#### Systems
-
-The following is a list of ...
