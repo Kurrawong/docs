@@ -445,7 +445,7 @@ In this module we have introduced vocabularies - different types and how they ar
 
 ## References and Further Reading
 
-* AGLDWG. (n.d.). VocPub profile specification. Retrieved April 17, 2025, from <https://w3id.org/profile/vocpub/spec>
+* AGLDWG. (n.d.). VocPub profile specification. Retrieved April 17, 2025, from <https://linked.data.gov.au/def/vocpub>
 * W3C (n.d.). QSKOS. Retrieved March 5, 2025, from <https://www.w3.org/2001/sw/wiki/QSKOS>
 * W3C (2009). SKOS reference. <https://www.w3.org/TR/skos-reference/>
 * W3C (2014). Turtle: Terse RDF triple language (W3C Recommendation). Retrieved from <https://www.w3.org/TR/turtle/>
