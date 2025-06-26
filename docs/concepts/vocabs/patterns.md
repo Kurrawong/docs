@@ -38,7 +38,7 @@ Conceptually, we just link an image to a Concept within a vocab using an appropr
 
 !!! note
 
-    If a Concept is actually defined by an image, it may seem appropriate to link directly to the image using the [`skos:definition`](https://www.w3.org/TR/skos-reference/#definition) predicated but we advise against this as it may be invalid for certain vocabulary profiles such as [VocPub](https://w3id.org/profile/vocpub/spec) and may be hard for systems to implement. Instead use another predicate and describe how the image, indicated by the chosen predicate, is the defining part of the Concept in the definition field, in text. 
+    If a Concept is actually defined by an image, it may seem appropriate to link directly to the image using the [`skos:definition`](https://www.w3.org/TR/skos-reference/#definition) predicated but we advise against this as it may be invalid for certain vocabulary profiles such as [VocPub](https://linked.data.gov.au/def/vocpub) and may be hard for systems to implement. Instead use another predicate and describe how the image, indicated by the chosen predicate, is the defining part of the Concept in the definition field, in text. 
 
 We can also choose to use a non-SKOS predicate, especially common ones used for images, such as [`schema:image`](https://schema.org/image). This would allow the use of regular SKOS predicates, such as [`skos:definition`](https://www.w3.org/TR/skos-reference/#definition), [`skos:example`](https://www.w3.org/TR/skos-reference/#example) etc. for their common use and the image predicate is an extra.
 
