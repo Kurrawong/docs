@@ -153,7 +153,7 @@ A relationship between agents may be expressed using qualified relations pattern
 
 !!! note
 
-    The DCAT profile includes patterns for qualified relationships between dasets and agents, and between datasets and other resources, but DCAT does not explicitiy state a pattern for qualified relationships between agents and agents. The the agent to agent pattern in this section follows the DCAT approach with some customaisation.
+    The DCAT profile includes patterns for qualified relationships between datasets and agents, and between datasets and other resources, but DCAT does not explicitiy state a pattern for qualified relationships between agents and agents. The the agent to agent pattern in this section follows the DCAT approach with some customaisation.
 
 To express a relationship between agents, the `dcat:qualifiedRelation` property identifies a `dcat:Relationship`, which is refined with `dcat:hadRole` and a concept from the [Agent to Agent Relationship Roles](https://data.idnau.org/pid/vocab/aarr) vocabulary. The object of the statement is expressed as an sdo:agent.
 
