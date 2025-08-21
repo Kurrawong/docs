@@ -6,7 +6,7 @@ extract labels for them from external resources.
 !!! note
 
     If you would like to use the labelify tool directly, we provide an online GUI for it 
-    [here](https://tools.dev.kurrawong.ai/). 
+    [here](https://tools.kurrawong.ai/tools/labelify). 
 
 labelify has detailed documentation for installation and use at its repository's home page:
 
@@ -18,7 +18,7 @@ labelify has detailed documentation for installation and use at its repository's
 
 ### More info
 
-* [KurrawongAI tools](https://tools.dev.kurrawong.ai/)
+* [KurrawongAI tools](https://tools.kurrawong.ai/)
     * for access to all our online versions of tools, including labelify
 * [KurrawongAI Service > Tools](https://kurrawong.ai/services/tools) 
     * for more information on our specialised Knowledge Graph tooling support. 

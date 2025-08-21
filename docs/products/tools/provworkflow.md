@@ -55,6 +55,6 @@ print(w.prov_to_graph().serialize(format="turtle"))
 
 Currently provworkflow is only documented in the source code. But a public repository and accompanying tool documentation is on the way.
 
-If you would like to see some of our tools in use, we provide an online GUI with some of our most useful tools [here](https://tools.dev.kurrawong.ai/).
+If you would like to see some of our tools in use, we provide an online GUI with some of our most useful tools [here](https://tools.kurrawong.ai/).
 
 To find out more about other ways KurrawongAI could provide Knowledge Graph tools that solve *your* data problems, visit the KurrawongAI [tools](https://kurrawong.ai/services/tools) page for more information on our specialised Knowledge Graph Tooling Support. 
