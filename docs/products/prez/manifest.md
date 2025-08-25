@@ -73,7 +73,7 @@ The IRI for automatic retrieval of this Shapes file is: <https://prez.dev/manife
 
 The recommended tools to perform validation using this Shapes file are:
 
-1. [KurrawongAI's Online Validator](https://tools.dev.kurrawong.ai/validate) - this Shapes file is pre-loaded
+1. [KurrawongAI's Online Validator](https://tools.kurrawong.ai/tools/validate) - this Shapes file is pre-loaded
 2. [pySHACL Python tool](https://pypi.org/project/pyshacl/) - for scripted validation
 
 ## Build Scripts

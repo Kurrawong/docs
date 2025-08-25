@@ -73,7 +73,7 @@ into the Prez system.
 
     There are a selection of tools available that can
     be used to validate RDF data. For an easy to use web based validator, check out [SHACL
-    Validator](https://tools.dev.kurrawong.ai/validate). It can be used to check if your RDF
+    Validator](https://tools.kurrawong.ai/tools/validate). It can be used to check if your RDF
     is syntactically valid, and enforce that your data conforms that any
     [SHACL](https://www.w3.org/TR/shacl/) rules that may apply. Note that if no SHACL
     shapes are provided then the tool will just validate the RDF.
@@ -83,7 +83,7 @@ into the Prez system.
     As mentioned above when loading data into Prez it is important to ensure that all
     resources are properly annotated, otherwise they cannot be rendered nicely in the UI.
 
-    To see which labels are missing from your data you can use [Labelify](https://tools.dev.kurrawong.ai/labelify).
+    To see which labels are missing from your data you can use [Labelify](https://tools.kurrawong.ai/tools/labelify).
     An online RDF labelling tool that can help you easily identify any missing labels.
 
     Remember that Prez includes [annotations for most major ontologies](https://github.com/RDFLib/prez/tree/main/prez/reference_data/annotations)
