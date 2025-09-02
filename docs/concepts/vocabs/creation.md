@@ -52,21 +52,21 @@ In this exercise we will use `skos:exactMatch` to link "Animal dispersal" with t
 1. **Go to** [VocEdit](https://vocedit.dev.kurrawong.ai) in Chrome  
 2. **Project** > **Open** `pestRiskPath_training.ttl` from your local directory (*don't have the file? see the [first exercise](https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier) in Introduction to Vocabularies*)  
 3. **Select** **Animal dispersal** from under **Concepts** in the left-hand panel  
-4. **Add a new predicate** > **Properties** > **Add new predicate**  
+4. **Properties** > **Add new predicate**  
 5. **Add a new predicate** > `"http://www.w3.org/2004/02/skos/core#exactMatch"` > **Add**  
-6. **Select** **Properties** - **exactMatch** (the field you just created)  
-7. **Select** **Add an IRI** > **Add** `"https://lod.nal.usda.gov/nalt/332111"`  
+6. **Properties** > **exactMatch** (the field you just created)  > **Add new value by type**
+7. **Add an IRI value** > **Options** (three dots) > **Widgets** > **URIEditor** > **Add** `"https://lod.nal.usda.gov/nalt/332111"`  
 8. **Project** > **Save**
 
 💡 **Tip:** strictly speaking you should only use `skos:exactMatch` when you know that the other vocabulary does, or plans to make a match back to the concept in your vocabulary. Why not get in touch? Notify the external vocabulary managers that you're matching with their vocabulary and you might get matched back!
 
 Now let's add a `skos:broadMatch`. Like `skos:broader`, the `skos:broadMatch` property matches a concept with another broader concept that is in a different concept scheme. We will add a skos:broadMatch from "Wildlife trafficking" to "Crime" in the Centre for Agriculture and Bioscience International (CABI) Thesaurus.
 
-9. **Select** **Wildlife trafficking** from under **Concepts** in the left-hand panel  
-10. **Add a new predicate** > **Properties** > **Add new predicate**  
+9.  **Select** **Wildlife trafficking** from under **Concepts** in the left-hand panel  
+10. **Properties** > **Add new predicate**  
 11. **Add a new predicate** > `"http://www.w3.org/2004/02/skos/core#broadMatch"` > **Add**  
-12. **Select** **Properties** - **broadMatch** (the field you just created)  
-13. **Select** **Add an IRI** > **Add** `"https://id.cabi.org/cabt/33618"`  
+12. **Properties** > **broadMatch** (the field you just created)  
+13. **Add an IRI value** > **Options** (three dots) > **Widgets** > **URIEditor** > **Add** `"https://id.cabi.org/cabt/33618"`  
 14. **Project** > **Save**  
 
 
