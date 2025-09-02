@@ -347,9 +347,7 @@ In this exercise we will add a broader relationship between two concepts. Note t
 4. **Concept relationships - Broader** > **Add an IRI value**  
 5. **Type** `"Hos"` - **"Host plants"** will return - **select** this  
 6. **Select** **tick** to save  
-7. **Concept scheme relationships - topConceptOf** >  
-8. **Select** **three dots** > **Delete**  
-9. **Project** > **Save**
+7. **Project** > **Save**
 
 This change optimises the SKOS model by applying a broader relationship between concepts that are conceptually broader and narrower. In a retrieval system we might expect a query for datasets about host plants as pest vectors to return a resource about Spore dispersal. The `skos:broader` relation support such an inference.
 
