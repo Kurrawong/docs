@@ -402,7 +402,7 @@ In this exercise we will add an alternative label to a concept. You will need to
 1. **Go to** [VocEdit](https://vocedit.dev.kurrawong.ai) in Chrome  
 2. **Project** > **Open** `pestRiskPath_training.ttl` from your local directory  
 3. **Select** **"Spore dispersal"** from the left-hand list of concepts  
-4. **Add a new predicate** > **Properties** > **Add new predicate**  
+4. **Properties** > **Add new predicate**  
 5. **Add a new predicate** > **http://www.w3.org/2004/02/skos/core#altLabel** > **Add**  
 6. **Select** **Properties** - **altLabel** (the field you just created)  
 7. **Add** `"Sporulation"` > **Save** (tick icon)  
