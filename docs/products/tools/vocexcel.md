@@ -10,7 +10,7 @@ VocExcel:
 * meets particular SKOS profile outcomes ([VocPub](https://w3id.org/profile/vocpub))
 * is under active development, production use, and is commercially supported
 
-An online version of VocExcel is available at <https://tools.dev.kurrawong.ai/vocexcel>. For other applications, access the GitHub repository [here](https://github.com/Kurrawong/VocExcel).
+An online version of VocExcel is available at <[https://tools.kurrawong.ai/tools/vocexcel](https://tools.kurrawong.ai/tools/vocexcel)>. For other applications, access the GitHub repository [here](https://github.com/Kurrawong/VocExcel).
 
 ---
 ## Creating vocabularies
@@ -110,7 +110,7 @@ The _convert.py_ file as a function that you can call to do conversions: `excel_
 
 #### Online
 
-<https://tools.dev.kurrawong.ai/vocexcel>
+<https://tools.kurrawong.ai/tools/vocexcel>
 
 ---
 ## License
