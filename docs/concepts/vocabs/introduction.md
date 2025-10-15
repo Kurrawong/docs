@@ -290,8 +290,8 @@ _Technical requirements: Chrome browser is needed to access the VocEdit tool._
   *(Right-click and choose “Save link as...” to download)*
 2. **Save** the file to your local directory  
 3. **Open** Chrome (if not already)  
-4. **Go to** [VocEdit](https://vocedit.dev.kurrawong.ai)  
-5. **Select** **Project** > **Open**  
+4. **Go to** [VocEdit](https://vocedit.kurrawong.ai)  
+5. **File** > **Open**  
 6. **Select** `pestRiskPath_training.ttl` from your local directory  
 7. **Select** **+ Create concept**  
 8. **Open a new tab** and go to [UUID Generator](https://www.uuidgenerator.net)  
@@ -341,7 +341,7 @@ In a vocabulary, it's possible to keep adding narrower relationships by creating
 
 In this exercise we will add a broader relationship between two concepts. Note that once a concept has a broader relationship, it can no longer be regarded as a 'top concept' and we will remove the top concept statement accordingly.
 
-1. **Go to** [VocEdit](https://vocedit.dev.kurrawong.ai) in Chrome  
+1. **Go to** [VocEdit](https://vocedit.kurrawong.ai) in Chrome  
 2. **Project** > **Open** `pestRiskPath_training.ttl` from your local directory  
 3. **Select** **"Spore dispersal"** from the left-hand list of concepts  
 4. **Concept relationships - Broader** > **Add an IRI value**  
@@ -399,7 +399,7 @@ Use an ``altLabel`` to connect official or technical language with natural langu
 
 In this exercise we will add an alternative label to a concept. You will need to add the skos:altLabel property to VocEdit as it is not included in the default form.
 
-1. **Go to** [VocEdit](https://vocedit.dev.kurrawong.ai) in Chrome  
+1. **Go to** [VocEdit](https://vocedit.kurrawong.ai) in Chrome  
 2. **Project** > **Open** `pestRiskPath_training.ttl` from your local directory  
 3. **Select** **"Spore dispersal"** from the left-hand list of concepts  
 4. **Properties** > **Add new predicate**  
@@ -430,7 +430,7 @@ A Concept Scheme is some metadata about the vocabulary as a whole - the vocabula
 
 We will continue to edit the Pest Risk Pathway vocabulary, but this time we will edit the concept scheme which is the metadata about the vocabulary as a whole.
 
-1. **Go to** [VocEdit](https://vocedit.dev.kurrawong.ai) in Chrome  
+1. **Go to** [VocEdit](https://vocedit.kurrawong.ai) in Chrome  
 2. **Project** > **Open** `pestRiskPath.ttl` from your local directory  
 3. **Select** **Pest Risk Pathway** from under **Concept Scheme** in the left-hand panel  
 4. **Definition** > **Add a literal value with a language tag**  
