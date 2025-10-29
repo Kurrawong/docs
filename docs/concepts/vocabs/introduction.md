@@ -347,13 +347,11 @@ In this exercise we will add a broader relationship between two concepts. Note t
 1. **Go to** [VocEdit](https://vocedit.dev.kurrawong.ai) in Chrome  
 2. **Project** > **Open** `pestRiskPath_training.ttl` from your local directory  
 3. **Select** _Spore dispersal_ from the left-hand list of concepts  
-4. **Concept relationships - Broader** > **Add an IRI value**  
-5. **Type** `"Hos"` - **"Host plants"** will return - **select** this  
-6. **Select** **tick** to save  
-7. **Project** > **Save**
+4. **Concept relationships** > **Broader** > **Add a new value** > **IRI**
+5. From the Select a value dropdown, search for or select _Host plants_ > **select**
+6. **Save**
 
 This change optimises the SKOS model by applying a broader relationship between concepts that are conceptually broader and narrower. In a retrieval system we might expect a query for datasets about host plants as pest vectors to return a resource about Spore dispersal. The `skos:broader` relation support such an inference.
-
 
 ### Alternative labels
 
