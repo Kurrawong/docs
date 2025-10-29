@@ -346,7 +346,7 @@ In this exercise we will add a broader relationship between two concepts. Note t
 
 1. **Go to** [VocEdit](https://vocedit.dev.kurrawong.ai) in Chrome  
 2. **Project** > **Open** `pestRiskPath_training.ttl` from your local directory  
-3. **Select** **"Spore dispersal"** from the left-hand list of concepts  
+3. **Select** _Spore dispersal_ from the left-hand list of concepts  
 4. **Concept relationships - Broader** > **Add an IRI value**  
 5. **Type** `"Hos"` - **"Host plants"** will return - **select** this  
 6. **Select** **tick** to save  
