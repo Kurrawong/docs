@@ -398,16 +398,19 @@ Use an ``altLabel`` to connect official or technical language with natural langu
 
 #### 🚧 Exercise: add alternative labels
 
-In this exercise we will add an alternative label to a concept. You will need to add the skos:altLabel property to VocEdit as it is not included in the default form.
+In this exercise we will add an alternative label to a concept. 
+
+💡 **Tip:** You will need to first add the `skos:altLabel` property to VocEdit as it is not required by [VocPub](https://linked.data.gov.au/def/vocpub).
 
 1. **Go to** [VocEdit](https://vocedit.dev.kurrawong.ai) in Chrome  
 2. **Project** > **Open** `pestRiskPath_training.ttl` from your local directory  
-3. **Select** **"Spore dispersal"** from the left-hand list of concepts  
-4. **Properties** > **Add new predicate**  
-5. **Add a new predicate** > **http://www.w3.org/2004/02/skos/core#altLabel** > **Add**  
-6. **Select** **Properties** - **altLabel** (the field you just created)  
-7. **Add** `"Sporulation"` > **Save** (tick icon)  
-8. **Project** > **Save**
+3. **Select** _Spore dispersal_ from the left-hand list of concepts  
+4. **Other Properties** > **Add property**  
+5. **Add** _http://www.w3.org/2004/02/skos/core#altLabel_ > **Add property**  
+6.  in the _altLabel_ field you just created > **"+"** > **Add new value** > **Literal with language**
+7. **Add** _Sporulation_
+8. **Add* "en" to _lang_ field
+9. **Save**
 
 ###  Top Concepts
 
