@@ -290,7 +290,7 @@ _Technical requirements: Chrome browser is needed to access the VocEdit tool._
   *(Right-click and choose “Save link as...” to download)*
 2. **Save** the file to your local directory  
 3. **Open** Chrome (if not already)  
-4. **Go to** [VocEdit](https://vocedit.dev.kurrawong.ai)  
+4. **Go to** [VocEdit](https://vocedit.kurrawong.ai)  
 5. **Select** **Project** > **Open**  
 6. **Select** `pestRiskPath_training.ttl` from your local directory  
 7. **Select** **+ Create concept**  
