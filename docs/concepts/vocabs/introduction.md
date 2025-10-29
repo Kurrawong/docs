@@ -292,21 +292,21 @@ These modules will include a number of editing exercises that use the VocEdit to
 3. **Open** Chrome (if not already)  
 4. **Go to** [VocEdit](https://vocedit.kurrawong.ai)  
 5. **Select** **Project** > **Open** > **Local file**
-6. **Select** `pestRiskPath_training.ttl` from your local directory  
+6. **Select** _pestRiskPath_training.ttl_ from your local directory  
 7. **Select** **Resource** > **Create new**
 8. **Resource type** > **Concept**
 9. **Add** _http://example.com/pestRiskPath/_
 10. **Open a new tab** and go to [UUID Generator](https://www.uuidgenerator.net)  
 11. **Copy** the UUID  
-12. **Paste** the UUID in the **IRI** field and after the stem _http://example.com/pestRiskPath/_. So the full IRI should looke like this: _http://example.com/pestRiskPath/[UUID]_
+12. **Paste** the UUID in the **IRI** field and after the stem _http://example.com/pestRiskPath/_. So the full IRI should look be: _http://example.com/pestRiskPath/[UUID]_
 13. **Select Create** 
 14. **Edit** > **prefLabel** > **"+"** > **Literal string with language**
-15. **Add** _"Wind dispersal"_
+15. **Add** _Wind dispersal_
 16. In Lang box, **Add*** "en"
 17. **definition** > **Add a literal with language**  
 18. **Add** _Dispersal of pests by wind_
 19. In Lang box, **Add*** "en"
-23. **Concept scheme relationships - topConceptOf** > **Select** "+" > _IRI_
+23. **Concept scheme relationships - topConceptOf** > **Select** **"+"** > _IRI_
 24. **Select a value** > select _pestRiskPath_
 26. **Save**
 
