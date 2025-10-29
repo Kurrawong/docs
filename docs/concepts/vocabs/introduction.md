@@ -291,21 +291,27 @@ _Technical requirements: Chrome browser is needed to access the VocEdit tool._
 2. **Save** the file to your local directory  
 3. **Open** Chrome (if not already)  
 4. **Go to** [VocEdit](https://vocedit.kurrawong.ai)  
-5. **Select** **Project** > **Open**  
+5. **Select** **Project** > **Open** > **Local file**
 6. **Select** `pestRiskPath_training.ttl` from your local directory  
-7. **Select** **+ Create concept**  
-8. **Open a new tab** and go to [UUID Generator](https://www.uuidgenerator.net)  
-9. **Copy** the UUID  
-10. **Paste** the UUID in the **Local Name** field > **Create**  
-11. **Annotations - preferred Label** > **Add a literal value with a language tag**  
-12. **Add** `"Wind dispersal"` > **Save** (tick icon)  
-13. **Annotations - definitions** > **Add a literal value with a language tag**  
-14. **Add** `"Dispersal of pests by wind"` > **Save** (tick icon)  
-15. **Concept scheme relationships - inScheme** > **Add an IRI value**  
-16. **Type** `"P"` - **Pest Risk Pathway** will return - select this  
-17. **Concept scheme relationships - topConceptOf** > **Add an IRI value**  
-18. **Type** `"P"` - **Pest Risk Pathway** will return - select this  
-19. **Project** > **Save**
+7. **Select** **Resource** > **Create new**
+8. **Resource type** > **Concept**
+9. **Add** _http://example.com/pestRiskPath/_
+10. **Open a new tab** and go to [UUID Generator](https://www.uuidgenerator.net)  
+11. **Copy** the UUID  
+12. **Paste** the UUID in the **IRI** field and after the stem _http://example.com/pestRiskPath/_. So the full IRI should looke like this: _http://example.com/pestRiskPath/[UUID]_
+13. **Select Create** 
+14. **Edit** > **prefLabel** > **"+"** > **Literal string with language**
+15. **Add** _"Wind dispersal"_
+16. In Lang box, **Add*** "en" > **Save**  
+17. **Annotations - definitions** > **Add a literal value with a language tag**  
+18. **Add** _Dispersal of pests by wind_
+19. **definition** > **Add** 
+20.   > **Save** (tick icon)  
+21. **Concept scheme relationships - inScheme** > **Add an IRI value**  
+22. **Type** `"P"` - **Pest Risk Pathway** will return - select this  
+23. **Concept scheme relationships - topConceptOf** > **Add an IRI value**  
+24. **Type** `"P"` - **Pest Risk Pathway** will return - select this  
+25. **Project** > **Save**
 
 The pestRiskPathway.ttl will now be updated in your local directory, with the new concept "Wind dispersal" added.
 
