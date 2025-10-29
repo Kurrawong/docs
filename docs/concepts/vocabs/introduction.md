@@ -284,7 +284,7 @@ To comply with VocPub profile ([AGLDWG, n.d.](#references-and-further-reading)),
 
 These modules will include a number of editing exercises that use the VocEdit tool and the Pest Risk Pathway vocabulary (PRP). The PRP is an un-published vocabulary, hosted by Kurrawong.ai for training and testing purposes. In this exercise we will add a new concept; a concept preferred label; a concept definition; and a concept identifier.
 
-_Technical requirements: Chrome browser is needed to access the VocEdit tool._
+💡 _Chrome browser is needed to use the VocEdit tool._
 
 1. **Go to** [Download TTL](https://raw.githubusercontent.com/Kurrawong/demo-vocabs/main/vocabs/pestRiskPath_training.ttl)  
   *(Right-click and choose “Save link as...” to download)*
@@ -302,16 +302,13 @@ _Technical requirements: Chrome browser is needed to access the VocEdit tool._
 13. **Select Create** 
 14. **Edit** > **prefLabel** > **"+"** > **Literal string with language**
 15. **Add** _"Wind dispersal"_
-16. In Lang box, **Add*** "en" > **Save**  
-17. **Annotations - definitions** > **Add a literal value with a language tag**  
+16. In Lang box, **Add*** "en"
+17. **definition** > **Add a literal with language**  
 18. **Add** _Dispersal of pests by wind_
-19. **definition** > **Add** 
-20.   > **Save** (tick icon)  
-21. **Concept scheme relationships - inScheme** > **Add an IRI value**  
-22. **Type** `"P"` - **Pest Risk Pathway** will return - select this  
-23. **Concept scheme relationships - topConceptOf** > **Add an IRI value**  
-24. **Type** `"P"` - **Pest Risk Pathway** will return - select this  
-25. **Project** > **Save**
+19. In Lang box, **Add*** "en"
+23. **Concept scheme relationships - topConceptOf** > **Select** "+" > _IRI_
+24. **Select a value** > select _pestRiskPath_
+26. **Save**
 
 The pestRiskPathway.ttl will now be updated in your local directory, with the new concept "Wind dispersal" added.
 
