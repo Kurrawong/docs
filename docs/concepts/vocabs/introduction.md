@@ -409,7 +409,7 @@ In this exercise we will add an alternative label to a concept.
 5. **Add** _http://www.w3.org/2004/02/skos/core#altLabel_ > **Add property**  
 6.  in the _altLabel_ field you just created > **"+"** > **Add new value** > **Literal with language**
 7. **Add** _Sporulation_
-8. **Add* "en" to _lang_ field
+8. **Add** "en" to _lang_ field
 9. **Save**
 
 ###  Top Concepts
@@ -434,12 +434,13 @@ A Concept Scheme is some metadata about the vocabulary as a whole - the vocabula
 
 We will continue to edit the Pest Risk Pathway vocabulary, but this time we will edit the concept scheme which is the metadata about the vocabulary as a whole.
 
-1. **Go to** [VocEdit](https://vocedit.dev.kurrawong.ai) in Chrome  
+1. **Go to** [VocEdit](https://vocedit.dev.kurrawong.ai) in Chrome    
 2. **Project** > **Open** `pestRiskPath.ttl` from your local directory  
-3. **Select** **Pest Risk Pathway** from under **Concept Scheme** in the left-hand panel  
-4. **Definition** > **Add a literal value with a language tag**  
-5. **Add** `"A vocabulary describing various structures, modes and activities that introduce unwanted pests, weeds and diseases."` > **Save** (tick icon)  
-6. **Project** > **Save**
+3. **Select** **Pest Risk Pathway** from under **Vocabularies** in the left-hand panel  
+4. **Annotations** > **definition** > **"+"** > **Add a new value** > **literal with language**  
+5. **Add** _A vocabulary describing various structures, modes and activities that introduce unwanted pests, weeds and diseases._
+6. **Add** "en" to _lang_ field
+7. **Save**
 
 ## Summary
 
