@@ -344,7 +344,7 @@ In a vocabulary, it's possible to keep adding narrower relationships by creating
 
 In this exercise we will add a broader relationship between two concepts. Note that once a concept has a broader relationship, it can no longer be regarded as a 'top concept' and we will remove the top concept statement accordingly.
 
-1. **Go to** [VocEdit](https://vocedit.dev.kurrawong.ai) in Chrome  
+1. **Go to** [VocEdit](https://vocedit.kurrawong.ai) in Chrome  
 2. **Project** > **Open** `pestRiskPath_training.ttl` from your local directory  
 3. **Select** _Spore dispersal_ from the left-hand list of concepts  
 4. **Concept relationships** > **Broader** > **Add a new value** > **IRI**
@@ -402,7 +402,7 @@ In this exercise we will add an alternative label to a concept.
 
 💡 **Tip:** You will need to first add the `skos:altLabel` property to VocEdit as it is not required by [VocPub](https://linked.data.gov.au/def/vocpub).
 
-1. **Go to** [VocEdit](https://vocedit.dev.kurrawong.ai) in Chrome  
+1. **Go to** [VocEdit](https://vocedit.kurrawong.ai) in Chrome  
 2. **Project** > **Open** `pestRiskPath_training.ttl` from your local directory  
 3. **Select** _Spore dispersal_ from the left-hand list of concepts  
 4. **Other Properties** > **Add property**  
@@ -434,7 +434,7 @@ A Concept Scheme is some metadata about the vocabulary as a whole - the vocabula
 
 We will continue to edit the Pest Risk Pathway vocabulary, but this time we will edit the concept scheme which is the metadata about the vocabulary as a whole.
 
-1. **Go to** [VocEdit](https://vocedit.dev.kurrawong.ai) in Chrome    
+1. **Go to** [VocEdit](https://vocedit.kurrawong.ai) in Chrome    
 2. **Project** > **Open** `pestRiskPath.ttl` from your local directory  
 3. **Select** **Pest Risk Pathway** from under **Vocabularies** in the left-hand panel  
 4. **Annotations** > **definition** > **"+"** > **Add a new value** > **literal with language**  
