@@ -57,7 +57,11 @@ Even if you build from scratch, you might consider developing a vocabulary that 
 Even if you build from scratch, you can match home-grown concepts with concepts in external vocabularies - see [Mapping concepts with other vocabularies](#mapping-concepts-with-other-vocabularies)
 
 ### Adoption
-Importing a cluster of concepts from an existing vocabulary into a local vocabulary project. See [Add imported concepts to a collection](#add-imported-concepts-to-a-collection)
+You might import a cluster of concepts from an existing vocabulary into a local vocabulary project. There are a number of things you should to to indicate provenance of such concepts, and to suppot ongoing management of imported concepts, including:
+
+- adding a `prov#wasDerivedFrom` statement for an imported concept
+- adding a `rdfs:isDefinedBy` statement indicating an IRI of a concept scheme where the concept is from
+- creating a `skos:Collection`, specifically for grouping concepts derived from some other vocabulary - see [Add imported concepts to a collection](#add-imported-concepts-to-a-collection)
 
 ### Verbatim
 
