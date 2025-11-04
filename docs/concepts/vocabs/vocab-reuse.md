@@ -276,7 +276,7 @@ To import a concept from another vocabulary:
     skos:member
         <http://cef.uv.es/lodroadtran18/def/transporte/dtx_srti#clockwise> ;
     skos:prefLabel "LOD SRTI DATEX II"@en ;
-    prov:wasDerivedFrom <https://cef.uv.es/lodroadtran18/def/transporte/dtx_srti/> ;
+    prov:wasDerivedFrom <https://cef.uv.es/lodroadtran18/def/transporte/dtx_srti/> 
 .
 ```
 
