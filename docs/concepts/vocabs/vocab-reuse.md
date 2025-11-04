@@ -40,10 +40,10 @@ Whatever domain we work in, there's a fair chance that useful vocabularies have 
 
 Is it worth reusing existing vocabularies in part or whole? There are a various patterns that can be followed:
 
-- Referencing vocabularies: match home-grown concepts with concepts in external vocabularies . 
+- Build from scratch - just make a vocabulary based on familiar resources
 - Importing concepts: some or perhaps most of your vocabulary comprises concepts sources from existing vocabularies, faithfully retaining and presenting definitions and other metadata from the source;
-- Verbatim: access and reuse a vocabulary as is, with only exceptional customisation.
-
+- Verbatim: access and reuse a vocabulary as is
+- Customise: Verbatim, with minor customisation.
 
 
 ### Build from scratch 
@@ -52,11 +52,20 @@ Why not develop a vocabulary from scratch, with sources of warrant that you know
 Even if you build from scratch, you might consider developing a vocabulary that is itself reuse-able in your industry, sector or in other regions. The more use your vocabulary gets, the more interopoerabilty you have with other systems and catalogues. If you want your vocabulary reused, ensure:
 - clear rights and licensing are declared, within the vocabulary concept scheme and in surrounding web context
 - governance arrangements for the vocabulary are stated somewhere - build trust by declaring the update history and cycle, and committments to persisting concept IRI
-- distributions: ensure your vocabulary can be accessed in standard formats and over stand APIs (see *Vocabulary Systems* for more about this)
+- distributions: ensure your vocabulary can be accessed in standard formats and over stand APIs
 
+Even if you build from scratch, you can match home-grown concepts with concepts in external vocabularies - see [Mapping concepts with other vocabularies](#mapping-concepts-with-other-vocabularies)
 
+### Verbatim
 
+While using an existing vocabulary as-is requires no editing work, there will usually be a need to attribute the creator or publisher within your local business context.
 
+### Customise
+
+Minor changes may be made to vocabularies to meet local requirements. Vocabulary concepts may be added; labels may be updated (changes to spelling or swapping an `skos:altLabel` for `skos:prefLabel`). Changes will need to be acknowledged at both the concept and concept scheme level.
+
+### Adoption
+Importing a cluster of concepts from an existing vocabulary into a local vocabulary project. See [Add imported concepts to a collection](#add-imported-concepts-to-a-collection)
 
 ## Finding vocabularies
 
@@ -85,9 +94,9 @@ flowchart TD
     Query -->|Find all medical vocabularies used in the Asia-Pacific region.| SubjectHeadings
 ```
 
-### Language
+## Language
 
-It is perhaps unnecessary to mention that a vocabulary fit for reuse needs to be comprehensible in the language of expected users. A skos:conceptScheme will typically list the language codes used for skos:concept labels, and in many cases there will be more than one - multilingual vocabularies are fairly common. If an existing vocabulary includes language labels that are not needed in a local context, they can be ignored (a local system is configured to only process labels with a given language tag). However, if parts of a vocabularyu are to be adopted (see Adoption), it might be worth considering whether managing a partially-multilingual vocabulary is an unwanted or unnecessary complication in your context.  
+It is perhaps unnecessary to mention that a vocabulary fit for reuse needs to be comprehensible in the language of expected users. A skos:`ConceptScheme` will typically list the language codes used for `skos:Concept` labels, and in many cases there will be more than one - multilingual vocabularies are fairly common. If an existing vocabulary includes language labels that are not needed in a local context, they can be ignored (a local system is configured to only process labels with a given language tag). However, if parts of a vocabulary are to be adopted [see Adoption](#adoption), it might be worth considering whether managing a partially-multilingual vocabulary is an unwanted or unnecessary complication in your context.  
 
 Even within a natural language, there may be regional differences. 
 
@@ -106,7 +115,7 @@ policy:7353843a-9107-49af-bcd0-a8eac00bcd54 a skos:Concept ;
 	
 ```
 
-## Double check: can I reuse this?
+## Can I reuse this?
 
 Check an existing vocabulary for rights and licensing statements. Information about terms and conditions should be stated within the `skos:conceptScheme`, but might be stated outside the vocabulary data in a non-semantic resource (such as a vocabulary landing page). Some properties to check for include:
 - `sdo:license` / `dcterms:license`
@@ -130,29 +139,7 @@ Child support `skos:exactMatch` Child support
 ... where _Child support_ is a concept in both [Public Policy Taxonomy](https://linked.data.gov.au/def/policy/0acd51d0-a4a3-48eb-b6f4-aa086f966057) and [FAST](http://id.worldcat.org/fast/854679).
 
 
-## Notes
-
-Note fields are available for each concept. A _definition_, such as found in a glossary, is required by VocPub ([AGLDWG, n.d.](#references-and-further-reading)). A definition is not intended to be an exhaustive treatment of a concept, but rather explains the scope and usage of the concept.
-
-A `skos:historyNote` is a useful property for vocabulary managers to track decisions that have been made about a concept (label changes, new broader relationships). It can also be used to make a statement about the origin of a concept.
-
-💡 When writing notes, use plain text only and limit paragraph breaks where possible.
-
-
-## Concept scheme
-
-A Concept scheme is some metadata about the vocabulary as a whole - the vocabulary title (`skos:prefLabel`), a definition (`skos:definition`), and a unique identifier are minimum requirements. All vocabularies must have a Concept scheme, and the Concept scheme should include:
-
-- an Identifier - create an IRI following the same pattern as the IRIs for concepts. For the suffix, instead of a concept ID, add a Concept scheme ID. This may be the name of the Concept scheme (the vocabulary), e.g.: - ``https://linked.data.gov.au/def/road-types``
-  ... _where Road types_ is the name of the concept scheme.
-
-- a [Preferred label](http://www.w3.org/2004/02/skos/core#prefLabel) - the same property that is used for a Concept. Use a Preferred label for the name or title of the vocabulary (this may also be used for the Concept scheme ID)
-- a [Definition](http://www.w3.org/2004/02/skos/core#definition) - a definition of the Concept scheme. Use plain text only but paragraphs may be separated by newlines. Also used for Concepts
-- a [Created](http://purl.org/dc/terms/created) date. When the Concept scheme was first created. This might be automatically created by a vocabulary editor
-- a [History](http://www.w3.org/2004/02/skos/core#historyNote) note - a note on the origin or history of a vocabulary - such as how or from what it was generated.
-
-
-## 🚧 Add imported concepts to a collection
+🚧 ## Add imported concepts to a collection
 
 When a vocabulary imports 6
 
@@ -208,21 +195,6 @@ Building a vocabulary from scratch, with the editing and validation [tools](#voc
 - Unidentified: a vocabulary with labels but no identifiers - new IRIs will need to be constructed in this case. 
 
 💡 When constructing IRIs for an existing vocabulary, base the IRI suffix on any existing identifiers or tokens that may be present in the vocabulary. 
-
-## Derivation modes
-
-Consider the extent and type of derivation, there will be different requirements and implications for using existing vocabularies
-
-### Verbatim
-
-While using an existing vocabulary as-is requires no editing work, there will usually be a need to attribute the creator or publisher within your local business context.
-
-### Customisations
-
-Minor changes may be made to vocabularies to meet local requirements. Vocabulary concepts may be added; labels may be updated (changes to spelling or swapping an `skos:altLabel` for `skos:prefLabel`). Changes will need to be acknowledged at both the concept and concept scheme level.
-
-### Adoption
-Importing a cluster of concepts from an existing vocabulary into a local vocabulary project. The [provenance](#provenance-of-existing-vocabularies) of adopted concepts must be stated.
 
 🚧 ### Import a concpt
 
