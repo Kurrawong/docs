@@ -19,7 +19,7 @@
 >
 >----------------
 
-💡 _Identifies troubleshooting tips, common errors and potential issues._
+> 💡 _Identifies troubleshooting tips, common errors and potential issues._
 
 > 📝 _Notes that summarise content at the end of a module._
 
