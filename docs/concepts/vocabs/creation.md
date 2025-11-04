@@ -49,25 +49,25 @@ In some cases there may be concepts in a vocabulary that we can reliably say rep
 
 In this exercise we will use `skos:exactMatch` to link "Animal dispersal" with the concept "Zoochory" from the [National Agriculture Library Thesaurus](https://lod.nal.usda.gov/nalt/en/).
 
-1. **Go to** [VocEdit](https://vocedit.dev.kurrawong.ai) in Chrome  
+1. **Go to** [VocEdit](https://vocedit.kurrawong.ai) in Chrome  
 2. **Project** > **Open** `pestRiskPath_training.ttl` from your local directory (*don't have the file? see the [first exercise](https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier) in Introduction to Vocabularies*)  
 3. **Select** **Animal dispersal** from under **Concepts** in the left-hand panel  
-4. **Properties** > **Add new predicate**  
-5. **Add a new predicate** > `"http://www.w3.org/2004/02/skos/core#exactMatch"` > **Add**  
-6. **Properties** > **exactMatch** (the field you just created)  > **Add new value by type**
-7. **Add an IRI value** > **Options** (three dots) > **Widgets** > **URIEditor** > **Add** `"https://lod.nal.usda.gov/nalt/332111"`  
-8. **Project** > **Save**
+4. **Edit** > **Other Properties** > **Add property**  
+5. **Add** > `http://www.w3.org/2004/02/skos/core#exactMatch` > **Add**  
+6. **Other Properties** > **exactMatch** (the field you just created)  > **Add new value** > **IRI**
+7. **[...]** > **Widget** > **URIEditor** > **Add** `https://lod.nal.usda.gov/nalt/332111`  
+8. **Save**
 
-💡 **Tip:** strictly speaking you should only use `skos:exactMatch` when you know that the other vocabulary does, or plans to make a match back to the concept in your vocabulary. Why not get in touch? Notify the external vocabulary managers that you're matching with their vocabulary and you might get matched back!
+💡 **Tip:** strictly speaking, you should only use `skos:exactMatch` when you know that the other vocabulary does, or plans to make a match back to the concept in your vocabulary. Why not get in touch? Notify the external vocabulary managers that you're matching with their vocabulary and you might get matched back! Otherwise, the looser semantics of `skos:closeMatch` may be more suitable.
 
-Now let's add a `skos:broadMatch`. Like `skos:broader`, the `skos:broadMatch` property matches a concept with another broader concept that is in a different concept scheme. We will add a skos:broadMatch from "Wildlife trafficking" to "Crime" in the Centre for Agriculture and Bioscience International (CABI) Thesaurus.
+Now let's add a `skos:broadMatch`. Like `skos:broader`, the `skos:broadMatch` property matches a concept with another broader concept that is in a different concept scheme. We will add a `skos:broadMatch` from _Wildlife trafficking_ to _Crime_ in the _Centre for Agriculture and Bioscience International (CABI) Thesaurus_.
 
 9.  **Select** **Wildlife trafficking** from under **Concepts** in the left-hand panel  
-10. **Properties** > **Add new predicate**  
-11. **Add a new predicate** > `"http://www.w3.org/2004/02/skos/core#broadMatch"` > **Add**  
-12. **Properties** > **broadMatch** (the field you just created)  
-13. **Add an IRI value** > **Options** (three dots) > **Widgets** > **URIEditor** > **Add** `"https://id.cabi.org/cabt/33618"`  
-14. **Project** > **Save**  
+10. **Edit** > **Other Properties** > **Add property**  
+11. **Add** > `http://www.w3.org/2004/02/skos/core#broadMatch` > **Add**  
+12. **Other Properties** > **exactMatch** (the field you just created)  > **Add new value** > **IRI**
+13. **[...]** > **Widget** > **URIEditor** > **Add** `https://lod.nal.usda.gov/nalt/332111](https://id.cabi.org/cabt/33618`  
+14. **Save**
 
 
 ## Images
@@ -79,14 +79,14 @@ Associating a `skos:concept` with an image that illustrates meaning is a powerfu
 
 We will add an image reference with a URL from Wikipedia Commons to the concept "Storm water".
 
-1. **Go to** [VocEdit](https://vocedit.dev.kurrawong.ai) in Chrome  
+1. **Go to** [VocEdit](https://vocedit.kurrawong.ai) in Chrome  
 2. **Project** > **Open** `pestRiskPath_training.ttl` from your local directory (*don't have the file? see the [first exercise](https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier) in Introduction to Vocabularies*)  
-3. **Select** **Storm water** from under **Concepts** in the left-hand panel  
-4. **Add a new predicate** > **Properties** > **Add new predicate**  
-5. **Add a new predicate** > `"https://schema.org/image"` > **Add**  
-6. **Select** **Properties** - **Image** (the field you just created)  
-7. **Select** **Add an IRI** > **Add** `"https://commons.wikimedia.org/wiki/File:2019-07-29_172052_Rain_in_Berlin.jpg"`  
-8. **Project** > **Save**
+3. **Select** _Storm water_ from under **Concepts** in the left-hand panel  
+4. **Edit** > **Other Properties** > **Add property** 
+5. **Add** > `https://schema.org/image` > **Add**
+6. **Other Properties** > **exactMatch** (the field you just created)  > **Add new value** > **IRI**  
+7. **[...]** > **Widget** > **URIEditor** > **Add** `https://commons.wikimedia.org/wiki/File:2019-07-29_172052_Rain_in_Berlin.jpg`
+8. **Save**
 
 ## Related (associated) concepts
 
@@ -104,12 +104,11 @@ A `skos:historyNote` is a useful property for vocabulary managers to track decis
 
 ## Collections
 
-There may be a need to define a group of concepts within a vocabulary that share certain characteristics. A vocabulary may contain a collection, or even many collections of concepts.
+There may be a need to define a group of concepts within a vocabulary that share certain characteristics. A vocabulary may contain a `skos:Collection`, or even many collections of concepts.
 
-Collections are like a non-hierarchical means of gathering Concepts. So for example concepts that are members of a Collection may be from different parts of a vocabulary hierarchy (and not all broader-narrower parts of a hierarchy branch). One use case for collections is to clearly represent concepts that have been 'imported' from another concept scheme. We will look at Collections used in this way in the [Vocabulary Reuse](vocab_reuse.md#adoption) module.
+Collections are like a non-hierarchical means of gathering concepts. So for example concepts that are members of a Collection may be from different parts of a vocabulary hierarchy (and not all broader-narrower parts of a hierarchy branch). One use case for collections is to clearly represent concepts that have been 'imported' from another concept scheme. We will look at collections used in this way in the [Vocabulary Reuse](vocab_reuse.md#adoption) module.
 
-A `skos:collection` connects to a `skos:concept` using the `skos:member` property.
-
+A `skos:Collection` connects to a `skos:concept` using the `skos:member` property.
 
 ## Identifiers
 
@@ -147,11 +146,11 @@ Here's another method for generating an IRI suffix:
 
 ``http://vocabulary.curriculum.edu.au/crossCurriculum/f7f47140-a85e-498b-9367-0d468082fc2b``
 
-The suffix here is a UUID, or a _Universally Unique Identifier_. Note that if we took the UUID out of context (away from the whole IRI), we could consider it to be unique on its own terms - UUIDs are designed that way. 
+The suffix here is a UUID, or a _Universally Unique Identifier_. Note that if we took the UUID out of context (away from the whole IRI), we could consider it to be unique on its own terms - UUIDs are designed that way.
 
-**Tip:** UUID are not registered and can be generated by anyone using [online tools](https://www.uuidgenerator.net).
+**Tip:** A UUID is not registered and can be freely generated by anyone using [online tools](https://www.uuidgenerator.net).
 
-A third _NOT RECOMMENDED_ method for constructing a concept ID is to base the ID on whatever ``prefLabel`` has been chosen. This has the advantage of making the IRI itself readable and understandable by humans - but there are several disadvantages also and the preferred label method should be avoided if possible.
+A third _NOT RECOMMENDED_ method for constructing a concept ID is to base the ID on whatever ``skos:prefLabel`` has been chosen. This has the advantage of making the IRI itself readable and understandable by humans - but there are several disadvantages also and the preferred label method should be avoided if possible.
 
 ``https://data.idnau.org/pid/vocab/org-indigeneity/run-by-indigenous-persons``
 
@@ -159,7 +158,7 @@ A third _NOT RECOMMENDED_ method for constructing a concept ID is to base the ID
 "/org-indigeneity/" is the ID for the vocabulary, and
 "/run-by-indigenous-persons/" is the ID for the concept
 
-The prefLabel method is not recommended. Why? What if the prefLabel for this concept changes to "_Managed_ by indigenous persons"? The IRI stays the same (they should be persistent), and now doesn't match (exactly) the ``prefLabel``. A similar problem is encountered if the concept has multiple ``prefLabel`` in different languages - which one should be used? IRIs are more robust if their concept IDs are opaque (they don't say anything about the concept itself).
+The prefLabel method is not recommended. Why? What if the `skos:prefLabel` for this concept changes to _Managed by indigenous persons_? The IRI stays the same (they should be persistent), and now doesn't match (exactly) the ``skos:prefLabel``. A similar problem is encountered if the concept has multiple ``prefLabel`` in different languages - which one should be used? IRIs are more robust if their concept IDs are opaque (they don't say anything about the concept itself).
 
 #### Version IRI
 
