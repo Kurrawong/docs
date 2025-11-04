@@ -69,7 +69,7 @@ While using an existing vocabulary as-is requires no editing work, there will us
 
 ### Reuse non-semantic vocabularies
 
-Building a vocabulary from scratch, with the editing and validation [tools](#vocabulary-tools) mentioned here, ensures vocabularies are well-formed and presented. Existing vocabularies published in other contexts may not be so well-formed! Existing vocabularies, including those found via vocabulary registries, will vary in their conformance with data standards such as RDF and SKOS, before even considering quality standards like VocPub and qSKOS ([W3C, n.d](#references-and-further-reading).). Here are a couple of challenges to consider:
+Building a vocabulary from scratch ensures vocabularies are well-formed and presented. Existing vocabularies published in other contexts may not be so well-formed! Existing vocabularies, including those found via vocabulary registries, will vary in their conformance with data standards such as RDF and SKOS, before even considering quality standards like VocPub and qSKOS ([W3C, n.d](#references-and-further-reading).). Here are a couple of challenges to consider:
 
 - Unstructured: an existing vocabulary is well presented by not machine-readable, such as in PDF or HTML. The vocabulary terms may indicate properties and relationships, but these properties themselves are not machine-readable. The vocabulary may need to be scraped and cleaned, eventually transformed into an RDF format compatible with a SKOS editing tool.
 - Unidentified: a vocabulary with labels but no identifiers - new IRIs will need to be constructed in this case. 
@@ -152,7 +152,7 @@ Child support `skos:exactMatch` Child support
 ... where _Child support_ is a concept in both [Public Policy Taxonomy](https://linked.data.gov.au/def/policy/0acd51d0-a4a3-48eb-b6f4-aa086f966057) and [FAST](http://id.worldcat.org/fast/854679).
 
 
-🚧 ## Add imported concepts to a collection
+## 🚧 Add imported concepts to a collection
 
 When a vocabulary imports 6
 
@@ -175,7 +175,7 @@ All concepts must have an IRI, and the IRI identifier may be a completely opaque
 
 ### Defining vocabulary IRI
 
-A concept may be 'imported' from another vocabulary. We can assume that a concept is imported if it shares the same or very similar metadata (such as a `skos:definition`) and labels. Such concepts should indicate the [defining](http://www.w3.org/2000/01/rdf-schema#isDefinedBy) vocabulary from where they were imported. Read more about [importing](#Adoption) concepts and references. 
+A concept may be 'imported' from another vocabulary. We can assume that a concept is imported if it shares the same or very similar metadata (such as a `skos:definition`) and labels. Such concepts should indicate the [defining](http://www.w3.org/2000/01/rdf-schema#isDefinedBy) vocabulary from where they were imported. Read more about [importing](#adoption) concepts and references. 
 
 ### Citation
 
@@ -202,48 +202,34 @@ It's worth checking if there are existing vocabularies (published by a third par
 
 💡 When constructing IRIs for an existing vocabulary, base the IRI suffix on any existing identifiers or tokens that may be present in the vocabulary. 
 
-🚧 ### Import a concpt
+### 🚧 Import a concept
 
-We will import a concept from the [LOD SRTI DATEX II](https://cef.uv.es/lodroadtran18/def/transporte/dtx_srti/) ontology into the <a href="https://linked.data.gov.au/def/road-travel-direction" target="_blank" rel="noopener noreferrer">Road Travel Direction</a> vocabulary.
+To import a concept from another vocabulary:
 
-_LOD SRTI DATEX II_ models 'Named individuals', which are enumerated instances of various properties. For example, the property ``srti:DirectionEnum`` has member the named individual ``srti:clockwise``. We will import model this named individual as a `skos:Concept` and import it into the _Road travel direction_ vocabulary.
+1. Navigate in your browser to the vocabulary’s URI, for example:  
+   `https://linked.data.gov.au/def/road-travel-direction`
 
-To import the concept we will need to update the prefix declarations and `skos:ConceptScheme` and add a new `skos:Concept` and `skos:Collection`
+2. Download the Turtle (`.ttl`) representation directly using this link:  
+   <a href="https://linked.data.gov.au/def/road-travel-direction.ttl" download>
+   Download Road Travel Direction (Turtle)
+   </a>
 
-- Open the VocPub Turtle file used in the [editing steps](#edit-a-vocabulary-with-vocedit) in a text editor.
+3. Open the downloaded `.ttl` file in a text or code editor.
 
-- Add `srti` to the prefixes:
+4. Add or modify the `@prefix` declaration to include your local alias:  
+   ```turtle
+   @prefix srti: <https://linked.data.gov.au/def/road-travel-direction/> .
+   ```
 
-```sparql
-PREFIX : <https://linked.data.gov.au/def/road-travel-direction/>
-PREFIX agldwgstatus: <https://linked.data.gov.au/def/reg-statuses/>
-PREFIX cs: <https://linked.data.gov.au/def/road-travel-direction>
-PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX droles: <https://linked.data.gov.au/def/data-roles/>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX prov: <http://www.w3.org/ns/prov#>
-PREFIX reg: <http://purl.org/linked-data/registry#>
-PREFIX sdo: <https://schema.org/>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-# Added new prefix "srti":
-PREFIX srti: <https://cef.uv.es/lodroadtran18/def/transporte/dtx_srti/>
-PREFIX themes: <https://linked.data.gov.au/def/fsdf/themes/>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-```
+5. Reference the imported concept in your vocabulary or SKOS collection:
 
-- Add the following ``skos:Concept`` and properties:
+   ```turtle
+   srti:bothDirections a skos:Concept ;
+       skos:prefLabel "Both directions"@en ;
+       skos:exactMatch <https://linked.data.gov.au/def/road-travel-direction/bothDirections> .
+   ```
 
-```turtle
-srti:clockwise
-    a skos:Concept ;
-    dcterms:created "XXXX-XX-XX"^^xsd:dateTime ;
-    dcterms:creator <http://editor.example.com/foo> ;
-    dcterms:modified "XXXX-XX-XX"^^xsd:dateTime ;
-    dcterms:definition "A rotational direction that moves in the same pattern as the hands of a clock" ;
-    skos:topConcept cs: ;
-    skos:prefLabel "Clockwise"@en ;
-```
-- Add the concept to the ``skos:ConceptScheme``
+6. Add the concept to the ``skos:ConceptScheme``
 
 ```turtle
   cs:
@@ -278,7 +264,7 @@ srti:clockwise
         ] ;
 ```
 
-- Create new ``skos:Collection``
+7. Create new ``skos:Collection``
 
 ```turtle
 :srti-vocabulary
@@ -294,17 +280,11 @@ srti:clockwise
 .
 ```
 
-- **Select** "One Way From To"
-- **Open** Concept relationships
-- **Open** options for Broader
-- **Select** Add an IRI value
-- **From** the new dropdown box, select (or search for) "One way"
-- **Select** the Tick button
-- **Go to** Project > Save
-- **Navigate** to the `road-travel-directions.ttl` file, open it, and note that there is a new `skos:broader` relationship.
+Save and document your changes, noting provenance and licensing information (e.g., using `dcterms:source`).
 
 
-# References and Further Reading
+
+## References and Further Reading
 
 * AGLDWG. (n.d.). VocPub profile specification. Retrieved April 17, 2025, from https://agldwg.github.io/vocpub-profile/specification.html
 * W3C (n.d.). QSKOS. Retrieved March 5, 2025, from https://www.w3.org/2001/sw/wiki/QSKOS
