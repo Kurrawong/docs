@@ -23,6 +23,8 @@
 
 > 📝 _Notes that summarise content at the end of a module._
 
+> 🚧 _Exercises_
+
 
 ## An Introduction to vocabulary reuse
 
@@ -115,11 +117,9 @@ Check an existing vocabulary for rights and licensing statements. Information ab
 - `dcterms:accessRights`
 - `sdo:copyrightHolder` / `isorole:rightsHolder`
 
-**Tip:** Even if a vocabulary may be reused, some attribution may be needed in your local context. If derivations to the vocabulary are planned, they may need to be shared as a condition of reuse.
+💡 Even if a vocabulary may be reused, some attribution may be needed in your local context. If derivations to the vocabulary are planned, they may need to be shared as a condition of reuse.
 
 ## Mapping concepts with other vocabularies
-
-
 
 In the basic structure of a vocabulary, concepts may be related to other concepts via broader, narrower or related properties. Sometimes a concept needs to be related to a concept in a _different_ vocabulary. Concept matching across vocabularies is done in a similar way but with different properties: [Broad match](http://www.w3.org/2004/02/skos/core#broadMatch), [Narrower match](http://www.w3.org/2004/02/skos/core#narrowMatch), [Related match](http://www.w3.org/2004/02/skos/core#relatedMatch).
 
@@ -134,16 +134,13 @@ Child support `skos:exactMatch` Child support
 ... where _Child support_ is a concept in both [Public Policy Taxonomy](https://linked.data.gov.au/def/policy/0acd51d0-a4a3-48eb-b6f4-aa086f966057) and [FAST](http://id.worldcat.org/fast/854679).
 
 
-
-
-
 ## Notes
 
 Note fields are available for each concept. A _definition_, such as found in a glossary, is required by VocPub ([AGLDWG, n.d.](#references-and-further-reading)). A definition is not intended to be an exhaustive treatment of a concept, but rather explains the scope and usage of the concept.
 
 A `skos:historyNote` is a useful property for vocabulary managers to track decisions that have been made about a concept (label changes, new broader relationships). It can also be used to make a statement about the origin of a concept.
 
-💡 **Tip:** When writing notes, use plain text only and limit paragraph breaks where possible.
+💡 When writing notes, use plain text only and limit paragraph breaks where possible.
 
 
 ## Concept scheme
@@ -159,17 +156,14 @@ A Concept scheme is some metadata about the vocabulary as a whole - the vocabula
 - a [History](http://www.w3.org/2004/02/skos/core#historyNote) note - a note on the origin or history of a vocabulary - such as how or from what it was generated.
 
 
-## Exercise: add imported concepts to a collection
+## 🚧 Add imported concepts to a collection
 
 When a vocabulary imports 6
-A `skos:collection` references a `skos:concept` using the `skos:member` property.
+
+💡 A `skos:Collection` references a `skos:Concept` using the `skos:member` property.
 
 ## Optional elements
 You can add more metadata to your Concepts and Concept schemes that will improve the clarity, scope and provenance of your vocabulary. Consider the following additional elements:
-
-### Citation
-
-Use the [Citation](https://schema.org/citation) element to provide an optional hyperlink to or textual description of source information.
 
 ### Derived from
 
@@ -217,7 +211,7 @@ Building a vocabulary from scratch, with the editing and validation [tools](#voc
 - Unstructured: an existing vocabulary is well presented by not machine-readable, such as in PDF or HTML. The vocabulary terms may indicate properties and relationships, but these properties themselves are not machine-readable. The vocabulary may need to be scraped and cleaned, eventually transformed into an RDF format compatible with a SKOS editing tool.
 - Unidentified: a vocabulary with labels but no identifiers - new IRIs will need to be constructed in this case. 
 
-**Tip:** When constructing IRIs for an existing vocabulary, base the IRI suffix on any existing identifiers or tokens that may be present in the vocabulary. 
+💡 When constructing IRIs for an existing vocabulary, base the IRI suffix on any existing identifiers or tokens that may be present in the vocabulary. 
 
 ## Derivation modes
 
@@ -234,13 +228,13 @@ Minor changes may be made to vocabularies to meet local requirements. Vocabulary
 ### Adoption
 Importing a cluster of concepts from an existing vocabulary into a local vocabulary project. The [provenance](#provenance-of-existing-vocabularies) of adopted concepts must be stated.
 
-Example:
+🚧 ### Import a concpt
 
 We will import a concept from the [LOD SRTI DATEX II](https://cef.uv.es/lodroadtran18/def/transporte/dtx_srti/) ontology into the <a href="https://linked.data.gov.au/def/road-travel-direction" target="_blank" rel="noopener noreferrer">Road Travel Direction</a> vocabulary.
 
-_LOD SRTI DATEX II_ models 'Named individuals', which are enumerated instances of various properties. For example, the property ``srti:DirectionEnum`` has member the named individual ``srti:clockwise``. We will import model this named individual as a skos:concept and import it into the Road travel direction vocabulary.
+_LOD SRTI DATEX II_ models 'Named individuals', which are enumerated instances of various properties. For example, the property ``srti:DirectionEnum`` has member the named individual ``srti:clockwise``. We will import model this named individual as a `skos:Concept` and import it into the _Road travel direction_ vocabulary.
 
-To import the concept we will need to update the prefix declarations and `skos:conceptScheme` and add a new `skos:concept` and `skos:collection`
+To import the concept we will need to update the prefix declarations and `skos:ConceptScheme` and add a new `skos:Concept` and `skos:Collection`
 
 - Open the VocPub Turtle file used in the [editing steps](#edit-a-vocabulary-with-vocedit) in a text editor.
 
@@ -263,7 +257,7 @@ PREFIX themes: <https://linked.data.gov.au/def/fsdf/themes/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 ```
 
-- Add the following ``skos:concept`` and properties:
+- Add the following ``skos:Concept`` and properties:
 
 ```turtle
 srti:clockwise
@@ -275,7 +269,7 @@ srti:clockwise
     skos:topConcept cs: ;
     skos:prefLabel "Clockwise"@en ;
 ```
-- Add the concept to the ``skos:conceptScheme``
+- Add the concept to the ``skos:ConceptScheme``
 
 ```turtle
   cs:
@@ -310,7 +304,7 @@ srti:clockwise
         ] ;
 ```
 
-- Create new ``skos:collection``
+- Create new ``skos:Collection``
 
 ```turtle
 :srti-vocabulary
