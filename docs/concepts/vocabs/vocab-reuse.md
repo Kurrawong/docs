@@ -61,7 +61,9 @@ You might import a cluster of concepts from an existing vocabulary into a local 
 
 - adding a `prov#wasDerivedFrom` statement for an imported concept
 - adding a `rdfs:isDefinedBy` statement indicating an IRI of a concept scheme where the concept is from
-- creating a `skos:Collection`, specifically for grouping concepts derived from some other vocabulary - see [Add imported concepts to a collection](#add-imported-concepts-to-a-collection)
+- creating a `skos:Collection`, specifically for grouping concepts derived from some other vocabulary
+
+See [Import a concept](#import-a-concept) excersise for more details.
 
 ### Verbatim
 
@@ -206,6 +208,10 @@ It's worth checking if there are existing vocabularies (published by a third par
 
 To import a concept from another vocabulary:
 
+- update the `skos:ConceptScheme`
+- add a new 	`skos:Concept`, and
+- add or update a 'skos:Collection` (optionally)
+
 1. Navigate in your browser to the vocabulary’s URI, for example:  
    `https://linked.data.gov.au/def/road-travel-direction`
 
@@ -216,17 +222,19 @@ To import a concept from another vocabulary:
 
 3. Open the downloaded `.ttl` file in a text or code editor.
 
-4. Add or modify the `@prefix` declaration to include your local alias:  
+4. Add the `@prefix` declaration:  
    ```turtle
-   @prefix srti: <https://linked.data.gov.au/def/road-travel-direction/> .
+   @prefix srti: <http://cef.uv.es/lodroadtran18/def/transporte/dtx_srti#> .
    ```
 
-5. Reference the imported concept in your vocabulary or SKOS collection:
+5. Add the concept in your vocabulary:
 
    ```turtle
-   srti:bothDirections a skos:Concept ;
+   srti:clockwise a skos:Concept ;
        skos:prefLabel "Both directions"@en ;
-       skos:exactMatch <https://linked.data.gov.au/def/road-travel-direction/bothDirections> .
+   # add definition vebatim from source
+       skos:definition "Clockwise."@en ;
+       prov:wasDerivedFrom <http://cef.uv.es/lodroadtran18/def/transporte/dtx_srti#clockwise> .
    ```
 
 6. Add the concept to the ``skos:ConceptScheme``
@@ -238,17 +246,18 @@ To import a concept from another vocabulary:
     dcterms:created "2023-05-30"^^xsd:date ;
     dcterms:creator <https://linked.data.gov.au/org/qsi> ;
     dcterms:identifier "road-travel-direction"^^xsd:token ;
-# Date modified will be incremented:
+# Date modified should be incremented:
     dcterms:modified "XXXX-XX-XX"^^xsd:date ;
     dcterms:publisher <https://linked.data.gov.au/org/icsm> ;
     reg:status agldwgstatus:experimental ;
+# Version information may be incremented
     owl:versionIRI :1.0 ;
     owl:versionInfo "1.0" ;
     skos:definition "This vocabulary describes the travel direction assigned to a section of a road. "@en ;
     skos:hasTopConcept
         :bi-directional ,
-# Added new concept "clockwise":
-        :clockwise ,
+# Add new concept "clockwise":
+        srti:clockwise ,
         :none ,
         :one-way ,
         :one-way-against-vector ,
@@ -258,7 +267,7 @@ To import a concept from another vocabulary:
     skos:historyNote "This vocabulary was created by the Queensland Spatial Information services and imports some concepts from other vocabularies" ;
     skos:prefLabel "Road Travel Direction"@en ;
     prov:qualifiedAttribution
-        [
+        [   a prov:qualifiedAttribution ;
             prov:hadRole droles:custodian ;
             prov:agent <https://linked.data.gov.au/org/icsm>
         ] ;
@@ -269,14 +278,13 @@ To import a concept from another vocabulary:
 ```turtle
 :srti-vocabulary
     a skos:Collection ;
-    dcterms:source "https://cef.uv.es/lodroadtran18/def/transporte/dtx_srti/"^^xsd:anyURI ;
+    prov:wasDerivedFrom :srti ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Concepts from the LOD SRTI DATEX II ontology" ;
     skos:inScheme cs: ;
     skos:member
-        <http://cef.uv.es/lodroadtran18/def/transporte/dtx_srti#clockwise> ;
-    skos:prefLabel "LOD SRTI DATEX II"@en ;
-    prov:wasDerivedFrom <https://cef.uv.es/lodroadtran18/def/transporte/dtx_srti/> 
+        :clockwise ;
+    skos:prefLabel "LOD SRTI DATEX II concept collection"@en ;
 .
 ```
 
@@ -286,7 +294,7 @@ Save and document your changes, noting provenance and licensing information (e.g
 
 ## References and Further Reading
 
-* AGLDWG. (n.d.). VocPub profile specification. Retrieved April 17, 2025, from https://agldwg.github.io/vocpub-profile/specification.html
+* AGLDWG. (n.d.). VocPub profile specification. https://linked.data.gov.au/def/vocpub/spec
 * W3C (n.d.). QSKOS. Retrieved March 5, 2025, from https://www.w3.org/2001/sw/wiki/QSKOS
 * W3C (2009). SKOS reference. https://www.w3.org/TR/skos-reference/
 * W3C (2014). Turtle: Terse RDF triple language (W3C Recommendation). Retrieved from https://www.w3.org/TR/turtle/
