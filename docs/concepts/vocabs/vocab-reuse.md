@@ -40,10 +40,10 @@ Whatever domain we work in, there's a fair chance that useful vocabularies have 
 
 Is it worth reusing existing vocabularies in part or whole? There are a various patterns that can be followed:
 
-- Build from scratch - just make a vocabulary based on familiar resources
-- Importing concepts: some or perhaps most of your vocabulary comprises concepts sources from existing vocabularies, faithfully retaining and presenting definitions and other metadata from the source;
-- Verbatim: access and reuse a vocabulary as is
-- Customise: Verbatim, with minor customisation.
+- **Build from scratch** - just make a vocabulary based on familiar resources
+- **Adoption** - Importing concepts from some or perhaps most of your vocabulary comprises concepts sources from existing vocabularies, faithfully retaining and presenting definitions and other metadata from the source;
+- **Verbatim** - access and reuse a vocabulary as is
+- **Customise** Verbatim, with minor changes, such as to labels
 
 
 ### Build from scratch 
@@ -56,21 +56,30 @@ Even if you build from scratch, you might consider developing a vocabulary that 
 
 Even if you build from scratch, you can match home-grown concepts with concepts in external vocabularies - see [Mapping concepts with other vocabularies](#mapping-concepts-with-other-vocabularies)
 
+### Adoption
+Importing a cluster of concepts from an existing vocabulary into a local vocabulary project. See [Add imported concepts to a collection](#add-imported-concepts-to-a-collection)
+
 ### Verbatim
 
 While using an existing vocabulary as-is requires no editing work, there will usually be a need to attribute the creator or publisher within your local business context.
 
+### Reuse non-semantic vocabularies
+
+Building a vocabulary from scratch, with the editing and validation [tools](#vocabulary-tools) mentioned here, ensures vocabularies are well-formed and presented. Existing vocabularies published in other contexts may not be so well-formed! Existing vocabularies, including those found via vocabulary registries, will vary in their conformance with data standards such as RDF and SKOS, before even considering quality standards like VocPub and qSKOS ([W3C, n.d](#references-and-further-reading).). Here are a couple of challenges to consider:
+
+- Unstructured: an existing vocabulary is well presented by not machine-readable, such as in PDF or HTML. The vocabulary terms may indicate properties and relationships, but these properties themselves are not machine-readable. The vocabulary may need to be scraped and cleaned, eventually transformed into an RDF format compatible with a SKOS editing tool.
+- Unidentified: a vocabulary with labels but no identifiers - new IRIs will need to be constructed in this case. 
+
 ### Customise
 
-Minor changes may be made to vocabularies to meet local requirements. Vocabulary concepts may be added; labels may be updated (changes to spelling or swapping an `skos:altLabel` for `skos:prefLabel`). Changes will need to be acknowledged at both the concept and concept scheme level.
+You may make minor changes to published vocabularies to meet local requirements. Vocabulary concepts may be added; labels may be updated (changes to spelling or swapping an `skos:altLabel` for `skos:prefLabel`). Changes will need to be acknowledged at both the concept and concept scheme level - use 
 
-### Adoption
-Importing a cluster of concepts from an existing vocabulary into a local vocabulary project. See [Add imported concepts to a collection](#add-imported-concepts-to-a-collection)
 
 ## Finding vocabularies
 
-There may already be vocabularies that match the theme and scope of your metadata catalogues. They may exist in a nearby knowledge domain, industry or sector, and may originate in other global regions.
-be vocabularies available for reuse listed in vocabulary registries, such as:
+If you are going to Adopt, use Verbatim or Customise a vocabulary, you'll need to find relevant vocabularies to do so with. Even if you are Building from scratch, it's a good idea to know about other vocabulary work already done in your domain. There may already be vocabularies that meet your requirements, such as enriching the semanics of a metadata catalogue. They may exist in a nearby knowledge domain, industry or sector, and may originate in other global regions.
+
+Look for vocabularies available for reuse listed in vocabulary registries, such as:
 
 - [Research Vocabularies Australia](https://vocabs.ardc.edu.au): vocabularies span a wide range of research and industry domains. Vocabulary search can be filtered by format and licensing, and many may be accessed directly from the RVA site via download or API.
 - [BARTOC.org](https://bartoc.org): this is an international registry of vocabularies and ontologies in many languages and with over 2,500 records. 
@@ -186,13 +195,6 @@ It's worth checking if there are existing vocabularies (published by a third par
 - derivation modes: the type and extent of reuse
 - how to indicate provenance and attribution
 
-
-### Reuse non-semantic vocabularies
-
-Building a vocabulary from scratch, with the editing and validation [tools](#vocabulary-tools) mentioned here, ensures vocabularies are well-formed and presented. Existing vocabularies published in other contexts may not be so well-formed! Existing vocabularies, including those found via vocabulary registries, will vary in their conformance with data standards such as RDF and SKOS, before even considering quality standards like VocPub and qSKOS ([W3C, n.d](#references-and-further-reading).). Here are a couple of challenges to consider:
-
-- Unstructured: an existing vocabulary is well presented by not machine-readable, such as in PDF or HTML. The vocabulary terms may indicate properties and relationships, but these properties themselves are not machine-readable. The vocabulary may need to be scraped and cleaned, eventually transformed into an RDF format compatible with a SKOS editing tool.
-- Unidentified: a vocabulary with labels but no identifiers - new IRIs will need to be constructed in this case. 
 
 💡 When constructing IRIs for an existing vocabulary, base the IRI suffix on any existing identifiers or tokens that may be present in the vocabulary. 
 
