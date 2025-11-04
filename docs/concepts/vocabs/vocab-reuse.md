@@ -44,10 +44,6 @@ Is it worth reusing existing vocabularies in part or whole? There are a various 
 - Importing concepts: some or perhaps most of your vocabulary comprises concepts sources from existing vocabularies, faithfully retaining and presenting definitions and other metadata from the source;
 - Verbatim: access and reuse a vocabulary as is, with only exceptional customisation.
 
-Decision workflow
-
-
-
 
 
 ### Build from scratch 
