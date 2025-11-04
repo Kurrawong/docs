@@ -1,0 +1,62 @@
+
+# Vocabulary Systems
+
+
+
+>
+>***Scope***
+>
+>This content is in intended to provide guidance on the use of vocabulary systems. It will introduce systems that support editing and validation of vocabularies.
+>
+>***Audience***
+>
+>_This module is primarily targeted to managers and users (vocab owners and contributors) of established vocabularies. It is assumed that learners have some experience with using document management or version control systems, and general familiarity with data management in practice._
+>
+>***Outcome***
+>
+>_Learners should be able to use systems to edit, vadidate and version vocabularies.
+>
+>----------------
+
+💡 _Identifies troubleshooting tips, common errors and potential issues._
+
+> 📝 _Notes that summarise content at the end of a module._
+
+
+# VocEdit + GitHub
+
+
+## 
+## 
+  
+```turtle
+@prefix policy: <https://linked.data.gov.au/def/policy/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+fast:
+
+policy:7353843a-9107-49af-bcd0-a8eac00bcd54 a skos:Concept ;
+	skos:prefLabel "Socioeconomic status"@en ;
+	skos:exactMatch <http://id.worldcat.org/fast/1123359> ;
+	
+```
+
+# SHACL Validator
+
+
+💡 **Tip:** When ...
+
+
+
+  
+## Exercise: Save a vocabulary to GitHub
+
+# References and Further Reading
+
+* AGLDWG. (n.d.). VocPub profile specification. Retrieved April 17, 2025, from https://agldwg.github.io/vocpub-profile/specification.html
+* W3C (n.d.). QSKOS. Retrieved March 5, 2025, from https://www.w3.org/2001/sw/wiki/QSKOS
+* W3C (2009). SKOS reference. https://www.w3.org/TR/skos-reference/
+* W3C (2014). Turtle: Terse RDF triple language (W3C Recommendation). Retrieved from https://www.w3.org/TR/turtle/
