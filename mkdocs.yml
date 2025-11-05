@@ -65,6 +65,7 @@ nav:
         - 'Vocabs':
             - 'Introduction': 'concepts/vocabs/introduction.md'
             - 'Advanced': 'concepts/vocabs/creation.md'
+            - 'Vocab reuse': 'concepts/vocabs/vocab-reuse.md'
             - 'Patterns': 'concepts/vocabs/patterns.md'
         - 'Agents':
             - 'Patterns': 'concepts/agents/patterns.md'
