@@ -67,7 +67,10 @@ See [Import a concept](#import-a-concept) excersise for more details.
 
 ### Verbatim
 
-While using an existing vocabulary as-is requires no editing work, there will usually be a need to attribute the creator or publisher within your local business context.
+While using an existing vocabulary as-is requires no editing work, there will usually be a need to attribute the creator or publisher within your local business context. Also ensure rights information are checked, even if you have no plans to extend or remix the vocabulary - look out for:
+- `sdo:license` / `dcterms:license`
+- `dcterms:accessRights` / `dcterms:rights`
+- `sdo:copyrightHolder` / `isorole:rightsHolder`
 
 ### Reuse non-semantic vocabularies
 
