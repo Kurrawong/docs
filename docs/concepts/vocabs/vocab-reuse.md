@@ -208,23 +208,37 @@ It's worth checking if there are existing vocabularies (published by a third par
 
 To import a concept from another vocabulary:
 
-- update the `skos:ConceptScheme`
-- add a new 	`skos:Concept`, and
-- add or update a 'skos:Collection` (optionally)
+- add the new `skos:Concept`
+- update the `skos:ConceptScheme`, and
+- add a `skos:Collection` (optional)
 
-1. Navigate in your browser to the vocabulary’s URI, for example:  
+1. Navigate in your browser to the vocabulary URI:  
    `https://linked.data.gov.au/def/road-travel-direction`
 
 2. Download the Turtle (`.ttl`) representation directly using this link:  
    <a href="https://linked.data.gov.au/def/road-travel-direction.ttl" download>
-   Download Road Travel Direction (Turtle)
+   Download Road Travel Direction (Turtle file)
    </a>
 
 3. Open the downloaded `.ttl` file in a text or code editor.
 
-4. Add the `@prefix` declaration:  
+4. Add the `@prefix` declarations:  
    ```turtle
+   @prefix : <https://linked.data.gov.au/def/road-travel-direction/> .   
+   @prefix cs: <https://linked.data.gov.au/def/road-travel-direction> .
+   @prefix agldwgstatus: <linked.data.gov.au/def/reg-status/> .
+   @prefix dcterms: <http://purl.org/dc/terms/> .
+   @prefix owl: <http://www.w3.org/2002/07/owl#> .
+   @prefix prov: <http://www.w3.org/ns/prov#> .
+   @prefix qsi: <https://linked.data.gov.au/org/qsi> .
+   @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+   @prefix reg:  <http://purl.org/linked-data/registry#> .
+   @prefix sdo: <https://schema.org/> .
+   @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+# add srti:
    @prefix srti: <http://cef.uv.es/lodroadtran18/def/transporte/dtx_srti#> .
+   @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+   
    ```
 
 5. Add the concept in your vocabulary:
@@ -265,12 +279,8 @@ To import a concept from another vocabulary:
         :unknown ;
 # History note extended
     skos:historyNote "This vocabulary was created by the Queensland Spatial Information services and imports some concepts from other vocabularies" ;
-    skos:prefLabel "Road Travel Direction"@en ;
-    prov:qualifiedAttribution
-        [   a prov:qualifiedAttribution ;
-            prov:hadRole droles:custodian ;
-            prov:agent <https://linked.data.gov.au/org/icsm>
-        ] ;
+    skos:prefLabel "Road Travel Direction"@en
+.
 ```
 
 7. Create new ``skos:Collection``
@@ -278,6 +288,8 @@ To import a concept from another vocabulary:
 ```turtle
 :srti-vocabulary
     a skos:Collection ;
+    dcterms:creator :qsi ;
+    dcterms:publisher :qsi ;
     prov:wasDerivedFrom :srti ;
     rdfs:isDefinedBy cs: ;
     skos:definition "Concepts from the LOD SRTI DATEX II ontology" ;
@@ -288,7 +300,7 @@ To import a concept from another vocabulary:
 .
 ```
 
-Save and document your changes, noting provenance and licensing information (e.g., using `dcterms:source`).
+Save your changes.
 
 
 
