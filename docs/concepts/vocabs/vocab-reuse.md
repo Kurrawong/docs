@@ -36,7 +36,7 @@ Whatever domain we work in, there's a fair chance that useful vocabularies have 
 - Adopting parts vs whole vocabularies
 - Attribution and provenance: representing and preserving primary sources.
 
-## Weighing it up
+## Reuse patterns
 
 Is it worth reusing existing vocabularies in part or whole? There are a various patterns that can be followed:
 
@@ -72,17 +72,9 @@ While using an existing vocabulary as-is requires no editing work, there will us
 - `dcterms:accessRights` / `dcterms:rights`
 - `sdo:copyrightHolder` / `isorole:rightsHolder`
 
-### Reuse non-semantic vocabularies
-
-Building a vocabulary from scratch ensures vocabularies are well-formed and presented. Existing vocabularies published in other contexts may not be so well-formed! Existing vocabularies, including those found via vocabulary registries, will vary in their conformance with data standards such as RDF and SKOS, before even considering quality standards like VocPub and qSKOS ([W3C, n.d](#references-and-further-reading).). Here are a couple of challenges to consider:
-
-- Unstructured: an existing vocabulary is well presented by not machine-readable, such as in PDF or HTML. The vocabulary terms may indicate properties and relationships, but these properties themselves are not machine-readable. The vocabulary may need to be scraped and cleaned, eventually transformed into an RDF format compatible with a SKOS editing tool.
-- Unidentified: a vocabulary with labels but no identifiers - new IRIs will need to be constructed in this case. 
-
 ### Customise
 
 You may make minor changes to published vocabularies to meet local requirements. Vocabulary concepts may be added; labels may be updated (changes to spelling or swapping an `skos:altLabel` for `skos:prefLabel`). Changes will need to be acknowledged at both the concept and concept scheme level - use 
-
 
 ## Finding vocabularies
 
@@ -111,6 +103,24 @@ flowchart TD
     Query -->|Find all thesauruses or thesauri in philosophy that include English and French labels| Thesaurus
     Query -->|Find all medical vocabularies used in the Asia-Pacific region.| SubjectHeadings
 ```
+## Reuse non-semantic vocabularies
+
+Building a vocabulary from scratch ensures vocabularies are well-formed and presented. Existing vocabularies published in other contexts may not be so well-formed! Existing vocabularies, including those found via vocabulary registries, will vary in their conformance with data standards such as RDF and SKOS, before even considering quality standards like VocPub and qSKOS ([W3C, n.d](#references-and-further-reading).). Here are a couple of challenges to consider:
+
+### Unstructured 
+An existing vocabulary is well presented by not machine-readable, such as in PDF or HTML. The vocabulary terms may indicate properties and relationships, but these properties themselves are not machine-readable. The vocabulary may need to be scraped and cleaned, eventually transformed into an RDF format compatible with a SKOS editing tool.
+
+### Opaque 
+An existing vocabulary has non-semantic or opaque identifiers, such as "123" or "AC123", that are not unique out of context and do not resolve on the web.
+
+For provenance and tracking, use such identifiers as the suffix of IRIs in your vocablary, such as
+- `https://vocabs.mydomain.org/AC123`
+
+Furthermore, retain the identifier as a `skos:notation`:
+- `skos:notation "AC123"` ;
+
+### Unidentified
+Where a vocabulary has labels but no identifiers - new IRIs will need to be constructed. 
 
 ## Language
 
