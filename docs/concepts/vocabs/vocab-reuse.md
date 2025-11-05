@@ -63,7 +63,7 @@ You might import a cluster of concepts from an existing vocabulary into a local 
 - adding a `rdfs:isDefinedBy` statement indicating an IRI of a concept scheme where the concept is from
 - creating a `skos:Collection`, specifically for grouping concepts derived from some other vocabulary
 
-See [Import a concept](#import-a-concept) for details.
+See [Import a concept](#-import-a-concept) for details.
 
 ### Verbatim
 
@@ -171,7 +171,7 @@ Child support `skos:exactMatch` Child support
 
 ## Add an imported concept
 
-When a vocabulary imports concepts from another vocabulary, you will need to both add the concept and also update the concept scheme. Optionally, you might create a 'collection' that groups the imported concepts in to a manageble frame. See [Import a concept](#import-a-concept) for detailed steps for importing a concept into a vocabulary.
+When a vocabulary imports concepts from another vocabulary, you will need to both add the concept and also update the concept scheme. Optionally, you might create a 'collection' that groups the imported concepts in to a manageble frame. See [Import a concept](#-import-a-concept) for detailed steps for importing a concept into a vocabulary.
 
 
 ## Optional elements
