@@ -218,7 +218,7 @@ It's worth checking if there are existing vocabularies (published by a third par
 
 💡 When constructing IRIs for an existing vocabulary, base the IRI suffix on any existing identifiers or tokens that may be present in the vocabulary. 
 
-🚧 ### Import a concept
+### 🚧 Import a concept
 
 To import a concept from another vocabulary:
 
