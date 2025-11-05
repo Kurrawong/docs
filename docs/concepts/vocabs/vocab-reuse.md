@@ -214,6 +214,7 @@ Example:
     sdo:citation: "https://policy.usq.edu.au/documents/14266PL"^^xsd:anyURI
 	.
 ```
+
 ... where the Citation refers to a policy definition originating from an external source. In this example the URL of the source is given so that it can be easily looked up and, if needed, verified and validated.
 
 
