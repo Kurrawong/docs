@@ -174,7 +174,7 @@ Child support `skos:exactMatch` Child support
 When a vocabulary imports concepts from another vocabulary, you will need to both add the concept and also update the concept scheme. Optionally, you might create a 'collection' that groups the imported concepts in to a manageble frame. See [Import a concept](#-import-a-concept) for detailed steps for importing a concept into a vocabulary.
 
 
-## Optional elements
+## Additional elements
 You can add more metadata to your Concepts and Concept schemes that will improve the clarity, scope and provenance of your vocabulary. Consider the following additional elements:
 
 ### Derived from
