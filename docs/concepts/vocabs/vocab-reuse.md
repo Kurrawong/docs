@@ -179,7 +179,7 @@ You can add more metadata to your Concepts and Concept schemes that will improve
 
 ### Derived from
 
-Use [derived](http://www.w3.org/ns/prov#wasDerivedFrom) from to reference an IRI for an external vocabulary from which the vocabulary is derived.
+Use `prov:wasDerivedFrom` to reference an IRI for an external vocabulary from which the vocabulary is derived.
 
 ### Derivation mode
 
@@ -214,7 +214,6 @@ It's worth checking if there are existing vocabularies (published by a third par
 - workflows to suit vocabulary formats
 - derivation modes: the type and extent of reuse
 - how to indicate provenance and attribution
-
 
 💡 When constructing IRIs for an existing vocabulary, base the IRI suffix on any existing identifiers or tokens that may be present in the vocabulary. 
 
