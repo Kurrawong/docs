@@ -235,7 +235,7 @@ To import a concept from another vocabulary:
 
 3. Open the downloaded `.ttl` file in a text or code editor.
 
-4. Add the `@prefix` declarations:  
+4. Add the prefix declarations:  
    ```turtle
    @prefix : <https://linked.data.gov.au/def/road-travel-direction/> .   
    @prefix cs: <https://linked.data.gov.au/def/road-travel-direction> .
@@ -248,10 +248,9 @@ To import a concept from another vocabulary:
    @prefix reg:  <http://purl.org/linked-data/registry#> .
    @prefix sdo: <https://schema.org/> .
    @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-# add srti:
+  # add srti:
    @prefix srti: <http://cef.uv.es/lodroadtran18/def/transporte/dtx_srti#> .
    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-   
    ```
 
 5. Add the concept in your vocabulary:
