@@ -65,8 +65,6 @@ You might import a cluster of concepts from an existing vocabulary into a local 
 
 See [Import a concept](#import-a-concept) for details.
 
-#import-a-concept
-
 ### Verbatim
 
 While using an existing vocabulary as-is requires no editing work, there will usually be a need to attribute the creator or publisher within your local business context. Also ensure rights information is checked, even if you have no plans to extend or remix the vocabulary - look out for:
