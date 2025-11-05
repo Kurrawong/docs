@@ -297,7 +297,7 @@ To import a concept from another vocabulary:
 
 7. Create new ``skos:Collection``
 
-**💡 A `skos:Collection` references a `skos:Concept` using the `skos:member` property.
+💡 A `skos:Collection` references a `skos:Concept` using the `skos:member` property.
 
 ```turtle
 :srti-vocabulary
