@@ -50,16 +50,17 @@ Is it worth reusing existing vocabularies in part or whole? There are a various 
 Why not develop a vocabulary from scratch, with sources of warrant that you know are relevant to your community and use case?
 
 Even if you build from scratch, you might consider developing a vocabulary that is itself reuse-able in your industry, sector or in other regions. The more use your vocabulary gets, the more interoperabilty you have with other systems and catalogues. If you want your vocabulary reused, ensure:
+
 - clear rights and licensing are declared, within the vocabulary concept scheme and in surrounding web context
 - governance arrangements for the vocabulary are stated somewhere - build trust by declaring the update history and cycle, and commitments to persisting concept IRI
 - distributions: ensure your vocabulary can be accessed in standard formats and over standard APIs
 
-Even if you build from scratch, you can match home-grown concepts with concepts in external vocabularies - see [Mapping concepts with other vocabularies](#mapping-concepts-with-other-vocabularies)
+Even if you build from scratch, you can match home-grown concepts with concepts in external vocabularies - see [Mapping concepts with other vocabularies](#mapping-concepts-with-other-vocabularies).
 
 ### Adoption
 You might import a cluster of concepts from an existing vocabulary into a local vocabulary project. There are a number of things you should do to indicate provenance of such concepts, and to support ongoing management of imported concepts, including:
 
-- adding a `prov#wasDerivedFrom` statement for an imported concept
+- adding a `prov:wasDerivedFrom` statement for an imported concept
 - adding a `rdfs:isDefinedBy` statement indicating an IRI of a concept scheme where the concept is from
 - creating a `skos:Collection`, specifically for grouping concepts derived from some other vocabulary
 
@@ -68,6 +69,7 @@ See [Import a concept](#-import-a-concept) for details.
 ### Verbatim
 
 While using an existing vocabulary as-is requires no editing work, there will usually be a need to attribute the creator or publisher within your local business context. Also ensure rights information is checked, even if you have no plans to extend or remix the vocabulary - look out for:
+
 - `sdo:license` / `dcterms:license`
 - `dcterms:accessRights` / `dcterms:rights`
 - `sdo:copyrightHolder` / `isorole:rightsHolder`
@@ -114,9 +116,10 @@ An existing vocabulary is well presented by not machine-readable, such as in PDF
 An existing vocabulary has non-semantic or opaque identifiers, such as "123" or "AC123", that are not unique out of context and do not resolve on the web.
 
 For provenance and tracking, use such identifiers as the suffix of IRIs in your vocabulary, such as
-- `https://vocabs.mydomain.org/AC123`
+- `https://vocabs.mydomain.org/AC123`.
 
 Furthermore, retain the identifier as a `skos:notation`:
+
 - `skos:notation "AC123"` ;
 
 ### Unidentified
@@ -148,6 +151,7 @@ policy:7353843a-9107-49af-bcd0-a8eac00bcd54 a skos:Concept ;
 ## Can I reuse this?
 
 Check an existing vocabulary for rights and licensing statements. Information about terms and conditions should be stated within the `skos:conceptScheme`, but might be stated outside the vocabulary data in a non-semantic resource (such as a vocabulary landing page). Some properties to check for include:
+
 - `sdo:license` / `dcterms:license`
 - `dcterms:accessRights`
 - `sdo:copyrightHolder` / `isorole:rightsHolder`
@@ -183,7 +187,7 @@ Use `prov:wasDerivedFrom` to reference an IRI for an external vocabulary from wh
 
 ### Derivation mode
 
-A Derivation mode value is mandatory if a value is given for the `prov#wasDerivedFrom` property. Derivation mode concepts are selected from the [Vocabulary Derivation Modes](https://linked.data.gov.au/def/vocdermods) vocabulary.
+A Derivation mode value is mandatory if a value is given for the `prov:wasDerivedFrom` property. Derivation mode concepts are selected from the [Vocabulary Derivation Modes](https://linked.data.gov.au/def/vocdermods) vocabulary.
 
 ### Notation
 
@@ -216,6 +220,7 @@ Example:
 ## Reuse existing vocabularies
 
 It's worth checking if there are existing vocabularies (published by a third party) that match your requirements. In this section we will discuss:
+
 - finding and identifying vocabularies for reuse
 - workflows to suit vocabulary formats
 - derivation modes: the type and extent of reuse
@@ -321,8 +326,6 @@ To import a concept from another vocabulary:
 ```
 
 Save your changes.
-
-
 
 ## References and Further Reading
 
