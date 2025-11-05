@@ -145,7 +145,7 @@ policy:7353843a-9107-49af-bcd0-a8eac00bcd54 a skos:Concept ;
 	skos:prefLabel "Socioeconomic status"@en ;
 	skos:exactMatch <http://id.worldcat.org/fast/1123359>
 .
-	
+
 ```
 
 ## Can I reuse this?
