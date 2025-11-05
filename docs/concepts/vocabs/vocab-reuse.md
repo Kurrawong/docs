@@ -74,7 +74,7 @@ While using an existing vocabulary as-is requires no editing work, there will us
 
 ### Customise
 
-You may make minor changes to published vocabularies to meet local requirements. Vocabulary concepts may be added; labels may be updated (changes to spelling or swapping an `skos:altLabel` for `skos:prefLabel`). Changes will need to be acknowledged at both the concept and concept scheme level - use 
+You may make minor changes to published vocabularies to meet local requirements. Vocabulary concepts may be added; labels may be updated (changes to spelling or swapping an `skos:altLabel` for `skos:prefLabel`). Changes will need to be acknowledged at both the concept and concept scheme level - see [Add an imported concept](#add-an-imported-concept) for how to do this. 
 
 ## Finding vocabularies
 
@@ -167,7 +167,7 @@ Child support `skos:exactMatch` Child support
 ... where _Child support_ is a concept in both [Public Policy Taxonomy](https://linked.data.gov.au/def/policy/0acd51d0-a4a3-48eb-b6f4-aa086f966057) and [FAST](http://id.worldcat.org/fast/854679).
 
 
-## 🚧 Add imported concepts to a collection
+## 🚧 Add an imported concept
 
 When a vocabulary imports 6
 
