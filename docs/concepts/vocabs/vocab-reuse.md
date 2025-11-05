@@ -11,7 +11,7 @@
 >
 >***Audience***
 >
->_This module is primarily targeted to managers and users (vocab owners and contributors) of established vocabularies. It is assumed that learners have some experience with using document management or version control systems, and general familiarity with data management in practice._
+>_This module is primarily targeted to managers and owners and of established vocabularies. It is assumed that learners have some experience with using document management or version control systems, and general familiarity with data management in practice._
 >
 >***Outcome***
 >
