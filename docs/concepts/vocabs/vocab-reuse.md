@@ -187,11 +187,11 @@ A Derivation mode value is mandatory if a value is given for the `prov#wasDerive
 
 ### Notation
 
-All concepts must have an IRI, and the IRI identifier may be a completely opaque string based on nothing other than a randomly generated string (such as from the UUID scheme). However, concepts may optionally store a `skos:notation`, which is like a secondary identifier and is based on some source or reference data that the concept was derived from.
+All concepts must have an IRI, and the IRI identifier may be a completely opaque string based on nothing other than a randomly generated string (such as from the UUID scheme). However, concepts may optionally store a `skos:notation`, which is like a secondary identifier and is based on some source or reference data that the concept was derived from. Note that keeping notations when importing from [Opaque](#opaque) vocabularies is especially important.
 
 ### Defining vocabulary IRI
 
-A concept may be 'imported' from another vocabulary. We can assume that a concept is imported if it shares the same or very similar metadata (such as a `skos:definition`) and labels. Such concepts should indicate the [defining](http://www.w3.org/2000/01/rdf-schema#isDefinedBy) vocabulary from where they were imported. Read more about [importing](#adoption) concepts and references. 
+A concept may be 'imported' from another vocabulary. We can assume that a concept is imported if it shares the same or very similar metadata (such as a `skos:definition`) and labels. Such concepts should indicate the vocabulary from where they were imported with `rdfs:isDefinedBy` . Read more about [importing](#adoption) concepts and references. 
 
 ### Citation
 
@@ -199,11 +199,17 @@ For each concept, a [Citation](https://schema.org/citation), an optional referen
 
 Example:
 
-    IRI: https://data.idnau.org/pid/vocab/policy-types/policy
-    prefLabel: policy
-    definition: A strategic directive and high-level description of desired behaviour developed by an organisation to help govern how it functions...
-    citation: https://policy.usq.edu.au/documents/14266PL
+ ```turtle
+   @prefix sdo: <https://schema.org/> .
+   @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+   @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+    <https://data.idnau.org/pid/vocab/policy-types/policy> a skos:Concept ;
+    skos:prefLabel: "policy"@en ;
+    skos:definition: "A strategic directive and high-level description of desired behaviour developed by an organisation to help govern how it functions..."@en ;
+    sdo:citation: "https://policy.usq.edu.au/documents/14266PL"^^xsd:anyURI
+	.
+```
 ... where the Citation refers to a policy definition originating from an external source. In this example the URL of the source is given so that it can be easily looked up and, if needed, verified and validated.
 
 
