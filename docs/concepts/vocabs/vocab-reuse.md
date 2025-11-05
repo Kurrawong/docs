@@ -124,22 +124,24 @@ Where a vocabulary has labels but no identifiers - new IRIs will need to be cons
 
 ## Language
 
-It is perhaps unnecessary to mention that a vocabulary fit for reuse needs to be comprehensible in the language of expected users. A skos:`ConceptScheme` will typically list the language codes used for `skos:Concept` labels, and in many cases there will be more than one - multilingual vocabularies are fairly common. If an existing vocabulary includes language labels that are not needed in a local context, they can be ignored (a local system is configured to only process labels with a given language tag). However, if parts of a vocabulary are to be adopted [see Adoption](#adoption), it might be worth considering whether managing a partially-multilingual vocabulary is an unwanted or unnecessary complication in your context.  
+It is perhaps unnecessary to mention that a vocabulary fit for reuse needs to be comprehensible in the language of expected users. A skos:`ConceptScheme` will typically list the language codes used for `skos:Concept` labels, and in many cases there will be more than one - multilingual vocabularies are fairly common. If an existing vocabulary includes language labels that are not needed in a local context, they can be ignored (a local system is configured to only process labels with a given language tag). However, if parts of a vocabulary are to be adopted [see Adoption](#adoption) or cusomised [see Customise](#customise) it might be worth considering whether managing a partially-multilingual vocabulary is an unwanted or unnecessary complication in your context.  
 
-Even within a natural language, there may be regional differences. 
+Even within a natural language, there may be regional differences, such as Australian use of _Socioeconomic status_ and United States use of _Social status_:
 
 ```turtle
+@prefix fast: <http://id.worldcat.org/fast/> .
 @prefix policy: <https://linked.data.gov.au/def/policy/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 
-fast:
+fast:1123359 a skos:Concept ;
+	skos:prefLabel "Social status"@en ;
+	skos:exactMatch policy:7353843a-9107-49af-bcd0-a8eac00bcd54
+.
 
 policy:7353843a-9107-49af-bcd0-a8eac00bcd54 a skos:Concept ;
 	skos:prefLabel "Socioeconomic status"@en ;
-	skos:exactMatch <http://id.worldcat.org/fast/1123359> ;
+	skos:exactMatch <http://id.worldcat.org/fast/1123359>
+.
 	
 ```
 
