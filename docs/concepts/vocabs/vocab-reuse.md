@@ -15,7 +15,7 @@
 >
 >***Outcome***
 >
->_Learners should be able to adopt vocabularies in part or in whole into their local contexts. Learners will understand implications for managing externally sourced vocabularies as part of local operations_
+>_Learners should be able to adopt vocabularies in part or in whole into their local contexts, and understand implications for managing externally sourced vocabularies as part of local operations_
 >
 >----------------
 
