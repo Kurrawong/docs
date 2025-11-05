@@ -63,7 +63,9 @@ You might import a cluster of concepts from an existing vocabulary into a local 
 - adding a `rdfs:isDefinedBy` statement indicating an IRI of a concept scheme where the concept is from
 - creating a `skos:Collection`, specifically for grouping concepts derived from some other vocabulary
 
-See [Import a concept](#import-a-concept) exersise for more details.
+See [Import a concept](#import-a-concept) for details.
+
+#import-a-concept
 
 ### Verbatim
 
@@ -105,7 +107,7 @@ flowchart TD
 ```
 ## Reuse non-semantic vocabularies
 
-Building a vocabulary from scratch ensures vocabularies are well-formed and presented. Existing vocabularies published in other contexts may not be so well-formed! Existing vocabularies, including those found via vocabulary registries, will vary in their conformance with data standards such as RDF and SKOS, before even considering quality standards like VocPub and qSKOS ([W3C, n.d](#references-and-further-reading).). Here are a couple of challenges to consider:
+Building a vocabulary from scratch ensures vocabularies are well-formed and presented. Existing vocabularies published in other contexts may not be so well-formed! Existing vocabularies, including those found via vocabulary registries, will vary in their conformance with data standards such as RDF and SKOS, before even considering quality standards like VocPub and qSKOS ([W3C, n.d](#references-and-further-reading). Here are a couple of challenges to consider:
 
 ### Unstructured 
 An existing vocabulary is well presented by not machine-readable, such as in PDF or HTML. The vocabulary terms may indicate properties and relationships, but these properties themselves are not machine-readable. The vocabulary may need to be scraped and cleaned, eventually transformed into an RDF format compatible with a SKOS editing tool.
@@ -124,7 +126,7 @@ Where a vocabulary has labels but no identifiers - new IRIs will need to be cons
 
 ## Language
 
-It is perhaps unnecessary to mention that a vocabulary fit for reuse needs to be comprehensible in the language of expected users. A skos:`ConceptScheme` will typically list the language codes used for `skos:Concept` labels, and in many cases there will be more than one - multilingual vocabularies are fairly common. If an existing vocabulary includes language labels that are not needed in a local context, they can be ignored (a local system is configured to only process labels with a given language tag). However, if parts of a vocabulary are to be adopted [see Adoption](#adoption) or customised [see Customise](#customise) it might be worth considering whether managing a partially-multilingual vocabulary is an unwanted or unnecessary complication in your context.  
+It is perhaps unnecessary to mention that a vocabulary fit for reuse needs to be comprehensible in the language of expected users. A `skos:ConceptScheme` will typically list the language codes used for `skos:Concept` labels, and in many cases there will be more than one - multilingual vocabularies are fairly common. If an existing vocabulary includes language labels that are not needed in a local context, they can be ignored (a local system is configured to only process labels with a given language tag). However, if parts of a vocabulary are to be adopted [see Adoption](#adoption) or customised [see Customise](#customise) it might be worth considering whether managing a partially-multilingual vocabulary is an unwanted or unnecessary complication in your context.  
 
 Even within a natural language, there may be regional differences, such as Australian use of _Socioeconomic status_ and United States use of _Social status_:
 
