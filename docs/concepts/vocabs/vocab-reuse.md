@@ -203,7 +203,7 @@ For each concept, a [Citation](https://schema.org/citation), an optional referen
 
 Example:
 
- ```turtle
+```turtle
    @prefix sdo: <https://schema.org/> .
    @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
