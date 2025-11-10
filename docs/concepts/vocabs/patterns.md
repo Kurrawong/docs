@@ -151,10 +151,10 @@ There are several ways to associate images with Concepts in SKOS vocabularies an
 
 The following is a list of KurrawongAI-supported vocabulary systems that have some image capability:
 
-* [VocExcel](../../products/tools/vocexcel)
+* [VocExcel](https://tools.kurrawong.ai/vocexcel)
     * for the creation of vocabs
     * VocExcel v0.8.0, due for release in Jun, 2025, will contain an `skos:example` slot for Concepts that can be used to link to an image via URL
-* [VocEdit](../../products/tools/vocedit)
+* [VocEdit](https://tools.kurrawong.ai/vocedit)
     * for the creation of vocabs
     * VocEdit already (May 2025) supports adding any predicated and literal values to Concepts, so the URL and local file path methods can be used now
     * the July 2025 release of VocEdit will support uploading small SVG files for the values of `skos:example` or `schema:image` predicates 
