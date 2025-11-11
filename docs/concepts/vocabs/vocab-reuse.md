@@ -82,7 +82,8 @@ You may make minor changes to published vocabularies to meet local requirements.
 
 If you are going to Adopt, use Verbatim or Customise a vocabulary, you'll need to find relevant vocabularies to do so with. Even if you are Building from scratch, it's a good idea to know about other vocabulary work already done in your domain. There may already be vocabularies that meet your requirements, such as enriching the semantics of a metadata catalogue. They may exist in a nearby knowledge domain, industry or sector, and may originate in other global regions.
 
-Look for vocabularies available for reuse listed in vocabulary registries, such as:
+Look for vocabularies available for reuse listed in vocabulary registries and discovery services, such as:
+
 
 - [Research Vocabularies Australia](https://vocabs.ardc.edu.au): vocabularies span a wide range of research and industry domains. Vocabulary search can be filtered by format and licensing, and many may be accessed directly from the RVA site via download or API.
 - [BARTOC.org](https://bartoc.org): this is an international registry of vocabularies and ontologies in many languages and with over 2,500 records. 
