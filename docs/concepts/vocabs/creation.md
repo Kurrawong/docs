@@ -125,9 +125,9 @@ skos:related <http://vocabulary.curriculum.edu.au/scot/10141>
 
 There may be a need to define a group of concepts within a vocabulary that share certain characteristics. A vocabulary may contain a `skos:Collection`, or even many collections of concepts.
 
-Collections are like a non-hierarchical means of gathering concepts. So for example concepts that are members of a Collection may be from different parts of a vocabulary hierarchy (and not all broader-narrower parts of a hierarchy branch). One use case for collections is to clearly represent concepts that have been 'imported' from another concept scheme. We will look at collections used in this way in the [Vocabulary Reuse](vocab_reuse.md#adoption) module.
+Collections are like a non-hierarchical means of gathering concepts. So for example concepts that are members of a Collection may be from different parts of a vocabulary hierarchy (and not all from within the same broader-narrower parts of a hierarchy branch). One use case for creating a `skos:Collection` is to clearly represent concepts that have been 'imported' from another skos:ConceptScheme. For more about using collections in this way see the [Import a concept](vocab_reuse.md#importaconcept) excersise in the _Vocabulary reuse_ module.
 
-A `skos:Collection` connects to a `skos:concept` using the `skos:member` property.
+💡 **Tip:** A `skos:Collection` connects to a `skos:Concept` using the `skos:member` property.
 
 ## Identifiers
 
@@ -155,13 +155,13 @@ Here's a real example from a published vocabulary:
     _scot_ is an identifier for the whole vocabulary, and
     _15326_ is a concept ID
 
-#### IRI patterns
+### IRI patterns
 
 What is the name of the concept above that has _15326_ as an identifier? You need to look it up on the web! The whole point of using ``http`` identifiers is so that the concepts can be looked up on the web by anyone, anywhere (and by anything - humans, browsers, bots etc.).
 
-Note that this IRI uses an increment method for generating a concept ID - the next concept IRI added to this vocabulary would have the suffix _15327_. This incremented number doesn't mean anything - we can't tell what the concept is about just by looking at this number. Any vocabulary could use this same increment method, and therefore this ID would appear for concepts in different vocabularies. The IRI as a whole, however, is unique.
+Note that this example IRI uses an increment method for generating a concept ID - the next concept IRI added to this vocabulary would have the suffix _15327_. This incremented number doesn't mean anything - we can't tell what the concept is about just by looking at this number. Any vocabulary could use this same increment method, and therefore this ID would appear for concepts in different vocabularies. The IRI as a whole, however, is unique.
 
-Here's another method for generating an IRI suffix:
+Here's another type of IRI suffix:
 
 ``http://vocabulary.curriculum.edu.au/crossCurriculum/f7f47140-a85e-498b-9367-0d468082fc2b``
 
