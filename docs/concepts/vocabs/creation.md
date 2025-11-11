@@ -105,7 +105,7 @@ In SKOS, _documentation_ properties include:
 
 - A `skos:note` - a note can say anything! If appropriate, use the following properties instead that have clearer semantics: `skos:changeNote`, `skos:definition`, `skos:editorialNote`, `skos:example`, or `skos:historyNote`
 - A `skos:changeNote` - you can indicate a change to a label, or even a changed relationship to another concept.
-- A 'skos:definition' - this field is mandatory in VocPub for all `skos:Concept`, `skos:ConceptScheme` and `skos:Collection` instances.  
+- A `skos:definition` - this field is mandatory in VocPub for all `skos:Concept`, `skos:ConceptScheme` and `skos:Collection` instances.  
 - A `skos:editorialNote` - similar to `skos:ChangeNote` but perhaps for internal use only, such as "Fixed typo [date]" or "review by [date]".
 - A `skos:example` - indicate some thing in the world that exemplifies the concept - this might be any kind of information resource, but references to images is not usually expected in Documentation properties (see [#images] to do this).
 - A `skos:historyNote` - this property must be used to indicate the origins of a `skos:ConceptScheme` or a `skos:Collection`, where the origin cannot be indicated with an IRI (so with a textual reference, e.g. (this vocabulary / collection was created for purpose X by project Y on behalf of agency Z"). For a skos:Concept, the same rules apply if the concept origin is NOT from within its `skos:ConceptScheme`, e.g. "this Concept originated in Vocabulary X, added here [date]".  
@@ -144,7 +144,7 @@ IRIs are web page URLs that:
 
 An IRI typically follows a pattern such as:
 
-``http:// [vocabulary subdomain] . [authority / domain] . [vocabulary name] . [concept ID]``
+- http://[vocab subdomain] . [authority / domain] . [vocabulary name] . [concept ID]
 
 Here's a real example from a published vocabulary:
 
@@ -179,19 +179,30 @@ A third _NOT RECOMMENDED_ method for constructing a concept ID is to base the ID
 "/org-indigeneity/" is the ID for the vocabulary, and
 "/run-by-indigenous-persons/" is the ID for the concept
 
-The prefLabel method is not recommended. Why? What if the `skos:prefLabel` for this concept changes to _Managed by indigenous persons_? The IRI stays the same (they should be persistent), and now doesn't match (exactly) the ``skos:prefLabel``. A similar problem is encountered if the concept has multiple ``prefLabel`` in different languages - which one should be used? IRIs are more robust if their concept IDs are opaque (they don't say anything about the concept itself).
+The preferred label method is not recommended. Why? What if the `skos:prefLabel` for this concept changes to _Managed by indigenous persons_? The IRI stays the same (they should be persistent), and now doesn't match (exactly) the `skos:prefLabel`, which could cause some confusion. A similar problem is encountered if the concept has multiple labels in different languages - which one should be used as an IRI suffix? IRIs are more robust if their concept IDs are opaque (meaning that they don't say anything about the concept itself).
+
+Another mixup that can result from meaningful IRI patterns is when a suffix indicates a level or position in a vocabulary hierarchy. Here's a hypothetical example:
+
+```turtle
+<https://vocab/mydomain/termid/111633> a skos:Concept ;
+skos:prefLabel "Work Health and Safety Manager"@en ;
+skos:broader <https://vocab/mydomain/termid/1116>
+```
+
+... where the suffix "111633" implies membership within the broader concept "<.../1116>". What if a decision is made to move this concept to another part of the vocabulary (that is, to remove this `skos:broader` relationship and replace with a new one (such as "<.../26>")? Like the re-labelled example above, the mis-match between the IRI and the change in position could cause confusion.
 
 #### Version IRI
 
-A supplementary IRI may be added that indicates the version of a concept, e.g. "1.1". A [version IRI](https://www.w3.org/2002/07/owl#versionIRI) may be used, example:
+A supplementary IRI may be added that indicates the version of a concept, e.g. "1.1". A [version IRI](https://www.w3.org/2002/07/owl#versionIRI) may be used, for example:
 
 ```turtle
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 
-IRI: https://linked.data.gov.au/def/address-alias-type
-skos:prefLabel: Address Alias Type
-owl:VersionIRI: https://linked.data.gov.au/def/address-alias-type/1.0
+<https://linked.data.gov.au/def/address-alias-type> a skos:Concept ;
+skos:prefLabel: "Address Alias Type"@en ;
+owl:versionIRI: <https://linked.data.gov.au/def/address-alias-type/1.0>
+.
 ```
 
 # References and Further Reading
