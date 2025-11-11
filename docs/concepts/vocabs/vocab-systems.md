@@ -65,10 +65,8 @@ A SHACL file can be used in various validation tools and services - here we'll d
 
 A page of Validation Results will launch. This report let's you know where your vocabulary does not conform to the VocPub profile. The messages are colour coded and indicates issues in your vocabulary that are:
 
-<span style="color:red">This text is red</span>
-
-- a <span style="color:red">Violation</span> - these issues MUST be addressed for the vocabulary to coform with VocPub specification;
-- a <span style="color:green">Warning</span> - it is recommended that these issues are addressed, but your vocabulary is still valid if you do not; and
+- a 🔴 Violation - these issues MUST be addressed for the vocabulary to coform with VocPub specification;
+- a 🟡 Warning - it is recommended that these issues are addressed, but your vocabulary is still valid if you do not; and
 - _Informational_ - these are optional improvements to the vocabulary
 
 💡 **Tip:** Below these results, a **Full Vaidation Report** is also available.
