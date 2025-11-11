@@ -103,13 +103,13 @@ To add a `skos:related`, follow the following steps, go to VocEdit and:
 
 In SKOS, _documentation_ properties include:
 
-> `skos:note` - a note can say anything! If appropriate, use the following properties instead that have clearer semantics: `skos:changeNote`, `skos:definition`, `skos:editorialNote`, `skos:example`, or `skos:historyNote`
-> `skos:changeNote` - you can indicate a change to a label, or even a changed relationship to another concept.
-> 'skos:definition' - this field is mandatory in VocPub for all `skos:Concept`, `skos:ConceptScheme` and `skos:Collection` instances.  
-> `skos:editorialNote` - similar to `skos:ChangeNote` but perhaps for internal use only, such as "Fixed typo [date]" or "review by [date]".
-> `skos:example` - indicate some thing in the world that exemplifies the concept - this might be any kind of information resource, but references to images is not usually expected in Documentation properties (see [#images] to do this).
-> `skos:historyNote` - this property must be used to indicate the origins of a `skos:ConceptScheme` or a `skos:Collection`, where the origin cannot be indicated with an IRI (so with a textual reference, e.g. (this vocabulary / collection was created for purpose X by project Y on behalf of agency Z"). For a skos:Concept, the same rules apply if the concept origin is NOT from within its `skos:ConceptScheme`, e.g. "this Concept originated in Vocabulary X, added here [date]".  
-> `skos:scopeNote` - use a Scope note to say what kinds of things are included in the concept and what is not included. It may be useful to indicate another concept that should be used instead to describe or catalogue certain kinds of things. For example:
+- A `skos:note` - a note can say anything! If appropriate, use the following properties instead that have clearer semantics: `skos:changeNote`, `skos:definition`, `skos:editorialNote`, `skos:example`, or `skos:historyNote`
+- A `skos:changeNote` - you can indicate a change to a label, or even a changed relationship to another concept.
+- A 'skos:definition' - this field is mandatory in VocPub for all `skos:Concept`, `skos:ConceptScheme` and `skos:Collection` instances.  
+- A `skos:editorialNote` - similar to `skos:ChangeNote` but perhaps for internal use only, such as "Fixed typo [date]" or "review by [date]".
+- A `skos:example` - indicate some thing in the world that exemplifies the concept - this might be any kind of information resource, but references to images is not usually expected in Documentation properties (see [#images] to do this).
+- A `skos:historyNote` - this property must be used to indicate the origins of a `skos:ConceptScheme` or a `skos:Collection`, where the origin cannot be indicated with an IRI (so with a textual reference, e.g. (this vocabulary / collection was created for purpose X by project Y on behalf of agency Z"). For a skos:Concept, the same rules apply if the concept origin is NOT from within its `skos:ConceptScheme`, e.g. "this Concept originated in Vocabulary X, added here [date]".  
+- A `skos:scopeNote` - use a Scope note to say what kinds of things are included in the concept and what is not included. It may be useful to indicate another concept that should be used instead to describe or catalogue certain kinds of things. For example:
 
 ```turtle
 <http://vocabulary.curriculum.edu.au/scot/10109> a skos:Concept ;
