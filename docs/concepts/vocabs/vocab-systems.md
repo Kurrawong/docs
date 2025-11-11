@@ -54,7 +54,7 @@ A SHACL file can be used in various validation tools and services - here we'll d
 🎬 You can find out about the SHACL Validator on the [KurrawongAI YouTube](https://www.youtube.com/watch?v=aOiEVHHfOMc) channel.
 
 
-### 🚧 Validate a SKOS vocabulary with the VocPub SHACL validator
+### 🚧 Validate a vocabulary with VocPub SHACL Validator
 
 1. **Go to** the KurrawongAI [SHACL Validator](https://tools.kurrawong.ai/validate) in any browser 
 2. **Data to validate** > **Upload** > select `pestRiskPath_training.ttl` (*don't have the file? see the [first exercise](https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier) in Introduction to Vocabularies*) 
