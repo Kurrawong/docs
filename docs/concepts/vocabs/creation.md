@@ -34,18 +34,17 @@ In the basic structure of a vocabulary, concepts may be related to other concept
 _Limestone packstone_ `skos:broadMatch` _Packstone_
 ... where _Limestone packstone_ is a concept in the <a href="https://linked.data.gov.au/def/gswa-rock-classification-scheme" target="_blank">GSWA rock classification scheme</a>, and _Packstone_ is a concept in the <a href="http://inspire.ec.europa.eu/codelist" target="_blank" rel="noopener noreferrer">INSPIRE code list</a> register.
 
-
 `skos:exactMatch` example:
 
-
 Child support `skos:exactMatch` Child support
+
 ... where _Child support_ is a concept in both [Public Policy Taxonomy](https://linked.data.gov.au/def/policy/0acd51d0-a4a3-48eb-b6f4-aa086f966057) and [FAST](http://id.worldcat.org/fast/854679).
 
 ### 🚧 Exercise: match a concept with a concept in another vocabulary. 
 
 In some cases there may be concepts in a vocabulary that we can reliably say represent the same thing in the world. To promote interoperability between vocabularies (and therefore datasets, catalogues and collections) it's a good idea to 'match' these concepts. 
 
-💡 **Tip:** use a skos match property to reference another skos:concept or to a similar semantic category such as an owl:NamedIndividual. Do not use skos match properties to match to non-semantic resources.
+💡 **Tip:** use one of the _skos:match_ properties to reference another `skos:Concept` or to a similar semantic category such as an `owl:NamedIndividual`. Do not use _skos:match_ properties to match to non-semantic resources.
 
 In this exercise we will use `skos:exactMatch` to link "Animal dispersal" with the concept "Zoochory" from the [National Agriculture Library Thesaurus](https://lod.nal.usda.gov/nalt/en/).
 
@@ -71,17 +70,17 @@ Now let's add a `skos:broadMatch`. Like `skos:broader`, the `skos:broadMatch` pr
 
 
 ## Images
-Associating a `skos:concept` with an image that illustrates meaning is a powerful and, perhaps obviously, language-neutral way of clarifying the meaning and scope of a concept. There are various different ways of modelling an image reference within a skos vocabulary. The skos model does mention image references within the context of Documentation properties (e.g. `skos:example`; `skos:scopeNote`). While using Documentation properties to refer to an image may be syntactically correct, most systems will be expecting textual data in these fields. In the exercise below we will add an image reference using a schema.org property "Image".
+Associating a `skos:Concept` with an image that illustrates meaning is a powerful and, perhaps obviously, language-neutral way of clarifying the meaning and scope of a concept. There are various different ways of modelling an image reference within a skos vocabulary. The skos model does mention image references within the context of _documentation_ properties (e.g. `skos:example`; `skos:scopeNote`). While using documentation properties to refer to an image may be syntactically correct, most systems will be expecting textual data in these fields. In the exercise below we will add an image reference using a schema.org property `schema:image`.
 
 💡 **Tip:** There are a number of approaches to adding an image to a vocabulary concept - the exercise below illustrates one valid approach. See other approaches in our [Patterns](https://docs.kurrawong.ai/concepts/vocabs/patterns/#images) document.
 
 ### 🚧 Exercise: add an image to a concept
 
-We will add an image reference with a URL from Wikipedia Commons to the concept "Storm water".
+We will add an image reference with a URL from Wikipedia Commons to the concept _Storm water_.
 
-1. **Go to** [VocEdit](https://vocedit.kurrawong.ai) in Chrome  
+1. **Go to** [VocEdit](https://vocedit.kurrawong.ai) in Chrome
 2. **Project** > **Open** `pestRiskPath_training.ttl` from your local directory (*don't have the file? see the [first exercise](https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier) in Introduction to Vocabularies*)  
-3. **Select** _Storm water_ from under **Concepts** in the left-hand panel  
+3. **Select** _Storm water_ from under **Concepts** in the left-hand panel
 4. **Edit** > **Other Properties** > **Add property** 
 5. **Add** > `https://schema.org/image` > **Add**
 6. **Other Properties** > **exactMatch** (the field you just created)  > **Add new value** > **IRI**  
@@ -90,17 +89,37 @@ We will add an image reference with a URL from Wikipedia Commons to the concept 
 
 ## Related (associated) concepts
 
-SKOS supports non-hierarchical relationships between concepts using `skos:related` property. This is based on the 'associative relationship' defined in standards such as ISO 25964-1, which states that related terms are "semantically or conceptually associated to such an extent that the link between the needs to be made explicit... and it is important to do this for concepts that overlap in scope" (International Organization for Standardization, 2011, p.63)
+SKOS supports non-hierarchical relationships between concepts using `skos:related` property. This is based on the _associative relationship_ defined in standards such as ISO 25964-1, which states that related terms are "semantically or conceptually associated to such an extent that the link between the needs to be made explicit... and it is important to do this for concepts that overlap in scope" (International Organization for Standardization, 2011, p.63).
 
+To add a `skos:related`, follow the following steps, go to VocEdit and:
 
-## Notes
+1. **Edit** > **Other Properties** > **Add property** 
+2. **Add** > http://www.w3.org/2004/02/skos/core#related` > **Add**
+3. **Other Properties** > **related** (the field you just created)  > **Add new value** > **IRI**  
+4. **--Select a value** from the drop-down field
+5. **Save**
 
-Note fields are available for each concept. A _definition_, such as found in a glossary, is required by VocPub ([AGLDWG, n.d.](#references-and-further-reading)). A definition is not intended to be an exhaustive treatment of a concept, but rather explains the scope and usage of the concept.
+## Documentation properties
 
-A `skos:historyNote` is a useful property for vocabulary managers to track decisions that have been made about a concept (label changes, new broader relationships). It can also be used to make a statement about the origin of a concept.
+In SKOS, _documentation_ properties include:
+- `skos:note` - a note can say anything! If appropriate, use the following properties instead that have clearer semantics: `skos:changeNote`, `skos:definition`, `skos:editorialNote`, `skos:example`, or `skos:historyNote`
+- `skos:changeNote` - you can indicate a change to a label, or even a changed relationship to another concept.
+- 'skos:definition' - this field is mandatory in VocPub for all `skos:Concept`, `skos:ConceptScheme` and `skos:Collection` instances.  
+- `skos:editorialNote` - similar to `skos:ChangeNote` but perhaps for internal use only, such as "Fixed typo [date]" or "review by [date]".
+- `skos:example` - indicate some thing in the world that exemplifies the concept - this might be any kind of information resource, but references to images is not usually expected in Documentation properties (see [#images] to do this).
+- `skos:historyNote` - this property must be used to indicate the origins of a `skos:ConceptScheme` or a `skos:Collection`, where the origin cannot be indicated with an IRI (so with a textual reference, e.g. (this vocabulary / collection was created for purpose X by project Y on behalf of agency Z"). For a skos:Concept, the same rules apply if the concept origin is NOT from within its `skos:ConceptScheme`, e.g. "this Concept originated in Vocabulary X, added here [date]".  
+- `skos:scopeNote` - use a Scope note to say what kinds of things are included in the concept and what is not included. It may be useful to indicate another concept that should be used instead to describe or catalogue certain kinds of things. For example:
 
+```turtle
+<http://vocabulary.curriculum.edu.au/scot/10109> a skos:Concept ;
+skos:prefLabel "Educational publications"@en ;
+skos:scopeNote "Use for resources about development, distribution or management of industry publications relevant across the education sector. For resources about publications generated by individual schools USE School publications."@en ;
+skos:related <http://vocabulary.curriculum.edu.au/scot/10141>
+```
+💡 **Tip:** When a `skos:scopeNote` refers to another `skos:Concept`, use a `skos:related` property also to indicate that concept via an IRI.
 
 💡 **Tip:** When writing notes, use plain text only and limit paragraph breaks where possible.
+
 
 ## Collections
 
