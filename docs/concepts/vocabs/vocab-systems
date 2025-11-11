@@ -24,7 +24,7 @@
 
 > 🚧 _Exercises_
 
-> :clapper: _videos_
+> 🎬 _videos_
 
 ## Introduction
 
@@ -49,7 +49,14 @@ A vocabulary validator will typically check for two things:
 
 SHACL (W3C, 2017), or the _Shapes Constraint Language_, is a way of encoding a vocabulary profile so that it is machine-readable and used in some tool to check a vocabulary's conformance with that profile. 
 
-A SHACL file can be used in various validation tools and services - here we'll demonstrate the KurrawongAI SHACL Validator, with a special focus on the VocPub profile.
+A SHACL file can be used in various validation tools and services - here we'll demonstrate the KurrawongAI SHACL Validator, with a special focus on the VocPub profile, through an excersise.
+
+🎬 You can find out about the SHACL Validator on the [KurrawongAI YouTube](https://www.youtube.com/watch?v=aOiEVHHfOMc channel.
+
+
+🚧 Validate a SKOS vocabulary with the VocPub SHACL validator
+
+
 
 
 
