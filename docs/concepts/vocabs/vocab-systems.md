@@ -32,6 +32,8 @@
 ## VocEdit + GitHub
 
 
+### 🚧 _Exercises_ Save a vocabulary to GitHub
+
 ## VocExcel
 
 
@@ -69,7 +71,7 @@ A page of Validation Results will launch. This report let's you know where your 
 - a 🟡 Warning - it is recommended that these issues are addressed, but your vocabulary is still valid if you do not; and
 - _Informational_ - these are optional improvements to the vocabulary
 
-💡 **Tip:** Below these results, a **Full Vaidation Report** is also available.
+> 💡 Below these results, a **Full Vaidation Report** is also available.
 
 Note that each message includes a reference to the VocPub specification, such as:
 
@@ -79,7 +81,7 @@ Note that each message includes a reference to the VocPub specification, such as
 >
 The Requirement referred to here can be looked up in the VocPub Specification in the [Vocabulary] (https://linked.data.gov.au/def/vocpub/spec#vocabulary) section (as this violation refers to a `skos:ConcpetSchem`) at Requirement 2.15.
 
-💡 **Tip:** Looking up the VocPub Specification requirement gives you more information about the Warning given in the Validator Results.
+>💡 **Tip:** Looking up the VocPub Specification requirement gives you more information about the Warning given in the Validator Results.
 
 
 ## RDF Converter
@@ -98,7 +100,6 @@ What if you have a vocabualry file that needs to be in a different format? Kurra
 
 >💡 JSON-LD is a W3C Recommendation (W3C, 2020)
 
-### 🚧 _Exercises_ Save a vocabulary to GitHub
 
 ## References and Further Reading
 
