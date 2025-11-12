@@ -84,14 +84,27 @@ The Requirement referred to here can be looked up in the VocPub Specification in
 
 ## RDF Converter
 
+This and other modules have featured excersies using Turtle (.ttl) files. Turtle is just one RDF serialisation - there are other standard formats that vocabulary data can be managed in. 
 
-  
+What if you have a vocabualry file that needs to be in a different format? KurrawongAI have develped an [RDF Coverter](https://tools.kurrawong.ai/convert). This coverter can be used to transform RDF files (not just SKOS vocabularies) into different formats. 
+
+### 🚧 Convert a Turtle file to JSON
+
+1. **Go to** the KurrawongAI [RDF Converter](https://tools.kurrawong.ai/convert) in any browser 
+2. **RDF Data** > **Upload** > select `pestRiskPath_training.ttl` (*don't have the file? see the [first exercise](https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier) in Introduction to Vocabularies*) 
+3. Next to the Convert button, select **JSON-LD** > **Convert**
+4. Scroll down to **RDF Output** form
+5. Copy or download results
+
+>💡 JSON-LD is a W3C Recommendation (W3C, 2020)
+
 ### 🚧 _Exercises_ Save a vocabulary to GitHub
 
-# References and Further Reading
+## References and Further Reading
 
-* AGLDWG. (n.d.). VocPub profile specification. https://agldwg.github.io/vocpub-profile/specification
+* AGLDWG (2025). VocPub profile specification. https://agldwg.github.io/vocpub-profile/specification
 * W3C (n.d.). QSKOS. Retrieved March 5, 2025, from https://www.w3.org/2001/sw/wiki/QSKOS
-* W3C (2009). SKOS reference. https://www.w3.org/TR/skos-reference/
-* W3C (2014). Turtle: Terse RDF triple language (W3C Recommendation). Retrieved from https://www.w3.org/TR/turtle/
-* W3C (2017). Shapes Constraint Language (SHACL). https://www.w3.org/TR/shacl
+* W3C (2009). SKOS Simple Knowledge Organization System Reference (W3C Recommendation). https://www.w3.org/TR/skos-reference/
+* W3C (2014). Turtle: Terse RDF triple language (W3C Recommendation). https://www.w3.org/TR/turtle/
+* W3C (2017). Shapes Constraint Language (SHACL) (W3C Recommendation). https://www.w3.org/TR/shacl
+* W3C (2020). JSON-LD 1.1: A JSON-based serialization for Linked Data (W3C Recommendation). https://www.w3.org/TR/json-ld11/
