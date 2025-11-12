@@ -75,10 +75,8 @@ A page of Validation Results will launch. This report let's you know where your 
 
 Note that each message includes a reference to the VocPub specification, such as:
 
-
-|--------------|
-| For http://example.com/pestRiskPath: |
-|Requirement 2.15 - modified date - violated |
+<pre>_For http://example.com/pestRiskPath:_</pre>
+<pre>_Requirement 2.15 - modified date - violated_</pre>
 
 
 The Requirement referred to here can be looked up in the VocPub Specification in the [Vocabulary] (https://linked.data.gov.au/def/vocpub/spec#vocabulary) section (as this violation refers to a `skos:ConcpetSchem`) at Requirement 2.15.
