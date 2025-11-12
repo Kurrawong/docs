@@ -76,7 +76,6 @@ A page of Validation Results will launch. This report let's you know where your 
 Note that each message includes a reference to the VocPub specification, such as:
 
 
-| ℹ️ **Info** |
 |--------------|
 | For http://example.com/pestRiskPath: |
 |Requirement 2.15 - modified date - violated |
