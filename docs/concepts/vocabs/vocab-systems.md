@@ -25,24 +25,24 @@
 > 🎬 _videos_
 
 ## Introduction
-Vocabularies are data, and managing data inevitably provokes the need for applications to support management and maintenance. Vocabularies are no different! In this module we will step you through some vocabualry systems developed by KurrawongAI that will make the task of managing vocabularies easier. 
+Vocabularies are data, and data management inevitably requires application support. Vocabularies are no different! In this module we will step you through some vocabualry systems developed by KurrawongAI that will make the task of managing vocabularies easier.
 
-If you've been working through _Introduction to Voabularies_, _Advanced Vocabulary Editing_, _Vocabulary Patterns_ or Vocabulary Resue, you will have already encountered a key tool in any vocabualry managers tookkit: an editor. In this module we will look at VocEdit again, but draw your attention to VocEdit > GitHub integration features that help you manage vocabulary review and versioning. We'll also introduce you to a spreadsheet-based tool for editing simple vocabularies. And we'll introduce tools that help you validate a vocabulary, and and a tool that converts a vocabulary from one RDF format to another. 
+If you've been working through _Introduction to Voabularies_, _Advanced Vocabulary Editing_, _Vocabulary Patterns_ or Vocabulary Resue, you will have already encountered a key tool in any vocabualry managers tookkit: an editor. In this module we will look at _VocEdit_ again, but draw your attention to a _VocEdit > GitHub_ integration feature that help you manage vocabulary review and versioning. We'll also introduce you to a spreadsheet-based tool for editing simple vocabularies. And we'll introduce tools that help you validate a vocabulary, and and a tool that converts a vocabulary from one RDF format to another. 
 
 
 ## VocEdit + GitHub
 
-Throughout these Vocabulary modules we have presented excersises that assume you are saving a vocabulary file to your desktop - you can close VocEdit, open it again and just return to that same file for more editing. But what if a file needs to be checked, validated, or edited outside of the VocEdit tool? Vocabulary data is data, and can be managed using 
+Throughout these Vocabulary modules we have presented excersises that assume you are saving a vocabulary file to your desktop - you can close _VocEdit_, open it again and just return to that same file to continue editing. But what if a file needs to be checked, validated, or edited outside of the _VocEdit_ tool? And you may want to store your vocabulary where ohthers can access it. VocEdit can be integrated with GitHub to achieve these goals. 
 
 ### 🚧 _Exercises_ Save a vocabulary to GitHub
 
-> 💡 This exercise assumes you have at least one GitHub repository that you have access rights to configure.
+> 💡 This exercise assumes you have at least one GitHub repository that you have permission to configure it.
 
 1. **Go to** the KurrawongAI [VocEdit](https://tools.kurrawong.ai/vocedit) in Chrome brower.
-2. **Select** **Integrations > GitHub** > **GitHub App Configuration**
+2. **Select** **Integrations** > **GitHub** > **GitHub App Configuration**
 3. **Select** a GitHub account from the list
 4. **Select** _Only select repositories_ (this is the most anticipated option for training and first time users - but you can select _All repositories_ if needed)
-5. **Select repositories** (assuming you went with the _Only select repositories_ option)
+5. **Select repositories** (assuming you selected _Only select repositories_ option)
 6. **Select** a repository where you will save vocabulary files to
 7. **Install & Authorise** -
 
@@ -53,6 +53,19 @@ Throughout these Vocabulary modules we have presented excersises that assume you
 
 ## VocExcel
 
+VocExcel is a vocabulary editor that is essentially a MS Excel template. Using VocExcel, you will be creating vocabualry data in tabular form. Don't worry, VocExcel comes with a transformation service that will convert the Excel file format into a range of RDF formats.
+
+> 💡 _VocExcel_ is more suitable for simple or 'flat' vocabularies, such as a vocabulary where all `skos:Concept` s are top concepts of a `skos:ConceptSchem`. VocExcel can technically handle a vocabulary of any hierarchy depth, but anything beyond a two-level vocabualry (top concepts with one level of `skos:narrower` concepts), is not as well supported. For deeper, multi-level hierarchy vocabularies we recommend _VodEdit_.
+
+To walk you through VocExcel features, we'll create a vocabualry from scratch. 
+
+### 🚧 _Exercises_ Create a vocabulary in VocExcel
+
+> 💡 You will need access to MS Excel to do this exercise
+
+1. **Go to** the KurrawongAI [VocExcel](https://tools.kurrawong.ai/vocexcel) in any brower.
+2. **Get VocExcel Template**
+3. 
 
 ## 
   
