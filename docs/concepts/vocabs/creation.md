@@ -1,5 +1,5 @@
 
-# Advanced vocabulary editing
+# Advanced Vocabulary Editing
 
 >
 >***Scope***
@@ -205,7 +205,7 @@ owl:versionIRI: <https://linked.data.gov.au/def/address-alias-type/1.0>
 .
 ```
 
-# References and Further Reading
+## References and Further Reading
 
 * AGLDWG. (n.d.). VocPub profile specification. Retrieved April 17, 2025, from https://linked.data.gov.au/def/vocpub
 * International Organization for Standardization. (2011). Information and documentation — Thesauri and interoperability with other vocabularies — Part 1: Thesauri for information retrieval (ISO Standard No. 25964-1:2011). https://www.iso.org/standard/53657.html
