@@ -14,7 +14,7 @@
 >
 >***Outcome***
 >
->_Learners should be able to use systems to edit, vadidate, transform and version vocabularies.
+> Learners should be able to use systems to edit, vadidate, transform and version vocabularies.
 >
 >----------------
 
