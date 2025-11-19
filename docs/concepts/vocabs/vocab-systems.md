@@ -10,7 +10,7 @@
 >
 >***Audience***
 >
->_This module is primarily targeted to managers and users (vocab owners and contributors) of established vocabularies. It is assumed that learners have some experience with using document management or version control systems, and general familiarity with data management in practice._
+>_This module is primarily targeted to managers and editors of established vocabularies. It is assumed that learners have some experience with data management in practice._
 >
 >***Outcome***
 >
@@ -20,13 +20,14 @@
 
 💡 _Identifies troubleshooting tips, common errors and potential issues._
 
-> 📝 _Notes that summarise content at the end of a module._
-
 > 🚧 _Exercises_
 
 > 🎬 _videos_
 
 ## Introduction
+Vocabularies are data, and managing data inevitably provokes the need for applications to support management and maintenance. Vocabularies are no different! In this module we will step you through some vocabualry systems developed by KurrawongAI that will make the task of managing vocabularies easier. 
+
+If you've been working through _Introduction to Voabularies_, _Advanced Vocabulary Editing_, _Vocabulary Patterns_ or Vocabulary Resue, you will have already encountered a key tool in any vocabualry managers tookkit: an editor. In this module we will look at VocEdit again, but draw your attention to VocEdit > GitHub integration features that help you manage vocabulary review and versioning. We'll also introduce you to a spreadsheet-based tool for editing simple vocabularies. And we'll introduce tools that help you validate a vocabulary, and and a tool that converts a vocabulary from one RDF format to another. 
 
 
 ## VocEdit + GitHub
