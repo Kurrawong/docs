@@ -65,7 +65,23 @@ To walk you through VocExcel features, we'll create a vocabualry from scratch.
 
 1. **Go to** the KurrawongAI [VocExcel](https://tools.kurrawong.ai/vocexcel) in any brower.
 2. **Get VocExcel Template**
-3. 
+3. **Open** the downloaded template (it may have opened automatically)
+4. **Save As** a new file, e.g. "VocExcel-newVocab.xlsx"
+
+VocExcel will open at the _Introduction_ tab. Note also the _Documentation_ tab, which gives you a rundown of the properties that you may be editing.
+
+5. **Open** the _Concept Scheme_ tab
+
+On the Concept Scheme tab you can create a new Concept Scheme for the vocabulary. Note that VocExcel conforms to the [VocPub Specification](https://agldwg.github.io/vocpub-profile/specification.html), and some fields with an asterix (*) are mandatory - they are:
+
+- Vocabulary IRI
+- Preferred Label
+- Definition
+- Creation Date (yyyy-mm-dd)
+- Modified Date (yyyy-mm-dd) - repeat the Creation Date if this is the first edit
+- Creator
+- Publisher
+- History Note
 
 ## 
   
