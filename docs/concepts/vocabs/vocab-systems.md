@@ -35,6 +35,21 @@ Throughout these Vocabulary modules we have presented excersises that assume you
 
 ### 🚧 _Exercises_ Save a vocabulary to GitHub
 
+> 💡 This exercise assumes you have at least one GitHub repository that you have access rights to configure.
+
+1. **Go to** the KurrawongAI [VocEdit](https://tools.kurrawong.ai/vocedit) in Chrome brower.
+2. **Select** **Integrations > GitHub** > **GitHub App Configuration**
+3. **Select** a GitHub account from the list
+4. **Select** _Only select repositories_ (this is the most anticipated option for training and first time users - but you can select _All repositories_ if needed)
+5. **Select repositories** (assuming you went with the _Only select repositories_ option)
+6. **Select** a repository where you will save vocabulary files to
+7. **Install & Authorise** -
+
+> 💡 note that if you do not have permissions to install in a given repository, the button in the last step will read _Authorise & Request_). In this case you will need to be granted access before proceeding with the integration.
+
+8. **Save**
+10. 
+
 ## VocExcel
 
 
