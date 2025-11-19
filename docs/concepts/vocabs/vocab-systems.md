@@ -31,6 +31,7 @@
 
 ## VocEdit + GitHub
 
+Throughout these Vocabulary modules we have presented excersises that assume you are saving a vocabulary file to your desktop - you can close VocEdit, open it again and just return to that same file for more editing. But what if a file needs to be checked, validated, or edited outside of the VocEdit tool? Vocabulary data is data, and can be managed using 
 
 ### 🚧 _Exercises_ Save a vocabulary to GitHub
 
@@ -88,21 +89,22 @@ This and other modules have featured excersies using Turtle (.ttl) files. Turtle
 
 What if you have a vocabualry file that needs to be in a different format? KurrawongAI have develped an [RDF Coverter](https://tools.kurrawong.ai/convert). This coverter can be used to transform RDF files (not just SKOS vocabularies) into different formats. 
 
-### 🚧 Convert a Turtle file to JSON
+### 🚧 Convert a Turtle file to XML
 
 1. **Go to** the KurrawongAI [RDF Converter](https://tools.kurrawong.ai/convert) in any browser 
 2. **RDF Data** > **Upload** > select `pestRiskPath_training.ttl` (*don't have the file? see the [first exercise](https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier) in Introduction to Vocabularies*) 
-3. Next to the Convert button, select **JSON-LD** > **Convert**
+3. Next to the Convert button, select **XML** > **Convert**
 4. Scroll down to **RDF Output** form
 5. Copy or download results
 
->💡 JSON-LD is a W3C Recommendation (W3C, 2020)
+>💡 **Tip:** XML is a W3C Recommendation (W3C, 2008)
 
 
 ## References and Further Reading
 
 * AGLDWG (2025). VocPub profile specification. https://agldwg.github.io/vocpub-profile/specification
 * W3C (n.d.). QSKOS. Retrieved March 5, 2025, from https://www.w3.org/2001/sw/wiki/QSKOS
+* W3C (2008). Extensible Markup Language (XML) 1.0 (W3C Recommendation). https://www.w3.org/TR/xml/
 * W3C (2009). SKOS Simple Knowledge Organization System Reference (W3C Recommendation). https://www.w3.org/TR/skos-reference/
 * W3C (2014). Turtle: Terse RDF triple language (W3C Recommendation). https://www.w3.org/TR/turtle/
 * W3C (2017). Shapes Constraint Language (SHACL) (W3C Recommendation). https://www.w3.org/TR/shacl
