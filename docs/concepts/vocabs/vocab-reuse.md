@@ -55,6 +55,8 @@ Even if you build from scratch, you might consider developing a vocabulary that 
 - governance arrangements for the vocabulary are stated somewhere - build trust by declaring the update history and cycle, and commitments to persisting concept IRI
 - distributions: ensure your vocabulary can be accessed in standard formats and over standard APIs
 
+> 💡 see _VocPub Specification_, sections 2.1.13 / 2.1.14, about declaring [licenses and rights](https://agldwg.github.io/vocpub-profile/specification.html#vocabulary).
+
 Even if you build from scratch, you can match home-grown concepts with concepts in external vocabularies - see [Mapping concepts with other vocabularies](#mapping-concepts-with-other-vocabularies).
 
 ### Adoption
@@ -83,7 +85,6 @@ You may make minor changes to published vocabularies to meet local requirements.
 If you are going to Adopt, use Verbatim or Customise a vocabulary, you'll need to find relevant vocabularies to do so with. Even if you are Building from scratch, it's a good idea to know about other vocabulary work already done in your domain. There may already be vocabularies that meet your requirements, such as enriching the semantics of a metadata catalogue. They may exist in a nearby knowledge domain, industry or sector, and may originate in other global regions.
 
 Look for vocabularies available for reuse listed in vocabulary registries and discovery services, such as:
-
 
 - [Research Vocabularies Australia](https://vocabs.ardc.edu.au): vocabularies span a wide range of research and industry domains. Vocabulary search can be filtered by format and licensing, and many may be accessed directly from the RVA site via download or API.
 - [BARTOC.org](https://bartoc.org): this is an international registry of vocabularies and ontologies in many languages and with over 2,500 records. 
@@ -124,7 +125,11 @@ Furthermore, retain the identifier as a `skos:notation`:
 - `skos:notation "AC123"` ;
 
 ### Unidentified
-Where a vocabulary has labels but no identifiers - new IRIs will need to be constructed. 
+Where a vocabulary has labels but no identifiers - new IRIs will need to be constructed.
+
+> 💡 Do NOT base IRIs on another organisations domain without first consulting with them! Either use the Example namespace `http://example.com[vocab/ID`, or use a domain that you own or control.
+
+Where an existing vocabulary does not have any identifiers for concepts, you should mint your own, but make them opaque. Use a scheme like UUID - these can be generated using a [web servive](https://www.uuidgenerator.net).
 
 ## Language
 
