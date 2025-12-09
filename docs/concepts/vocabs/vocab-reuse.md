@@ -10,7 +10,7 @@
 >
 >***Audience***
 >
->_This module is primarily targeted to managers and owners and of established vocabularies. It is assumed that learners have some experience with using document management or version control systems, and general familiarity with data management in practice._
+>_This module is primarily targeted to managers and owners of established vocabularies. It is assumed that learners have some experience with using document management or version control systems, and general familiarity with data management in practice._
 >
 >***Outcome***
 >
@@ -30,17 +30,17 @@
 Whatever domain we work in, there's a fair chance that useful vocabularies have already been developed by third parties. And as for any data management operation, it's a good idea to seek opportunities to reuse existing vocabularies. In this module we'll cover:
 - Weighing up the effort: reuse vs build from scratch.
 - Finding existing vocabularies that meet your scenario
-- Evaluating the suitability, and reuse-ability of existing vocabularies
+- Evaluating the suitability, and reuseability of existing vocabularies
 - Matching vs importing external Concepts
 - Adopting parts vs whole vocabularies
 - Attribution and provenance: representing and preserving primary sources.
 
 ## Reuse patterns
 
-Is it worth reusing existing vocabularies in part or whole? There are a various patterns that can be followed:
+Is it worth reusing existing vocabularies in part or whole? There are various patterns that can be followed:
 
 - **Build from scratch** - just make a vocabulary based on familiar resources
-- **Adoption** - Importing concepts from some or perhaps most of your vocabulary comprises concepts sources from existing vocabularies, faithfully retaining and presenting definitions and other metadata from the source;
+- **Adoption** - Importing concepts from some or perhaps most of your vocabulary comprises concepts sourced from existing vocabularies, faithfully retaining and presenting definitions and other metadata from the source;
 - **Verbatim** - access and reuse a vocabulary as is
 - **Customise** Verbatim, with minor changes, such as to labels
 
@@ -48,10 +48,10 @@ Is it worth reusing existing vocabularies in part or whole? There are a various 
 ### Build from scratch 
 Why not develop a vocabulary from scratch, with sources of warrant that you know are relevant to your community and use case?
 
-Even if you build from scratch, you might consider developing a vocabulary that is itself reuse-able in your industry, sector or in other regions. The more use your vocabulary gets, the more interoperabilty you have with other systems and catalogues. If you want your vocabulary reused, ensure:
+Even if you build from scratch, you might consider developing a vocabulary that is itself reuse-able in your industry, sector or in other regions. The more use your vocabulary gets, the more interoperability you have with other systems and catalogues. If you want your vocabulary reused, ensure:
 
 - clear rights and licensing are declared, within the vocabulary concept scheme and in surrounding web context
-- governance arrangements for the vocabulary are stated somewhere - build trust by declaring the update history and cycle, and commitments to persisting Concept IRI
+- governance arrangements for the vocabulary are stated somewhere - build trust by declaring the update history and cycle, and commitments to persisting Concept IRIs
 - distributions: ensure your vocabulary can be accessed in standard formats and over standard APIs
 
 > 💡 see _VocPub Specification_, sections 2.1.13 / 2.1.14, about declaring [licenses and rights](https://agldwg.github.io/vocpub-profile/specification.html#vocabulary).
@@ -78,7 +78,7 @@ PREFIX sdo: <https://schema.org/>
 
 # sdo:license
 # dcterms:license - equivalent to sdo:license;
-# dcterms:accessRights - not really 'rights' as such, but if access rights restriced in some way, look further into what you allowed to do with the vocabulary;
+# dcterms:accessRights - not really 'rights' as such, but if access rights restricted in some way, look further into what you allowed to do with the vocabulary;
 # dcterms:rights
 # sdo:copyrightHolder
 # isorole:rightsHolder - equivalent to sdo:rightsholder
@@ -117,10 +117,10 @@ flowchart TD
 ```
 ## Reuse non-semantic vocabularies
 
-Building a vocabulary from scratch is an easy win for ensuring vocabularies are well-formed and presented. Existing vocabularies published in other contexts may not be so well-formed! Existing vocabularies, including those found via vocabulary registries, will vary in their conformance with data standards such as RDF and SKOS, before even considering quality standards like VocPub and qSKOS ([W3C, n.d](#references-and-further-reading). Here are a couple of challenges to consider:
+Building a vocabulary from scratch is an easy win for ensuring vocabularies are well-formed and presented. Existing vocabularies published in other contexts may not be so well-formed! Existing vocabularies, including those found via vocabulary registries, will vary in their conformance with data standards such as RDF and SKOS, before even considering quality standards like VocPub and qSKOS [(W3C, n.d)](#references-and-further-reading). Here are a couple of challenges to consider:
 
 ### Unstructured 
-An existing vocabulary is well presented by not machine-readable, such as in PDF or HTML. The vocabulary terms may indicate properties and relationships, but these properties themselves are not machine-readable. The vocabulary may need to be scraped and cleaned, eventually transformed into an RDF format compatible with a SKOS editing tool - if you haven't looked at open source solution yet, we [introduce VocEdit here](https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier).
+An existing vocabulary is well presented but not machine-readable, such as in PDF or HTML. The vocabulary terms may indicate properties and relationships, but these properties themselves are not machine-readable. The vocabulary may need to be scraped and cleaned, eventually transformed into an RDF format compatible with a SKOS editing tool - if you haven't looked at open source solution yet, we [introduce VocEdit here](https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier).
 
 ### Token IDs
 An existing vocabulary has non-semantic or token identifiers, such as "123" or "AC123", that are not unique out of context and do not resolve on the web.
@@ -132,12 +132,12 @@ Optionally, retain the identifier as a `skos:notation`:
 
 - `skos:notation "AC123"`
 
-You will still neeed to construct a rull IRI - see tips below under [Unidentified](#unidentified)
+You will still need to construct a full IRI - see tips below under [Unidentified](#unidentified)
 
 ### Unidentified
 Where a vocabulary has labels but no identifiers - new IRIs will need to be constructed.
 
-> 💡 Do NOT base IRIs on another organisations domain without first consulting with them! Either use the Example namespace `http://example.com[vocab/ID]`, or use a domain that you own or control.
+> 💡 Do NOT base IRIs on another organisation's domain without first consulting with them! Either use the Example namespace `http://example.com[vocab/ID]`, or use a domain that you own or control.
 
 Where an existing vocabulary does not have any identifiers for concepts, you should mint your own, but make them opaque. Use a scheme like UUID - these can be generated using a [web service](https://www.uuidgenerator.net).
 
@@ -187,7 +187,7 @@ policy:7353843a-9107-49af-bcd0-a8eac00bcd54 a skos:Concept ;
 
 Regional language variations can be declared in label language tags explicitly. 
 
-```trutle
+```turtle
 PREFIX : <http://vocabulary.curriculum.edu.au/scot/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -209,9 +209,9 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
         "Vegetation fires"@en-GB
 .
 ```
-> 💡This example Concept has a combination of ISO 639-1 language tags (e.g. "@en") and BCP 47 (e.g. "@en-AU"). It's valid SKOS and RDF! But a downstream system may be expecting the locale-free ISO 639-1 scheme, so we recommend including at least one skos:prefLabel encoded as ISO 639-1.
+> 💡This example Concept has a combination of ISO 639-1 language tags (e.g. "@en") and BCP 47 (e.g. "@en-AU"). It's valid SKOS and RDF! But a downstream system may be expecting the locale-free ISO 639-1 scheme, so we recommend including at least one `skos:prefLabel` encoded as ISO 639-1.
 
-> 💡 Multiple `skos:prefLabel` instances per `skos:Concept` with different language tags is _not compliant_ with VocPub Sepcification (AGLDWG, n.d.), but valid in SKOS.
+> 💡 Multiple `skos:prefLabel` instances per `skos:Concept` with different language tags is _not compliant_ with VocPub Specification (AGLDWG, n.d.), but valid in SKOS.
 
 ## Mapping concepts with other vocabularies
 
@@ -230,7 +230,7 @@ Child support `skos:exactMatch` Child support
 
 ## Add an imported Concept
 
-When a vocabulary imports concepts from another vocabulary, you will need to both add the Concept and also update the concept scheme. Optionally, you might create a 'collection' that groups the imported concepts in to a manageble frame. See [Import a concept](#-import-a-concept) for detailed steps for importing a Concept into a vocabulary.
+When a vocabulary imports concepts from another vocabulary, you will need to both add the Concept and also update the concept scheme. Optionally, you might create a 'collection' that groups the imported concepts in to a manageable frame. See [Import a concept](#-import-a-concept) for detailed steps for importing a Concept into a vocabulary.
 
 ## Additional elements
 You can add more metadata to your Concepts and Concept schemes that will improve the clarity, scope and provenance of your vocabulary. Consider the following additional elements:
@@ -247,7 +247,7 @@ A Derivation mode value is mandatory if a value is given for the `prov:wasDerive
 
 ### Notation
 
-All concepts must have an IRI, and the IRI may be a completely opaque string based on a randomly generated string (such as from the UUID scheme). However, concepts may optionally store a `skos:notation`, which is like a secondary identifier and is based on some source or reference data that the Concept was derived from. Note that keeping notations when importing from vocabularies with [token IDs](#Token_IDs) is recommended.
+All concepts must have an IRI, and the IRI may be a completely opaque string based on a randomly generated string (such as from the UUID scheme). However, concepts may optionally store a `skos:notation`, which is like a secondary identifier and is based on some source or reference data that the Concept was derived from. Note that keeping notations when importing from vocabularies with [token IDs](#token-ids) is recommended.
 
 ### Defining vocabulary IRI
 
@@ -260,14 +260,15 @@ For each Concept, a [Citation](https://schema.org/citation), an optional referen
 Example:
 
 ```turtle
-   @prefix sdo: <https://schema.org/> .
-   @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-   @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+   PREFIX policytypes: <https://data.idnau.org/pid/vocab/policy-types/>
+   PREFIX sdo: <https://schema.org/>
+   PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+   PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-    <https://data.idnau.org/pid/vocab/policy-types/policy> a skos:Concept ;
-    skos:prefLabel: "policy"@en ;
-    skos:definition: "A strategic directive and high-level description of desired behaviour developed by an organisation to help govern how it functions..."@en ;
-    sdo:citation: "https://policy.usq.edu.au/documents/14266PL"^^xsd:anyURI
+    policytypes:policy a skos:Concept ;
+    skos:prefLabel "policy"@en ;
+    skos:definition "A strategic directive and high-level description of desired behaviour developed by an organisation to help govern how it functions..."@en ;
+    sdo:citation "https://policy.usq.edu.au/documents/14266PL"^^xsd:anyURI
 	.
 ```
 
@@ -293,21 +294,22 @@ To import a Concept from another vocabulary:
 
 4. Add the prefix declarations:  
    ```turtle
-   PREFIX : <https://linked.data.gov.au/def/road-travel-direction/> .   
-   PREFIX cs: <https://linked.data.gov.au/def/road-travel-direction> .
-   PREFIX agldwgstatus: <linked.data.gov.au/def/reg-status/> .
-   PREFIX dcterms: <http://purl.org/dc/terms/> .
+   PREFIX : <https://linked.data.gov.au/def/road-travel-direction/>
+   PREFIX cs: <https://linked.data.gov.au/def/road-travel-direction>
+   PREFIX agldwgstatus: <linked.data.gov.au/def/reg-status/>
+   PREFIX dcat:	<http://www.w3.org/ns/dcat#>	
+   PREFIX dcterms: <http://purl.org/dc/terms/>
    PREFIX icsm: <https://linked.data.gov.au/org/icsm>
-   PREFIX owl: <http://www.w3.org/2002/07/owl#> .
-   PREFIX prov: <http://www.w3.org/ns/prov#> .
-   PREFIX qsi: <https://linked.data.gov.au/org/qsi> .
-   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-   PREFIX reg:  <http://purl.org/linked-data/registry#> .
-   PREFIX sdo: <https://schema.org/> .
-   PREFIX skos: <http://www.w3.org/2004/02/skos/core#> .
+   PREFIX owl: <http://www.w3.org/2002/07/owl#>
+   PREFIX prov: <http://www.w3.org/ns/prov#>
+   PREFIX qsi: <https://linked.data.gov.au/org/qsi>
+   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+   PREFIX reg:  <http://purl.org/linked-data/registry#>
+   PREFIX sdo: <https://schema.org/>
+   PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
    # add prefix srti:
-   PREFIX srti: <http://cef.uv.es/lodroadtran18/def/transporte/dtx_srti#> .
-   PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> .
+   PREFIX srti: <http://cef.uv.es/lodroadtran18/def/transporte/dtx_srti#>
+   PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
    ```
 
 5. Add the Concept in your vocabulary:
@@ -325,7 +327,7 @@ To import a Concept from another vocabulary:
 ```turtle
   cs:
     a skos:ConceptScheme ;
-    sdo:keywords themes:transport ;
+    sdo:keywords "transport"@en ;
     dcterms:created "2023-05-30"^^xsd:date ;
     dcterms:creator qsi: ;
     dcterms:identifier "road-travel-direction"^^xsd:token ;
