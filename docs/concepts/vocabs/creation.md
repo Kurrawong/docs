@@ -128,7 +128,7 @@ skos:related <http://vocabulary.curriculum.edu.au/scot/10141>
 
 There may be a need to define a group of concepts within a vocabulary that share certain characteristics. A vocabulary may contain a `skos:Collection`, or even many collections of concepts.
 
-Collections are like a non-hierarchical means of gathering concepts. So for example concepts that are members of a `skos:Collection` may be from different parts of a vocabulary hierarchy (and not all from within the same broader-narrower parts of a hierarchy branch). One use case for creating a `skos:Collection` is to clearly represent concepts that have been 'imported' from another `skos:ConceptScheme`. For more about using collections in this way see the [Import a concept](vocab_reuse.md#-import-a-concept) exercise in the _Vocabulary reuse_ module.
+Collections are like a non-hierarchical means of gathering concepts. So for example concepts that are members of a `skos:Collection` may be from different parts of a vocabulary hierarchy (and not all from within the same broader-narrower parts of a hierarchy branch). One use case for creating a `skos:Collection` is to clearly represent concepts that have been 'imported' from another `skos:ConceptScheme`. For more about using collections in this way see the [Import a concept](vocab-reuse.md#-import-a-concept) exercise in the _Vocabulary reuse_ module.
 
 💡 `skos:Collection` indicates a `skos:Concept` using the `skos:member` property.
 
