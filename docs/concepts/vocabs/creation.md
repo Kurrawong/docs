@@ -4,7 +4,7 @@
 >
 >***Scope***
 >
->This content is in intended to provide guidance on the creation optional vocabulary elements that will enrich and optimise semantics, provenance and interoperability. 
+>This content is intended to provide guidance on the creation of optional vocabulary elements that will enrich and optimise semantics, provenance and interoperability. 
 
 >
 >***Prerequisite***
@@ -23,11 +23,11 @@
 
 ## Introduction
 
-The _Introduction to vocabularies_ module focused on basic vocabulary properties that are typically required by vocabulary systems and standards. This module will describe more optional properties that will improve the a vocabularies semantics, provenance and interoperability with other vocabularies and with data systems. 
+The _Introduction to vocabularies_ module focused on basic vocabulary properties that are typically required by vocabulary systems and standards. This module will describe more optional properties that will improve vocabularies semantics, provenance and interoperability with other vocabularies and with data systems. 
 
 ## Mapping concepts with concepts in other vocabularies
 
-In the basic structure of a vocabulary, concepts may be related to other concepts via broader, narrower or related properties. We can also relate to a concept to a concept in a _different_ vocabulary. Concept matching across vocabularies is done in a similar way with these properties: [Broad match](http://www.w3.org/2004/02/skos/core#broadMatch), [Narrower match](http://www.w3.org/2004/02/skos/core#narrowMatch), [Related match](http://www.w3.org/2004/02/skos/core#relatedMatch).
+In the basic structure of a vocabulary, concepts may be related to other concepts via broader, narrower or related properties. We can also relate a concept to a concept in a _different_ vocabulary. Concept matching across vocabularies is done in a similar way with these properties: [Broad match](http://www.w3.org/2004/02/skos/core#broadMatch), [Narrower match](http://www.w3.org/2004/02/skos/core#narrowMatch), [Related match](http://www.w3.org/2004/02/skos/core#relatedMatch).
 
 `skos:broadMatch` example:
 
@@ -44,7 +44,7 @@ Child support `skos:exactMatch` Child support
 
 In some cases there may be concepts in a vocabulary that we can reliably say represent the same thing in the world. To promote interoperability between vocabularies (and therefore datasets, catalogues and collections) it's a good idea to _match_ these concepts. 
 
-💡 use one of the SKOS _match_ properties to reference another `skos:Concept` or to a similar semantic category such as an `owl:NamedIndividual`. Do not use and of the SKOS _match_ properties to match to non-semantic resources.
+💡 use one of the SKOS _match_ properties to reference another `skos:Concept` or to a similar semantic category such as an `owl:NamedIndividual`. Do not use any of the SKOS _match_ properties to match to non-semantic resources.
 
 In this exercise we will use `skos:exactMatch` to link _Animal dispersal_ with the concept _Zoochory_ from the [National Agriculture Library Thesaurus](https://lod.nal.usda.gov/nalt/en/).
 
@@ -64,8 +64,8 @@ Now let's add a `skos:broadMatch`. Like `skos:broader`, the `skos:broadMatch` pr
 9.  **Select** **Wildlife trafficking** from under **Concepts** in the left-hand panel  
 10. **Edit** > **Other Properties** > **Add property**  
 11. **Add** > `http://www.w3.org/2004/02/skos/core#broadMatch` > **Add**  
-12. **Other Properties** > **exactMatch** (the field you just created)  > **Add new value** > **IRI**
-13. **[...]** > **Widget** > **URIEditor** > **Add** `https://lod.nal.usda.gov/nalt/332111](https://id.cabi.org/cabt/33618`  
+12. **Other Properties** > **broadMatch** (the field you just created)  > **Add new value** > **IRI**
+13. **[...]** > **Widget** > **URIEditor** > **Add** `https://id.cabi.org/cabt/33618` 
 14. **Save**
 
 
@@ -89,7 +89,7 @@ We will add an image reference with a URL from Wikipedia Commons to the Concept 
 
 ## Related (associated) concepts
 
-SKOS supports non-hierarchical relationships between concepts using `skos:related` property. This is based on the _associative relationship_ defined in standards such as ISO 25964-1, which states that related terms are "semantically or conceptually associated to such an extent that the link between the needs to be made explicit... and it is important to do this for concepts that overlap in scope" (International Organization for Standardization, 2011, p.63).
+SKOS supports non-hierarchical relationships between concepts using `skos:related` property. This is based on the _associative relationship_ defined in standards such as ISO 25964-1, which states that related terms are "semantically or conceptually associated to such an extent that the link between the two needs to be made explicit... and it is important to do this for concepts that overlap in scope" (International Organization for Standardization, 2011, p.63).
 
 To add a `skos:related`, go to VocEdit and:
 
@@ -107,8 +107,8 @@ In SKOS, _documentation_ properties include:
 - A `skos:note` - a note can say anything! If appropriate, use the following properties instead that have clearer semantics: `skos:changeNote`, `skos:definition`, `skos:editorialNote`, `skos:example`, or `skos:historyNote`
 - A `skos:changeNote` - you can indicate a change to a label, or even a changed relationship to another concept.
 - A `skos:definition` - this field is mandatory in VocPub for all `skos:Concept`, `skos:ConceptScheme` and `skos:Collection` instances.  
-- A `skos:editorialNote` - similar to `skos:ChangeNote` but perhaps for internal use only, such as "Fixed typo [date]" or "review by [date]".
-- A `skos:example` - indicate some thing in the world that exemplifies the concept - this might be any kind of information resource, but references to images is not usually expected in Documentation properties (see [#images] to do this).
+- A `skos:editorialNote` - similar to `skos:changeNote` but perhaps for internal use only, such as "Fixed typo [date]" or "review by [date]".
+- A `skos:example` - indicate some thing in the world that exemplifies the concept - this might be any kind of information resource, but references to images are not usually expected in Documentation properties (see [#images] to do this).
 - A `skos:historyNote` - this property must be used to indicate the origins of a `skos:ConceptScheme` or a `skos:Collection`, where the origin cannot be indicated with an IRI (so with a textual reference, e.g. (this vocabulary / collection was created for purpose X by project Y on behalf of agency Z"). For a skos:Concept, the same rules apply if the concept origin is NOT from within its `skos:ConceptScheme`, e.g. "this Concept originated in Vocabulary X, added here [date]".  
 - A `skos:scopeNote` - use a Scope note to say what kinds of things are included in the concept and what is not included. It may be useful to indicate another concept that should be used instead to describe or catalogue certain kinds of things. For example:
 
@@ -128,9 +128,9 @@ skos:related <http://vocabulary.curriculum.edu.au/scot/10141>
 
 There may be a need to define a group of concepts within a vocabulary that share certain characteristics. A vocabulary may contain a `skos:Collection`, or even many collections of concepts.
 
-Collections are like a non-hierarchical means of gathering concepts. So for example concepts that are members of a `skos:Collection` may be from different parts of a vocabulary hierarchy (and not all from within the same broader-narrower parts of a hierarchy branch). One use case for creating a `skos:Collection` is to clearly represent concepts that have been 'imported' from another `skos:ConceptScheme`. For more about using collections in this way see the [Import a concept](vocab_reuse.md#importaconcept) excersise in the _Vocabulary reuse_ module.
+Collections are like a non-hierarchical means of gathering concepts. So for example concepts that are members of a `skos:Collection` may be from different parts of a vocabulary hierarchy (and not all from within the same broader-narrower parts of a hierarchy branch). One use case for creating a `skos:Collection` is to clearly represent concepts that have been 'imported' from another `skos:ConceptScheme`. For more about using collections in this way see the [Import a concept](vocab_reuse.md#import-a-concept) exercise in the _Vocabulary reuse_ module.
 
-💡 **Tip:** A `skos:Collection` indicates a `skos:Concept` using the `skos:member` property.
+💡 `skos:Collection` indicates a `skos:Concept` using the `skos:member` property.
 
 ## Identifiers
 
@@ -190,7 +190,7 @@ skos:prefLabel "Work Health and Safety Manager"@en ;
 skos:broader <https://vocab/mydomain/termid/1116>
 ```
 
-... where the suffi `1111633` implies membership within the broader concept `<.../1116>`. What if a decision is made to move this concept to another part of the vocabulary (that is, to remove this `skos:broader` relationship and replace with a new one (such as "<.../26>")? Like the re-labelled example above, the mis-match between the IRI and the change in position could cause confusion.
+... where the suffix `1111633` implies membership within the broader concept `<.../1116>`. What if a decision is made to move this concept to another part of the vocabulary (that is, to remove this `skos:broader` relationship and replace with a new one (such as "<.../26>")? Like the re-labelled example above, the mis-match between the IRI and the change in position could cause confusion.
 
 ### Version IRI
 
