@@ -33,7 +33,7 @@ If you've been working through _Introduction to Voabularies_, _Advanced Vocabula
 
 Throughout these Vocabulary modules we have presented exercises that direct you to save vocabulary files to your desktop - you can close _VocEdit_, open it again and just return to that same file to continue editing. But what if a file needs to be reviewed, edited or validated outside of the _VocEdit_ tool? And you may want to store your vocabulary where others can access it. VocEdit is integrated with GitHub to achieve these goals. 
 
-### 🚧 _Exercises_ Save a vocabulary to GitHub
+### 🚧 Save a vocabulary to GitHub
 
 > 💡 This exercise assumes you have a vocabulary saved in a GitHub repository that you have permission to configure. Don't have a vocabulary? You can upload the file from the [first exercise](https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier) to your GitHub repository.  
 
@@ -70,7 +70,7 @@ VocExcel is a vocabulary editor that is essentially a MS Excel template. Using V
 
 To walk you through VocExcel features, we'll create a vocabulary from scratch. 
 
-### 🚧 _Exercises_ Create a vocabulary in VocExcel
+### 🚧 Create a vocabulary in VocExcel
 
 > 💡 You will need access to MS Excel to do this exercise.
 
@@ -85,14 +85,14 @@ VocExcel will open at the _Introduction_ tab. Note also the _Documentation_ tab,
 
 On the Concept Scheme tab you can create a new Concept Scheme for the vocabulary. Note that VocExcel conforms to the [VocPub Specification](https://agldwg.github.io/vocpub-profile/specification.html), and some fields with an asterix (*) are mandatory - they are:
 
-- Vocabulary IRI
-- Preferred Label
-- Definition
-- Creation Date (yyyy-mm-dd)
-- Modified Date (yyyy-mm-dd) - repeat the Creation Date if this is the first edit
-- Creator
-- Publisher
-- History Note
+> - Vocabulary IRI
+> - Preferred Label
+> - Definition
+> - Creation Date (yyyy-mm-dd)
+> - Modified Date (yyyy-mm-dd) - repeat the Creation Date if this is the first edit
+> - Creator
+> - Publisher
+> - History Note
 
 6. Add data for all mandatory fields in the Concept Scheme
 7. **Open** the _Concept_ tab
