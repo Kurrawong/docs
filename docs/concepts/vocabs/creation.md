@@ -13,7 +13,7 @@
 >
 >***Outcome***
 >
->_On completing this module you will be able to understand and apply an expanded set of properties to vocabulary concepts and concept schemes._
+>_On completing this module you will be able to understand and apply an expanded set of vocabulary properties.
 >
 >----------------
 
@@ -213,9 +213,9 @@ cs:
 
 ## References and Further Reading
 
-* AGLDWG. (n.d.). VocPub profile specification. Retrieved April 17, 2025, from https://linked.data.gov.au/def/vocpub
+* AGLDWG. (n.d.). VocPub profile specification. Retrieved April 17, 2025, https://linked.data.gov.au/def/vocpub
 * International Organization for Standardization. (2011). Information and documentation — Thesauri and interoperability with other vocabularies — Part 1: Thesauri for information retrieval (ISO Standard No. 25964-1:2011). https://www.iso.org/standard/53657.html
-* W3C (n.d.). QSKOS. Retrieved March 5, 2025, from https://www.w3.org/2001/sw/wiki/QSKOS
+* W3C (n.d.). QSKOS. Retrieved March 5, 2025. https://www.w3.org/2001/sw/wiki/QSKOS
 * W3C (2009). SKOS reference. https://www.w3.org/TR/skos-reference/
-* W3C (2014). Turtle: Terse RDF triple language (W3C Recommendation). Retrieved from https://www.w3.org/TR/turtle/
+* W3C (2014). Turtle: Terse RDF triple language (W3C Recommendation). https://www.w3.org/TR/turtle/
 
