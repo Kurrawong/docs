@@ -2,7 +2,6 @@
 # Vocabulary Reuse
 
 
-
 >
 >***Scope***
 >
@@ -32,7 +31,7 @@ Whatever domain we work in, there's a fair chance that useful vocabularies have 
 - Weighing up the effort: reuse vs build from scratch.
 - Finding existing vocabularies that meet your scenario
 - Evaluating the suitability, and reuse-ability of existing vocabularies
-- Matching vs importing external concepts
+- Matching vs importing external Concepts
 - Adopting parts vs whole vocabularies
 - Attribution and provenance: representing and preserving primary sources.
 
@@ -52,7 +51,7 @@ Why not develop a vocabulary from scratch, with sources of warrant that you know
 Even if you build from scratch, you might consider developing a vocabulary that is itself reuse-able in your industry, sector or in other regions. The more use your vocabulary gets, the more interoperabilty you have with other systems and catalogues. If you want your vocabulary reused, ensure:
 
 - clear rights and licensing are declared, within the vocabulary concept scheme and in surrounding web context
-- governance arrangements for the vocabulary are stated somewhere - build trust by declaring the update history and cycle, and commitments to persisting concept IRI
+- governance arrangements for the vocabulary are stated somewhere - build trust by declaring the update history and cycle, and commitments to persisting Concept IRI
 - distributions: ensure your vocabulary can be accessed in standard formats and over standard APIs
 
 > 💡 see _VocPub Specification_, sections 2.1.13 / 2.1.14, about declaring [licenses and rights](https://agldwg.github.io/vocpub-profile/specification.html#vocabulary).
@@ -62,8 +61,8 @@ Even if you build from scratch, you can match home-grown concepts with concepts 
 ### Adoption
 You might import a cluster of concepts from an existing vocabulary into a local vocabulary project. There are a number of things you should do to indicate provenance of such concepts, and to support ongoing management of imported concepts, including:
 
-- adding a `prov:wasDerivedFrom` statement for an imported concept
-- adding a `rdfs:isDefinedBy` statement indicating an IRI of a concept scheme where the concept is from
+- adding a `prov:wasDerivedFrom` statement for an imported Concept
+- adding a `rdfs:isDefinedBy` statement indicating an IRI of a Concept scheme where the Concept is from
 - creating a `skos:Collection`, specifically for grouping concepts derived from some other vocabulary
 
 See [Import a concept](#-import-a-concept) for details.
@@ -87,7 +86,7 @@ PREFIX sdo: <https://schema.org/>
 
 ### Customise
 
-You may make minor changes to published vocabularies to meet local requirements. Vocabulary concepts may be added; labels may be updated (changes to spelling or swapping an `skos:altLabel` for `skos:prefLabel`). Changes will need to be acknowledged at both the concept and concept scheme level - see [Add an imported concept](#add-an-imported-concept) for how to do this. 
+You may make minor changes to published vocabularies to meet local requirements. Vocabulary concepts may be added; labels may be updated (changes to spelling or swapping an `skos:altLabel` for `skos:prefLabel`). Changes will need to be acknowledged at both the Concept and concept scheme level - see [Add an imported concept](#add-an-imported-concept) for how to do this. 
 
 ## Finding vocabularies
 
@@ -216,12 +215,12 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 ## Mapping concepts with other vocabularies
 
-In the basic structure of a vocabulary, concepts may be related to other concepts via broader, narrower or related properties. Sometimes a concept needs to be related to a concept in a _different_ vocabulary. Concept matching across vocabularies is done in a similar way but with different properties: [Broad match](http://www.w3.org/2004/02/skos/core#broadMatch), [Narrower match](http://www.w3.org/2004/02/skos/core#narrowMatch), [Related match](http://www.w3.org/2004/02/skos/core#relatedMatch).
+In the basic structure of a vocabulary, concepts may be related to other concepts via broader, narrower or related properties. Sometimes a Concept needs to be related to a Concept in a _different_ vocabulary. Concept matching across vocabularies is done in a similar way but with different properties: [Broad match](http://www.w3.org/2004/02/skos/core#broadMatch), [Narrower match](http://www.w3.org/2004/02/skos/core#narrowMatch), [Related match](http://www.w3.org/2004/02/skos/core#relatedMatch).
 
 Broad match example:
 
 _Limestone packstone_ `skos:broadMatch` _Packstone_
-... where _Limestone packstone_ is a concept in the [GSWA rock classification scheme](https://linked.data.gov.au/def/gswa-rock-classification-scheme), and _Packstone_ is a Concept in the [INSPIRE code list register](http://inspire.ec.europa.eu/codelist).
+... where _Limestone packstone_ is a Concept in the [GSWA rock classification scheme](https://linked.data.gov.au/def/gswa-rock-classification-scheme), and _Packstone_ is a Concept in the [INSPIRE code list register](http://inspire.ec.europa.eu/codelist).
 
 Exact match example:
 
@@ -231,7 +230,7 @@ Child support `skos:exactMatch` Child support
 
 ## Add an imported Concept
 
-When a vocabulary imports concepts from another vocabulary, you will need to both add the concept and also update the concept scheme. Optionally, you might create a 'collection' that groups the imported concepts in to a manageble frame. See [Import a concept](#-import-a-concept) for detailed steps for importing a concept into a vocabulary.
+When a vocabulary imports concepts from another vocabulary, you will need to both add the Concept and also update the concept scheme. Optionally, you might create a 'collection' that groups the imported concepts in to a manageble frame. See [Import a concept](#-import-a-concept) for detailed steps for importing a Concept into a vocabulary.
 
 ## Additional elements
 You can add more metadata to your Concepts and Concept schemes that will improve the clarity, scope and provenance of your vocabulary. Consider the following additional elements:
@@ -248,7 +247,7 @@ A Derivation mode value is mandatory if a value is given for the `prov:wasDerive
 
 ### Notation
 
-All concepts must have an IRI, and the IRI may be a completely opaque string based on a randomly generated string (such as from the UUID scheme). However, concepts may optionally store a `skos:notation`, which is like a secondary identifier and is based on some source or reference data that the concept was derived from. Note that keeping notations when importing from vocabularies with [token IDs](#Token_IDs) is recommended.
+All concepts must have an IRI, and the IRI may be a completely opaque string based on a randomly generated string (such as from the UUID scheme). However, concepts may optionally store a `skos:notation`, which is like a secondary identifier and is based on some source or reference data that the Concept was derived from. Note that keeping notations when importing from vocabularies with [token IDs](#Token_IDs) is recommended.
 
 ### Defining vocabulary IRI
 
@@ -256,7 +255,7 @@ A Concept may be 'imported' from another vocabulary. We can assume that a Concep
 
 ### Citation
 
-For each concept, a [Citation](https://schema.org/citation), an optional reference to or textual description of some source information, may be given.
+For each Concept, a [Citation](https://schema.org/citation), an optional reference to or textual description of some source information, may be given.
 
 Example:
 
@@ -276,7 +275,7 @@ Example:
 
 ### 🚧 Import a Concept
 
-To import a concept from another vocabulary:
+To import a Concept from another vocabulary:
 
 - add the new `skos:Concept`
 - update the `skos:ConceptScheme`, and
@@ -311,7 +310,7 @@ To import a concept from another vocabulary:
    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> .
    ```
 
-5. Add the concept in your vocabulary:
+5. Add the Concept in your vocabulary:
 
    ```turtle
    srti:clockwise a skos:Concept ;
@@ -321,7 +320,7 @@ To import a concept from another vocabulary:
        prov:wasDerivedFrom srti:#clockwise .
    ```
 
-6. Add the concept to the `skos:ConceptScheme`
+6. Add the Concept to the `skos:ConceptScheme`
 
 ```turtle
   cs:
@@ -340,7 +339,7 @@ To import a concept from another vocabulary:
     skos:definition "This vocabulary describes the travel direction assigned to a section of a road. "@en ;
     skos:hasTopConcept
         :bi-directional ,
-# Add new concept "clockwise":
+# Add new Concept "clockwise":
         srti:clockwise ,
         :none ,
         :one-way ,
