@@ -77,12 +77,12 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX isorole: <https://standards.iso.org/iso/19115/-3/cit/1.0/>
 PREFIX sdo: <https://schema.org/>
 
-sdo:license
-dcterms:license
-dcterms:accessRights
-dcterms:rights
-sdo:copyrightHolder
-isorole:rightsHolder
+# sdo:license
+# dcterms:license - equivalent to sdo:license;
+# dcterms:accessRights - not really 'rights' as such, but if access rights restriced in some way, look further into what you allowed to do with the vocabulary;
+# dcterms:rights
+# sdo:copyrightHolder
+# isorole:rightsHolder - equivalent to sdo:rightsholder
 ```
 
 ### Customise
