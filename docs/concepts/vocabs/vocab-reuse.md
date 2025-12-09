@@ -72,9 +72,18 @@ See [Import a concept](#-import-a-concept) for details.
 
 While using an existing vocabulary as-is requires no editing work, there will usually be a need to attribute the creator or publisher within your local business context. Also ensure rights information is checked, even if you have no plans to extend or remix the vocabulary - look out for:
 
-- `sdo:license` / `dcterms:license`
-- `dcterms:accessRights` / `dcterms:rights`
-- `sdo:copyrightHolder` / `isorole:rightsHolder`
+```turtle
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX isorole: <https://standards.iso.org/iso/19115/-3/cit/1.0/>
+PREFIX sdo: <https://schema.org/>
+
+sdo:license
+dcterms:license
+dcterms:accessRights
+dcterms:rights
+sdo:copyrightHolder
+isorole:rightsHolder
+```
 
 ### Customise
 
