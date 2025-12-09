@@ -70,7 +70,7 @@ See [Import a concept](#-import-a-concept) for details.
 
 ### Verbatim
 
-While using an existing vocabulary as-is requires no editing work, there will usually be a need to attribute the creator or publisher within your local business context. Also ensure rights information is checked, even if you have no plans to extend or remix the vocabulary - look out for:
+While using an existing vocabulary as-is requires no editing work, there will usually be a need to attribute the creator or publisher within your local business context. Also ensure rights information is checked, even if you have no plans to extend or remix the vocabulary - look out for these properties:
 
 ```turtle
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -91,7 +91,7 @@ You may make minor changes to published vocabularies to meet local requirements.
 
 ## Finding vocabularies
 
-If you are going to Adopt, use Verbatim or Customise a vocabulary, you'll need to find relevant vocabularies to do so with. Even if you are Building from scratch, it's a good idea to know about other vocabulary work already done in your domain. There may already be vocabularies that meet your requirements, such as enriching the semantics of a metadata catalogue. They may exist in a nearby knowledge domain, industry or sector, and may originate in other global regions.
+If you are going to **Adopt**, use **Verbatim** or **Customise** a vocabulary, you'll need to find relevant vocabularies to do so with. Even if you **Build from scratch**, it's a good idea to know about other vocabulary work already done in your domain. There may already be vocabularies that meet your requirements, such as enriching the semantics of a metadata catalogue. They may exist in a nearby knowledge domain, industry or sector, and may originate in other global regions.
 
 Look for vocabularies available for reuse listed in vocabulary registries and discovery services, such as:
 
@@ -118,20 +118,22 @@ flowchart TD
 ```
 ## Reuse non-semantic vocabularies
 
-Building a vocabulary from scratch ensures vocabularies are well-formed and presented. Existing vocabularies published in other contexts may not be so well-formed! Existing vocabularies, including those found via vocabulary registries, will vary in their conformance with data standards such as RDF and SKOS, before even considering quality standards like VocPub and qSKOS ([W3C, n.d](#references-and-further-reading). Here are a couple of challenges to consider:
+Building a vocabulary from scratch is an easy win for ensuring vocabularies are well-formed and presented. Existing vocabularies published in other contexts may not be so well-formed! Existing vocabularies, including those found via vocabulary registries, will vary in their conformance with data standards such as RDF and SKOS, before even considering quality standards like VocPub and qSKOS ([W3C, n.d](#references-and-further-reading). Here are a couple of challenges to consider:
 
 ### Unstructured 
-An existing vocabulary is well presented by not machine-readable, such as in PDF or HTML. The vocabulary terms may indicate properties and relationships, but these properties themselves are not machine-readable. The vocabulary may need to be scraped and cleaned, eventually transformed into an RDF format compatible with a SKOS editing tool.
+An existing vocabulary is well presented by not machine-readable, such as in PDF or HTML. The vocabulary terms may indicate properties and relationships, but these properties themselves are not machine-readable. The vocabulary may need to be scraped and cleaned, eventually transformed into an RDF format compatible with a SKOS editing tool - if you haven't looked at open source solution yet, we [introduce VocEdit here](https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier).
 
-### Opaque 
-An existing vocabulary has non-semantic or opaque identifiers, such as "123" or "AC123", that are not unique out of context and do not resolve on the web.
+### Token IDs
+An existing vocabulary has non-semantic or token identifiers, such as "123" or "AC123", that are not unique out of context and do not resolve on the web.
 
 For provenance and tracking, use such identifiers as the suffix of IRIs in your vocabulary, such as
-- `https://vocabs.mydomain.org/AC123`.
+- `https://vocabs.mydomain.org/AC123`
 
-Furthermore, retain the identifier as a `skos:notation`:
+Optionally, retain the identifier as a `skos:notation`:
 
-- `skos:notation "AC123"` ;
+- `skos:notation "AC123"`
+
+You will still neeed to construct a rull IRI - see tips below under [Unidentified](#unidentified)
 
 ### Unidentified
 Where a vocabulary has labels but no identifiers - new IRIs will need to be constructed.
@@ -142,9 +144,19 @@ Where an existing vocabulary does not have any identifiers for concepts, you sho
 
 ## Language
 
-It is perhaps unnecessary to mention that a vocabulary fit for reuse needs to be comprehensible in the language of expected users. A `skos:ConceptScheme` will typically list the language codes used for `skos:Concept` labels, and in many cases there will be more than one - multilingual vocabularies are fairly common. If an existing vocabulary includes language labels that are not needed in a local context, they can be ignored (a local system is configured to only process labels with a given language tag). However, if parts of a vocabulary are to be adopted [see Adoption](#adoption) or customised [see Customise](#customise) it might be worth considering whether managing a partially-multilingual vocabulary is an unwanted or unnecessary complication in your context.  
+It is perhaps unnecessary to mention that a vocabulary fit for reuse needs to be comprehensible in the language of expected users. Optionally, a `skos:ConceptScheme` may indicate language codes used throughout a vocabulary `skos:Concept` labels, so that all labels do not need to be checked to identify multi-lingual patterns.
 
-Even within a natural language, there may be regional differences, such as Australian use of _Socioeconomic status_ and United States use of _Social status_:
+```turtle
+:myScheme a skos:ConceptScheme ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-1/en> ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-1/fr> .
+```
+
+If an existing vocabulary includes language labels that are not needed in a local context, consider whether this impacts your system requirements. This is a consideration for the  [Adoption](#adoption) or [Customisation](#customise) scenarios - whether or not to keep labels in languages that will not be used, or to retain them but configure your system to suppress them in search indexes or user interfaces. 
+
+### Regional language variations
+
+Even within a natural language, there may be _regional_ differences, such as Australian use of _Socioeconomic status_ and United States use of _Social status_:
 
 ```turtle
 @prefix fast: <http://id.worldcat.org/fast/> .
@@ -158,10 +170,48 @@ fast:1123359 a skos:Concept ;
 
 policy:7353843a-9107-49af-bcd0-a8eac00bcd54 a skos:Concept ;
 	skos:prefLabel "Socioeconomic status"@en ;
-	skos:exactMatch <http://id.worldcat.org/fast/1123359>
+	skos:exactMatch fast:1123359
 .
-
 ```
+When adopting a Concept and customising labels with the local context, consider retaining the regional variant as a `skos:altLabel`:
+
+```turtle
+@prefix policy: <https://linked.data.gov.au/def/policy/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+policy:7353843a-9107-49af-bcd0-a8eac00bcd54 a skos:Concept ;
+	skos:prefLabel "Socioeconomic status"@en ;
+    skos:altLabel "Social status"@en ;  # retaining the FAST preferred label as an alternative label
+	skos:exactMatch fast:1123359
+.
+```
+
+Regional language variations can be declared in label language tags explicitly. 
+
+```trutle
+PREFIX : <http://vocabulary.curriculum.edu.au/scot/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+:2981 a skos:Concept ;
+    skos:inScheme :6f1bbd29-fccf-4b0a-91d5-9089f768e88c ;
+    skos:prefLabel
+        "Forest fires"@en,
+        "Bushfires"@en-AU,
+        "Wildfires"@en-GB,
+        "Bushfires"@en-NZ,
+        "Forest fires"@en-US ;
+    skos:altLabel 
+	    "Bushfires"@en,
+        "Firestorms"@en,
+        "Wildfires"@en,
+        "Firestorms"@en-AU,
+        "Wildfires"@en-AU,
+        "Vegetation fires"@en-GB,
+.
+```
+> 💡 Note that multiple `skos:prefLabel` instances per `skos:Concept` with different language tags is _not compliant_ with VocPub Sepcification, but valid in SKOS.
+
 
 ## Can I reuse this?
 
@@ -188,7 +238,7 @@ Child support `skos:exactMatch` Child support
 ... where _Child support_ is a concept in both [Public Policy Taxonomy](https://linked.data.gov.au/def/policy/0acd51d0-a4a3-48eb-b6f4-aa086f966057) and [FAST](http://id.worldcat.org/fast/854679).
 
 
-## Add an imported concept
+## Add an imported Concept
 
 When a vocabulary imports concepts from another vocabulary, you will need to both add the concept and also update the concept scheme. Optionally, you might create a 'collection' that groups the imported concepts in to a manageble frame. See [Import a concept](#-import-a-concept) for detailed steps for importing a concept into a vocabulary.
 
@@ -244,7 +294,7 @@ It's worth checking if there are existing vocabularies (published by a third par
 
 💡 When constructing IRIs for an existing vocabulary, base the IRI suffix on any existing identifiers or tokens that may be present in the vocabulary. 
 
-### 🚧 Import a concept
+### 🚧 Import a Concept
 
 To import a concept from another vocabulary:
 
