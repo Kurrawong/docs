@@ -165,7 +165,7 @@ What if you have a vocabualry file that needs to be in a different format? Kurra
 ## References and Further Reading
 
 * AGLDWG (2025). VocPub profile specification. https://agldwg.github.io/vocpub-profile/specification
-* W3C (n.d.). QSKOS. Retrieved March 5, 2025, from https://www.w3.org/2001/sw/wiki/QSKOS
+* W3C (n.d.). QSKOS. Retrieved March 5, 2025. https://www.w3.org/2001/sw/wiki/QSKOS
 * W3C (2008). Extensible Markup Language (XML) 1.0 (W3C Recommendation). https://www.w3.org/TR/xml/
 * W3C (2009). SKOS Simple Knowledge Organization System Reference (W3C Recommendation). https://www.w3.org/TR/skos-reference/
 * W3C (2014). Turtle: Terse RDF triple language (W3C Recommendation). https://www.w3.org/TR/turtle/
