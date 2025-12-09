@@ -6,7 +6,7 @@
 >
 >***Scope***
 >
->This content is in intended to provide guidance on the use of vocabulary systems that support editing and validation of vocabularies.
+>This content is intended to provide guidance on the use of vocabulary systems that support editing and validation of vocabularies.
 >
 >***Audience***
 >
@@ -14,7 +14,7 @@
 >
 >***Outcome***
 >
-> Learners should be able to use systems to edit, vadidate, transform and version vocabularies.
+> Learners should be able to use systems to edit, validate, transform and version vocabularies.
 >
 >----------------
 
@@ -27,7 +27,7 @@
 ## Introduction
 Vocabularies are data, and data management inevitably requires application support. Vocabularies are no different! In this module we will step you through some vocabulary systems developed by KurrawongAI that will make the task of managing vocabularies easier.
 
-If you've been working through _Introduction to Voabularies_, _Advanced Vocabulary Editing_ or _Vocabulary Resue_, you will have already encountered a key tool in any vocabulary managers toolkit: an editor. In this module we will look again at _VocEdit_, but draw your attention to a _VocEdit > GitHub_ integration feature that help you manage vocabulary review and versioning. We'll also introduce you to _VocExcel_, a spreadsheet-based tool for editing simple vocabularies. And we'll introduce tools that help you validate a vocabulary, and and a tool that converts a vocabulary from one RDF format to another.
+If you've been working through _Introduction to Voabularies_, _Advanced Vocabulary Editing_ or _Vocabulary Reuse_, you will have already encountered a key tool in any vocabulary managers toolkit: an editor. In this module we will look again at _VocEdit_, but draw your attention to a _VocEdit > GitHub_ integration feature that help you manage vocabulary review and versioning. We'll also introduce you to _VocExcel_, a spreadsheet-based tool for editing simple vocabularies. And we'll introduce tools that help you validate a vocabulary, and a tool that converts a vocabulary from one RDF format to another.
 
 ## VocEdit + GitHub
 
@@ -37,7 +37,7 @@ Throughout these Vocabulary modules we have presented exercises that direct you 
 
 > 💡 This exercise assumes you have a vocabulary saved in a GitHub repository that you have permission to configure. Don't have a vocabulary? You can upload the file from the [first exercise](https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier) to your GitHub repository.  
 
-1. **Go to** the KurrawongAI [VocEdit](https://tools.kurrawong.ai/vocedit) in Chrome brower.
+1. **Go to** the KurrawongAI [VocEdit](https://tools.kurrawong.ai/vocedit) in Chrome browser.
 2. **Select** **Integrations** > **GitHub** > **GitHub App Configuration**
 3. **Select** a GitHub account from the list
 4. **Select** _Only select repositories_ (this is the most anticipated option for training and first time users - but select _All repositories_ if needed)
@@ -48,33 +48,33 @@ Throughout these Vocabulary modules we have presented exercises that direct you 
 > 💡 if you do not have permissions to install in the repository, the button in the last step will read _Authorise & Request_. In this case you will need to request access before proceeding with GitHub integration.
 
 8. **Save**
-9. **Project** > **Open** > **GitHub File** - you will be presentede with the repository that you configured > **Select** > **Next**
+9. **Project** > **Open** > **GitHub File** - you will be presented with the repository that you configured > **Select** > **Next**
 10. Either create a new branch or select an existing branch > **Next**
 11. Select a vocabulary file
 12. Edit the vocabulary - any changes that you like
 13. Save
 14. **Project** > **Save**
-15. Go to your GitHub repositoy - note that the change!
+15. Go to your GitHub repository - note the change!
 
-Close your project in VocEdit. The next time you return to ths project:
+Close your project in VocEdit. The next time you return to this project:
 
 16. **Project** > **Open** > **GitHub File**
 
-Now your vocabulary is availabe in your GitHub repository where it can be reviewed, edited, accessed over the web and even deployed. 
+Now your vocabulary is available in your GitHub repository where it can be reviewed, edited, accessed over the web and even deployed. 
 
 ## VocExcel
 
 VocExcel is a vocabulary editor that is essentially a MS Excel template. Using VocExcel, you will be creating vocabulary data in tabular form. Don't worry, VocExcel comes with a transformation service that will convert the Excel file into a range of RDF formats.
 
-> 💡 _VocExcel_ is more suitable for simple or 'flat' vocabularies, such as a vocabulary where all `skos:Concept` s are top concepts of a `skos:ConceptSchem`. VocExcel can technically handle a vocabulary of any hierarchy depth, but anything beyond a two-level vocabulary (top concepts with one level of `skos:narrower` concepts), is not as well supported. For deeper, multi-level hierarchy vocabularies we recommend _VodEdit_.
+> 💡 _VocExcel_ is more suitable for simple or 'flat' vocabularies, such as a vocabulary where all `skos:Concept` s are top concepts of a `skos:ConceptScheme`. VocExcel can technically handle a vocabulary of any hierarchy depth, but anything beyond a two-level vocabulary (top concepts with one level of `skos:narrower` concepts), is not as well supported. For deeper, multi-level hierarchy vocabularies we recommend _VocEdit_.
 
-To walk you through VocExcel features, we'll create a vocabualry from scratch. 
+To walk you through VocExcel features, we'll create a vocabulary from scratch. 
 
 ### 🚧 _Exercises_ Create a vocabulary in VocExcel
 
 > 💡 You will need access to MS Excel to do this exercise.
 
-1. **Go to** the KurrawongAI [VocExcel](https://tools.kurrawong.ai/vocexcel) in any brower.
+1. **Go to** the KurrawongAI [VocExcel](https://tools.kurrawong.ai/vocexcel) in any browser.
 2. **Get VocExcel Template**
 3. **Open** the downloaded template (it may have opened automatically)
 4. **Save As** a new file, e.g. "VocExcel-newVocab.xlsx"
@@ -98,8 +98,8 @@ On the Concept Scheme tab you can create a new Concept Scheme for the vocabulary
 7. **Open** the _Concept_ tab
 8. Add data for all mandatory fields for a Concept
 9. **Save** the template
-10. Go to [VocExcel](https://tools.kurrawong.ai/vocexcel) in any brower.
-11. **Upload an Excel or RDF fils** > choose MS Excel file you just saved > **Upload**
+10. Go to [VocExcel](https://tools.kurrawong.ai/vocexcel) in any browser.
+11. **Upload an Excel or RDF file** > choose MS Excel file you just saved > **Upload**
 
 You will be presented with a Result. From here you can view the Concept Scheme or any Concept in the file, or the Full RDF Turtle result.
 
@@ -115,7 +115,7 @@ A vocabulary validator will typically check for two things:
 
 SHACL (W3C, 2017), or the _Shapes Constraint Language_, is a way of encoding a vocabulary profile so that it is machine-readable and used in some tool to check a vocabulary's conformance with that profile. 
 
-A SHACL file can be used in various validation tools and services - here we'll demonstrate the KurrawongAI SHACL Validator, with a special focus on the VocPub profile, through an excersise.
+A SHACL file can be used in various validation tools and services - here we'll demonstrate the KurrawongAI SHACL Validator, with a special focus on the VocPub profile, through an exercise.
 
 🎬 You can find out about the SHACL Validator on the [KurrawongAI YouTube](https://www.youtube.com/watch?v=aOiEVHHfOMc) channel.
 
@@ -125,32 +125,32 @@ A SHACL file can be used in various validation tools and services - here we'll d
 1. **Go to** the KurrawongAI [SHACL Validator](https://tools.kurrawong.ai/validate) in any browser 
 2. **Data to validate** > **Upload** > select `pestRiskPath_training.ttl` (*don't have the file? see the [first exercise](https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier) in Introduction to Vocabularies*) 
 3. **Data to validate** form > **Upload**
-4. Scroll down to **SHACL Shapes* form
-5. **Use Validators** > expand **VocPub > *Add** the most recent version > **Close**
+4. Scroll down to **SHACL Shapes** form
+5. **Use Validators** > expand **VocPub > **Add** the most recent version > **Close**
 6. **Validate**
 
-A page of Validation Results will launch. This report let's you know where your vocabulary does not conform to the VocPub profile. The messages are colour coded and indicates issues in your vocabulary that are:
+A page of Validation Results will launch. This report lets you know where your vocabulary does not conform to the VocPub profile. The messages are colour coded and indicates issues in your vocabulary that are:
 
-- a 🔴 Violation - these issues MUST be addressed for the vocabulary to coform with VocPub specification;
+- a 🔴 Violation - these issues MUST be addressed for the vocabulary to conform with VocPub specification;
 - a 🟡 Warning - it is recommended that these issues are addressed, but your vocabulary is still valid if you do not; and
 - _Informational_ - these are optional improvements to the vocabulary
 
-> 💡 Below these results, a **Full Vaidation Report** is also available.
+> 💡 Below these results, a **Full Validation Report** is also available.
 
 Note that each message includes a reference to the VocPub specification, such as:
 
-<pre>For http://example.com/pestRiskPath: Requirement 2.15 - modified date - violated_</pre>
+> _For http://example.com/pestRiskPath: Requirement 2.15 - modified date - violated_
 
-The Requirement referred to here can be looked up in the VocPub Specification in the [Vocabulary] (https://linked.data.gov.au/def/vocpub/spec#vocabulary) section (as this violation refers to a `skos:ConcpetSchem`) at Requirement 2.15.
+The Requirement referred to here can be looked up in the VocPub Specification in the [Vocabulary](https://linked.data.gov.au/def/vocpub/spec#vocabulary) section (as this violation refers to a `skos:ConceptScheme`) at Requirement 2.15.
 
 >💡 **Tip:** Looking up the VocPub Specification requirement gives you more information about the Warning given in the Validator Results.
 
 
 ## RDF Converter
 
-This and other modules have featured excersies using Turtle (.ttl) files. Turtle is just one RDF serialisation - there are other standard formats that vocabulary data can be managed in. 
+This and other modules have featured exercises using Turtle (.ttl) files. Turtle is just one RDF serialisation - there are other standard formats that vocabulary data can be managed in. 
 
-What if you have a vocabualry file that needs to be in a different format? KurrawongAI have develped an [RDF Coverter](https://tools.kurrawong.ai/convert). This coverter can be used to transform RDF files (not just SKOS vocabularies) into different formats. 
+What if you have a vocabulary file that needs to be in a different format? KurrawongAI have developed an [RDF Coverter](https://tools.kurrawong.ai/convert). This converter can be used to transform RDF files (not just SKOS vocabularies) into different formats. 
 
 ### 🚧 Convert a Turtle file to XML
 
