@@ -139,7 +139,7 @@ Where a vocabulary has labels but no identifiers - new IRIs will need to be cons
 
 > 💡 Do NOT base IRIs on another organisations domain without first consulting with them! Either use the Example namespace `http://example.com[vocab/ID]`, or use a domain that you own or control.
 
-Where an existing vocabulary does not have any identifiers for concepts, you should mint your own, but make them opaque. Use a scheme like UUID - these can be generated using a [web servive](https://www.uuidgenerator.net).
+Where an existing vocabulary does not have any identifiers for concepts, you should mint your own, but make them opaque. Use a scheme like UUID - these can be generated using a [web service](https://www.uuidgenerator.net).
 
 ## Language
 
