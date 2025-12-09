@@ -318,7 +318,7 @@ To import a concept from another vocabulary:
        skos:prefLabel "Both directions"@en ;
    # add definition verbatim from source
        skos:definition "Clockwise."@en ;
-       prov:wasDerivedFrom <http://cef.uv.es/lodroadtran18/def/transporte/dtx_srti#clockwise> .
+       prov:wasDerivedFrom srti:#clockwise .
    ```
 
 6. Add the concept to the `skos:ConceptScheme`
