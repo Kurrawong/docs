@@ -207,21 +207,12 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
         "Wildfires"@en,
         "Firestorms"@en-AU,
         "Wildfires"@en-AU,
-        "Vegetation fires"@en-GB,
+        "Vegetation fires"@en-GB
 .
 ```
-> 💡 Note that multiple `skos:prefLabel` instances per `skos:Concept` with different language tags is _not compliant_ with VocPub Sepcification, but valid in SKOS.
+> 💡This example Concept has a combination of ISO 639-1 language tags (e.g. "@en") and BCP 47 (e.g. "@en-AU"). It's valid SKOS and RDF! But a downstream system may be expecting the locale-free ISO 639-1 scheme, so we recommend including at least one skos:prefLabel encoded as ISO 639-1.
 
-
-## Can I reuse this?
-
-Check an existing vocabulary for rights and licensing statements. Information about terms and conditions should be stated within the `skos:conceptScheme`, but might be stated outside the vocabulary data in a non-semantic resource (such as a vocabulary landing page). Some properties to check for include:
-
-- `sdo:license` / `dcterms:license`
-- `dcterms:accessRights`
-- `sdo:copyrightHolder` / `isorole:rightsHolder`
-
-💡 Even if a vocabulary may be reused, some attribution may be needed in your local context. If derivations to the vocabulary are planned, they may need to be shared as a condition of reuse.
+> 💡 Multiple `skos:prefLabel` instances per `skos:Concept` with different language tags is _not compliant_ with VocPub Sepcification (AGLDWG, n.d.), but valid in SKOS.
 
 ## Mapping concepts with other vocabularies
 
@@ -230,25 +221,26 @@ In the basic structure of a vocabulary, concepts may be related to other concept
 Broad match example:
 
 _Limestone packstone_ `skos:broadMatch` _Packstone_
-... where _Limestone packstone_ is a concept in the [GSWA rock classification scheme](https://linked.data.gov.au/def/gswa-rock-classification-scheme), and _Packstone_ is a concept in the [INSPIRE code list register](http://inspire.ec.europa.eu/codelist).
+... where _Limestone packstone_ is a concept in the [GSWA rock classification scheme](https://linked.data.gov.au/def/gswa-rock-classification-scheme), and _Packstone_ is a Concept in the [INSPIRE code list register](http://inspire.ec.europa.eu/codelist).
 
 Exact match example:
 
 Child support `skos:exactMatch` Child support
-... where _Child support_ is a concept in both [Public Policy Taxonomy](https://linked.data.gov.au/def/policy/0acd51d0-a4a3-48eb-b6f4-aa086f966057) and [FAST](http://id.worldcat.org/fast/854679).
+... where _Child support_ is a Concept in both [Public Policy Taxonomy](https://linked.data.gov.au/def/policy/0acd51d0-a4a3-48eb-b6f4-aa086f966057) and [FAST](http://id.worldcat.org/fast/854679).
 
 
 ## Add an imported Concept
 
 When a vocabulary imports concepts from another vocabulary, you will need to both add the concept and also update the concept scheme. Optionally, you might create a 'collection' that groups the imported concepts in to a manageble frame. See [Import a concept](#-import-a-concept) for detailed steps for importing a concept into a vocabulary.
 
-
 ## Additional elements
 You can add more metadata to your Concepts and Concept schemes that will improve the clarity, scope and provenance of your vocabulary. Consider the following additional elements:
 
 ### Derived from
 
-Use `prov:wasDerivedFrom` to reference an IRI for an external vocabulary from which the vocabulary is derived.
+Use `prov:wasDerivedFrom` to indicate an IRI of an external vocabulary from which the vocabulary is derived. 
+
+> 💡 An external vocabulary may not have an IRI - see VocPub Specification [section 2.1.7](https://agldwg.github.io/vocpub-profile/specification.html#vocabulary) for more information about indicating external vocabularies. 
 
 ### Derivation mode
 
@@ -256,11 +248,11 @@ A Derivation mode value is mandatory if a value is given for the `prov:wasDerive
 
 ### Notation
 
-All concepts must have an IRI, and the IRI identifier may be a completely opaque string based on nothing other than a randomly generated string (such as from the UUID scheme). However, concepts may optionally store a `skos:notation`, which is like a secondary identifier and is based on some source or reference data that the concept was derived from. Note that keeping notations when importing from [Opaque](#opaque) vocabularies is especially important.
+All concepts must have an IRI, and the IRI may be a completely opaque string based on a randomly generated string (such as from the UUID scheme). However, concepts may optionally store a `skos:notation`, which is like a secondary identifier and is based on some source or reference data that the concept was derived from. Note that keeping notations when importing from vocabularies with [token IDs](#Token_IDs) is recommended.
 
 ### Defining vocabulary IRI
 
-A concept may be 'imported' from another vocabulary. We can assume that a concept is imported if it shares the same or very similar metadata (such as a `skos:definition`) and labels. Such concepts should indicate the vocabulary from where they were imported with `rdfs:isDefinedBy` . Read more about [importing](#adoption) concepts and references. 
+A Concept may be 'imported' from another vocabulary. We can assume that a Concept is imported if it shares the same or very similar metadata (such as a `skos:definition`) and labels. Such concepts should indicate the vocabulary from where they were imported with `rdfs:isDefinedBy` . Read more about [importing](#adoption) concepts and references. 
 
 ### Citation
 
@@ -280,19 +272,7 @@ Example:
 	.
 ```
 
-... where the Citation refers to a policy definition originating from an external source. In this example the URL of the source is given so that it can be easily looked up and, if needed, verified and validated.
-
-
-## Reuse existing vocabularies
-
-It's worth checking if there are existing vocabularies (published by a third party) that match your requirements. In this section we will discuss:
-
-- finding and identifying vocabularies for reuse
-- workflows to suit vocabulary formats
-- derivation modes: the type and extent of reuse
-- how to indicate provenance and attribution
-
-💡 When constructing IRIs for an existing vocabulary, base the IRI suffix on any existing identifiers or tokens that may be present in the vocabulary. 
+... where the Citation indicates a policy definition originating from an external source. In this example the URL of the source is given so that it can be easily looked up and, if needed, verified and validated.
 
 ### 🚧 Import a Concept
 
@@ -314,20 +294,21 @@ To import a concept from another vocabulary:
 
 4. Add the prefix declarations:  
    ```turtle
-   @prefix : <https://linked.data.gov.au/def/road-travel-direction/> .   
-   @prefix cs: <https://linked.data.gov.au/def/road-travel-direction> .
-   @prefix agldwgstatus: <linked.data.gov.au/def/reg-status/> .
-   @prefix dcterms: <http://purl.org/dc/terms/> .
-   @prefix owl: <http://www.w3.org/2002/07/owl#> .
-   @prefix prov: <http://www.w3.org/ns/prov#> .
-   @prefix qsi: <https://linked.data.gov.au/org/qsi> .
-   @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-   @prefix reg:  <http://purl.org/linked-data/registry#> .
-   @prefix sdo: <https://schema.org/> .
-   @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+   PREFIX : <https://linked.data.gov.au/def/road-travel-direction/> .   
+   PREFIX cs: <https://linked.data.gov.au/def/road-travel-direction> .
+   PREFIX agldwgstatus: <linked.data.gov.au/def/reg-status/> .
+   PREFIX dcterms: <http://purl.org/dc/terms/> .
+   PREFIX icsm: <https://linked.data.gov.au/org/icsm>
+   PREFIX owl: <http://www.w3.org/2002/07/owl#> .
+   PREFIX prov: <http://www.w3.org/ns/prov#> .
+   PREFIX qsi: <https://linked.data.gov.au/org/qsi> .
+   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+   PREFIX reg:  <http://purl.org/linked-data/registry#> .
+   PREFIX sdo: <https://schema.org/> .
+   PREFIX skos: <http://www.w3.org/2004/02/skos/core#> .
    # add prefix srti:
-   @prefix srti: <http://cef.uv.es/lodroadtran18/def/transporte/dtx_srti#> .
-   @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+   PREFIX srti: <http://cef.uv.es/lodroadtran18/def/transporte/dtx_srti#> .
+   PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> .
    ```
 
 5. Add the concept in your vocabulary:
@@ -340,18 +321,18 @@ To import a concept from another vocabulary:
        prov:wasDerivedFrom <http://cef.uv.es/lodroadtran18/def/transporte/dtx_srti#clockwise> .
    ```
 
-6. Add the concept to the ``skos:ConceptScheme``
+6. Add the concept to the `skos:ConceptScheme`
 
 ```turtle
   cs:
     a skos:ConceptScheme ;
     sdo:keywords themes:transport ;
     dcterms:created "2023-05-30"^^xsd:date ;
-    dcterms:creator <https://linked.data.gov.au/org/qsi> ;
+    dcterms:creator qsi: ;
     dcterms:identifier "road-travel-direction"^^xsd:token ;
 # Date modified should be incremented:
     dcterms:modified "XXXX-XX-XX"^^xsd:date ;
-    dcterms:publisher <https://linked.data.gov.au/org/icsm> ;
+    dcterms:publisher icsm: ;
     reg:status agldwgstatus:experimental ;
 # Version information may be incremented
     owl:versionIRI :1.0 ;
@@ -372,7 +353,7 @@ To import a concept from another vocabulary:
 .
 ```
 
-7. Create new ``skos:Collection``
+7. Create new `skos:Collection`
 
 💡 A `skos:Collection` references a `skos:Concept` using the `skos:member` property.
 
@@ -390,12 +371,11 @@ To import a concept from another vocabulary:
     skos:prefLabel "LOD SRTI DATEX II concept collection"@en ;
 .
 ```
-
 Save your changes.
 
 ## References and Further Reading
 
 * AGLDWG. (n.d.). VocPub profile specification. https://linked.data.gov.au/def/vocpub/spec
-* W3C (n.d.). QSKOS. Retrieved March 5, 2025, from https://www.w3.org/2001/sw/wiki/QSKOS
+* W3C (n.d.). QSKOS. https://www.w3.org/2001/sw/wiki/QSKOS
 * W3C (2009). SKOS reference. https://www.w3.org/TR/skos-reference/
-* W3C (2014). Turtle: Terse RDF triple language (W3C Recommendation). Retrieved from https://www.w3.org/TR/turtle/
+* W3C (2014). Turtle: Terse RDF triple language (W3C Recommendation). https://www.w3.org/TR/turtle/
