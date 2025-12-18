@@ -13,7 +13,7 @@
 >
 >***Outcome***
 >
->_On completing this module you will be able to understand and apply an expanded set of vocabulary properties.
+>_On completing this module you will be able to understand and apply an expanded set of vocabulary properties._
 >
 >----------------
 

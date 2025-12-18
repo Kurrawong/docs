@@ -27,7 +27,7 @@
 ## Introduction
 Vocabularies are data, and data management inevitably requires application support. Vocabularies are no different! In this module we will step you through some vocabulary systems developed by KurrawongAI that will make the task of managing vocabularies easier.
 
-If you've been working through _Introduction to Vocabularies_, _Advanced Vocabulary Editing_ or _Vocabulary Reuse_, you will have already encountered a key tool in any vocabulary managers toolkit: an editor. In this module we will look again at _VocEdit_, but draw your attention to a _VocEdit > GitHub_ integration feature that help you manage vocabulary review and versioning. We'll also introduce you to _VocExcel_, a spreadsheet-based tool for editing simple vocabularies. And we'll introduce tools that help you validate a vocabulary, and a tool that converts a vocabulary from one RDF format to another.
+If you've been working through [_Introduction to Vocabularies_](/concepts/vocabs/introduction), [_Advanced Vocabulary Editing_](/concepts/vocabs/creation) or [_Vocabulary Reuse_](/concepts/vocabs/vocab-reuse), you will have already encountered a key tool in any vocabulary managers toolkit: an editor. In this module we will look again at _VocEdit_, but draw your attention to a _VocEdit > GitHub_ integration feature that help you manage vocabulary review and versioning. We'll also introduce you to _VocExcel_, a spreadsheet-based tool for editing simple vocabularies. And we'll introduce tools that help you validate a vocabulary, and a tool that converts a vocabulary from one RDF format to another.
 
 ## VocEdit + GitHub
 
