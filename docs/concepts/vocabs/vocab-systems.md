@@ -53,16 +53,18 @@ In short, these systems best address the following scenarios:
 
 |  | VocEdit | VocExcel | PoolParty
 |:-------------|:--------|:--------------|:---------------------|
-| Sign-up required | NO | NO | YES |
-| Tech requirements | Browser (Chrome) | MS Excel | Browser |
-| Bulk load from spreadsheet | NO | YES | YES |
-| Support for deep hierarchy editing | YES | Limited | YES |
+| sign-up required | NO | NO | YES |
+| tech requirements | browser (Chrome) | MS Excel | browser |
+| bulk load from spreadsheet | NO | YES | YES |
+| support for deep hierarchy editing | YES | limited | YES |
 | VocPub conformance | YES | YES | NO |
-| Add non-VocPub properties | Per Concept | Per vocabulary | Per vocabulary |
-| RDF formats | Turtle | Turtle | Many |
-| File management | GitHub integration | Local directory | Database |
+| add non-VocPub properties | per concept | per vocabulary | per vocabulary |
+| RDF formats | Turtle | Turtle | many |
+| file management | GitHub integration | local directory | database |
 
 > 💡 Migrating vocabulary data between VocExcel and VocEdit is seemless. PoolParty will ingest data from VocExcel or VocEdit, and will store and output data with minor syntactic differences. It's a good idea to consider the relative strengths of each system, but as these systems all have RDF and SKOS as core business logic, lock-in scenarios are minimal. 
+
+<br>
 
 ### VocEdit + GitHub
 
