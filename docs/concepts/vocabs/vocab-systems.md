@@ -60,7 +60,7 @@ In short, these systems best address the following scenarios:
 | sign-up required | NO | NO | YES |
 | tech requirements | browser (Chrome) | browser, MS Excel | browser (Firefox, Chrome, MS Edge)|
 | bulk load from spreadsheet | NO | YES | YES |
-| support for deep hierarchy editing | YES | limited | YES |
+| deep hierarchy editing | YES | limited | YES |
 | VocPub conformance | YES | YES | NO |
 | add non-VocPub properties | per concept | per vocabulary | per vocabulary |
 | RDF formats | Turtle | Turtle | many |
