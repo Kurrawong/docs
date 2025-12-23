@@ -36,16 +36,19 @@ KurrawongAI has develped VodEdit and VocExcel for editing and managing vocabular
 In short, these systems best address the following scenarios:
 
 **VocEdit**
+
 - no client-side setup
 - editing deep, complex hierarchies
 - GitHub integtration
 
 **VocExcel**
+
 - minimal client-side setup
 - bulk-load vocabulary data from tables
 - extending profiles (SKOS+, VocPub+)
 
 **PoolParty**
+
 - database backend
 - mulit-lingual vocabularies
 - native support for multiple formats
