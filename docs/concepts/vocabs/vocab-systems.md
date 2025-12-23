@@ -31,22 +31,25 @@ If you've been working through [_Introduction to Vocabularies_](/concepts/vocabs
 
 ## Vocabulary editing tools
 
-KurrawongAI has develped VodEdit and VocExcel for editing and managing vocabulary data. Each feature different requirements and strengths suited to different workflows. We also mention PoolParty, an editor that is available via commercial license, or in Australia a non-commercial feature-limited license is available for research institutions via the Research Vocabularies Australia service. 
+KurrawongAI has develped VodEdit and VocExcel for editing and managing vocabulary data. Each feature different requirements and strengths suited to different workflows. We also mention [PoolParty](https://www.poolparty.biz), an editor that is available via commercial license, or in Australia a non-commercial feature-limited license is available for research institutions via the [Research Vocabularies Australia[(https://documentation.ardc.edu.au/rva/what-is-rva-editor-poolparty) service. 
 
-In short, these systems address the following scenarios:
+In short, these systems best address the following scenarios:
 
-**VocEdit** 
-- no client-side setup required
-- support for editing deep, complex hierarchies
+**VocEdit**
+- no client-side setup
+- editing deep, complex hierarchies
 - GitHub integtration
 
 **VocExcel**
 - bulk-load vocabulary data from tables
-- extend profile (SKOS+, VocPub+)
+- extending profiles (SKOS+, VocPub+)
 
 **PoolParty**
 - database management
-- native support for multiple formats 
+- mulit-lingual vocabularies
+- native support for multiple formats
+
+<br>
 
 |  | VocEdit | VocExcel | PoolParty
 |:-------------|:--------|:--------------|:---------------------|
@@ -59,6 +62,7 @@ In short, these systems address the following scenarios:
 | RDF formats | Turtle | Turtle | Many |
 | File management | GitHub integration | Local directory | Database |
 
+> 💡 Migrating vocabulary data between VocExcel and VocEdit is seemless. PoolParty will ingest data from VocExcel or VocEdit, and will store and output data with minor syntactic differences. It's a good idea to consider the relative strengths of each system, but as these systems all have RDF and SKOS as core business logic, lock-in scenarios are minimal. 
 
 ### VocEdit + GitHub
 
