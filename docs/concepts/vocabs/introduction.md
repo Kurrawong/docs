@@ -3,27 +3,32 @@
 This is the first in a series of modules that range from introductory guidance, tips for experienced vocabulary practitioners and lessons in using innovative vocabulary tooling. These modules needn't be approached in series order, but note the step-by-step exercise that continues through out other modules. In summary, the modules are:
 
 [Introduction to Vocabularies](#introduction-to-vocabularies) (this module)
+
 - Vocabulary types
 - Core properties
-- Excercise - start using VocEdit
+- Exercise - start using VocEdit
 
 [Advanced Vocbulary Editing](https://docs.kurrawong.ai/concepts/vocabs/creation/)
+
 - Mapping between vocabularies
 - Additional properties
 - Exercise (continued from _Introduction_)
 
 [Vocabulary Reuse](https://docs.kurrawong.ai/concepts/vocabs/vocab-reuse/)
+
 - Reuse patterns
 - Importing concept from other vocabularies
 - Exercise (continued from _Advanced_)
 
 [Vocabulary systems](https://docs.kurrawong.ai/concepts/vocabs/vocab-systems/)
+
 - VocEdit + GitHub (with new exercise)
 - VocExcel
 - SHACL Validator
 - RDF Converter
 
 [Vocabulary patterns](https://docs.kurrawong.ai/concepts/vocabs/patterns/)
+
 - Handling special cases and advanced tips
 
 <br>
