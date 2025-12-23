@@ -56,7 +56,7 @@ In short, these systems best address the following scenarios:
 <br>
 
 |  | VocEdit | VocExcel | PoolParty
-|:-------------|:--------|:--------------|:---------------------|
+|:-------------|:---------|:---------------|:-------------------|
 | sign-up required | NO | NO | YES |
 | tech requirements | browser (Chrome) | browser, MS Excel | browser (Firefox, Chrome, MS Edge)|
 | bulk load from spreadsheet | NO | YES | YES |
