@@ -2,7 +2,7 @@
 
 This is the first in a series of modules that range from introductory guidance, tips for experienced vocabulary practitioners and lessons in using innovative vocabulary tooling. These modules needn't be approached in series order, but note the step-by-step exercise that continues through out other modules. In summary, the modules are:
 >
-> _Introduction to Vocabularies_ (this module)
+> [Introduction to Vocabularies](#introductiontovocabularies] (this module)
 > - Vocabulary types
 > - Core properties
 > - Excercise - start using VocEdit
@@ -30,7 +30,7 @@ This is the first in a series of modules that range from introductory guidance, 
 
 > 💡 _Identifies troubleshooting tips, common errors and potential issues._
 > 🚧 _Exercises_
-> 🎬 _Vidoes_
+> 🎬 _Videos_
 
 ## Introduction to Vocabularies
 
