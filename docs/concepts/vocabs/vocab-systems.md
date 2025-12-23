@@ -29,11 +29,42 @@ Vocabularies are data, and data management inevitably requires application suppo
 
 If you've been working through [_Introduction to Vocabularies_](/concepts/vocabs/introduction), [_Advanced Vocabulary Editing_](/concepts/vocabs/creation) or [_Vocabulary Reuse_](/concepts/vocabs/vocab-reuse), you will have already encountered a key tool in any vocabulary managers toolkit: an editor. In this module we will look again at _VocEdit_, but draw your attention to a _VocEdit > GitHub_ integration feature that help you manage vocabulary review and versioning. We'll also introduce you to _VocExcel_, a spreadsheet-based tool for editing simple vocabularies. And we'll introduce tools that help you validate a vocabulary, and a tool that converts a vocabulary from one RDF format to another.
 
-## VocEdit + GitHub
+## Vocabulary editing tools
+
+KurrawongAI has develped VodEdit and VocExcel for editing and managing vocabulary data. Each feature different requirements and strengths suited to different workflows. We also mention PoolParty, an editor that is available via commercial license, or in Australia a non-commercial feature-limited license is available for research institutions via the Research Vocabularies Australia service. 
+
+In short, these systems address the following scenarios:
+
+**VocEdit** 
+- no client-side setup required
+- support for editing deep, complex hierarchies
+- GitHub integtration
+
+**VocExcel**
+- bulk-load vocabulary data from tables
+- extend profile (SKOS+, VocPub+)
+
+**PoolParty**
+- database management
+- native support for multiple formats 
+
+|  | VocEdit | VocExcel | PoolParty
+|:-------------|:--------|:--------------|:---------------------|
+| Sign-up required | NO | NO | YES |
+| Tech requirements | Browser (Chrome) | MS Excel | Browser |
+| Bulk load from spreadsheet | NO | YES | YES |
+| Support for deep hierarchy editing | YES | Limited | YES |
+| VocPub conformance | YES | YES | NO |
+| Add non-VocPub properties | Per Concept | Per vocabulary | Per vocabulary |
+| RDF formats | Turtle | Turtle | Many |
+| File management | GitHub integration | Local directory | Database |
+
+
+### VocEdit + GitHub
 
 Throughout these Vocabulary modules we have presented exercises that direct you to save vocabulary files to your desktop - you can close _VocEdit_, open it again and just return to that same file to continue editing. But what if a file needs to be reviewed, edited or validated outside the _VocEdit_ tool? And you may want to store your vocabulary where others can access it. VocEdit is integrated with GitHub to achieve these goals. 
 
-### 🚧 Save a vocabulary to GitHub
+#### 🚧 Save a vocabulary to GitHub
 
 > 💡 This exercise assumes you have a vocabulary saved in a GitHub repository that you have permission to configure. Don't have a vocabulary? You can upload the file from the [first exercise](https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier) to your GitHub repository.  
 
@@ -56,13 +87,13 @@ Throughout these Vocabulary modules we have presented exercises that direct you 
 14. **Project** > **Save**
 15. Go to your GitHub repository - note the change!
 
-Close your project in VocEdit. The next time you return to this project:
+Close your project in VocEdit. The next time you return to this same project:
 
 16. **Project** > **Open** > **GitHub File**
 
 Now your vocabulary is available in your GitHub repository where it can be reviewed, edited, accessed over the web and even deployed. 
 
-## VocExcel
+### VocExcel
 
 VocExcel is a vocabulary editor that is essentially a MS Excel template. Using VocExcel, you will be creating vocabulary data in tabular form. Don't worry, VocExcel comes with a transformation service that will convert the Excel file into a range of RDF formats.
 
@@ -70,7 +101,7 @@ VocExcel is a vocabulary editor that is essentially a MS Excel template. Using V
 
 To walk you through VocExcel features, we'll create a vocabulary from scratch. 
 
-### 🚧 Create a vocabulary in VocExcel
+#### 🚧 Create a vocabulary in VocExcel
 
 > 💡 You will need access to MS Excel to do this exercise.
 
