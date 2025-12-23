@@ -1,30 +1,41 @@
+# Overview
 
-# Introduction to Vocabularies
+This is the first in a series of modules that range from introductory guidance, tips for experienced vocabulary practitioners and lessons in using innovative vocabulary tooling. These modules needn't be approached in series order, but note the step-by-step exercise that continues through out other modules. In summary, the modules are:
+>
+> _Introduction to Vocabularies_
+> - Vocabulary types
+> - Core properties
+> - Excercise - start using VocEdit
+>
+> _Advanced Vocbulary Editing_
+> - Mapping between vocabularies
+> - Additional properties
+> - Exercise (continued from _Introduction_)
+>
+> _Vocabulary Reuse_
+> - Reuse patterns
+> - Importing concept from other vocabularies
+> - Exercise (continued from _Advanced_)
+>
+> _Vocabulary systems_
+> - VocEdit + GitHub
+> - VocExcel
+> - SHACL Validator
+> - RDF Converter
+>
 
-
-> ***Scope***
->
-> This module is in intended to introduce vocabularies and to provide initial steps and guidance on starting a vocabulary with minimum elements. This module will also explain the rationale for vocabularies within the context of Knowledge Graph data management.
->
->***Audience***
->
-> _The content is primarily targeted to managers and users (vocab owners and contributors) of established vocabularies. It is assumed that learners have some experience with using document management or version control systems, and general familiarity with data management in practice._
->
-> ***Outcome***
->
-> _These modules are intended to provide an introduction to vocabulary creation and management, and provide initial guidance on best practice for administration and management of vocabularies within part of broader data management systems. It is recommended that users independently access other resources (see references [here](#references-and-further-reading)), as part of ongoing independent learning._
->
-> ---
+> _Vocabulary patterns_
+> - Handling special cases and advanced tips
 
 > 💡 _Identifies troubleshooting tips, common errors and potential issues._
+> 🚧 _Exercises_
+> 🎬 _Vidoes_
 
-> #### 🚧 _Exercises_
+## Introduction to Vocabularies
 
-## An Introduction to Vocabularies
+As languages speakers, we have developed the categorization of "things" to both understand and communicate our experience of the world. The sheer volume of data that we interact with has necessitated a shared understanding of naming and definition. In large-scale data holdings, standardisation and disambiguation through vocabularies becomes a necessity.
 
-As languages speakers, we have developed the categorization of "things" as a means to both understand and communicate our experience of the world. The sheer volume of data that we interact with has necessitated approaches to using our shared understanding of language and naming. Particularly when using information as part of large-scale data holdings, it can be beneficial to encourage consistency through the use of controlled vocabularies.
-
-When sharing information across diverse groups of people (or perhaps software applications), there is need for a common understanding of exactly what is being referred to. This is where controlled vocabularies provide a structure from which terminology applied to information can be driven from an agreed stated understanding of that concept. That understanding can be a definition for human understanding, or a machine-readable unique identifier for machine processing.
+When sharing information across diverse groups, catalogues or software applications, there is need for a common understanding of exactly what is being referred to. This is where controlled vocabularies provide terminology applied to information, driving agreed understanding of concepts. Vocabularies provide both textual labels and definitions for human understanding, and machine-readable unique identifier for machine processing.
 
 Whatever size and shape, the vocabularies mentioned in these modules are designed for describing data and content. Vocabularies can be used to describe (or catalogue) content in information systems. Vocabularies can also optimise search engines and provide the basis for navigation in information systems, making it easier for users to find content and data.
 
