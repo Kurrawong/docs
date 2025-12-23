@@ -41,11 +41,12 @@ In short, these systems best address the following scenarios:
 - GitHub integtration
 
 **VocExcel**
+- minimal client-side setup
 - bulk-load vocabulary data from tables
 - extending profiles (SKOS+, VocPub+)
 
 **PoolParty**
-- database management
+- database backend
 - mulit-lingual vocabularies
 - native support for multiple formats
 
@@ -187,7 +188,11 @@ The Requirement referred to here can be looked up in the VocPub Specification in
 
 This and other modules have featured exercises using Turtle (.ttl) files. Turtle is just one RDF serialisation - there are other standard formats that vocabulary data can be managed in. 
 
-What if you have a vocabulary file that needs to be in a different format? KurrawongAI have developed an [RDF Coverter](https://tools.kurrawong.ai/convert). This converter can be used to transform RDF files (not just SKOS vocabularies) into different formats. 
+The RDF Converter can be used to both transform Turtle files into other formats and also to improve Turtle file management. The Converter can:
+- transform RDF between formats such as Turtle, JSON-LD and XML
+- apply prefixes, improving both file readability and minimizing file size by shortening IRIs.
+
+The two exercises below demonstrate how the KurrawongAI [RDF Coverter](https://tools.kurrawong.ai/convert) can be used to convert SKOS vocabularies into different formats and also apply prefixes.  
 
 ### 🚧 Convert a Turtle file to XML
 
@@ -198,6 +203,22 @@ What if you have a vocabulary file that needs to be in a different format? Kurra
 5. Copy or download results
 
 >💡 **Tip:** XML is a W3C Recommendation (W3C, 2008)
+
+### 🚧 Apply prefixes to a Turtle file
+
+1. **Go to** the KurrawongAI [RDF Converter](https://tools.kurrawong.ai/convert) in any browser 
+2. In a separate tab or window, **Go to** [Public Policy Taxonomy](https://vocabs.ardc.edu.au/viewById/309) at Research Vocabularies Australia.
+3. **Download** > .ttl file
+4. **RDF Data** > **Upload** > select `apo_public-policy-taxonomy_[date].ttl`
+5. In the RDF Data form, add to the prefixes section near the top of the file:
+- `@prefix <https://linked.data.gov.au/def/policy/> .`
+6. Next to the Convert button, select **Turtle** > **Convert**
+
+The Output will have shortened IRIs for each `skos:Concept`, such as `https://linked.data.gov.au/def/policy/1e0b0209-a519-4167-9165-2c3e1b753bb7` transformed to `ppt:1e0b0209-a519-4167-9165-2c3e1b753bb7`. Prefixes can substantially reduce file sizes Note also that the Converter re-orders the prefixes in alphabetical order, which supports human readability. The Converter also removes any un-used prefixes in the input file.
+
+>💡 In Turtle, prefixes may be declared with two different syntaxes: `@prefix <https://linked.data.gov.au/def/policy/> .` OR `PREFIX <https://linked.data.gov.au/def/policy/>`. Note that a trailing space and period (" .") must be included in the old Turtle format, and `PREFIX` must be all uppercase in the new Turtle format. The Converter will accept either, but may transform prefixes between syntax formats.
+
+<br>
 
 ## References and Further Reading
 
