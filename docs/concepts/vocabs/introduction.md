@@ -18,11 +18,13 @@ This is the first in a series of modules that range from introductory guidance, 
 > - Exercise (continued from _Advanced_)
 >
 > _Vocabulary systems_
-> - VocEdit + GitHub
+> - VocEdit + GitHub (with new exercise)
 > - VocExcel
 > - SHACL Validator
 > - RDF Converter
 >
+
+<br>
 
 > _Vocabulary patterns_
 > - Handling special cases and advanced tips
@@ -47,11 +49,11 @@ In this section we will introduce some common vocabulary types. By introducing s
 
 ... _defining terms_
 
-Glossary are a very common form of vocabulary found in many print and web resources. A glossary is a list of concepts, expressed by natural language terms (we will refer to _terms_ and _labels_ interchangeably) with added definitions.
+Glossaries are a very common form of vocabulary found in many print and web resources. A glossary is a list of concepts, expressed by natural language terms (we will refer to _terms_ and _labels_ interchangeably) with added definitions.
 
   <img src="../../../assets/vocabs/glossaryPic.png" alt="Glossary Picture" style="width:75%;">
 
-Each concept in a Glossary has at least one label and one definition. Some glossaries include _see_ references that direct a user to a preferred term. This _equivalence_ mapping is a common feature in more complex vocabulary types such as in a **thesaurus** that we will look at below. But first we will look at vocabularies that include hierarchy relationships.
+Each concept in a Glossary has at least one label and one definition. Some glossaries include _see_ references that direct a user to a preferred term. This _equivalence_ mapping is a common feature in more complex vocabulary types such as a **thesaurus** (see below). But first we will look at vocabularies that include hierarchy relationships.
 
 ### Taxonomies
 
@@ -59,7 +61,7 @@ Each concept in a Glossary has at least one label and one definition. Some gloss
 
 Taxonomies are vocabularies with hierarchical relationships between concepts. Conventionally, we might say that concept A is _broader_ than concept B, when the _all-some_ rule apples: All B's are A, and some A's are B. For example, _all apples are fruit, and some fruit are applies_. Therefore, _fruit_ is broader than _apples_.
 
-Modern taxonomies that are used to organise and retrieve data owe their heritage to two disciplines: biology, or the taxonomy of living things, featuring familiar concepts of class, family, genus, species etc..., and financial classifications, where concepts are typically categorised as either function, activity of transaction.
+Modern taxonomies that are used to organise and retrieve data owe their heritage largely to two disciplines: biology, or the taxonomy of living things, featuring familiar concepts of class, family, genus, species etc..., and financial classifications, where concepts are typically categorised as either function, activity of transaction.
 
 ```mermaid
 %% Title: **Financial classification**
@@ -105,13 +107,14 @@ class F,G1,G2,S1,S2,S3 green;
 ```
 
 We will see below in [Vocabularies in the context of knowledge graphs](#vocabularies-in-knowledge-graphs) how the broader / narrower relationship between concepts can improve search and extraction functions in data where vocabularies are used to enrich data.
+
 <br>
 
 ### Thesaurus
 
 ... _a (more) complete picture_
 
-The modern retrieval thesaurus combines the structure of a taxonomy with an additional non-hierarchical relationship and also synonym control. Thesauri establish _hierarchy_, _association_ and _equivalence_ between terms. Each can be expressed using the Simple Knowledge Organization System (SKOS) properties `skos:broader` / `skos:narrower`; `skos:relation`; and `skos:prefLabel` / `skos:altLabel` ([W3C, 2009](#references-and-further-reading)).
+The modern retrieval thesaurus combines the structure of a taxonomy with additional non-hierarchical relationships and also synonym control. Thesauri establish _hierarchy_, _association_ and _equivalence_ between terms. Each can be expressed using the Simple Knowledge Organization System (SKOS) properties `skos:broader` / `skos:narrower`; `skos:relation`; and `skos:prefLabel` / `skos:altLabel` ([W3C, 2009](#references-and-further-reading)).
 
 ```mermaid
 graph TD
@@ -143,7 +146,7 @@ We will look at SKOS properties in more detail in the [Properties](#vocabulary-p
 
 ### Vocabularies in knowledge graphs
 
-Thought of as an interconnected system of data classes, a knowledge graphs may involve vocabularies as an additional class that will connect with some or all other classes. In a knowledge graph, a vocabulary concept can be modelled as just another class. 
+Thought of as an interconnected system of data classes, a knowledge graph may include vocabularies as additional classes that connect with some or all other classes. In a knowledge graph, a vocabulary concept can be modelled as just another class instance.
 
 One function that vocabularies serve is to supplement and fill semantic gaps in data relations. In the example below, classes A, B an C are each related to each other in some way. Class D is not related to other classes. A concept from a vocabulary is also included, and has relationships to classes A, B and C.
 
@@ -250,7 +253,7 @@ graph LR;
     10 -- "subject" --> 11;
 ```
 
-Because of this relation between concepts in the vocabulary, it's possible to make an inference that connects classes that were previously unrelated, such as between ``Lane counts`` data and ``Seasonality`` data.
+Because of this relation between concepts in the vocabulary, it's possible to make an _inference_ that connects classes that were previously unrelated, such as between ``Lane counts`` data and ``Seasonality`` data.
 
 ```mermaid
 graph LR;
@@ -275,13 +278,11 @@ graph LR;
 ```
 Let's put this into a narrative form:
 
-_We know that some roads are closed on a seasonal basis, but we don't know what portion of these are one lane roads. But we do have data about the seasonality of 'One Way From Two' roads, also called 'One way with vector' roads. Because these roads are defined as a type of One Way road (defined as `skos:narrower`), we can infer information about seasonal road closures for one lane roads._
+_We know that some roads are closed on a seasonal basis, but we don't know what portion of these are one lane roads. But we do have data about the seasonality of 'One Way From Two' roads, also called 'One way with vector' roads. Because these roads are defined as a type of One Way road (via `skos:narrower`), we can infer information about seasonal road closures for one lane roads._
 
 ## Vocabulary properties
 
-Vocabularies contain, as a minimum: _preferred labels_, _definitions_ and _identifiers_
-
-We have already introduced concepts and their relation properties to other concepts. In this section we will look at more concept properties, including properties that are required for validation in vocabulary quality standards.
+Vocabularies contain, as a minimum: _preferred labels_, _definitions_ and _identifiers_. We have already introduced concepts relations with other concepts. In this section we will look at more concept properties, including properties that are required for validation in vocabulary quality standards.
 
 ### Minimum properties: prefLabel, definition and identifier
 
@@ -293,7 +294,7 @@ To comply with VocPub profile ([AGLDWG, n.d.](#references-and-further-reading)),
 
 #### 🚧 Exercise: 0pen, edit and save a vocabulary
 
-These modules will include a number of editing exercises that use the VocEdit tool and the Pest Risk Pathway vocabulary (PRP). The PRP is an un-published vocabulary, hosted by Kurrawong.ai for training and testing purposes. In this exercise we will add a new concept; a concept preferred label; a concept definition; and a concept identifier.
+These modules will include a number of editing exercises that use the VocEdit tool and the _Pest Risk Pathway_ vocabulary (PRP). The PRP is un-published and hosted by KurrawongAI for training purposes. In this exercise we will add a new concept; a concept preferred label; a concept definition; and a concept identifier.
 
 💡 _Chrome browser is needed to use the VocEdit tool._
 
@@ -321,39 +322,39 @@ These modules will include a number of editing exercises that use the VocEdit to
 24. **Select a value** > select _pestRiskPath_
 26. **Save**
 
-The pestRiskPathway.ttl will now be updated in your local directory, with the new concept "Wind dispersal" added.
+The pestRiskPathway.ttl will now be updated in your local directory, with the new concept _Wind dispersal_ added.
 
 ## Broader / Narrower
 
-We have already introduced the ``skos:broader`` and ``skos:narrower`` relationships in the sections above on taxonomies and thesaurus vocabularies. 
+We have already introduced the ``skos:broader`` and ``skos:narrower`` relationships in the sections on _taxonomies_ and _thesaurus_ vocabularies. 
 
-Depending on the type and complexity of a vocabulary, there may be a requirement that all concepts are related to another concept via ``skos:broader`` property. In a taxonomy or thesaurus vocabulary project, a concept that does not have a skos:broader concept may be considered an _orphan_, unless it is a ``topConcept``. As far as the SKOS standard is concerned, there is no need for all (or any) concepts to be arranged in a hierarchy. In some cases a vocabulary will be mostly flat with selected concepts in narrower relationships to broader concepts.
+Depending on the type and complexity of a vocabulary, there may be a requirement that all concepts are related to another concept via ``skos:broader`` property. In a taxonomy or thesaurus vocabulary project, a concept that does not have a `skos:broader` concept may be considered an _orphan_, unless it is a _top concept_, indicated with the `skos:topConceptOf` property. The SKOS standard does not require concepts to be arranged in a hierarchy. Some vocabularies will be mostly flat with only selected concepts in narrower relationships to broader concepts.
 
-If a `skos:Concept` does not have a `skos:broader` property, the VocPub profile requires that it must reference the relevant `skos:ConceptScheme` IRI with the ``skos:topConcept`` property. 
+If a `skos:Concept` does not have a `skos:broader` property, the VocPub profile requires that it must reference the relevant `skos:ConceptScheme` IRI with the `skos:topConceptOf` property. 
 
 **Tip:** Broader and narrower relationships are reciprocal - that is, if A is broader than B, then B is narrower than A. For example:
 
-- Dynamic land cover ``broader`` Land cover and land use
-- Land cover and land use ``narrower`` Dynamic land cover
+- Dynamic land cover `skos:broader` Land cover and land use
+- Land cover and land use `skos:narrower` Dynamic land cover
 
-- Apples ``broader`` Pomme fruit
-- Pomme fruit ``narrower`` Apples
+- Apples `skos:broader` Pomme fruit
+- Pomme fruit `skos:narrower` Apples
 
-- Hospitals ``narrower`` Private hospitals
-- Private hospitals ``broader`` Hospitals
+- Hospitals `skos:narrower` Private hospitals
+- Private hospitals `skos:broader` Hospitals
 
 Arranging concepts into a hierarchy supports discovery via:
 
-- _Search expansion_ - a search system can add results that match narrower concepts of a search term. For example a search for _Granitoid_ would return resources about _granitoid_ OR _granite_
-- _Navigation_ - top-down navigation or breadcrumb links can be launched in an interface using broader/narrower relationships. For example, clicking on _Pomme fruit_ launches a list of links to apples, pears and quinces
+- _Search expansion_ - a system can expand results by matching any narrower concepts of a search term, e.g. a search for _Granitoid_ returns resources about _granitoid_ OR _granite_
+- _Navigation_ - top-down navigation or breadcrumb links can be launched in an interface using broader / narrower relationships. For example, clicking on _Pomme fruit_ launches a list of links to apples, pears and quinces
 
 In a vocabulary, it's possible to keep adding narrower relationships by creating more and more specific concepts. For example, a catalogue that is about horticulture probably needs a vocabulary with more specific (narrower) concepts than just _apples_ (e.g. _Kiku Fuji_).
 
-💡 **Tip:** Only add narrower concepts that you would expect to be used to describe content in a catalogue, and distinguish that content from others, with that concept. Don't make a vocabulary hierarchy very deep with specific concepts just because you can!
+💡 Only add narrower concepts that you would expect to be used to describe content in a catalogue, and distinguish that content from others, with that concept. Don't make a vocabulary hierarchy very deep with specific concepts just because you can!
 
 #### 🚧 Exercise: add broader concept relations
 
-In this exercise we will add a broader relationship between two concepts. Note that once a concept has a broader relationship, it can no longer be regarded as a 'top concept' and we will remove the top concept statement accordingly.
+In this exercise we will add a `skos:broader` relationship between two concepts. Note that once a concept has a broader relationship, it is no longer indicated by `skos:topConceptOf` and and 'top concept' status is removed.
 
 1. **Go to** [VocEdit](https://vocedit.kurrawong.ai) in Chrome  
 2. **Project** > **Open** `pestRiskPath_training.ttl` from your local directory  
@@ -362,11 +363,11 @@ In this exercise we will add a broader relationship between two concepts. Note t
 5. From the Select a value dropdown, search for or select _Host plants_ > **select**
 6. **Save**
 
-This change optimises the SKOS model by applying a broader relationship between concepts that are conceptually broader and narrower. In a retrieval system we might expect a query for datasets about host plants as pest vectors to return a resource about Spore dispersal. The `skos:broader` relation support such an inference.
+This change optimises the SKOS model by applying a broader relationship between concepts that are conceptually broader and narrower. In a retrieval system we might expect a query for resources about host plants as pest vectors to return a resource about _Spore dispersal_. The `skos:broader` relation support such an inference.
 
 ### Alternative labels
 
-Each concept must have at least one _Preferred label_ (``skos:prefLabel``), based on the word or phrase that best describes the concept. We often use different terms to mean the same thing - the ``skos:prefLabel`` should be the term that is used most frequently, or understood and used by most expected users of a system or catalogue.
+Each concept must have at least one _Preferred label_ (`skos:prefLabel`), based on the word or phrase that best describes the concept. We often use different terms to mean the same thing - the `skos:prefLabel` should be the term that is used most frequently, or understood and used by most expected users of a system or catalogue.
 
 In addition, each concept may have one ore more _Alternate labels_ (``skos:altLabel``). It's a good idea to add one or more ``altLabel`` to a concept so that it can be found in different ways. A concept can have any number of alternate labels, provided they are similar enough to the common understanding of the concept.
 
