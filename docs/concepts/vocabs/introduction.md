@@ -33,9 +33,9 @@ This is the first in a series of modules that range from introductory guidance, 
 
 <br>
 
-> 💡 _Identifies troubleshooting tips, common errors and potential issues._
-> 🚧 _Exercises_
-> 🎬 _Videos_
+> - 💡 _Identifies troubleshooting tips, common errors and potential issues._
+> - 🚧 _Exercises_
+> - 🎬 _Videos_
 
 ## Introduction to Vocabularies
 
