@@ -23,7 +23,7 @@ This is the first in a series of modules that range from introductory guidance, 
 - SHACL Validator
 - RDF Converter
 
-[Vocabulary patterns_](https://docs.kurrawong.ai/concepts/vocabs/patterns/)
+[Vocabulary patterns](https://docs.kurrawong.ai/concepts/vocabs/patterns/)
 - Handling special cases and advanced tips
 
 <br>
