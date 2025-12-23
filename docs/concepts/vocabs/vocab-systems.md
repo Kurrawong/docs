@@ -55,7 +55,7 @@ In short, these systems best address the following scenarios:
 |  | VocEdit | VocExcel | PoolParty
 |:-------------|:--------|:--------------|:---------------------|
 | sign-up required | NO | NO | YES |
-| tech requirements | browser (Chrome) | MS Excel | browser |
+| tech requirements | browser (Chrome) | browser, MS Excel | browser (Firefox, Chrome, MS Edge)|
 | bulk load from spreadsheet | NO | YES | YES |
 | support for deep hierarchy editing | YES | limited | YES |
 | VocPub conformance | YES | YES | NO |
