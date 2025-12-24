@@ -22,16 +22,16 @@
 
 > 🚧 _Exercises_
 
-> 🎬 _videos_
+> 🎬 _Videos_
 
 ## Introduction
 Vocabularies are data, and data management inevitably requires application support. Vocabularies are no different! In this module we will step you through some vocabulary systems developed by KurrawongAI that will make the task of managing vocabularies easier.
 
-If you've been working through [_Introduction to Vocabularies_](/concepts/vocabs/introduction), [_Advanced Vocabulary Editing_](/concepts/vocabs/creation) or [_Vocabulary Reuse_](/concepts/vocabs/vocab-reuse), you will have already encountered a key tool in any vocabulary managers toolkit: an editor. In this module we will look again at _VocEdit_, but draw your attention to a _VocEdit > GitHub_ integration feature that help you manage vocabulary review and versioning. We'll also introduce you to _VocExcel_, a spreadsheet-based tool for editing simple vocabularies. And we'll introduce tools that help you validate a vocabulary, and a tool that converts a vocabulary from one RDF format to another.
+If you've been working through [_Introduction to Vocabularies_](/concepts/vocabs/introduction), [_Advanced Vocabulary Editing_](/concepts/vocabs/creation) or [_Vocabulary Reuse_](/concepts/vocabs/vocab-reuse), you will have already encountered a key tool in any vocabulary managers toolkit: an editor. In this module we will look again at _VocEdit_, but draw your attention to a _VocEdit > GitHub_ integration feature that helps you manage vocabulary review and versioning. We'll also introduce you to _VocExcel_, a spreadsheet-based tool for editing simple vocabularies. And we'll introduce tools that help you validate a vocabulary, and a tool that converts a vocabulary from one RDF format to another.
 
 ## Vocabulary editing tools
 
-KurrawongAI has develped VodEdit and VocExcel for editing and managing vocabulary data. Each feature different requirements and strengths suited to different workflows. We also mention [PoolParty](https://www.poolparty.biz), an editor that is available via commercial license, or in Australia a non-commercial feature-limited license is available for research institutions via the [Research Vocabularies Australia[(https://documentation.ardc.edu.au/rva/what-is-rva-editor-poolparty) service. 
+KurrawongAI has developed VocEdit and VocExcel for editing and managing vocabulary data. Each features different requirements and strengths suited to different workflows. We also mention [PoolParty](https://www.poolparty.biz), an editor that is available via commercial license, or in Australia a non-commercial feature-limited license is available for research institutions via the [Research Vocabularies Australia](https://documentation.ardc.edu.au/rva/what-is-rva-editor-poolparty) service. 
 
 In short, these systems best address the following scenarios:
 
@@ -39,7 +39,7 @@ In short, these systems best address the following scenarios:
 
 - no client-side setup
 - editing deep, complex hierarchies
-- GitHub integtration
+- GitHub integration
 
 **VocExcel**
 
@@ -50,23 +50,23 @@ In short, these systems best address the following scenarios:
 **PoolParty**
 
 - database backend
-- mulit-lingual vocabularies
+- multi-lingual vocabularies
 - native support for multiple formats
 
 <br>
 
-|  | VocEdit | VocExcel | PoolParty
+|  | VocEdit | VocExcel | PoolParty |
 |:-------------|:---------|:---------------|:-----------------|
 | sign-up required | NO | NO | YES |
 | tech requirements | browser (Chrome) | browser, MS Excel | browser (Firefox, Chrome, MS Edge)|
 | bulk load from spreadsheet | NO | YES | YES |
 | deep hierarchy editing | YES | limited | YES |
-| VocPub conformance | YES | YES | NO |
+| VocPub validation | Native | Native | Optional |
 | add non-VocPub properties | per concept | per vocabulary | per vocabulary |
 | RDF formats | Turtle | Turtle | many |
 | file management | GitHub integration | local directory | database |
 
-> 💡 Migrating vocabulary data between VocExcel and VocEdit is seemless. PoolParty will ingest data from VocExcel or VocEdit, and will store and output data with minor syntactic differences. It's a good idea to consider the relative strengths of each system, but as these systems all have RDF and SKOS as core business logic, lock-in scenarios are minimal. 
+> 💡 Migrating vocabulary data between VocExcel and VocEdit is seamless. PoolParty will ingest data from VocExcel or VocEdit, and will store and output data with minor syntactic differences. It's a good idea to consider the relative strengths of each system, but as these systems all have RDF and SKOS as core business logic, lock-in scenarios are minimal. 
 
 <br>
 
@@ -124,7 +124,7 @@ To walk you through VocExcel features, we'll create a vocabulary from scratch.
 
 5. **Open** the _Concept Scheme_ tab
 
-> On the Concept Scheme tab you can create a new Concept Scheme for the vocabulary. Note that VocExcel conforms to the [VocPub Specification](https://agldwg.github.io/vocpub-profile/specification.html), and some fields with an asterix (*) are mandatory - they are:
+> On the Concept Scheme tab you can create a new Concept Scheme for the vocabulary. Note that VocExcel conforms to the [VocPub Specification](https://agldwg.github.io/vocpub-profile/specification.html), and some fields with an asterisk (*) are mandatory - they are:
 
 > - Vocabulary IRI
 > - Preferred Label
@@ -170,7 +170,7 @@ A SHACL file can be used in various validation tools and services - here we'll d
 5. **Use Validators** > expand **VocPub > **Add** the most recent version > **Close**
 6. **Validate**
 
-A page of Validation Results will launch. This report lets you know where your vocabulary does not conform to the VocPub profile. The messages are colour coded and indicates issues in your vocabulary that are:
+A page of Validation Results will launch. This report lets you know where your vocabulary does not conform to the VocPub profile. The messages are colour coded and indicate issues in your vocabulary that are:
 
 - a 🔴 Violation - these issues MUST be addressed for the vocabulary to conform with VocPub specification;
 - a 🟡 Warning - it is recommended that these issues are addressed, but your vocabulary is still valid if you do not; and
@@ -195,7 +195,7 @@ The RDF Converter can be used to both transform Turtle files into other formats 
 - transform RDF between formats such as Turtle, JSON-LD and XML
 - apply prefixes, improving both file readability and minimizing file size by shortening IRIs.
 
-The two exercises below demonstrate how the KurrawongAI [RDF Coverter](https://tools.kurrawong.ai/convert) can be used to convert SKOS vocabularies into different formats and also apply prefixes.  
+The two exercises below demonstrate how the KurrawongAI [RDF Converter](https://tools.kurrawong.ai/convert) can be used to convert SKOS vocabularies into different formats and also apply prefixes.  
 
 ### 🚧 Convert a Turtle file to XML
 
@@ -217,7 +217,7 @@ The two exercises below demonstrate how the KurrawongAI [RDF Coverter](https://t
 - `@prefix <https://linked.data.gov.au/def/policy/> .`
 6. Next to the Convert button, select **Turtle** > **Convert**
 
-The Output will have shortened IRIs for each `skos:Concept`, such as `https://linked.data.gov.au/def/policy/1e0b0209-a519-4167-9165-2c3e1b753bb7` transformed to `ppt:1e0b0209-a519-4167-9165-2c3e1b753bb7`. Prefixes can substantially reduce file sizes Note also that the Converter re-orders the prefixes in alphabetical order, which supports human readability. The Converter also removes any un-used prefixes in the input file.
+The Output will have shortened IRIs for each `skos:Concept`, such as `https://linked.data.gov.au/def/policy/1e0b0209-a519-4167-9165-2c3e1b753bb7` transformed to `ppt:1e0b0209-a519-4167-9165-2c3e1b753bb7`. Prefixes can substantially reduce file sizes Note also that the Converter re-orders the prefixes in alphabetical order, which supports human readability. The RDF Converter also removes any un-used prefixes in the input file.
 
 >💡 In Turtle, prefixes may be declared with two different syntaxes: `@prefix <https://linked.data.gov.au/def/policy/> .` OR `PREFIX <https://linked.data.gov.au/def/policy/>`. Note that a trailing space and period (" .") must be included in the old Turtle format, and `PREFIX` must be all uppercase in the new Turtle format. The Converter will accept either, but may transform prefixes between syntax formats.
 
