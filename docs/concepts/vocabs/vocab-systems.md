@@ -61,7 +61,7 @@ In short, these systems best address the following scenarios:
 | tech requirements | browser (Chrome) | browser, MS Excel | browser (Firefox, Chrome, MS Edge)|
 | bulk load from spreadsheet | NO | YES | YES |
 | deep hierarchy editing | YES | limited | YES |
-| VocPub validation | Native | Native | Optional |
+| VocPub validation | native | native | optional |
 | add non-VocPub properties | per concept | per vocabulary | per vocabulary |
 | RDF formats | Turtle | Turtle | many |
 | file management | GitHub integration | local directory | database |
