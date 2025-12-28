@@ -219,6 +219,7 @@ The two exercises below demonstrate how the KurrawongAI [RDF Converter](https://
 The Output will have shortened IRIs for each `skos:Concept`, such as:
 * `https://linked.data.gov.au/def/policy/1e0b0209-a519-4167-9165-2c3e1b753bb7` , transformed to:
 * `ppt:1e0b0209-a519-4167-9165-2c3e1b753bb7`
+
 Prefixes can substantially reduce file sizes. Note also that the RDF Converter re-orders the prefixes alphabetically, which improves human readability. The RDF Converter also removes any un-used prefixes in the input file.
 
 >💡 In Turtle format, prefixes may be declared with one of two different syntaxes:
