@@ -213,13 +213,15 @@ The two exercises below demonstrate how the KurrawongAI [RDF Converter](https://
 2. In a separate tab or window, **Go to** [Public Policy Taxonomy](https://vocabs.ardc.edu.au/viewById/309) at Research Vocabularies Australia.
 3. **Download** > .ttl file
 4. **RDF Data** > **Upload** > select `apo_public-policy-taxonomy_[date].ttl`
-5. In the RDF Data form, add to the prefixes section near the top of the file:
-- `@prefix ppt: <https://linked.data.gov.au/def/policy/> .`
+5. In the RDF Data form, add to the prefixes near the top of the file: `@prefix ppt: <https://linked.data.gov.au/def/policy/> .`
 6. Next to the Convert button, select **Turtle** > **Convert**
 
 The Output will have shortened IRIs for each `skos:Concept`, such as `https://linked.data.gov.au/def/policy/1e0b0209-a519-4167-9165-2c3e1b753bb7` transformed to `ppt:1e0b0209-a519-4167-9165-2c3e1b753bb7`. Prefixes can substantially reduce file sizes. Note also that the RDF Converter re-orders the prefixes alphabetically, which improves human readability. The RDF Converter also removes any un-used prefixes in the input file.
 
->💡 In Turtle, prefixes may be declared with two different syntaxes: `@prefix <https://linked.data.gov.au/def/policy/> .` OR `PREFIX <https://linked.data.gov.au/def/policy/>`. Note that a trailing space and period (" .") must be included in the old Turtle format, and `PREFIX` must be all uppercase in the new Turtle format. The Converter will accept either, but may transform prefixes between syntax formats.
+>💡 In Turtle format, prefixes may be declared with one of two different syntaxes:
+> `@prefix <https://linked.data.gov.au/def/policy/> .` OR
+> `PREFIX <https://linked.data.gov.au/def/policy/>`.
+> Note that a trailing space and period (" .") must be included in the old Turtle format, and `PREFIX` must be all UPPERCASE in the new Turtle format. The Converter will accept > either, but may transform prefixes between syntax formats.
 
 <br>
 
