@@ -222,10 +222,11 @@ The Output will have shortened IRIs for each `skos:Concept`, such as:
 
 Prefixes can substantially reduce file sizes. Note also that the RDF Converter re-orders the prefixes alphabetically, which improves human readability. The RDF Converter also removes any un-used prefixes in the input file.
 
->💡 In Turtle format, prefixes may be declared with one of two different syntaxes:
-> `@prefix <https://linked.data.gov.au/def/policy/> .` OR
-> `PREFIX <https://linked.data.gov.au/def/policy/>`.
-> Note that a trailing space and period (" .") must be included in the old Turtle format, and `PREFIX` must be all UPPERCASE in the new Turtle format. The Converter will accept > either, but may transform prefixes between syntax formats.
+💡 In Turtle format, prefixes may be declared with one of two different syntaxes:
+* `@prefix <https://linked.data.gov.au/def/policy/> .` OR
+* `PREFIX <https://linked.data.gov.au/def/policy/>`.
+
+A trailing space and period (" .") must be included in the old Turtle format, and `PREFIX` must be all UPPERCASE in the new Turtle format. The Converter will accept > either, but may transform prefixes between syntax formats.
 
 <br>
 
