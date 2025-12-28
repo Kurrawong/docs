@@ -31,7 +31,7 @@ If you've been working through [_Introduction to Vocabularies_](/concepts/vocabs
 
 ## Vocabulary editing tools
 
-KurrawongAI has developed VocEdit and VocExcel for editing and managing vocabulary data. Each features different requirements and strengths suited to different workflows. We also mention [PoolParty](https://www.poolparty.biz), an editor that is available via commercial license, or in Australia a non-commercial feature-limited license is available for research institutions via the [Research Vocabularies Australia](https://documentation.ardc.edu.au/rva/what-is-rva-editor-poolparty) service. 
+KurrawongAI has developed [VocEdit and VocExcel](https://tools.kurrawong.ai) for editing and managing vocabulary data. Each features different requirements and strengths suited to different workflows. We also mention [PoolParty](https://www.poolparty.biz), an editor that is available via commercial license, or in Australia a non-commercial feature-limited license is available for research institutions via the [Research Vocabularies Australia](https://documentation.ardc.edu.au/rva/what-is-rva-editor-poolparty) service. 
 
 In short, these systems best address the following scenarios:
 
@@ -72,7 +72,7 @@ In short, these systems best address the following scenarios:
 
 ### VocEdit + GitHub
 
-Throughout these Vocabulary modules we have presented exercises that direct you to save vocabulary files to your desktop - you can close _VocEdit_, open it again and just return to that same file to continue editing. But what if a file needs to be reviewed, edited or validated outside the _VocEdit_ tool? And you may want to store your vocabulary where others can access it. VocEdit is integrated with GitHub to achieve these goals. 
+Throughout these Vocabulary modules we have presented exercises that direct you to save vocabulary files to your desktop - you can close VocEdit, open it again and just return to that same file to continue editing. But what if a file needs to be reviewed, edited or validated outside the VocEdit tool? And you may want to store your vocabulary where others can access it. VocEdit is integrated with GitHub to achieve these goals. 
 
 #### 🚧 Save a vocabulary to GitHub
 
