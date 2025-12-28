@@ -226,7 +226,7 @@ Prefixes can substantially reduce file sizes. Note also that the RDF Converter r
 * `@prefix <https://linked.data.gov.au/def/policy/> .` OR
 * `PREFIX <https://linked.data.gov.au/def/policy/>`
 
-A trailing space and period (" .") must be included in the old Turtle format, and `PREFIX` must be all UPPERCASE in the new Turtle format. The Converter will accept > either, but may transform prefixes between syntax formats.
+A trailing space and period (" .") must be included in the old Turtle format, and `PREFIX` must be all UPPERCASE in the new Turtle format. The Converter will accept either, but may transform prefixes between syntax formats.
 
 <br>
 
