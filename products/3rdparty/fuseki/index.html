@@ -1,0 +1,2059 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../tools/vocexcel/">
+      
+      
+        <link rel="next" href="../../../concepts/vocabs/introduction/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon-32x32.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Fuseki - </title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="kai" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fuseki" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="" class="md-header__button md-logo" aria-label="" data-md-component="logo">
+      
+  <img src="../../../assets/KurrawongAI-inverted.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fuseki
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="" class="md-nav__button md-logo" aria-label="" data-md-component="logo">
+      
+  <img src="../../../assets/KurrawongAI-inverted.svg" alt="logo">
+
+    </a>
+    
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../prez/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prez
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prez
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prez/ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prez/manifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manifest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prez/data-preparation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Preparation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploying
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deploying
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prez/deploying/aws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5_2" id="__nav_2_1_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prez/deploying/azure/appservice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    App Service Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prez/developers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../olis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Olis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tools/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KAI Tools
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    KAI Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/kurra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kurra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/labelify/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Labelify
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/ogc-tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OGC Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/prefix-lookup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prefix Lookup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/prezmanifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prez Manifest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/provworkflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ProvWorkflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/pylode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pyLODE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/rdf-converter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RDF Converter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/rdf-merger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RDF Merger
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/shacl-validator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SHACL Validator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/sparql-parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPARQL Parser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/vocedit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VocEdit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/vocexcel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VocExcel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3rd Party
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3rd Party
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fuseki
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fuseki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-loading-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Loading Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-loading-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Loading Procedures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Loading Procedures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sparql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SPARQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kurra-cli-graph-store-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kurra CLI - Graph Store Protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tdbloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tdbloader
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rdf-delta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RDF Delta
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocabs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vocabs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/vocabs/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/vocabs/creation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/vocabs/vocab-reuse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocab reuse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/vocabs/patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/vocabs/vocab-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocab systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Agents
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/agents/patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-loading-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Loading Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-loading-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Loading Procedures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Loading Procedures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sparql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SPARQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kurra-cli-graph-store-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kurra CLI - Graph Store Protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tdbloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tdbloader
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rdf-delta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RDF Delta
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="fuseki">Fuseki</h1>
+<p><a href="https://jena.apache.org/documentation/fuseki2/">Fuseki</a> is an <a href="https://apache.org/">Apache Software Foundation</a> free and open source product that is part of the <a href="https://jena.apache.org/">Jena</a> RDF framework. It is a database system that implements the <a href="https://www.w3.org/TR/sparql11-protocol/">SPARQL Protocol</a> which means you can run Fuseki to expose RDF data.</p>
+<p>KurrawongAI has extensive experience in deploying Fuseki for clients and can also provide a range of Fuseki support services. To find out more, visit our <a href="https://kurrawong.ai/products/fuseki/">website</a>.</p>
+<p>This guide outlines the various Fuseki data loading methods available and provides detailed procedures for each.</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="#data-loading-methods">Data Loading Methods</a></li>
+<li>Data Loading Procedures<ul>
+<li><a href="#sparql">SPARQL</a></li>
+<li><a href="#kurra-cli-graph-store-protocol">Kurra CLI - Graph Store Protocol</a></li>
+<li><a href="#tdbloader">tdbloader</a></li>
+<li><a href="#rdf-delta">RDF Delta</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="data-loading-methods">Data Loading Methods</h2>
+<p>There are a number of tools/methods that can be used for loading data to Fuseki databases. Both the size of the database and the dataset being loaded will dictate which method is most suitable, as indicated in the Traffic Light Matrix and related notes below.</p>
+<p>Refer to the <a href="#data-loading-procedures">Data Loading Procedures</a> section for the detailed steps required for each loading tool/method.</p>
+<p><strong>Traffic Light Matrix for data loading methods</strong>
+<img alt="" src="../../../assets/3rdparty/fuseki/fuseki-01.png" /></p>
+<table>
+<thead>
+<tr>
+<th><em>Matrix Notes:</em></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Can be verbose, useful for scripts inserting/creating small amounts of data.<br>    <br>2. Good option.<br>    <br>3. Running tdbloader and related set up can be more effort than it is worth for small datasets.<br>    <br>4. Setting up RDF Delta can be more effort than it is worth for small datasets.<br>    <br>5. Not recommended.<br>    <br>6. Has appeared to worked in the hundreds of MB but seems to cause issues with Fuseki.<br>    <br>7. Good option.<br>    <br>8. Good option.<br>    <br>9. Good option. May not have record of addition if query is not saved.<br>    <br>10. Good option.<br>    <br>11. Requires dataset to be offline, or performed on replica. Not worth the effort for small additions.<br><br>12. Good option.</td>
+<td>13. Not recommended.<br><br>14. Somewhere between 50 MB to 1 GB this is a bad idea.<br>    <br>15. Requires dataset to be offline, or performed on replica. Must run in append mode; slower than sequential loader. Cannot use xloader, so restricted in size.<br>    <br>16. Good option.<br>    <br>17. Good option. May not have record of update if query is not saved.<br>    <br>18. Can only update at the graph level (PUT).<br>    <br>19. Requires dataset to be offline, or performed on replica. Not worth the effort for small additions. Requires update to be written in SPARQL.<br>    <br>20. Good option.<br>    <br>21. Not recommended.<br>    <br>22. Not recommended.<br>    <br>23. Requires dataset to be offline, or performed on replica. Requires update to be written in SPARQL.<br>    <br>24. Good option.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-loading-procedures">Data Loading Procedures</h2>
+<h3 id="sparql">SPARQL</h3>
+<h5 id="scenarios">Scenarios</h5>
+<p>SPARQL is recommended as a method for small additions/deletions/updates to new or existing datasets. It is not recommended for large operations for both performance reasons (on large instances this may not be an issue), and also because the provenance of changes made to the database through SPARQL updates are not captured (unless specifically set up through an external process). </p>
+<p>One caveat is that SPARQL can be used with the tdbupdate command line utility to directly update large Fuseki TDB2 datasets, though the TDB2 dataset must be offline to do this.</p>
+<p><img alt="" src="../../../assets/3rdparty/fuseki/fuseki-02.png" /></p>
+<h5 id="steps-to-accomplish">Steps to accomplish</h5>
+<p>The <a href="https://www.w3.org/TR/sparql11-update/">SPARQL Update specification</a> sets out a number of methods for updating RDF Data in Triplestores via update queries. These updates, deletes, or additions are done using the general patterns specified below, where “{ }” has been used to denote graph or triple patterns e.g. { GRAPH ?g { ?s ?p ?o } } or { ?s ?p ?o } (or equivalent expressions with IRIs or RDF Literals).</p>
+<p>Insertion of new data “inline” i.e. directly specifying the data to insert:
+<div class="highlight"><pre><span></span><code>INSERT DATA { }
+</code></pre></div></p>
+<p>Insertion of new data based on existing data in the dataset:
+<div class="highlight"><pre><span></span><code>INSERT { }
+WHERE { }
+</code></pre></div></p>
+<p>Deletion of data “inline” i.e. directly specifying the data to delete:<br />
+<div class="highlight"><pre><span></span><code>DELETE DATA { }
+</code></pre></div></p>
+<p>Deletion of data based on existing data in the graph:
+<div class="highlight"><pre><span></span><code>DELETE { }  
+WHERE  { }
+</code></pre></div></p>
+<p>Update of data based on existing data in the graph:
+<div class="highlight"><pre><span></span><code>DELETE  { }
+INSERT  { }
+WHERE  { }
+</code></pre></div></p>
+<h3 id="kurra-cli-graph-store-protocol">Kurra CLI - Graph Store Protocol</h3>
+<h5 id="scenarios_1">Scenarios</h5>
+<p>The Graph Store Protocol can be used in a range of scenarios, it is generally less preferred for larger datasets. While local uploads of large files have been done successfully this is not always reliable in cloud environments.</p>
+<p><img alt="" src="../../../assets/3rdparty/fuseki/fuseki-03.png" /></p>
+<h5 id="steps-to-accomplish_1">Steps to accomplish</h5>
+<p>You have a new Fuseki instance without any data in it, and you want to load in a small amount of data. You have already created a new Fuseki dataset named “ds” along with the following Fuseki endpoint permission in the Fuseki configuration file.</p>
+<div class="highlight"><pre><span></span><code>:service_tdb_all  
+    a  fuseki:Service ;  
+    fuseki:endpoint  [ fuseki:operation  fuseki:gsp-rw ] .
+</code></pre></div>
+<p>The above sets the Fuseki service with gsp-rw, which allows read and write operations on the unnamed Graph Store Protocol endpoint. Assuming the Fuseki instance is available at localhost:3030, the above “ds” dataset will be available at <a href="http://localhost:3030/ds">http://localhost:3030/ds</a> with both read and write capabilities available.</p>
+<p>Using <a href="https://docs.astral.sh/uv/">uv</a> or a similar python executable manager, install the kurra CLI utility from https://github.com/Kurrawong/kurrawong-python.</p>
+<blockquote>
+<p>uv tool install <a href="https://github.com/Kurrawong/kurrawong-python/archive/refs/tags/0.4.1.zip">https://github.com/Kurrawong/kurrawong-python/archive/refs/tags/0.4.1.zip</a></p>
+</blockquote>
+<p>The kurra command is now available. Use the <strong>fuseki upload</strong> subcommand to upload RDF data files to the “ds” dataset via the HTTP Graph Store Protocol.</p>
+<p><code>kurra fuseki upload background-resources/ http://localhost:3030/ds -u admin -p fuseki</code></p>
+<p>The tool can upload RDF data from both directories or individual files on the filesystem. In the above example, we are uploading all files from the <em>background-resources</em> directory.  </p>
+<p>If Fuseki has been configured with a custom shiro.ini and it is protected by basic authentication, you can add the -u and -p flags to specify the username and password, respectively.</p>
+<h3 id="tdbloader">tdbloader</h3>
+<h5 id="scenarios_2">Scenarios</h5>
+<p>The following scenarios are appropriate for use with the tdbloader command line utilities.</p>
+<p><img alt="" src="../../../assets/3rdparty/fuseki/fuseki-04.png" /></p>
+<p><strong>Simple Deployments</strong>
+For simple deployments where RDF Delta is not required, the preferred data loading method is to use the Jena tdb2.tdbloader command line utility to generate the database files.</p>
+<p><em>Advantages</em>
+- Fast for a large amount of data.
+- It uses the same module that Jena uses internally to create database files but is decoupled from the HTTP server, and is thus faster because it does not need to allow for handling of requests while the generation is in progress.</p>
+<p><em>Disadvantages</em>
+- Requires the orchestration of another component (the tdb2-generation image), and 
+- is not preferable for making additions or updates to the data after the initial generation. And thus may only ever be used once.</p>
+<h5 id="steps-to-accomplish_2">Steps to accomplish</h5>
+<ol>
+<li>Install the <a href="https://jena.apache.org/documentation/tdb2/tdb2_cmds.html">Jena command line tools</a></li>
+<li>Run the tdb2.tdbloader command (it takes RDF files as input and produces a TDB 2 database as output.)</li>
+<li>Upload the database files to the location required for the deployed Fuseki instance. (for example, if Fuseki is deployed to a cloud VM, then the files must be copied to the cloud VM disk under <code>/fuseki/databases</code> or similar)</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> There exists the <a href="https://github.com/kurrawong/tdb2-generation">tdb2-generation</a> image, which is a wrapper around these operations and more. It can also create the spatial and text indexes that may be required for the database.</p>
+</blockquote>
+<h3 id="rdf-delta">RDF Delta</h3>
+<p>RDF Delta is a system for recording and publishing a set of changes made to RDF Datasets in Fuseki. Its main goal is to provide a deployment stack that allows for a highly available Fuseki cluster that scales horizontally. </p>
+<p>The deployment stack follows a hybrid model between eventual consistency and a master-slave architecture where the RDF Delta Servers acts as the master, can receive writes in the form of RDF patch logs, and propagates them to the Fuseki instances, which are the slaves. A caveat to this master-slave architecture is that RDF Delta Servers can only receive RDF patch logs and not SPARQL Update queries. For this case, the SPARQL Update queries must be executed on the Fuseki dataset’s SPARQL endpoint whereby the query immediately updates the Fuseki database, generates a set of patch logs, and sends them to the RDF Delta Servers for further propagation.</p>
+<h5 id="scenarios_3">Scenarios</h5>
+<p>RDF Delta is an appropriate solution for loading or updating all sizes of datasets, however, it requires more effort to set up than other methods. Once set up, a smaller amount of effort is required to write additional “producers” to update Fuseki.</p>
+<p><img alt="" src="../../../assets/3rdparty/fuseki/fuseki-05.png" /></p>
+<p><strong>Complex deployments</strong>
+In many scenarios, it may be necessary to incorporate the RDF Delta system into the Fuseki deployment. In this case, the tdb2.tdbloader utility is not recommended for loading new datasets, as the patch log database is the source of truth rather than the tdb2 database.</p>
+<p><em>Advantages</em>
+- This can be performed against the live server, and
+- is the same way that data loading can be performed for additions and updates.</p>
+<p><em>Disadvantages</em>
+- Not as fast as TDB2 loader for large volumes of data.</p>
+<h5 id="submitting-rdf-patch-logs-to-the-rdf-delta-server">Submitting RDF patch logs to the RDF Delta Server</h5>
+<p>RDF Delta comes with a suite of <a href="https://afs.github.io/rdf-delta/cmds.html">command line tools</a> that aid in performing actions against the RDF Delta Server, including adding new RDF patch logs.  </p>
+<p>Append a new patch log to a dataset.
+<code>dcmd get --server URL --dsrc NAME PATCH ...</code></p>
+<p>If you have an RDF file and not a patch log, you can use the r2p tool to convert an RDF file to a patch log.
+<code>dcmd rdf2patch FILE</code></p>
+<p>The command line tools are just wrappers around an undocumented HTTP API. To aid in programmatically interfacing with the RDF Delta Server, use the <a href="https://github.com/Kurrawong/rdf-delta-python">python rdf-delta library</a>.</p>
+<h5 id="submitting-sparql-update-queries-to-fuseki">Submitting SPARQL Update queries to Fuseki</h5>
+<p>SPARQL Update queries are submitted exactly the same way as documented in the SPARQL Data Loading Procedure. The RDF Delta module in the Fuseki instance will handle the processing of the SPARQL query, generating patch logs, and submitting it to the RDF Delta Server in the background.</p>
+<h5 id="rdf-delta-and-event-sourcing">RDF Delta and Event Sourcing</h5>
+<p>This section speaks to an event-driven architecture where the event sourcing pattern is the primary method of updating the system’s state. </p>
+<p>In an event sourcing system, it is critical for all update actions that mutate the system’s state are processed through the event stream and persisted in the event broker. The event stream becomes a firehose of real-time information that can be used for auditing and analytical purposes, or be replayed as part of the data restore process. The event stream also serves as a way for other systems to hook into and be notified when certain interesting changes are made to the system. Additionally, the event stream also provides a straightforward way to add additional middleware layers when business requirements change without having to rewrite or re-architect the system as a whole.  </p>
+<p>There may be multiple event streams in the data flow, but there’s usually just one main topic that all producers use as the API to submit changes to the system. This API must establish a message specification where all producers and consumers must conform to. A message generally has a set of standard headers described using the vocabulary and structure in <a href="https://spatial-information-qld.github.io/ladb-schemas/#PamnVMBU">ladb-schemas - Patch Log Header Example</a> with a message body containing actual content (such as delta changes, or RDF payload) or a URL to a large payload in external storage. This specification will be pulled out of the QLD spatial information system and reused in other projects in the future.</p>
+<h6 id="message-rdf-patch-log">Message - RDF patch log</h6>
+<p><strong>Header:</strong>
+    application/rdf-patch</p>
+<p><strong>Description:</strong>
+    Raise an error. RDF patch logs require the previous patch log identifier in the patch log header. The previous patch log identifier may not be valid by the time the message is consumed and sent to the RDF Delta Server. Producers must submit RDF patch logs in the “RDF patch body” format.</p>
+<h6 id="message-rdf-patch-body">Message - RDF patch body</h6>
+<p><strong>Header:</strong>
+    application/rdf-patch-body</p>
+<p><strong>Description:</strong>
+    The mime type is informal but is required to inform consumers that the content is a valid RDF patch log body but is without the required header information. Consumers must retrieve the latest RDF patch log identifier, attach it to the current patch log header, and submit it to the RDF Delta Server. Suggested identifier regime is to generate a UUID version 4.</p>
+<h6 id="message-rdf-turtle">Message - RDF Turtle</h6>
+<p><strong>Header:</strong>
+    text/turtle, application/n-triples, application/ld+json, etc. This should include all official triple and quad serialisation formats.</p>
+<p><strong>Description:</strong>
+    The RDF payload is converted into an RDF patch log with all statements as “append” and sent to the RDF Delta Server.</p>
+<h6 id="message-uri-list">Message - URI list</h6>
+<p><strong>Header:</strong>
+    text/uri-list</p>
+<p><strong>Description:</strong>
+    The message body consists of a line-separated listing of URLs of the location of the RDF patch log or payload. The consumer performs a request to each URL, processes it, and submits it to the RDF Delta Server.</p>
+<blockquote>
+<p><strong>Note:</strong>
+This specification is currently incomplete. Ideally the header also contains metadata about the kind of mime type of each URL. It may be a requirement that all documents at each URL must be compressed using a specific compression algorithm  to reduce data transfer bandwidth.</p>
+</blockquote>
+<h6 id="message-sparql-update">Message - SPARQL Update</h6>
+<p><strong>Header:</strong>
+    application/sparql-update</p>
+<p><strong>Description:</strong>
+    A SPARQL Update query. The consumer must send this to the Fuseki SPARQL Update endpoint, which will update the Fuseki database state, and propagate the changes back to the RDF Delta Server.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; KurrawongAI, 2025
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.indexes", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

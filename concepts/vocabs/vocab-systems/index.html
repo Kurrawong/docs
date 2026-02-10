@@ -1,0 +1,2256 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../patterns/">
+      
+      
+        <link rel="next" href="../../agents/patterns/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon-32x32.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Vocab systems - </title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="kai" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vocabulary-systems" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="" class="md-header__button md-logo" aria-label="" data-md-component="logo">
+      
+  <img src="../../../assets/KurrawongAI-inverted.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Vocab systems
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="" class="md-nav__button md-logo" aria-label="" data-md-component="logo">
+      
+  <img src="../../../assets/KurrawongAI-inverted.svg" alt="logo">
+
+    </a>
+    
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../products/prez/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prez
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prez
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/manifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manifest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/data-preparation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Preparation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploying
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deploying
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/deploying/aws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5_2" id="__nav_2_1_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/deploying/azure/appservice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    App Service Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/developers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/olis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Olis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../products/tools/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KAI Tools
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    KAI Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/kurra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kurra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/labelify/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Labelify
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/ogc-tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OGC Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/prefix-lookup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prefix Lookup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/prezmanifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prez Manifest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/provworkflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ProvWorkflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/pylode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pyLODE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/rdf-converter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RDF Converter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/rdf-merger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RDF Merger
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/shacl-validator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SHACL Validator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/sparql-parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPARQL Parser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/vocedit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VocEdit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/vocexcel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VocExcel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3rd Party
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3rd Party
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/3rdparty/fuseki/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fuseki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocabs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vocabs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vocab-reuse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocab reuse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocab systems
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocab systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vocabulary-editing-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vocabulary editing tools
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vocabulary editing tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vocedit-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VocEdit + GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vocexcel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VocExcel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shacl-validator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SHACL Validator
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SHACL Validator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validate-a-vocabulary-with-vocpub-shacl-validator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚧 Validate a vocabulary with VocPub SHACL Validator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rdf-converter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RDF Converter
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RDF Converter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convert-a-turtle-file-to-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚧 Convert a Turtle file to XML
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply-prefixes-to-a-turtle-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚧 Apply prefixes to a Turtle file
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references-and-further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References and Further Reading
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Agents
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vocabulary-editing-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vocabulary editing tools
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vocabulary editing tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vocedit-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VocEdit + GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vocexcel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VocExcel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shacl-validator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SHACL Validator
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SHACL Validator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validate-a-vocabulary-with-vocpub-shacl-validator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚧 Validate a vocabulary with VocPub SHACL Validator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rdf-converter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RDF Converter
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RDF Converter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convert-a-turtle-file-to-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚧 Convert a Turtle file to XML
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply-prefixes-to-a-turtle-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚧 Apply prefixes to a Turtle file
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references-and-further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References and Further Reading
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="vocabulary-systems">Vocabulary Systems</h1>
+<blockquote>
+<p><strong><em>Scope</em></strong></p>
+<p>This content is intended to provide guidance on the use of vocabulary systems that support editing and validation of vocabularies.</p>
+<p><strong><em>Audience</em></strong></p>
+<p><em>This module is primarily targeted to managers and editors of established vocabularies. It is assumed that learners have some experience with data management in practice.</em></p>
+<p><strong><em>Outcome</em></strong></p>
+<p>Learners should be able to use systems to edit, validate, transform and version vocabularies.</p>
+<hr />
+<p>💡 <em>Identifies troubleshooting tips, common errors and potential issues.</em></p>
+<p>🚧 <em>Exercises</em></p>
+<p>🎬 <em>Videos</em></p>
+</blockquote>
+<h2 id="introduction">Introduction</h2>
+<p>Vocabularies are data, and data management inevitably requires application support. Vocabularies are no different! In this module we will step you through some vocabulary systems developed by KurrawongAI that will make the task of managing vocabularies easier.</p>
+<p>If you've been working through <a href="/concepts/vocabs/introduction"><em>Introduction to Vocabularies</em></a>, <a href="/concepts/vocabs/creation"><em>Advanced Vocabulary Editing</em></a> or <a href="/concepts/vocabs/vocab-reuse"><em>Vocabulary Reuse</em></a>, you will have already encountered a key tool in any vocabulary managers toolkit: an editor. In this module we will look again at <em>VocEdit</em>, but draw your attention to a <em>VocEdit &gt; GitHub</em> integration feature that helps you manage vocabulary review and versioning. We'll also introduce you to <em>VocExcel</em>, a spreadsheet-based tool for editing simple vocabularies. And we'll introduce tools that help you validate a vocabulary, and a tool that converts a vocabulary from one RDF format to another.</p>
+<h2 id="vocabulary-editing-tools">Vocabulary editing tools</h2>
+<p>KurrawongAI has developed <a href="https://tools.kurrawong.ai">VocEdit and VocExcel</a> for editing and managing vocabulary data. Each features different requirements and strengths suited to different workflows. We also mention <a href="https://www.poolparty.biz">PoolParty</a>, an editor that is available via commercial license, or in Australia a non-commercial feature-limited license is available for research institutions via the <a href="https://documentation.ardc.edu.au/rva/what-is-rva-editor-poolparty">Research Vocabularies Australia</a> service. </p>
+<p>In short, these systems best address the following scenarios:</p>
+<p><strong>VocEdit</strong></p>
+<ul>
+<li>no client-side setup</li>
+<li>editing deep, complex hierarchies</li>
+<li>GitHub integration</li>
+</ul>
+<p><strong>VocExcel</strong></p>
+<ul>
+<li>minimal client-side setup</li>
+<li>bulk-load vocabulary data from tables</li>
+<li>extending profiles (SKOS+, VocPub+)</li>
+</ul>
+<p><strong>PoolParty</strong></p>
+<ul>
+<li>database backend</li>
+<li>multi-lingual vocabularies</li>
+<li>native support for multiple formats</li>
+</ul>
+<p><br></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">VocEdit</th>
+<th style="text-align: left;">VocExcel</th>
+<th style="text-align: left;">PoolParty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">sign-up required</td>
+<td style="text-align: left;">NO</td>
+<td style="text-align: left;">NO</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr>
+<td style="text-align: left;">tech requirements</td>
+<td style="text-align: left;">browser (Chrome)</td>
+<td style="text-align: left;">browser, MS Excel</td>
+<td style="text-align: left;">browser (Firefox, Chrome, MS Edge)</td>
+</tr>
+<tr>
+<td style="text-align: left;">bulk load from spreadsheet</td>
+<td style="text-align: left;">NO</td>
+<td style="text-align: left;">YES</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr>
+<td style="text-align: left;">deep hierarchy editing</td>
+<td style="text-align: left;">YES</td>
+<td style="text-align: left;">limited</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr>
+<td style="text-align: left;">VocPub validation</td>
+<td style="text-align: left;">native</td>
+<td style="text-align: left;">native</td>
+<td style="text-align: left;">optional</td>
+</tr>
+<tr>
+<td style="text-align: left;">add non-VocPub properties</td>
+<td style="text-align: left;">per concept</td>
+<td style="text-align: left;">per vocabulary</td>
+<td style="text-align: left;">per vocabulary</td>
+</tr>
+<tr>
+<td style="text-align: left;">RDF formats</td>
+<td style="text-align: left;">Turtle</td>
+<td style="text-align: left;">Turtle</td>
+<td style="text-align: left;">many</td>
+</tr>
+<tr>
+<td style="text-align: left;">file management</td>
+<td style="text-align: left;">GitHub integration</td>
+<td style="text-align: left;">local directory</td>
+<td style="text-align: left;">database</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 Migrating vocabulary data between VocExcel and VocEdit is seamless. PoolParty will ingest data from VocExcel or VocEdit, and will store and output data with minor syntactic differences. It's a good idea to consider the relative strengths of each system, but as these systems all have RDF and SKOS as core business logic, lock-in scenarios are minimal. </p>
+</blockquote>
+<p><br></p>
+<h3 id="vocedit-github">VocEdit + GitHub</h3>
+<p>Throughout these Vocabulary modules we have presented exercises that direct you to save vocabulary files to your desktop - you can close VocEdit, open it again and just return to that same file to continue editing. But what if a file needs to be reviewed, edited or validated outside the VocEdit tool? And you may want to store your vocabulary where others can access it. VocEdit is integrated with GitHub to achieve these goals. </p>
+<h4 id="save-a-vocabulary-to-github">🚧 Save a vocabulary to GitHub</h4>
+<blockquote>
+<p>💡 This exercise assumes you have a vocabulary saved in a GitHub repository that you have permission to configure. Don't have a vocabulary? You can upload the file from the <a href="https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier">first exercise</a> to your GitHub repository.  </p>
+</blockquote>
+<ol>
+<li><strong>Go to</strong> the KurrawongAI <a href="https://tools.kurrawong.ai/vocedit">VocEdit</a> in Chrome browser.</li>
+<li><strong>Select</strong> <strong>Integrations</strong> &gt; <strong>GitHub</strong> &gt; <strong>GitHub App Configuration</strong></li>
+<li><strong>Select</strong> a GitHub account from the list</li>
+<li><strong>Select</strong> <em>Only select repositories</em> (this is the most anticipated option for training and first time users - but select <em>All repositories</em> if needed)</li>
+<li><strong>Select repositories</strong> (assuming you selected <em>Only select repositories</em> option)</li>
+<li><strong>Select</strong> the repository where you have a vocabulary file</li>
+<li><strong>Install &amp; Authorise</strong> -</li>
+</ol>
+<blockquote>
+<p>💡 if you do not have permissions to install in the repository, the button in the last step will read <em>Authorise &amp; Request</em>. In this case you will need to request access before proceeding with GitHub integration.</p>
+</blockquote>
+<ol>
+<li><strong>Save</strong></li>
+<li><strong>Project</strong> &gt; <strong>Open</strong> &gt; <strong>GitHub File</strong> - you will be presented with the repository that you configured &gt; <strong>Select</strong> &gt; <strong>Next</strong></li>
+<li>Either create a new branch or select an existing branch &gt; <strong>Next</strong></li>
+<li>Select a vocabulary file</li>
+<li>Edit the vocabulary - any changes that you like</li>
+<li>Save</li>
+<li><strong>Project</strong> &gt; <strong>Save</strong></li>
+<li>Go to your GitHub repository - note the change!</li>
+</ol>
+<p>Close your project in VocEdit. The next time you return to this same project:</p>
+<ol>
+<li><strong>Project</strong> &gt; <strong>Open</strong> &gt; <strong>GitHub File</strong></li>
+</ol>
+<p>Now your vocabulary is available in your GitHub repository where it can be reviewed, edited, accessed over the web and even deployed. </p>
+<h3 id="vocexcel">VocExcel</h3>
+<p>VocExcel is a vocabulary editor that is essentially a MS Excel template. Using VocExcel, you will be creating vocabulary data in tabular form. Don't worry, VocExcel comes with a transformation service that will convert the Excel file into a range of RDF formats.</p>
+<blockquote>
+<p>💡 <em>VocExcel</em> is more suitable for simple or 'flat' vocabularies, such as a vocabulary where all <code>skos:Concept</code> s are top concepts of a <code>skos:ConceptScheme</code>. VocExcel can technically handle a vocabulary of any hierarchy depth, but anything beyond a two-level vocabulary (top concepts with one level of <code>skos:narrower</code> concepts), is not as well-supported. For deeper, multi-level hierarchy vocabularies we recommend <em>VocEdit</em>.</p>
+</blockquote>
+<p>To walk you through VocExcel features, we'll create a vocabulary from scratch. </p>
+<h4 id="create-a-vocabulary-in-vocexcel">🚧 Create a vocabulary in VocExcel</h4>
+<blockquote>
+<p>💡 You will need access to MS Excel to do this exercise.</p>
+</blockquote>
+<ol>
+<li><strong>Go to</strong> the KurrawongAI <a href="https://tools.kurrawong.ai/vocexcel">VocExcel</a> in any browser.</li>
+<li><strong>Get VocExcel Template</strong></li>
+<li><strong>Open</strong> the downloaded template (it may have opened automatically)</li>
+<li><strong>Save As</strong> a new file, e.g. "VocExcel-newVocab.xlsx"</li>
+</ol>
+<blockquote>
+<p>VocExcel will open at the <em>Introduction</em> tab. Note also the <em>Documentation</em> tab, which gives you a rundown of the properties that you may be editing.</p>
+</blockquote>
+<ol>
+<li><strong>Open</strong> the <em>Concept Scheme</em> tab</li>
+</ol>
+<blockquote>
+<p>On the Concept Scheme tab you can create a new Concept Scheme for the vocabulary. Note that VocExcel conforms to the <a href="https://agldwg.github.io/vocpub-profile/specification.html">VocPub Specification</a>, and some fields with an asterisk (*) are mandatory - they are:</p>
+<ul>
+<li>Vocabulary IRI</li>
+<li>Preferred Label</li>
+<li>Definition</li>
+<li>Creation Date (yyyy-mm-dd)</li>
+<li>Modified Date (yyyy-mm-dd) - repeat the Creation Date if this is the first edit</li>
+<li>Creator</li>
+<li>Publisher</li>
+<li>History Note</li>
+</ul>
+</blockquote>
+<ol>
+<li>Add data for all mandatory fields in the Concept Scheme</li>
+<li><strong>Open</strong> the <em>Concept</em> tab</li>
+<li>Add data for all mandatory fields for a Concept</li>
+<li><strong>Save</strong> the template</li>
+<li>Go to <a href="https://tools.kurrawong.ai/vocexcel">VocExcel</a> in any browser.</li>
+<li><strong>Upload an Excel or RDF file</strong> &gt; choose MS Excel file you just saved &gt; <strong>Upload</strong></li>
+</ol>
+<p>You will be presented with a Result. From here you can view the Concept Scheme or any Concept in the file, or the Full RDF Turtle result.</p>
+<blockquote>
+<p>💡 Why not try downloading the RDF, uploading it to a GitHub repository, and continuing on with the <a href="#vocedit-+-github">VocEdit + GitHub</a> steps above? Both VocEdit and VocExcel generate vocabulary data in the same format - you can switch between the tools if you like!</p>
+</blockquote>
+<h2 id="shacl-validator">SHACL Validator</h2>
+<p>You can check that your vocabulary is valid by using a SHACL validator. What does <em>valid</em> mean, and what is SHACL? </p>
+<p>A vocabulary validator will typically check for two things:</p>
+<ul>
+<li>the RDF syntax is valid - e.g. there are correct end of line terminators; all prefixes are defined;</li>
+<li>the vocabulary conforms to some vocabulary profile - a set of rules or quality measures that state what classes and properties feature in the vocabulary, and that certain datatypes are used to express property values.</li>
+</ul>
+<p>SHACL (W3C, 2017), or the <em>Shapes Constraint Language</em>, is a way of encoding a vocabulary profile so that it is machine-readable and used in some tool to check a vocabulary's conformance with that profile. </p>
+<p>A SHACL file can be used in various validation tools and services - here we'll demonstrate the KurrawongAI SHACL Validator, with a special focus on the VocPub profile, through an exercise.</p>
+<p>🎬 You can find out about the SHACL Validator on the <a href="https://www.youtube.com/watch?v=aOiEVHHfOMc">KurrawongAI YouTube</a> channel.</p>
+<h3 id="validate-a-vocabulary-with-vocpub-shacl-validator">🚧 Validate a vocabulary with VocPub SHACL Validator</h3>
+<ol>
+<li><strong>Go to</strong> the KurrawongAI <a href="https://tools.kurrawong.ai/validate">SHACL Validator</a> in any browser </li>
+<li><strong>Data to validate</strong> &gt; <strong>Upload</strong> &gt; select <code>pestRiskPath_training.ttl</code> (<em>don't have the file? see the <a href="https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier">first exercise</a> in Introduction to Vocabularies</em>) </li>
+<li><strong>Data to validate</strong> form &gt; <strong>Upload</strong></li>
+<li>Scroll down to <strong>SHACL Shapes</strong> form</li>
+<li><strong>Use Validators</strong> &gt; expand <strong>VocPub &gt; </strong>Add<strong> the most recent version &gt; </strong>Close**</li>
+<li><strong>Validate</strong></li>
+</ol>
+<p>A page of Validation Results will launch. This report lets you know where your vocabulary does not conform to the VocPub profile. The messages are colour coded and indicate issues in your vocabulary that are:</p>
+<ul>
+<li>a 🔴 Violation - these issues MUST be addressed for the vocabulary to conform with VocPub specification;</li>
+<li>a 🟡 Warning - it is recommended that these issues are addressed, but your vocabulary is still valid if you do not; and</li>
+<li><em>Informational</em> - these are optional improvements to the vocabulary</li>
+</ul>
+<blockquote>
+<p>💡 Below these results, a <strong>Full Validation Report</strong> is also available.</p>
+</blockquote>
+<p>Note that each message includes a reference to the VocPub specification, such as:</p>
+<blockquote>
+<p><em>For http://example.com/pestRiskPath: Requirement 2.15 - modified date - violated</em></p>
+</blockquote>
+<p>The Requirement referred to here can be looked up in the VocPub Specification in the <a href="https://linked.data.gov.au/def/vocpub/spec#vocabulary">Vocabulary</a> section (as this violation refers to a <code>skos:ConceptScheme</code>) at Requirement 2.15.</p>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Looking up the VocPub Specification requirement gives you more information about the Warning given in the Validator Results.</p>
+</blockquote>
+<h2 id="rdf-converter">RDF Converter</h2>
+<p>This and other modules have featured exercises using Turtle (.ttl) files. Turtle is just one RDF serialisation - there are other standard formats that vocabulary data can be managed in. </p>
+<p>The RDF Converter can be used to both transform Turtle files into other formats and also to improve Turtle file management. The Converter can:
+- transform RDF between formats such as Turtle, JSON-LD and XML
+- apply prefixes, improving both file readability and minimizing file size by shortening IRIs.</p>
+<p>The two exercises below demonstrate how the KurrawongAI <a href="https://tools.kurrawong.ai/convert">RDF Converter</a> can be used to convert SKOS vocabularies into different formats and also apply prefixes.  </p>
+<h3 id="convert-a-turtle-file-to-xml">🚧 Convert a Turtle file to XML</h3>
+<ol>
+<li><strong>Go to</strong> the KurrawongAI <a href="https://tools.kurrawong.ai/convert">RDF Converter</a> in any browser </li>
+<li><strong>RDF Data</strong> &gt; <strong>Upload</strong> &gt; select <code>pestRiskPath_training.ttl</code> (<em>don't have the file? see the <a href="https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier">first exercise</a> in Introduction to Vocabularies</em>) </li>
+<li>Next to the Convert button, select <strong>XML</strong> &gt; <strong>Convert</strong></li>
+<li>Scroll down to <strong>RDF Output</strong> form</li>
+<li>Copy or download results</li>
+</ol>
+<blockquote>
+<p>💡 <strong>Tip:</strong> XML is a W3C Recommendation (W3C, 2008)</p>
+</blockquote>
+<h3 id="apply-prefixes-to-a-turtle-file">🚧 Apply prefixes to a Turtle file</h3>
+<ol>
+<li><strong>Go to</strong> the KurrawongAI <a href="https://tools.kurrawong.ai/convert">RDF Converter</a> in any browser </li>
+<li>In a separate tab or window, <strong>Go to</strong> <a href="https://vocabs.ardc.edu.au/viewById/309">Public Policy Taxonomy</a> at Research Vocabularies Australia.</li>
+<li><strong>Download</strong> &gt; .ttl file</li>
+<li><strong>RDF Data</strong> &gt; <strong>Upload</strong> &gt; select <code>apo_public-policy-taxonomy_[date].ttl</code></li>
+<li>In the RDF Data form, add to the prefixes near the top of the file: <code>@prefix ppt: &lt;https://linked.data.gov.au/def/policy/&gt; .</code></li>
+<li>Next to the Convert button, select <strong>Turtle</strong> &gt; <strong>Convert</strong></li>
+</ol>
+<p>The Output will have shortened IRIs for each <code>skos:Concept</code>, such as:
+* <code>https://linked.data.gov.au/def/policy/1e0b0209-a519-4167-9165-2c3e1b753bb7</code> , transformed to:
+* <code>ppt:1e0b0209-a519-4167-9165-2c3e1b753bb7</code></p>
+<p>Prefixes can substantially reduce file sizes. Note also that the RDF Converter re-orders the prefixes alphabetically, which improves human readability. The RDF Converter also removes any un-used prefixes in the input file.</p>
+<p>💡 In Turtle format, prefixes may be declared with one of two different syntaxes:
+* <code>@prefix &lt;https://linked.data.gov.au/def/policy/&gt; .</code> OR
+* <code>PREFIX &lt;https://linked.data.gov.au/def/policy/&gt;</code></p>
+<p>A trailing space and period (" .") must be included in the old Turtle format, and <code>PREFIX</code> must be all UPPERCASE in the new Turtle format. The Converter will accept either, but may transform prefixes between syntax formats.</p>
+<p><br></p>
+<h2 id="references-and-further-reading">References and Further Reading</h2>
+<ul>
+<li>AGLDWG (2025). VocPub profile specification. https://agldwg.github.io/vocpub-profile/specification</li>
+<li>W3C (n.d.). QSKOS. Retrieved March 5, 2025. https://www.w3.org/2001/sw/wiki/QSKOS</li>
+<li>W3C (2008). Extensible Markup Language (XML) 1.0 (W3C Recommendation). https://www.w3.org/TR/xml/</li>
+<li>W3C (2009). SKOS Simple Knowledge Organization System Reference (W3C Recommendation). https://www.w3.org/TR/skos-reference/</li>
+<li>W3C (2014). Turtle: Terse RDF triple language (W3C Recommendation). https://www.w3.org/TR/turtle/</li>
+<li>W3C (2017). Shapes Constraint Language (SHACL) (W3C Recommendation). https://www.w3.org/TR/shacl</li>
+<li>W3C (2020). JSON-LD 1.1: A JSON-based serialization for Linked Data (W3C Recommendation). https://www.w3.org/TR/json-ld11/</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; KurrawongAI, 2025
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.indexes", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

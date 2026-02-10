@@ -1,0 +1,2018 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../vocab-reuse/">
+      
+      
+        <link rel="next" href="../vocab-systems/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon-32x32.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Patterns - </title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="kai" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vocabulary-patterns" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="" class="md-header__button md-logo" aria-label="" data-md-component="logo">
+      
+  <img src="../../../assets/KurrawongAI-inverted.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Patterns
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="" class="md-nav__button md-logo" aria-label="" data-md-component="logo">
+      
+  <img src="../../../assets/KurrawongAI-inverted.svg" alt="logo">
+
+    </a>
+    
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../products/prez/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prez
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prez
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/manifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manifest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/data-preparation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Preparation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploying
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deploying
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/deploying/aws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5_2" id="__nav_2_1_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/deploying/azure/appservice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    App Service Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/developers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/olis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Olis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../products/tools/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KAI Tools
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    KAI Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/kurra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kurra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/labelify/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Labelify
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/ogc-tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OGC Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/prefix-lookup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prefix Lookup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/prezmanifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prez Manifest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/provworkflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ProvWorkflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/pylode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pyLODE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/rdf-converter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RDF Converter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/rdf-merger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RDF Merger
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/shacl-validator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SHACL Validator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/sparql-parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPARQL Parser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/vocedit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VocEdit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/vocexcel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VocExcel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3rd Party
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3rd Party
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/3rdparty/fuseki/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fuseki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocabs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vocabs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vocab-reuse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocab reuse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patterns
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Images
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discussion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vocab-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocab systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Agents
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Images
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discussion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="vocabulary-patterns">Vocabulary Patterns</h1>
+<blockquote>
+<p><strong><em>Scope</em></strong></p>
+<p>This content is in intended to convey Best Practice patterns in vocabulary content</p>
+<p><strong><em>Audience</em></strong></p>
+<p>Technical vocabulary creators.</p>
+<p>All the patterns documented here assume the use of the <a href="https://www.w3.org/TR/skos-primer/">SKOS data model</a> for vocabulary content and <a href="https://en.wikipedia.org/wiki/Semantic_Web">Semantic Web</a> methods for data management and access. </p>
+<p><strong><em>Outcome</em></strong></p>
+<p>Technical vocabulary creators should learn both what KurrawongAI considers to be Best Practice for certain aspects of vocabulary content and also how KurrawongAI and other vocabulary creation and publication tools support the pattern.</p>
+<hr />
+</blockquote>
+<h2 id="images">Images</h2>
+<p><em>Can we use images for concepts in vocabularies?</em></p>
+<h3 id="context">Context</h3>
+<p>Some vocabularies lend themselves to the use of images to either define or explain the concepts they contain. For example, a vocabulary about road signs really should show images of the sign, not just describe them. Other vocabularies might like to exemplify concepts with images.</p>
+<h3 id="solution">Solution</h3>
+<p>Yes we can use images with the following clarifications:</p>
+<ol>
+<li>there is more than one way</li>
+<li>different approaches require different system capabilities for authoring or displaying vocabs</li>
+</ol>
+<h4 id="conceptual-handling">Conceptual handling</h4>
+<p>Conceptually, we just link an image to a Concept within a vocab using an appropriate predicate. The <a href="https://www.w3.org/TR/skos-reference/#notes">SKOS Reference document's <em>Notes</em> section</a> indicates that certain note predicates such as <a href="https://www.w3.org/TR/skos-reference/#example"><code>skos:example</code></a> might be appropriate since the don't only have to be used with text, even though they usually are.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a Concept is actually defined by an image, it may seem appropriate to link directly to the image using the <a href="https://www.w3.org/TR/skos-reference/#definition"><code>skos:definition</code></a> predicated but we advise against this as it may be invalid for certain vocabulary profiles such as <a href="https://linked.data.gov.au/def/vocpub">VocPub</a> and may be hard for systems to implement. Instead use another predicate and describe how the image, indicated by the chosen predicate, is the defining part of the Concept in the definition field, in text. </p>
+</div>
+<p>We can also choose to use a non-SKOS predicate, especially common ones used for images, such as <a href="https://schema.org/image"><code>schema:image</code></a>. This would allow the use of regular SKOS predicates, such as <a href="https://www.w3.org/TR/skos-reference/#definition"><code>skos:definition</code></a>, <a href="https://www.w3.org/TR/skos-reference/#example"><code>skos:example</code></a> etc. for their common use and the image predicate is an extra.</p>
+<p>The information about the images actually linked to by <a href="https://www.w3.org/TR/skos-reference/#example"><code>skos:example</code></a> or <a href="https://schema.org/image"><code>schema:image</code></a> can be one of the following:</p>
+<ul>
+<li>a web address - URL<ul>
+<li>e.g. <code>https://upload.wikimedia.org/wikipedia/commons/4/4c/2019-07-29_172052_Rain_in_Berlin.jpg</code> - a publicly available image on WikiMedia</li>
+</ul>
+</li>
+<li>a local file path<ul>
+<li>e.g. <code>images/germany/rain_in_berlin.jpg</code> - only available on a particular system</li>
+</ul>
+</li>
+<li>embedded image content<ul>
+<li>e.g. an <a href="https://en.wikipedia.org/wiki/SVG">SVG</a> image defined in XML text</li>
+<li>e.g. a hex-encoded raster image, like a JPG</li>
+</ul>
+</li>
+<li>a Blank Node describing an image</li>
+</ul>
+<p>There are pros and cons to each type of information listed above. </p>
+<p>A <em>web address</em> is easy to record - just a predicate like <a href="https://schema.org/image"><code>schema:image</code></a> pointing to the URL - but it will break if the image disappears offline, so the vocabulary has a dependency on the image's stability to keep working.</p>
+<p>A <em>local file path</em> will only work if any tool publishing the vocabulary can access and on-deliver (render) the image.</p>
+<p>An <em>embedded image</em> stays within the vocab's source data file, which means it can't ever be lost, but could be large: the JPG image linked to in the web address bullet above is 7.5MB as a JPEG but 137MB when converted to HEX which is a form of text encoding that can be used in an RDF file. This may only be appropriate for small vector images such as icons of map symbols.</p>
+<p>If we want to provide more information about the image than either just its embedded content or a link to its location, we can qualify it by linking to a Blank Node from which we can then link to remote content via a URL or local file path or to embedded content. From the same Blank Node, we can then also link to other information such as captions, copyright info, etc. See Examples below.</p>
+<h3 id="examples">Examples</h3>
+<h4 id="url-using-schemaimage">URL using <code>schema:image</code></h4>
+<div class="highlight"><pre><span></span><code><span class="k">PREFIX</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nv">&lt;https://schema.org/&gt;</span>
+<span class="k">PREFIX</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+<span class="k">PREFIX</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span>
+
+<span class="p">:</span><span class="nt">dog</span>
+  <span class="kt">a</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Concept</span> <span class="p">;</span>
+  <span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="s">&quot;Dog&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+  <span class="nn">skos</span><span class="p">:</span><span class="nt">altLabel</span> <span class="s">&quot;Domestic Dog&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+  <span class="nn">skos</span><span class="p">:</span><span class="nt">definition</span> <span class="s">&quot;The dog (Canis familiaris or Canis lupus familiaris) is a domesticated descendant of the gray wolf.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+  <span class="nn">schema</span><span class="p">:</span><span class="nt">image</span> <span class="s">&quot;https://en.wikipedia.org/wiki/Dog#/media/File:Chin_posing.jpg&quot;</span> <span class="p">;</span>
+<span class="p">.</span>
+</code></pre></div>
+<p>Note here the use of <code>xsd:anyURI</code> for a typed literal for the image link, as opposed to an IRI named node, which would be <code>&lt;https://en.wikipedia.org/wiki/Dog#/media/File:Chin_posing.jpg&gt;</code>. This is because the image is not part of the vocab's graph (the nodes in its data) but a link off to somewhere else.</p>
+<h4 id="local-file-path-using-skosexample">Local file path using <code>skos:example</code></h4>
+<div class="highlight"><pre><span></span><code><span class="k">PREFIX</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+<span class="k">PREFIX</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span>
+
+<span class="p">:</span><span class="nt">dog</span>
+  <span class="kt">a</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Concept</span> <span class="p">;</span>
+  <span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="s">&quot;Dog&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+  <span class="nn">skos</span><span class="p">:</span><span class="nt">altLabel</span> <span class="s">&quot;Domestic Dog&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+  <span class="nn">skos</span><span class="p">:</span><span class="nt">definition</span> <span class="s">&quot;The dog (Canis familiaris or Canis lupus familiaris) is a domesticated descendant of the gray wolf.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+  <span class="nn">skos</span><span class="p">:</span><span class="nt">example</span> <span class="s">&quot;src/img/my_dog.jpg&quot;</span> <span class="p">;</span>
+<span class="p">.</span>
+</code></pre></div>
+<h4 id="embedded-svg-image">Embedded SVG image</h4>
+<div class="highlight"><pre><span></span><code><span class="k">PREFIX</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+<span class="k">PREFIX</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+<span class="k">PREFIX</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span>
+
+<span class="p">:</span><span class="nt">apron</span>
+    <span class="kt">a</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Concept</span> <span class="p">;</span>
+    <span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="s">&quot;Apron&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">skos</span><span class="p">:</span><span class="nt">definition</span> <span class="s">&quot;An apron, in geology, is a fan-like accumulation of sediments that spreads outward from the base of a slope, such as the edge of a continental shelf, a submarine mountain, or an island. It&#39;s typically formed by gravity-driven processes like submarine landslides, debris flows, or turbidity currents.&quot;</span><span class="o">@</span><span class="ge">en</span>  <span class="p">;</span>
+    <span class="nn">schema</span><span class="p">:</span><span class="nt">image</span> <span class="s">&quot;&quot;&quot;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:inkscape=&quot;http://www.inkscape.org/namespaces/inkscape&quot; xmlns:sodipodi=&quot;http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd&quot; xmlns:svg=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;97.118958mm&quot; height=&quot;74.286232mm&quot; viewBox=&quot;0 0 97.118957 74.286232&quot; version=&quot;1.1&quot; id=&quot;svg5&quot; xml:space=&quot;preserve&quot; inkscape:version=&quot;1.2.2 (b0a8486, 2022-12-01)&quot; sodipodi:docname=&quot;apron.inkscape.svg&quot; inkscape:export-filename=&quot;apron.png&quot; inkscape:export-xdpi=&quot;96&quot; inkscape:export-ydpi=&quot;96&quot;&gt;&lt;sodipodi:namedview id=&quot;namedview7&quot; pagecolor=&quot;#ffffff&quot; bordercolor=&quot;#666666&quot; borderopacity=&quot;1.0&quot; inkscape:showpageshadow=&quot;2&quot; inkscape:pageopacity=&quot;1&quot; inkscape:pagecheckerboard=&quot;0&quot; inkscape:deskcolor=&quot;#ffffff&quot; inkscape:document-units=&quot;mm&quot; showgrid=&quot;false&quot; inkscape:zoom=&quot;1.8380915&quot; inkscape:cx=&quot;75.077873&quot; inkscape:cy=&quot;204.01596&quot; inkscape:window-width=&quot;2063&quot; inkscape:window-height=&quot;1210&quot; inkscape:window-x=&quot;133&quot; inkscape:window-y=&quot;70&quot; inkscape:window-maximized=&quot;0&quot; inkscape:current-layer=&quot;layer1&quot; /&gt;&lt;defs id=&quot;defs2&quot;&gt;&lt;linearGradient inkscape:collect=&quot;always&quot; id=&quot;linearGradient3584&quot;&gt;&lt;stop style=&quot;stop-color:#808080;stop-opacity:1;&quot; offset=&quot;0&quot; id=&quot;stop3580&quot; /&gt;&lt;stop style=&quot;stop-color:#808080;stop-opacity:0;&quot; offset=&quot;1&quot; id=&quot;stop3582&quot; /&gt;&lt;/linearGradient&gt;&lt;linearGradient inkscape:collect=&quot;always&quot; id=&quot;linearGradient3522&quot;&gt;&lt;stop style=&quot;stop-color:#ffffff;stop-opacity:1;&quot; offset=&quot;0&quot; id=&quot;stop3518&quot; /&gt;&lt;stop style=&quot;stop-color:#ffffff;stop-opacity:0;&quot; offset=&quot;1&quot; id=&quot;stop3520&quot; /&gt;&lt;/linearGradient&gt;&lt;linearGradient inkscape:collect=&quot;always&quot; xlink:href=&quot;#linearGradient3522&quot; id=&quot;linearGradient3524&quot; x1=&quot;64.030418&quot; y1=&quot;96.847031&quot; x2=&quot;143.43111&quot; y2=&quot;96.847031&quot; gradientUnits=&quot;userSpaceOnUse&quot; /&gt;&lt;linearGradient inkscape:collect=&quot;always&quot; xlink:href=&quot;#linearGradient3584&quot; id=&quot;linearGradient3586&quot; x1=&quot;67.60627&quot; y1=&quot;98.366364&quot; x2=&quot;148.15862&quot; y2=&quot;98.366364&quot; gradientUnits=&quot;userSpaceOnUse&quot; /&gt;&lt;/defs&gt;&lt;g inkscape:label=&quot;img-top&quot; inkscape:groupmode=&quot;layer&quot; id=&quot;layer1&quot; style=&quot;display:inline&quot; transform=&quot;translate(-53.17203,-43.635959)&quot;&gt;&lt;text xml:space=&quot;preserve&quot; style=&quot;font-size:4.93889px;line-height:0.95;font-family:sans-serif;display:inline;stroke-width:0.264583&quot; x=&quot;145.31673&quot; y=&quot;68.72187&quot; id=&quot;text364&quot; inkscape:label=&quot;A&#39;&quot;&gt;&lt;tspan sodipodi:role=&quot;line&quot; id=&quot;tspan362&quot; style=&quot;font-size:4.93889px;stroke-width:0.264583&quot; x=&quot;145.31673&quot; y=&quot;68.72187&quot;&gt;A&#39;&lt;/tspan&gt;&lt;/text&gt;&lt;text xml:space=&quot;preserve&quot; style=&quot;font-size:4.93889px;line-height:0.95;font-family:sans-serif;display:inline;stroke-width:0.264583&quot; x=&quot;53.109329&quot; y=&quot;69.1222&quot; id=&quot;text356&quot; inkscape:label=&quot;A&quot;&gt;&lt;tspan sodipodi:role=&quot;line&quot; id=&quot;tspan354&quot; style=&quot;font-size:4.93889px;stroke-width:0.264583&quot; x=&quot;53.109329&quot; y=&quot;69.1222&quot;&gt;A&lt;/tspan&gt;&lt;/text&gt;&lt;path style=&quot;fill:none;stroke:#0000ff;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1&quot; d=&quot;m 57.779747,66.186502 6.271707,0.13344 m 10.942123,-5.20418 c 3.257361,-3.824489 5.768834,-16.591931 11.876208,-17.347268 l 31.491965,0.13344 c 9.02277,0.304639 8.97067,10.773129 12.27653,17.480709&quot; id=&quot;path521&quot; sodipodi:nodetypes=&quot;cccccc&quot; inkscape:label=&quot;line thin&quot; /&gt;&lt;path style=&quot;fill:none;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1&quot; d=&quot;m 140.51287,66.186502 3.20258,-0.13344&quot; id=&quot;path523&quot; inkscape:label=&quot;line thin&quot; /&gt;&lt;path style=&quot;display:inline;fill:none;stroke:#0000ff;stroke-width:1.065;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1&quot; d=&quot;m 64.37479,66.27375 c 3.51625,-2.756604 7.149616,-4.459157 10.919028,-4.937299&quot; id=&quot;path1153&quot; sodipodi:nodetypes=&quot;cc&quot; inkscape:label=&quot;line thick&quot; /&gt;&lt;path style=&quot;display:inline;fill:none;stroke:#0000ff;stroke-width:1.065;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1&quot; d=&quot;m 130.64854,61.051609 c 2.69577,3.040226 5.97672,4.617491 9.6847,5.127193&quot; id=&quot;path1155&quot; sodipodi:nodetypes=&quot;cc&quot; inkscape:label=&quot;line thick&quot; /&gt;&lt;ellipse style=&quot;fill:#0000ff;stroke:#0000ff;stroke-width:1.065;stroke-dasharray:none;paint-order:fill markers stroke;stop-color:#000000&quot; id=&quot;path1209&quot; cx=&quot;64.327316&quot; cy=&quot;66.178802&quot; rx=&quot;0.4272663&quot; ry=&quot;0.37979227&quot; inkscape:label=&quot;dot&quot; /&gt;&lt;ellipse style=&quot;fill:#0000ff;stroke:#0000ff;stroke-width:1.065;stroke-dasharray:none;paint-order:fill markers stroke;stop-color:#000000&quot; id=&quot;path1209-8&quot; cx=&quot;74.914024&quot; cy=&quot;61.241501&quot; rx=&quot;0.4272663&quot; ry=&quot;0.37979227&quot; inkscape:label=&quot;dot&quot; /&gt;&lt;ellipse style=&quot;fill:#0000ff;stroke:#0000ff;stroke-width:1.065;stroke-dasharray:none;paint-order:fill markers stroke;stop-color:#000000&quot; id=&quot;path1209-6&quot; cx=&quot;130.64854&quot; cy=&quot;61.241505&quot; rx=&quot;0.4272663&quot; ry=&quot;0.37979227&quot; inkscape:label=&quot;dot&quot; /&gt;&lt;ellipse style=&quot;display:inline;fill:#0000ff;stroke:#0000ff;stroke-width:1.065;stroke-dasharray:none;paint-order:fill markers stroke;stop-color:#000000&quot; id=&quot;path1209-7&quot; cx=&quot;140.61809&quot; cy=&quot;66.463654&quot; rx=&quot;0.4272663&quot; ry=&quot;0.37979227&quot; inkscape:label=&quot;dot&quot; /&gt;&lt;/g&gt;&lt;g inkscape:groupmode=&quot;layer&quot; id=&quot;layer2&quot; inkscape:label=&quot;img-bottom&quot; transform=&quot;translate(-53.17203,-43.635959)&quot;&gt;&lt;text xml:space=&quot;preserve&quot; style=&quot;font-size:4.93889px;line-height:0.95;font-family:sans-serif;display:inline;stroke-width:0.264583&quot; x=&quot;145.98393&quot; y=&quot;89.004837&quot; id=&quot;text418&quot; inkscape:label=&quot;A&#39;&quot;&gt;&lt;tspan sodipodi:role=&quot;line&quot; id=&quot;tspan416&quot; style=&quot;font-size:4.93889px;stroke-width:0.264583&quot; x=&quot;145.98393&quot; y=&quot;89.004837&quot;&gt;A&#39;&lt;/tspan&gt;&lt;/text&gt;&lt;text xml:space=&quot;preserve&quot; style=&quot;font-size:4.93889px;line-height:0.95;font-family:sans-serif;stroke-width:0.264583&quot; x=&quot;58.580395&quot; y=&quot;107.41962&quot; id=&quot;text360&quot; inkscape:label=&quot;A&quot;&gt;&lt;tspan sodipodi:role=&quot;line&quot; id=&quot;tspan358&quot; style=&quot;font-size:4.93889px;stroke-width:0.264583&quot; x=&quot;58.580395&quot; y=&quot;107.41962&quot;&gt;A&lt;/tspan&gt;&lt;/text&gt;&lt;path style=&quot;display:inline;fill:url(#linearGradient3586);fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:1.05833, 0.529166;stroke-dashoffset:0;stroke-opacity:1&quot; d=&quot;m 67.792919,103.20855 c 4.599387,-9.503289 12.289063,-18.282292 32.946981,-24.021863 12.12077,-1.108928 23.16637,1.62207 33.51667,6.836262 l 7.78574,4.082767 c 5.60824,7.500866 6.29687,9.877152 5.88678,11.108924 -3.26483,7.38071 -7.18384,7.23836 -10.91903,9.20996 -10.4388,5.06006 -20.66991,6.38166 -30.85812,6.93121 -8.988417,1.01278 -17.470444,0.2532 -25.446082,-2.27875 -3.993675,-1.7923 -8.342705,-2.87389 -11.393767,-6.55142 -0.969389,-1.49456 -1.797623,-3.07382 -1.519172,-5.31709 z&quot; id=&quot;path1315&quot; sodipodi:nodetypes=&quot;cccccccccc&quot; /&gt;&lt;path style=&quot;fill:#ffffff;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:1.05833, 0.529166;stroke-dashoffset:0;stroke-opacity:1&quot; d=&quot;m 77.002882,98.84094 7.026159,-6.361523 c 6.083988,-5.950949 11.770322,-8.985769 17.280549,-10.729132 7.06531,-0.658765 14.47992,0.42898 22.31279,3.608028 3.72737,1.172182 6.59804,3.415237 9.58976,5.506987 2.25277,2.747834 5.17529,4.825911 7.97564,7.026159 1.78653,2.133421 1.66729,3.949211 0,5.506991 -5.84246,3.73718 -11.81949,7.17831 -18.60982,8.83017 -4.73149,1.40464 -9.60474,2.49032 -15.09675,2.1838 -4.68506,0.4466 -8.787537,-1.24294 -12.912934,-2.84844 -3.291533,-1.31082 -6.583066,-2.39442 -9.874599,-2.5636 -2.973433,-0.1711 -5.85874,-1.04722 -8.640276,-2.75349 -0.801585,-2.11557 -1.789119,-4.17242 0.949481,-7.40595 z&quot; id=&quot;path1313&quot; sodipodi:nodetypes=&quot;ccccccccccccc&quot; /&gt;&lt;path style=&quot;fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:1.05833, 0.529166;stroke-dashoffset:0;stroke-opacity:1&quot; d=&quot;m 80.326065,98.366198 5.317093,-4.367612 9.589754,-6.36152 9.304908,-3.323183 c 6.87816,-0.02477 12.86259,1.55916 18.79972,3.228235 3.15956,1.049802 5.56485,2.853877 7.97564,4.652457 l 8.35543,6.36152 c 1.08339,1.20359 0.597,2.210955 0.18989,3.228235 -5.75066,4.27882 -11.03758,5.77526 -16.42601,7.88069 -5.95586,1.84631 -11.51884,2.25204 -16.90076,1.99391 -4.43091,-0.61103 -8.861819,-1.94866 -13.292729,-3.51308 -3.048129,-1.29307 -6.066741,-2.40904 -8.925118,-2.5636 -2.056026,-0.26064 -4.013977,-0.70108 -4.937299,-3.03834 -0.0801,-1.26037 0.477077,-2.733171 0.949481,-4.177712 z&quot; id=&quot;path1311&quot; sodipodi:nodetypes=&quot;cccccccccccccc&quot; /&gt;&lt;path style=&quot;display:inline;fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:1.05833, 0.529166;stroke-dashoffset:0;stroke-opacity:1&quot; d=&quot;m 83.459351,97.701562 6.836261,-4.082767 c 5.777343,-4.396213 9.074888,-4.659428 13.292728,-6.456468 6.61438,-0.124928 12.94692,1.15935 19.17951,2.943389 3.01596,1.078699 4.8098,2.646247 6.93121,4.082767 2.75815,1.611792 5.31325,3.325107 6.93121,5.506989 -0.34477,2.947598 -9.78734,6.397208 -15.85633,7.785738 -3.89858,0.98424 -7.87315,1.58855 -11.96346,1.61412 -5.18319,-0.71088 -10.546343,-1.06185 -15.001788,-3.22823 -1.726601,-0.57796 -3.163168,-1.54263 -5.412042,-1.42422 l -4.082767,-0.75959 c -1.426529,-0.31511 -1.879655,-1.21426 -2.373701,-2.08886 0.398131,-1.838918 0.929823,-3.010025 1.519169,-3.892868 z&quot; id=&quot;path1309&quot; sodipodi:nodetypes=&quot;ccccccccccccc&quot; /&gt;&lt;path style=&quot;display:inline;fill:url(#linearGradient3524);fill-opacity:1;stroke:#0000ff;stroke-width:0.565;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:2.825;stroke-dashoffset:0;stroke-opacity:1&quot; d=&quot;M 64.089946,105.39236 143.37158,88.301702&quot; id=&quot;path1301&quot; inkscape:label=&quot;line&quot; /&gt;&lt;/g&gt;&lt;/svg&gt;&quot;&quot;&quot;</span><span class="p">^^</span><span class="nn">rdf</span><span class="p">:</span><span class="nt">XMLLiteral</span> <span class="p">;</span>
+<span class="p">.</span>
+</code></pre></div>
+<p>This example embeds the following simple image and yet the <a href="https://en.wikipedia.org/wiki/SVG">SVG</a> literal used is large (long):</p>
+<p><img alt="" src="../../../assets/vocabs/apron.png" /></p>
+<p>Note also that the literal value used for the SVG encoding of the image is XML, indicated using the <code>rdf:XMLLiteral</code> custom datatype.</p>
+<h4 id="blank-node">Blank Node</h4>
+<p>Here an image at a local file path is given a caption and a copyright notice via a Blank Node of type <a href="https://schema.org/ImageObject"><code>schema:ImageObject</code></a> using other <a href="https://schema.org">schema.org</a> predicates:</p>
+<div class="highlight"><pre><span></span><code><span class="k">PREFIX</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+<span class="k">PREFIX</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span>
+
+<span class="p">:</span><span class="nt">dog</span>
+  <span class="kt">a</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Concept</span> <span class="p">;</span>
+  <span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="s">&quot;Dog&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+  <span class="nn">skos</span><span class="p">:</span><span class="nt">altLabel</span> <span class="s">&quot;Domestic Dog&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+  <span class="nn">skos</span><span class="p">:</span><span class="nt">definition</span> <span class="s">&quot;The dog (Canis familiaris or Canis lupus familiaris) is a domesticated descendant of the gray wolf.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+  <span class="nn">skos</span><span class="p">:</span><span class="nt">example</span> <span class="p">[</span>
+    <span class="kt">a</span> <span class="nn">schema</span><span class="p">:</span><span class="nt">ImageObject</span> <span class="p">;</span>
+    <span class="nn">schema</span><span class="p">:</span><span class="nt">contentLocation</span> <span class="s">&quot;src/img/my_dog.jpg&quot;</span> <span class="p">;</span>
+    <span class="nn">schema</span><span class="p">:</span><span class="nt">caption</span> <span class="s">&quot;Fido, Nicholas&#39; dog&quot;</span> <span class="p">;</span>
+    <span class="nn">schema</span><span class="p">:</span><span class="nt">copyrightNotice</span> <span class="s">&quot;&amp;copy; Nicholas Car, 2025&quot;</span> <span class="p">;</span>  
+  <span class="p">]</span> <span class="p">;</span>
+<span class="p">.</span>
+</code></pre></div>
+<h3 id="discussion">Discussion</h3>
+<p>There are several ways to associate images with Concepts in SKOS vocabularies and each have different pros and cons. Be sure to determine how your target vocabulary creation / management / publication systems handle images too.</p>
+<h3 id="related">Related</h3>
+<h4 id="systems">Systems</h4>
+<p>The following is a list of KurrawongAI-supported vocabulary systems that have some image capability:</p>
+<ul>
+<li><a href="https://tools.kurrawong.ai/vocexcel">VocExcel</a><ul>
+<li>for the creation of vocabs</li>
+<li>VocExcel v0.8.0, due for release in Jun, 2025, will contain an <code>skos:example</code> slot for Concepts that can be used to link to an image via URL</li>
+</ul>
+</li>
+<li><a href="https://tools.kurrawong.ai/vocedit">VocEdit</a><ul>
+<li>for the creation of vocabs</li>
+<li>VocEdit already (May 2025) supports adding any predicated and literal values to Concepts, so the URL and local file path methods can be used now</li>
+<li>the July 2025 release of VocEdit will support uploading small SVG files for the values of <code>skos:example</code> or <code>schema:image</code> predicates </li>
+</ul>
+</li>
+<li><a href="../../products/prez">Prez</a><ul>
+<li>for the display of images in vocabs</li>
+<li>already supports rendering of embedded SVG images<ul>
+<li>see an example: <a href="https://demo.dev.kurrawong.ai/catalogs/exm:demo-vocabs/collections/demovocabs:image-test/items/imagetest:plane-image">the KurrawongAI Image Test vocab Concept of 'Plane'</a></li>
+</ul>
+</li>
+<li>will soon support loading of remote images linked to via URL</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; KurrawongAI, 2025
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.indexes", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

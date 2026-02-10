@@ -1,0 +1,2199 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../introduction/">
+      
+      
+        <link rel="next" href="../vocab-reuse/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon-32x32.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Advanced - </title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="kai" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#advanced-vocabulary-editing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="" class="md-header__button md-logo" aria-label="" data-md-component="logo">
+      
+  <img src="../../../assets/KurrawongAI-inverted.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Advanced
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="" class="md-nav__button md-logo" aria-label="" data-md-component="logo">
+      
+  <img src="../../../assets/KurrawongAI-inverted.svg" alt="logo">
+
+    </a>
+    
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../products/prez/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prez
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prez
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/manifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manifest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/data-preparation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Preparation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploying
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deploying
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/deploying/aws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5_2" id="__nav_2_1_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/deploying/azure/appservice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    App Service Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/developers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/olis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Olis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../products/tools/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KAI Tools
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    KAI Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/kurra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kurra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/labelify/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Labelify
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/ogc-tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OGC Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/prefix-lookup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prefix Lookup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/prezmanifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prez Manifest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/provworkflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ProvWorkflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/pylode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pyLODE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/rdf-converter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RDF Converter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/rdf-merger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RDF Merger
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/shacl-validator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SHACL Validator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/sparql-parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPARQL Parser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/vocedit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VocEdit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/vocexcel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VocExcel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3rd Party
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3rd Party
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/3rdparty/fuseki/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fuseki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocabs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vocabs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapping-concepts-with-concepts-in-other-vocabularies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mapping concepts with concepts in other vocabularies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mapping concepts with concepts in other vocabularies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-match-a-concept-with-a-concept-in-another-vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚧 Exercise: match a concept with a concept in another vocabulary.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Images
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-add-an-image-to-a-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚧 Exercise: add an image to a concept
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-associated-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related (associated) concepts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation properties
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collections
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identifiers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identifiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iri-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IRI patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-iri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version IRI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references-and-further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References and Further Reading
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vocab-reuse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocab reuse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vocab-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocab systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Agents
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapping-concepts-with-concepts-in-other-vocabularies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mapping concepts with concepts in other vocabularies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mapping concepts with concepts in other vocabularies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-match-a-concept-with-a-concept-in-another-vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚧 Exercise: match a concept with a concept in another vocabulary.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Images
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-add-an-image-to-a-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚧 Exercise: add an image to a concept
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-associated-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related (associated) concepts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation properties
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collections
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identifiers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identifiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iri-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IRI patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-iri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version IRI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references-and-further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References and Further Reading
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="advanced-vocabulary-editing">Advanced Vocabulary Editing</h1>
+<blockquote>
+<p><strong><em>Scope</em></strong></p>
+<p>This content is intended to provide guidance on the creation of optional vocabulary elements that will enrich and optimise semantics, provenance and interoperability. </p>
+<p><strong><em>Prerequisite</em></strong></p>
+<p><em>It is recommended that <a href="https://docs.kurrawong.ai/concepts/vocabs/introduction/">Introduction to Vocabularies</a> module is completed prior to Advanced vocabulary editing. Note that some of the exercises in this module will build on changes implemented in the introductory module</em></p>
+<p><strong><em>Outcome</em></strong></p>
+<p><em>On completing this module you will be able to understand and apply an expanded set of vocabulary properties.</em></p>
+<hr />
+</blockquote>
+<p>💡 <em>Identifies troubleshooting tips, common errors and potential issues.</em></p>
+<blockquote>
+<p>📝 <em>Notes that summarise content at the end of a module.</em></p>
+</blockquote>
+<h2 id="introduction">Introduction</h2>
+<p>The <em>Introduction to vocabularies</em> module focused on basic vocabulary properties that are typically required by vocabulary systems and standards. This module will describe more optional properties that will improve vocabularies semantics, provenance and interoperability with other vocabularies and with data systems. </p>
+<h2 id="mapping-concepts-with-concepts-in-other-vocabularies">Mapping concepts with concepts in other vocabularies</h2>
+<p>In the basic structure of a vocabulary, concepts may be related to other concepts via broader, narrower or related properties. We can also relate a concept to a concept in a <em>different</em> vocabulary. Concept matching across vocabularies is done in a similar way with these properties: <a href="http://www.w3.org/2004/02/skos/core#broadMatch">Broad match</a>, <a href="http://www.w3.org/2004/02/skos/core#narrowMatch">Narrower match</a>, <a href="http://www.w3.org/2004/02/skos/core#relatedMatch">Related match</a>.</p>
+<p><code>skos:broadMatch</code> example:</p>
+<p><em>Limestone packstone</em> <code>skos:broadMatch</code> <em>Packstone</em>
+... where <em>Limestone packstone</em> is a concept in the <a href="https://linked.data.gov.au/def/gswa-rock-classification-scheme" target="_blank">GSWA rock classification scheme</a>, and <em>Packstone</em> is a concept in the <a href="http://inspire.ec.europa.eu/codelist" target="_blank" rel="noopener noreferrer">INSPIRE code list</a> register.</p>
+<p><code>skos:exactMatch</code> example:</p>
+<p>Child support <code>skos:exactMatch</code> Child support</p>
+<p>... where <em>Child support</em> is a concept in both <a href="https://linked.data.gov.au/def/policy/0acd51d0-a4a3-48eb-b6f4-aa086f966057">Public Policy Taxonomy</a> and <a href="http://id.worldcat.org/fast/854679">FAST</a>.</p>
+<h3 id="exercise-match-a-concept-with-a-concept-in-another-vocabulary">🚧 Exercise: match a concept with a concept in another vocabulary.</h3>
+<p>In some cases there may be concepts in a vocabulary that we can reliably say represent the same thing in the world. To promote interoperability between vocabularies (and therefore datasets, catalogues and collections) it's a good idea to <em>match</em> these concepts. </p>
+<p>💡 use one of the SKOS <em>match</em> properties to reference another <code>skos:Concept</code> or to a similar semantic category such as an <code>owl:NamedIndividual</code>. Do not use any of the SKOS <em>match</em> properties to match to non-semantic resources.</p>
+<p>In this exercise we will use <code>skos:exactMatch</code> to link <em>Animal dispersal</em> with the concept <em>Zoochory</em> from the <a href="https://lod.nal.usda.gov/nalt/en/">National Agriculture Library Thesaurus</a>.</p>
+<ol>
+<li><strong>Go to</strong> <a href="https://vocedit.kurrawong.ai">VocEdit</a> in Chrome  </li>
+<li><strong>Project</strong> &gt; <strong>Open</strong> <code>pestRiskPath_training.ttl</code> from your local directory (<em>don't have the file? see the <a href="https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier">first exercise</a> in Introduction to Vocabularies</em>)  </li>
+<li><strong>Select</strong> <strong>Animal dispersal</strong> from under <strong>Concepts</strong> in the left-hand panel  </li>
+<li><strong>Edit</strong> &gt; <strong>Other Properties</strong> &gt; <strong>Add property</strong>  </li>
+<li><strong>Add</strong> &gt; <code>http://www.w3.org/2004/02/skos/core#exactMatch</code> &gt; <strong>Add</strong>  </li>
+<li><strong>Other Properties</strong> &gt; <strong>exactMatch</strong> (the field you just created)  &gt; <strong>Add new value</strong> &gt; <strong>IRI</strong></li>
+<li><strong>[...]</strong> &gt; <strong>Widget</strong> &gt; <strong>URIEditor</strong> &gt; <strong>Add</strong> <code>https://lod.nal.usda.gov/nalt/332111</code>  </li>
+<li><strong>Save</strong></li>
+</ol>
+<p>💡 strictly speaking, you should only use <code>skos:exactMatch</code> when you know that the other vocabulary does, or plans to make a match back to the concept in your vocabulary. Why not get in touch? Notify the external vocabulary managers that you're matching with their vocabulary and you might get matched back! Otherwise, the looser semantics of <code>skos:closeMatch</code> may be more suitable.</p>
+<p>Now let's add a <code>skos:broadMatch</code>. Like <code>skos:broader</code>, the <code>skos:broadMatch</code> property matches a concept with another broader concept that is in a different concept scheme. We will add a <code>skos:broadMatch</code> from <em>Wildlife trafficking</em> to <em>Crime</em> in the <em>Centre for Agriculture and Bioscience International (CABI) Thesaurus</em>.</p>
+<ol>
+<li><strong>Select</strong> <strong>Wildlife trafficking</strong> from under <strong>Concepts</strong> in the left-hand panel  </li>
+<li><strong>Edit</strong> &gt; <strong>Other Properties</strong> &gt; <strong>Add property</strong>  </li>
+<li><strong>Add</strong> &gt; <code>http://www.w3.org/2004/02/skos/core#broadMatch</code> &gt; <strong>Add</strong>  </li>
+<li><strong>Other Properties</strong> &gt; <strong>broadMatch</strong> (the field you just created)  &gt; <strong>Add new value</strong> &gt; <strong>IRI</strong></li>
+<li><strong>[...]</strong> &gt; <strong>Widget</strong> &gt; <strong>URIEditor</strong> &gt; <strong>Add</strong> <code>https://id.cabi.org/cabt/33618</code> </li>
+<li><strong>Save</strong></li>
+</ol>
+<h2 id="images">Images</h2>
+<p>Associating a <code>skos:Concept</code> with an image that illustrates meaning is a powerful and, perhaps obviously, language-neutral way of clarifying the meaning and scope of a concept. There are various different ways of modelling an image reference within a skos vocabulary. The skos model does mention image references within the context of <em>documentation</em> properties (e.g. <code>skos:example</code>; <code>skos:scopeNote</code>). While using documentation properties to refer to an image may be syntactically correct, most systems will be expecting textual data in these fields. In the exercise below we will add an image reference using a schema.org property <code>schema:image</code>.</p>
+<p>💡 <strong>Tip:</strong> There are a number of approaches to adding an image to a vocabulary concept - the exercise below illustrates one valid approach. See other approaches in our <a href="https://docs.kurrawong.ai/concepts/vocabs/patterns/#images">Patterns</a> document.</p>
+<h3 id="exercise-add-an-image-to-a-concept">🚧 Exercise: add an image to a concept</h3>
+<p>We will add an image reference with a URL from Wikipedia Commons to the Concept <em>Storm water</em>.</p>
+<ol>
+<li><strong>Go to</strong> <a href="https://vocedit.kurrawong.ai">VocEdit</a> in Chrome</li>
+<li><strong>Project</strong> &gt; <strong>Open</strong> <code>pestRiskPath_training.ttl</code> from your local directory (<em>don't have the file? see the <a href="https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier">first exercise</a> in Introduction to Vocabularies</em>)  </li>
+<li><strong>Select</strong> <em>Storm water</em> from under <strong>Concepts</strong> in the left-hand panel</li>
+<li><strong>Edit</strong> &gt; <strong>Other Properties</strong> &gt; <strong>Add property</strong> </li>
+<li><strong>Add</strong> &gt; <code>https://schema.org/image</code> &gt; <strong>Add</strong></li>
+<li><strong>Other Properties</strong> &gt; <strong>exactMatch</strong> (the field you just created)  &gt; <strong>Add new value</strong> &gt; <strong>IRI</strong>  </li>
+<li><strong>[...]</strong> &gt; <strong>Widget</strong> &gt; <strong>URIEditor</strong> &gt; <strong>Add</strong> <code>https://commons.wikimedia.org/wiki/File:2019-07-29_172052_Rain_in_Berlin.jpg</code></li>
+<li><strong>Save</strong></li>
+</ol>
+<h2 id="related-associated-concepts">Related (associated) concepts</h2>
+<p>SKOS supports non-hierarchical relationships between concepts using <code>skos:related</code> property. This is based on the <em>associative relationship</em> defined in standards such as ISO 25964-1, which states that related terms are "semantically or conceptually associated to such an extent that the link between the two needs to be made explicit... and it is important to do this for concepts that overlap in scope" (International Organization for Standardization, 2011, p.63).</p>
+<p>To add a <code>skos:related</code>, go to VocEdit and:</p>
+<ol>
+<li>Select a Concept under <em>Concepts</em></li>
+<li><strong>Edit</strong> &gt; <strong>Other Properties</strong> &gt; <strong>Add property</strong> </li>
+<li><strong>Add</strong> &gt; http://www.w3.org/2004/02/skos/core#related &gt; <strong>Add</strong></li>
+<li><strong>Other Properties</strong> &gt; <strong>related</strong> (the field you just created)  &gt; <strong>+</strong> &gt; <strong>IRI</strong>  </li>
+<li><strong>--Select a value</strong> from the drop-down field</li>
+<li><strong>Save</strong></li>
+</ol>
+<h2 id="documentation-properties">Documentation properties</h2>
+<p>In SKOS, <em>documentation</em> properties include:</p>
+<ul>
+<li><code>skos:note</code> - a note can say anything! If appropriate, use the following properties instead that have clearer semantics: <code>skos:changeNote</code>, <code>skos:definition</code>, <code>skos:editorialNote</code>, <code>skos:example</code>, or <code>skos:historyNote</code></li>
+<li><code>skos:changeNote</code> - you can indicate a change to a label, or even a changed relationship to another concept.</li>
+<li><code>skos:definition</code> - this field is mandatory in VocPub for all <code>skos:Concept</code>, <code>skos:ConceptScheme</code> and <code>skos:Collection</code> instances.  </li>
+<li><code>skos:editorialNote</code> - similar to <code>skos:changeNote</code> but perhaps for internal use only, such as "Fixed typo [date]" or "review by [date]".</li>
+<li><code>skos:example</code> - indicate some thing in the world that exemplifies the concept - this might be any kind of information resource, but references to images are not usually expected in Documentation properties (see [#images] to do this).</li>
+<li><code>skos:historyNote</code> - this property must be used to indicate the origins of a <code>skos:ConceptScheme</code> or a <code>skos:Collection</code>, where the origin cannot be indicated with an IRI (so with a textual reference, e.g. (this vocabulary / collection was created for purpose X by project Y on behalf of agency Z"). For a skos:Concept, the same rules apply if the concept origin is NOT from within its <code>skos:ConceptScheme</code>, e.g. "this Concept originated in Vocabulary X, added here [date]".  </li>
+<li><code>skos:scopeNote</code> - use a Scope note to say what kinds of things are included in the concept and what is not included. It may be useful to indicate another concept that should be used instead to describe or catalogue certain kinds of things. For example:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nv">&lt;http://vocabulary.curriculum.edu.au/scot/10109&gt;</span> <span class="kt">a</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Concept</span> <span class="p">;</span>
+<span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="s">&quot;Educational publications&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+<span class="nn">skos</span><span class="p">:</span><span class="nt">scopeNote</span> <span class="s">&quot;Use for resources about development, distribution or management of industry publications relevant across the education sector. For resources about publications generated by individual schools USE School publications.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+<span class="nn">skos</span><span class="p">:</span><span class="nt">related</span> <span class="nv">&lt;http://vocabulary.curriculum.edu.au/scot/10141&gt;</span>
+</code></pre></div>
+<p>💡 When a <code>skos:scopeNote</code> refers to another <code>skos:Concept</code>, use a <code>skos:related</code> property also to indicate that concept with an IRI.</p>
+<p>💡 When writing notes, use plain text only and limit paragraph breaks where possible.</p>
+<h2 id="collections">Collections</h2>
+<p>There may be a need to define a group of concepts within a vocabulary that share certain characteristics. A vocabulary may contain a <code>skos:Collection</code>, or even many collections of concepts.</p>
+<p>Collections are like a non-hierarchical means of gathering concepts. So for example concepts that are members of a <code>skos:Collection</code> may be from different parts of a vocabulary hierarchy (and not all from within the same broader-narrower parts of a hierarchy branch). One use case for creating a <code>skos:Collection</code> is to clearly represent concepts that have been 'imported' from another <code>skos:ConceptScheme</code>. For more about using collections in this way see the <a href="../vocab-reuse/#-import-a-concept">Import a concept</a> exercise in the <em>Vocabulary reuse</em> module.</p>
+<p>💡 <code>skos:Collection</code> indicates a <code>skos:Concept</code> using the <code>skos:member</code> property.</p>
+<h2 id="identifiers">Identifiers</h2>
+<p>Each Concept must have a unique identifier that can be looked up in an application or on the web. An IRI, or <em>Internationalized Resource Identifier</em>, is a recommended identifier type for vocabulary concepts.</p>
+<p>IRIs are web page URLs that:</p>
+<ul>
+<li>can be used in data to identify things without necessarily resolving to a web page</li>
+<li>can be managed with domain name ownership</li>
+<li>allow for a specified range of characters, e.g. non-English alphabets</li>
+<li>have validation rules similar to web address (URL) rules, e.g. no spaces</li>
+</ul>
+<p>An IRI typically follows a pattern such as:</p>
+<ul>
+<li>http://[vocab subdomain] . [authority / domain] . [vocabulary name] . [concept ID]</li>
+</ul>
+<p>Here's a real example from a published vocabulary:</p>
+<p><code>http://vocabulary.curriculum.edu.au/scot/15326</code></p>
+<p>... where:</p>
+<pre><code>_vocabulary_ is a subdomain
+_curriculum.edu.au_ is a managed or owned domain
+_scot_ is an identifier for the vocabulary, and
+_15326_ is a concept ID
+</code></pre>
+<h3 id="iri-patterns">IRI patterns</h3>
+<p>What is the name of the Concept above that has <em>15326</em> as an identifier? You need to look it up on the web! The whole point of using <code>http</code> identifiers is so that the concepts can be looked up on the web by anyone, anywhere (and by anything - humans, browsers, bots etc.).</p>
+<p>Note that this example IRI uses an increment method for generating a Concept ID - the next Concept IRI added to this vocabulary would have the suffix <em>15327</em>. This incremented number doesn't mean anything - we can't tell what the Concept is about just by looking at this number. Any vocabulary could use this same increment method, and therefore this ID could be used for a Concept in different vocabulary. The IRI as a whole, however, is unique.</p>
+<p>Here's another type of IRI suffix:</p>
+<blockquote>
+<p><code>http://vocabulary.curriculum.edu.au/crossCurriculum/f7f47140-a85e-498b-9367-0d468082fc2b</code></p>
+</blockquote>
+<p>The suffix here is a UUID, or a <em>Universally Unique Identifier</em>. Note that if we took the UUID out of context (away from the whole IRI), we could consider it to be unique on its own terms - UUIDs are designed that way.</p>
+<p>💡 A UUID is not registered and can be freely generated by anyone using <a href="https://www.uuidgenerator.net">online tools</a>.</p>
+<p>A third <em>NOT RECOMMENDED</em> method for constructing a Concept ID is to base the ID on whatever <code>skos:prefLabel</code> has been chosen. This has the advantage of making the IRI itself readable and understandable by humans - but there are several disadvantages also and the preferred label method should be avoided if possible.</p>
+<blockquote>
+<p><code>https://data.idnau.org/pid/vocab/org-indigeneity/run-by-indigenous-persons</code></p>
+</blockquote>
+<p>... where:
+"/org-indigeneity/" is the ID for the vocabulary, and
+"/run-by-indigenous-persons/" is the ID for the concept</p>
+<p>The preferred label method is not recommended. Why? What if the <code>skos:prefLabel</code> for this concept changes to <em>Managed by indigenous persons</em>? The IRI stays the same (they should be persistent), and now doesn't match (exactly) the <code>skos:prefLabel</code>, which could cause some confusion. A similar problem is encountered if the concept has multiple labels in different languages - which one should be used as an IRI suffix? IRIs are more robust if the Concept ID suffix is opaque (meaning non-semantic: they don't say anything about the concept itself).</p>
+<p>Another mixup that can result from semantic IRI patterns is when a suffix indicates a level or position in a vocabulary hierarchy. Here's a hypothetical example:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">&lt;https://vocab/mydomain/termid/111633&gt;</span> <span class="kt">a</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Concept</span> <span class="p">;</span>
+<span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="s">&quot;Work Health and Safety Manager&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+<span class="nn">skos</span><span class="p">:</span><span class="nt">broader</span> <span class="nv">&lt;https://vocab/mydomain/termid/1116&gt;</span>
+</code></pre></div>
+<p>... where the suffix <code>1111633</code> implies membership within the broader concept <code>&lt;.../1116&gt;</code>. What if a decision is made to move this concept to another part of the vocabulary (that is, to remove this <code>skos:broader</code> relationship and replace with a new one (such as "&lt;.../26&gt;")? Like the re-labelled example above, the mis-match between the IRI and the change in position could cause confusion.</p>
+<h3 id="version-iri">Version IRI</h3>
+<p>A supplementary IRI may be added that indicates the version of a <code>skos:ConceptScheme</code>, e.g. "1.1". A <a href="https://www.w3.org/2002/07/owl#versionIRI">version IRI</a> may be used, for example:</p>
+<div class="highlight"><pre><span></span><code><span class="k">PREFIX</span><span class="w"> </span><span class="nn">cs:</span><span class="w"> </span><span class="nv">&lt;https://data.idnau.org/pid/licenses&gt;</span>
+<span class="k">PREFIX</span><span class="w"> </span><span class="nn">org:</span><span class="w"> </span><span class="nv">&lt;https://linked.data.gov.au/org/&gt;</span>
+<span class="k">PREFIX</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span>
+<span class="k">PREFIX</span><span class="w"> </span><span class="nn">schema:</span><span class="w"> </span><span class="nv">&lt;https://schema.org/&gt;</span>
+<span class="k">PREFIX</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+
+<span class="nn">cs</span><span class="p">:</span>
+    <span class="kt">a</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">ConceptScheme</span> <span class="p">;</span>
+    <span class="nn">schema</span><span class="p">:</span><span class="nt">creator</span> <span class="nn">org</span><span class="p">:</span><span class="nt">idn</span> <span class="p">;</span>
+    <span class="nn">owl</span><span class="p">:</span><span class="nt">versionIRI</span> <span class="p">:</span><span class="nt">1</span> <span class="p">;</span>
+    <span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="s">&quot;Data Licenses&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">.</span>
+</code></pre></div>
+<h2 id="references-and-further-reading">References and Further Reading</h2>
+<ul>
+<li>AGLDWG. (n.d.). VocPub profile specification. Retrieved April 17, 2025, https://linked.data.gov.au/def/vocpub</li>
+<li>International Organization for Standardization. (2011). Information and documentation — Thesauri and interoperability with other vocabularies — Part 1: Thesauri for information retrieval (ISO Standard No. 25964-1:2011). https://www.iso.org/standard/53657.html</li>
+<li>W3C (n.d.). QSKOS. Retrieved March 5, 2025. https://www.w3.org/2001/sw/wiki/QSKOS</li>
+<li>W3C (2009). SKOS reference. https://www.w3.org/TR/skos-reference/</li>
+<li>W3C (2014). Turtle: Terse RDF triple language (W3C Recommendation). https://www.w3.org/TR/turtle/</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; KurrawongAI, 2025
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.indexes", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

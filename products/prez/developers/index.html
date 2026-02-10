@@ -1,0 +1,2839 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../deploying/azure/appservice/">
+      
+      
+        <link rel="next" href="../../olis/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon-32x32.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Developers - </title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="kai" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#developer-information" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="" class="md-header__button md-logo" aria-label="" data-md-component="logo">
+      
+  <img src="../../../assets/KurrawongAI-inverted.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Developers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="" class="md-nav__button md-logo" aria-label="" data-md-component="logo">
+      
+  <img src="../../../assets/KurrawongAI-inverted.svg" alt="logo">
+
+    </a>
+    
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prez
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prez
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manifest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-preparation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Preparation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploying
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deploying
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploying/aws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5_2" id="__nav_2_1_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploying/azure/appservice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    App Service Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developers
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profiles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-profile-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General profile specification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specification-of-mediatypes-and-resource-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specification of Mediatypes and Resource Formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default profiles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#excluded-and-optional-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Excluded and Optional paths
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blank-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blank Nodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profile-and-mediatype-selection-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profile and mediatype selection logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#focus-node-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Focus Node Selection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Focus Node Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#high-level-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High level summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detail
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-delivered-by-prez" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Content delivered by Prez
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#internal-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Internal links
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Internal links">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#link-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Link generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-prefixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generating Prefixes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotation-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotation properties
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-add-an-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to add an endpoint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query Generation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Query Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#focus-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Focus nodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#main-query-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Query Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repositories
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#startup-routine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Startup Routine
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-level-sequence-object-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High Level Sequence /object endpoint
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="High Level Sequence /object endpoint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prez-ui-or-similar-human-actionable-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prez UI or similar human-actionable client
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-level-sequence-listing-and-individual-object-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High Level Sequence listing and individual object endpoints
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../olis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Olis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tools/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KAI Tools
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    KAI Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/kurra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kurra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/labelify/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Labelify
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/ogc-tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OGC Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/prefix-lookup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prefix Lookup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/prezmanifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prez Manifest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/provworkflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ProvWorkflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/pylode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pyLODE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/rdf-converter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RDF Converter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/rdf-merger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RDF Merger
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/shacl-validator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SHACL Validator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/sparql-parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPARQL Parser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/vocedit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VocEdit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/vocexcel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VocExcel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3rd Party
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3rd Party
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3rdparty/fuseki/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fuseki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocabs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vocabs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/vocabs/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/vocabs/creation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/vocabs/vocab-reuse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocab reuse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/vocabs/patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/vocabs/vocab-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocab systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Agents
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/agents/patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profiles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-profile-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General profile specification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specification-of-mediatypes-and-resource-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specification of Mediatypes and Resource Formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default profiles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#excluded-and-optional-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Excluded and Optional paths
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blank-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blank Nodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profile-and-mediatype-selection-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profile and mediatype selection logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#focus-node-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Focus Node Selection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Focus Node Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#high-level-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High level summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detail
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-delivered-by-prez" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Content delivered by Prez
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#internal-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Internal links
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Internal links">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#link-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Link generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-prefixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generating Prefixes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotation-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotation properties
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-add-an-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to add an endpoint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query Generation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Query Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#focus-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Focus nodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#main-query-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Query Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repositories
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#startup-routine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Startup Routine
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-level-sequence-object-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High Level Sequence /object endpoint
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="High Level Sequence /object endpoint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prez-ui-or-similar-human-actionable-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prez UI or similar human-actionable client
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-level-sequence-listing-and-individual-object-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High Level Sequence listing and individual object endpoints
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="developer-information">Developer Information</h1>
+<p>This documentation is to assist developers of Prez, not users or installers.</p>
+<ul>
+<li><a href="#profiles">Profiles</a><ul>
+<li><a href="#general-profile-specification">General profile specification</a></li>
+<li><a href="#specification-of-mediatypes-and-resource-formats">Specification of Mediatypes and Resource Formats</a></li>
+<li><a href="#classes-for-a-profile">Classes for a Profile</a></li>
+<li><a href="#default-profiles">Default profiles</a></li>
+<li><a href="#direct-paths">Direct Paths</a></li>
+<li><a href="#sequence-paths">Sequence Paths</a></li>
+<li><a href="#inverse-paths">Inverse Paths</a></li>
+<li><a href="#combinations-of-paths">Combinations of paths</a></li>
+<li><a href="#excluded-and-optional-paths">Excluded and Optional paths</a></li>
+<li><a href="#blank-nodes">Blank Nodes</a></li>
+<li><a href="#profile-and-mediatype-selection-logic">Profile and mediatype selection logic</a></li>
+</ul>
+</li>
+<li><a href="#focus-node-selection">Focus Node Selection</a><ul>
+<li><a href="#high-level-summary">High level summary</a></li>
+<li><a href="#detail">Detail</a></li>
+</ul>
+</li>
+<li><a href="#content-delivered-by-prez">Content delivered by Prez</a></li>
+<li><a href="#internal-links">Internal links</a><ul>
+<li><a href="#link-generation">Link generation</a></li>
+</ul>
+</li>
+<li><a href="#generating-prefixes">Generating Prefixes</a></li>
+<li><a href="#annotation-properties">Annotation properties</a></li>
+<li><a href="#how-to-add-an-endpoint">How to add an endpoint</a></li>
+<li><a href="#query-generation">Query Generation</a></li>
+<li><a href="#repositories">Repositories</a></li>
+<li><a href="#startup-routine">Startup Routine</a></li>
+<li><a href="#high-level-sequence-object-endpoint">High Level Sequence <code>/object</code> endpoint</a></li>
+<li><a href="#high-level-sequence-listing-and-individual-object-endpoints">High Level Sequence listing and individual object endpoints</a></li>
+</ul>
+<h2 id="profiles">Profiles</h2>
+<p>SHACL NodeShapes and PropertyShapes are utilised to determine which properties of Focus Nodes should be rendered.</p>
+<h3 id="general-profile-specification">General profile specification</h3>
+<p>Each Profile must have the following properties:
+- A <code>prof:Profile</code> type
+- A type of either <code>prez:ObjectProfile</code> (for rendering objects) or <code>prez:ListingProfile</code> (for rendering lists of objects), or both.
+- A title, identifier (with datatype xsd:token), and description, using the DCTERMS namespace.</p>
+<h3 id="specification-of-mediatypes-and-resource-formats">Specification of Mediatypes and Resource Formats</h3>
+<p>Extensions to SHACL are used to specify the mediatypes and resource formats available for a given profile. These are specified as follows. The namespace used is http://www.w3.org/ns/dx/connegp/altr-ext#, and the prefix used for this namespace is <code>altr-ext</code>.</p>
+<h4 id="resource-formats">Resource formats</h4>
+<p>The default resource format for a profile can be set with <code>altr-ext:hasDefaultResourceFormat</code>.
+For example:
+<div class="highlight"><pre><span></span><code><span class="nn">prez</span><span class="p">:</span><span class="nt">OGCSchemesObjectProfile</span>  
+    <span class="kt">a</span> <span class="nn">prof</span><span class="p">:</span><span class="nt">Profile</span> <span class="p">,</span> <span class="nn">prez</span><span class="p">:</span><span class="nt">ObjectProfile</span> <span class="p">,</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
+    <span class="nn">altr-ext</span><span class="p">:</span><span class="nt">hasDefaultResourceFormat</span> <span class="s">&quot;text/turtle&quot;</span> <span class="p">;</span>
+<span class="p">.</span>
+</code></pre></div>
+The available resource formats for a profile can be set with <code>altr-ext:hasResourceFormat</code>.
+For example:
+<div class="highlight"><pre><span></span><code><span class="nn">prez</span><span class="p">:</span><span class="nt">OGCSchemesObjectProfile</span>  
+    <span class="kt">a</span> <span class="nn">prof</span><span class="p">:</span><span class="nt">Profile</span> <span class="p">,</span> <span class="nn">prez</span><span class="p">:</span><span class="nt">ObjectProfile</span> <span class="p">,</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
+    <span class="nn">altr-ext</span><span class="p">:</span><span class="nt">hasResourceFormat</span> <span class="s">&quot;text/turtle&quot;</span> <span class="p">,</span> <span class="s">&quot;application/ld+json&quot;</span> <span class="p">;</span>
+</code></pre></div></p>
+<h4 id="classes-for-a-profile">Classes for a Profile</h4>
+<p>The classes of object which a profile constrains can be specified with <code>altr-ext:constrainsClass</code>.
+Prez utilises this information when determining whether a requested profile can be used; and the alternate profiles that are available to render a resource. An example is given below:
+<div class="highlight"><pre><span></span><code><span class="nn">prez</span><span class="p">:</span><span class="nt">OGCSchemesObjectProfile</span>  
+    <span class="kt">a</span> <span class="nn">prof</span><span class="p">:</span><span class="nt">Profile</span> <span class="p">,</span> <span class="nn">prez</span><span class="p">:</span><span class="nt">ObjectProfile</span> <span class="p">,</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
+    <span class="nn">altr-ext</span><span class="p">:</span><span class="nt">constrainsClass</span> <span class="nn">dcat</span><span class="p">:</span><span class="nt">Catalog</span> <span class="p">;</span>
+<span class="p">.</span>
+</code></pre></div></p>
+<h3 id="default-profiles">Default profiles</h3>
+<p>A default profile can be specified using the <code>altr-ext:hasNodeShape</code> and <code>altr-ext:hasDefaultProfile</code> predicates. This is typically done on an "umbrella" profile which indicates default profiles for all classes the API can render. An example is given below:
+<div class="highlight"><pre><span></span><code><span class="nn">prez</span><span class="p">:</span><span class="nt">OGCRecordsProfile</span>
+    <span class="kt">a</span> <span class="nn">prof</span><span class="p">:</span><span class="nt">Profile</span> <span class="p">;</span>
+    <span class="nn">dcterms</span><span class="p">:</span><span class="nt">identifier</span> <span class="s">&quot;ogc&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">token</span> <span class="p">;</span>
+    <span class="nn">dcterms</span><span class="p">:</span><span class="nt">description</span> <span class="s">&quot;A system profile for OGC Records conformant API&quot;</span> <span class="p">;</span>
+    <span class="nn">dcterms</span><span class="p">:</span><span class="nt">title</span> <span class="s">&quot;OGC Profile&quot;</span> <span class="p">;</span>
+    <span class="nn">altr-ext</span><span class="p">:</span><span class="nt">constrainsClass</span> <span class="nn">prez</span><span class="p">:</span><span class="nt">CatPrez</span> <span class="p">;</span>
+    <span class="nn">altr-ext</span><span class="p">:</span><span class="nt">hasDefaultResourceFormat</span> <span class="s">&quot;text/anot+turtle&quot;</span> <span class="p">;</span>
+    <span class="nn">altr-ext</span><span class="p">:</span><span class="nt">hasNodeShape</span> <span class="p">[</span>
+        <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
+        <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">prof</span><span class="p">:</span><span class="nt">Profile</span> <span class="p">,</span> <span class="nn">dcat</span><span class="p">:</span><span class="nt">Catalog</span> <span class="p">,</span> <span class="nn">dcat</span><span class="p">:</span><span class="nt">Resource</span> <span class="p">,</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Concept</span> <span class="p">,</span> <span class="nn">geo</span><span class="p">:</span><span class="nt">Feature</span> <span class="p">,</span> <span class="nn">geo</span><span class="p">:</span><span class="nt">FeatureCollection</span>
+                               <span class="p">,</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Collection</span> <span class="p">,</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">Resource</span> <span class="p">,</span> <span class="nn">prez</span><span class="p">:</span><span class="nt">SearchResult</span> <span class="p">,</span> <span class="nn">prez</span><span class="p">:</span><span class="nt">CQLObjectList</span> <span class="p">;</span>
+        <span class="nn">altr-ext</span><span class="p">:</span><span class="nt">hasDefaultProfile</span> <span class="nn">prez</span><span class="p">:</span><span class="nt">OGCListingProfile</span>
+    <span class="p">]</span> <span class="p">,</span> <span class="p">[</span>
+        <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
+        <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">ConceptScheme</span> <span class="p">;</span>
+        <span class="nn">altr-ext</span><span class="p">:</span><span class="nt">hasDefaultProfile</span> <span class="nn">prez</span><span class="p">:</span><span class="nt">OGCSchemesListProfile</span>
+    <span class="p">]</span> <span class="p">,</span> <span class="p">[</span>
+        <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
+        <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">ConceptScheme</span> <span class="p">;</span>
+        <span class="nn">altr-ext</span><span class="p">:</span><span class="nt">hasDefaultProfile</span> <span class="nn">prez</span><span class="p">:</span><span class="nt">OGCSchemesObjectProfile</span>
+    <span class="p">]</span> <span class="p">,</span> <span class="p">[</span>
+        <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
+        <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">prof</span><span class="p">:</span><span class="nt">Profile</span> <span class="p">,</span> <span class="nn">dcat</span><span class="p">:</span><span class="nt">Catalog</span> <span class="p">,</span> <span class="nn">dcat</span><span class="p">:</span><span class="nt">Resource</span> <span class="p">,</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Concept</span> <span class="p">,</span> <span class="nn">geo</span><span class="p">:</span><span class="nt">Feature</span> <span class="p">,</span> <span class="nn">geo</span><span class="p">:</span><span class="nt">FeatureCollection</span>
+                               <span class="p">,</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Collection</span> <span class="p">,</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">Resource</span> <span class="p">;</span>
+        <span class="nn">altr-ext</span><span class="p">:</span><span class="nt">hasDefaultProfile</span> <span class="nn">prez</span><span class="p">:</span><span class="nt">OGCItemProfile</span>
+    <span class="p">]</span>
+    <span class="p">.</span>
+</code></pre></div>
+Note the target classes are shared across both listings of items, and items themselves; the API determines whether a listing or object profile is appropriate based on the endpoint a request is received at.</p>
+<h4 id="direct-paths">Direct Paths</h4>
+<p>Direct properties of a focus node are specified via <code>sh:path</code>.</p>
+<p>Example:
+<div class="highlight"><pre><span></span><code><span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span>  
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">prov</span><span class="p">:</span><span class="nt">qualifiedDerivation</span>  
+    <span class="p">]</span>
+</code></pre></div></p>
+<p>A convenience predicate is provided to specify the inclusion of all predicates, <code>shext:allPredicateValues</code>.</p>
+<p>Example:
+<div class="highlight"><pre><span></span><code><span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span>  
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">shext</span><span class="p">:</span><span class="nt">allPredicateValues</span> <span class="p">;</span>  
+    <span class="p">]</span>
+</code></pre></div></p>
+<h4 id="sequence-paths">Sequence Paths</h4>
+<p>Sequence paths are specified as property shapes with a path representing the linked list of properties from a focus node.
+<div class="highlight"><pre><span></span><code><span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span>  
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="p">(</span> <span class="nn">prov</span><span class="p">:</span><span class="nt">qualifiedDerivation</span> <span class="nn">prov</span><span class="p">:</span><span class="nt">hadRole</span> <span class="p">)</span>  
+    <span class="p">]</span>
+</code></pre></div></p>
+<h4 id="inverse-paths">Inverse Paths</h4>
+<p>Inverse paths are specified on a nested blank node where the first property is <code>sh:inversePath</code>.
+<div class="highlight"><pre><span></span><code><span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span>  
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">inversePath</span> <span class="nn">dcterms</span><span class="p">:</span><span class="nt">hasPart</span> <span class="p">]</span> <span class="p">;</span>  
+    <span class="p">]</span>
+</code></pre></div></p>
+<h4 id="combinations-of-paths">Combinations of paths</h4>
+<p>Multiple paths can be specified at once using <code>sh:union</code>.
+<div class="highlight"><pre><span></span><code><span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span>  
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="p">(</span>  
+        <span class="nn">sh</span><span class="p">:</span><span class="nt">union</span> <span class="p">(</span>  
+          <span class="nn">dcterms</span><span class="p">:</span><span class="nt">publisher</span>  
+          <span class="nn">reg</span><span class="p">:</span><span class="nt">status</span>  
+          <span class="p">(</span> <span class="nn">prov</span><span class="p">:</span><span class="nt">qualifiedDerivation</span> <span class="nn">prov</span><span class="p">:</span><span class="nt">hadRole</span> <span class="p">)</span>  
+          <span class="p">(</span> <span class="nn">prov</span><span class="p">:</span><span class="nt">qualifiedDerivation</span> <span class="nn">prov</span><span class="p">:</span><span class="nt">entity</span> <span class="p">)</span>  
+        <span class="p">)</span>  
+      <span class="p">)</span>  
+    <span class="p">]</span>
+</code></pre></div></p>
+<h3 id="excluded-and-optional-paths">Excluded and Optional paths</h3>
+<p>The above property paths when specified without a min or max count <strong>must be present for a focus node to be returned.</strong> That is, by default, specified paths must be present for the focus node and properties to be returned.</p>
+<p>The following constructs can be used to specify excluded or optional properties.</p>
+<h4 id="exclude">Exclude</h4>
+<p>Specification: <code>sh:maxCount 0</code>
+Interpretation: do not include these paths from the focus node, even if they exist in the data.
+Example:
+<div class="highlight"><pre><span></span><code><span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span>  
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">0</span> <span class="p">;</span>  
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">dcterms</span><span class="p">:</span><span class="nt">hasPart</span>  
+    <span class="p">]</span>
+</code></pre></div></p>
+<h4 id="optional">Optional</h4>
+<p>Specification: <code>sh:minCount 0</code>
+Interpretation: include these paths from the focus node if they exist.
+Example:
+<div class="highlight"><pre><span></span><code><span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span>  
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">minCount</span> <span class="mi">0</span> <span class="p">;</span>  
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">dcterms</span><span class="p">:</span><span class="nt">hasPart</span>  
+    <span class="p">]</span>
+</code></pre></div></p>
+<h3 id="blank-nodes">Blank Nodes</h3>
+<p>A convenience predicate is provided to specify the inclusion of blank nodes to a given depth, <code>shext:bnode-depth</code>. Note this is specified directly on the profile and not on a property shape as it does not relate to any particular property shape.
+Specification: <code>shext:bnode-depth</code>
+Example:
+<div class="highlight"><pre><span></span><code><span class="nn">prez</span><span class="p">:</span><span class="nt">OGCSchemesObjectProfile</span>  
+    <span class="kt">a</span> <span class="nn">prof</span><span class="p">:</span><span class="nt">Profile</span> <span class="p">,</span> <span class="nn">prez</span><span class="p">:</span><span class="nt">ObjectProfile</span> <span class="p">,</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
+    <span class="nn">shext</span><span class="p">:</span><span class="nt">bnode-depth</span> <span class="mi">2</span> <span class="p">;</span>
+</code></pre></div></p>
+<h3 id="profile-and-mediatype-selection-logic">Profile and mediatype selection logic</h3>
+<p>The following logic is used to determine the profile and mediatype to be returned:</p>
+<ol>
+<li>If a profile and mediatype are requested, they are returned if a matching profile which has the requested mediatype is found, otherwise the default profile for the most specific class is returned, with its default mediatype.</li>
+<li>If a profile only is requested, if it can be found it is returned, otherwise the default profile for the most specific class is returned. In both cases the default mediatype is returned.</li>
+<li>If a mediatype only is requested, the default profile for the most specific class is returned, and if the requested mediatype is available for that profile, it is returned, otherwise the default mediatype for that profile is returned.</li>
+<li>If neither a profile nor mediatype is requested, the default profile for the most specific class is returned, with the default mediatype for that profile.</li>
+</ol>
+<p>The SPARQL query used to select the profile is given in <a href="#appendix-d-example-profile-and-mediatype-selection-sparql-query">Appendix D</a>.</p>
+<h2 id="focus-node-selection">Focus Node Selection</h2>
+<h3 id="high-level-summary">High level summary</h3>
+<p>For object endpoints, the (single) focus node is specified at runtime, either as a URL path parameter or query string argument.</p>
+<p>For listing endpoints, the following inputs are used to determine which nodes to select:
+1. Endpoint - an endpoint is mapped to one or more endpoint SHACL NodeShapes.
+2. CQL JSON - only used as filter, i.e. filters on specified predicates.
+3. Search term - filters the label properties of focus nodes to a given search term. Currently a REGEX search is supported.</p>
+<p>All listing endpoints support these inputs. The inputs are transformed into the SPARQL Grammar, merged together, and combined with SPARQL Grammar for profiles to create a single query. Profiles specify the inclusion/exclusion of properties on focus nodes, and are detailed in "Profile Design".</p>
+<h3 id="detail">Detail</h3>
+<p>Determine <strong>which</strong> nodes to select. </p>
+<p>This forms the inner select part of the SPARQL query. The inputs are one or more of: the URL path a query is sent to; a CQL filter expression; and a search term. The outputs are three sets of SPARQL Grammar objects <code>TriplesSameSubject</code>, <code>TriplesSameSubjectPath</code>,  and <code>GraphPatternNotTriples</code>. The <code>TriplesSameSubject</code> are used to form the <code>ConstructTriples</code> part of the query; the  <code>TriplesSameSubjectPath</code>,  and <code>GraphPatternNotTriples</code> form the <code>WhereClause</code>.</p>
+<h4 id="1-endpoint-nodeshapes">1. Endpoint Nodeshapes</h4>
+<p>Considerations:
+1. Class of objects to list (e.g. for /catalogs, list all items of class dcat:Catalog)
+2. Relationship to parent objects (e.g. for /catalogs/{parent_catalog_curie}/collections/, list all items that have the relationship dcterms:hasPart from the parent catalog curie)
+Implementation:
+    SHACL shapes are used to represent the how URL path parameters are translated into a SPARQL query.
+    One endpoint maps to one or more endpoint NodeShapes. For example the items endpoint can render resources of type <code>skos:Concept</code> and <code>geo:Feature</code>. An example of an endpoint definition is:
+<div class="highlight"><pre><span></span><code><span class="nn">ogce</span><span class="p">:</span><span class="nt">item-object</span>  
+    <span class="kt">a</span> <span class="nn">ont</span><span class="p">:</span><span class="nt">ObjectEndpoint</span> <span class="p">;</span>  
+    <span class="nn">ont</span><span class="p">:</span><span class="nt">relevantShapes</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">Feature</span> <span class="p">,</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">ConceptSchemeConcept</span> <span class="p">,</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">CollectionConcept</span> <span class="p">,</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">Resource</span> <span class="p">;</span>  
+<span class="p">.</span>
+</code></pre></div></p>
+<p>To determine which NodeShape (under <code>ont:relevantShapes</code>) should be used to render resources, the class of parents in the URL path is first determined. The logic for this is:
+    1. Get the classes of all parents in the URL path. Prez caches this class information.
+    2. Match these to <code>sh:class</code> statements on the PropertyShapes for the NodeShape. <em><code>sh:class</code> is used on nested PropertyShapes to specify a constraint on the class of related nodes, that is, nodes related via the property shape. (e.g. "the class of the first parent is <code>dcat:Resource</code>, the class of the second parent is <code>dcat:Catalog</code>, therefore the applicable NodeShape for the listing is the <code>ex:Resource</code> NodeShape.)</em> 
+    The NodeShape information, once determined, is used for:
+    1. Query generation - which class of nodes to list (e.g. <code>rdf:Resource</code> below)
+    2. Link generation - to determine which endpoints can render a resource of a given class, and, how to find the parents of a given object in order to generate a link (e.g. the parents are all related via <code>dcterms:hasPart</code> in the example below.)
+    An example NodeShapes for describing an endpoint is:</p>
+<div class="highlight"><pre><span></span><code><span class="nn">ex</span><span class="p">:</span><span class="nt">Resource</span>  
+    <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>  
+    <span class="nn">ont</span><span class="p">:</span><span class="nt">hierarchyLevel</span> <span class="mi">3</span> <span class="p">;</span>  
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">Resource</span> <span class="p">;</span>  
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span>  
+        <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">inversePath</span> <span class="nn">dcterms</span><span class="p">:</span><span class="nt">hasPart</span> <span class="p">]</span> <span class="p">;</span>  
+        <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">dcat</span><span class="p">:</span><span class="nt">Resource</span> <span class="p">;</span>  
+    <span class="p">]</span> <span class="p">,</span> <span class="p">[</span>  
+        <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="p">(</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">inversePath</span> <span class="nn">dcterms</span><span class="p">:</span><span class="nt">hasPart</span> <span class="p">]</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">inversePath</span> <span class="nn">dcterms</span><span class="p">:</span><span class="nt">hasPart</span> <span class="p">]</span> <span class="p">);</span>  
+        <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">dcat</span><span class="p">:</span><span class="nt">Catalog</span> <span class="p">;</span>  
+    <span class="p">]</span> <span class="p">.</span>
+</code></pre></div>
+<p><em>The hierarchyLevel is used to filter the set of potentially relevant NodeShapes - when a request comes from an endpoint, that endpoint has a corresponding hierarchy level.</em></p>
+<p>A  further example for the collections endpoint is provided:
+<div class="highlight"><pre><span></span><code><span class="nn">ex</span><span class="p">:</span><span class="nt">Collections</span>  
+    <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>  
+    <span class="nn">ont</span><span class="p">:</span><span class="nt">hierarchyLevel</span> <span class="mi">2</span> <span class="p">;</span>  
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">geo</span><span class="p">:</span><span class="nt">FeatureCollection</span> <span class="p">,</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">ConceptScheme</span> <span class="p">,</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Collection</span> <span class="p">,</span> <span class="nn">dcat</span><span class="p">:</span><span class="nt">Resource</span> <span class="p">;</span>  
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span>  
+        <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">inversePath</span> <span class="nn">dcterms</span><span class="p">:</span><span class="nt">hasPart</span> <span class="p">]</span> <span class="p">;</span>  
+        <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">dcat</span><span class="p">:</span><span class="nt">Catalog</span> <span class="p">;</span>  
+    <span class="p">]</span> <span class="p">.</span>
+</code></pre></div></p>
+<p>This means to select the nodes of class <code>dcat:Resource</code>, <code>geo:FeatureCollection</code>, <code>skos:ConceptScheme</code>, or <code>skos:Collection</code>, which are related to a parent node of class <code>dcat:Catalog</code>, by the relationship <code>dcterms:hasPart</code>. </p>
+<h4 id="2-cql">2. CQL</h4>
+<p>Considerations:
+1. Mapping of JSON values to URIs.
+2. Filtering of properties vs. graph pattern matching; the latter supports more complex operations (sequence, inverse paths etc.). 
+Implementation:
+CQL JSON expressions are translated to JSON LD to allow easy mapping to URIs.
+Examples are provided in the API docs using test data. A demo instance is available <a href="https://prezv4-with-fuseki.sgraljii8d3km.ap-southeast-2.cs.amazonlightsail.com/docs#/ogcprez/https___prez_dev_endpoint_extended_ogc_records_cql_post_cql_post">here</a>.
+CQL JSON documentation is available <a href="https://portal.ogc.org/files/96288#cql-json">here</a>:</p>
+<p>Properties are assumed to be URIs.
+Values for properties can be specified as URIs using a JSON LD like "@id", for example:
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w">  </span>
+<span class="w">  </span><span class="nt">&quot;op&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;=&quot;</span><span class="p">,</span><span class="w">  </span>
+<span class="w">  </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span>
+<span class="w">    </span><span class="p">{</span><span class="w">  </span>
+<span class="w">      </span><span class="nt">&quot;property&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://www.w3.org/2000/01/rdf-schema#member&quot;</span><span class="w">  </span>
+<span class="w">    </span><span class="p">},</span><span class="w">  </span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nd">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://example.com/datasets/sandgate/facilities&quot;</span><span class="w"> </span><span class="p">}</span><span class="w">  </span>
+<span class="w">  </span><span class="p">]</span><span class="w">  </span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>The following context is "inserted" into CQL JSON to create "CQL JSON-LD".
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w">  </span>
+<span class="w">  </span><span class="nd">&quot;@version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1</span><span class="p">,</span><span class="w">  </span>
+<span class="w">  </span><span class="nd">&quot;@base&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://example.com/&quot;</span><span class="p">,</span><span class="w">  </span>
+<span class="w">  </span><span class="nd">&quot;@vocab&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://example.com/vocab/&quot;</span><span class="p">,</span><span class="w">  </span>
+<span class="w">  </span><span class="nt">&quot;cql&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://www.opengis.net/doc/IS/cql2/1.0/&quot;</span><span class="p">,</span><span class="w">  </span>
+<span class="w">  </span><span class="nt">&quot;sf&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://www.opengis.net/ont/sf#&quot;</span><span class="p">,</span><span class="w">  </span>
+<span class="w">  </span><span class="nt">&quot;geo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://www.opengis.net/ont/geosparql#&quot;</span><span class="p">,</span><span class="w">  </span>
+<span class="w">  </span><span class="nt">&quot;landsat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://example.com/landsat/&quot;</span><span class="p">,</span><span class="w">  </span>
+<span class="w">  </span><span class="nt">&quot;ro&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://example.com/ro/&quot;</span><span class="p">,</span><span class="w">  </span>
+<span class="w">  </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<span class="w">    </span><span class="nd">&quot;@container&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@set&quot;</span><span class="p">,</span><span class="w">  </span>
+<span class="w">    </span><span class="nd">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cql:args&quot;</span><span class="w">  </span>
+<span class="w">  </span><span class="p">},</span><span class="w">  </span>
+<span class="w">  </span><span class="nt">&quot;property&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<span class="w">    </span><span class="nd">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@id&quot;</span><span class="p">,</span><span class="w">  </span>
+<span class="w">    </span><span class="nd">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cql:property&quot;</span><span class="w">  </span>
+<span class="w">  </span><span class="p">},</span><span class="w">  </span>
+<span class="w">  </span><span class="nt">&quot;op&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<span class="w">    </span><span class="nd">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cql:operator&quot;</span><span class="w">  </span>
+<span class="w">  </span><span class="p">},</span><span class="w">  </span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<span class="w">    </span><span class="nd">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sf:type&quot;</span><span class="w">  </span>
+<span class="w">  </span><span class="p">}</span><span class="w">  </span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>The following has been implemented:
+1. Spatial functions
+2. String pattern matching
+3. Property filtering</p>
+<p>The following has not yet been implemented:
+1. Time filtering</p>
+<h4 id="3-search-query">3. Search query</h4>
+<p>Implementation:
+The search term is inserted into three different regex expressions which match the search term in different ways, and weights the results. A full search query is generated, and then relevant parts are extracted (<code>TriplesSameSubject</code> etc. as listed above), to generate a final query.</p>
+<p>Prez utilises the sparql-grammar-pydantic library to generate SPARQL queries.</p>
+<h2 id="content-delivered-by-prez">Content delivered by Prez</h2>
+<p>Prez returns:
+- RDF data for specified objects
+- RDF data for lists of objects
+- Annotated RDF<em> for specified objects
+- Annotated RDF</em> for lists of objects
+- Available Profiles
+- An alternates profile for every object or listing, listing all available profiles and mediatypes
+- OpenAPI documentation for the API</p>
+<p>* Annotated RDF is RDF which includes labels, descriptions, explanatory, and other properties for all RDF terms. The predicates Prez looks for are rdfs:label, <code>dcterms:description</code>, and <code>dcterms:provenance</code>. The list of predicates Prez looks for can be extended in the profiles.</p>
+<h2 id="internal-links">Internal links</h2>
+<p>The objects Prez delivers RDF for have URIs that uniquely identify them. Prez delivers RDF for these objects at URLs on the web. These URLs and URIs are not required to be the same, and frequently are not. For objects that Prez holds information for, it is helpful if Prez tells users the URL of these when they are referenced elsewhere in the API. This is in two places:
+1. Listings of objects, for example <code>dcat:Catalog</code> at the <code>/catalogs</code> endpoint; and
+2. Links to related objects, where the API holds information on the related object.\
+In these cases, in the annotated RDF mediatype (<code>text/anot+turtle</code>) URL paths are provided which link to the related object.</p>
+<p>For cases where URIs and URLs for a given object differ, URL redirection can be used to send users to the Prez URL instance which displays information for the object.</p>
+<h3 id="link-generation">Link generation</h3>
+<p>Internal links use <a href="https://en.wikipedia.org/wiki/CURIE">CURIEs</a>. Prez uses the default RDFLib prefixes, covering common namespaces.
+Additional prefixes can be specified using the Vann ontology property "vann:preferredNamespacePrefix". These can be added to turtle files in the prez/reference_data/prefixes directory.
+Any turtle files in this directory will be loaded on startup.</p>
+<p>When Prez encounters a URI which is required for an internal link but is not in the current known prefixes, it will generate a prefix using the following logic:
+1. Get the "second to last part" of the URI; either the part before a fragment if it exists, or the second to last path segment otherwise.
+2. If this second to last part is less than six characters, use it as is, else:
+3. Remove vowels from the second to last part and use this as the prefix.
+4. If this prefix fails to bind for any reason, use RDFLib's default "ns1", "ns2" etc. prefixes.</p>
+<p>To get "sensible" or "nice" prefixes, it is recommended to add all prefixes which will be required to turtle files in prez/reference_data/prefixes.
+A future change could allow the prefixes to be specified alongside data in the backend, as profiles currently can be.</p>
+<h2 id="generating-prefixes">Generating Prefixes</h2>
+<p>The following SPARQL query can be used as a starting point to check if a namespace prefix is defined for instances of the main classes prez delivers. NB this query should NOT be run against SPARQL endpoints for large datasets; offline options should instead be used.
+NB. for "short" URIs, i.e. a hostname with no fragments and a "no" path, this query will (correctly, but uselessly) return "http://" or "https://". You will need to otherwise identify what these URIs are and provide prefixes for them should you wish.
+<div class="highlight"><pre><span></span><code><span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">vann</span><span class="p">:</span> <span class="nl">&lt;http://purl.org/vocab/vann/&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">dcat</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/ns/dcat#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">geo</span><span class="p">:</span> <span class="nl">&lt;http://www.opengis.net/ont/geosparql#&gt;</span>
+
+<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?namespace</span>
+<span class="p">{</span><span class="nv">?uri</span> <span class="k">a</span> <span class="nv">?type</span>
+  <span class="k">BIND</span> <span class="p">(</span><span class="nf">REPLACE</span><span class="p">(</span><span class="nf">STR</span><span class="p">(</span><span class="nv">?uri</span><span class="p">),</span> <span class="s">&quot;(.*[/#])[^#/]*$&quot;</span><span class="p">,</span> <span class="s">&quot;$1&quot;</span><span class="p">)</span> <span class="k">AS</span> <span class="nv">?namespace</span><span class="p">)</span>
+  <span class="k">VALUES</span> <span class="nv">?type</span> <span class="p">{</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Collection</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">ConceptScheme</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Concept</span> <span class="nn">dcat</span><span class="p">:</span><span class="nt">Dataset</span> <span class="nn">geo</span><span class="p">:</span><span class="nt">FeatureCollection</span> <span class="nn">geo</span><span class="p">:</span><span class="nt">Feature</span> <span class="nn">dcat</span><span class="p">:</span><span class="nt">Resource</span> <span class="nn">dcat</span><span class="p">:</span><span class="nt">Catalog</span> <span class="p">}</span>
+  <span class="k">MINUS</span> <span class="p">{</span><span class="nv">?namespace</span> <span class="nn">vann</span><span class="p">:</span><span class="nt">preferredPrefix</span> <span class="nv">?prefix</span> <span class="p">.}</span>
+<span class="p">}</span> <span class="k">LIMIT</span> <span class="mi">100</span>
+</code></pre></div></p>
+<h2 id="annotation-properties">Annotation properties</h2>
+<p>Prez recognises the following kinds of annotation properties, and can return RDF, either via SPARQL queries, or the endpoints as annotated RDF.</p>
+<p>When an annotated mediatype is requested (e.g. <code>text/anot+turtle</code>), Prez will look for the following predicates for <em>every</em> RDF term in the (initial) response returned by the triplestore. That is it will expand the response to include the annotations and return the RDF merge of the original response and the annotations.</p>
+<p>Additional predicates can be added to the list of predicates Prez looks for in the profiles by adding these predicates to the configuration.</p>
+<h2 id="how-to-add-an-endpoint">How to add an endpoint</h2>
+<p>New endpoints can be added to Prez by adding RDF, and minimal addition of FastAPI decorators.</p>
+<ol>
+<li>Add FastAPI decorator,<ol>
+<li>For Listing endpoints, add these to the <code>listings</code> function in <code>prez/routers/ogc_router</code>. An example is:
+<div class="highlight"><pre><span></span><code><span class="nd">@router</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>  
+    <span class="s2">&quot;/catalogs&quot;</span><span class="p">,</span>  
+    <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;Catalog Listing&quot;</span><span class="p">,</span>  
+    <span class="n">name</span><span class="o">=</span><span class="n">OGCE</span><span class="p">[</span><span class="s2">&quot;catalog-listing&quot;</span><span class="p">],</span>  
+    <span class="n">responses</span><span class="o">=</span><span class="n">responses</span>  
+<span class="p">)</span>
+</code></pre></div></li>
+</ol>
+</li>
+</ol>
+<p><em>See the references in the code for what should be provided for <code>responses</code> and <code>openapi_extra</code>; these fields are optional but useful for documentation.</em>
+The name is required, and should be a URI.
+2. An endpoint definition. 
+    1. <strong>The endpoint URI must match the name uri in the decorator.</strong> 
+    2. The endpoint must be declared a <code>ont:ListingEndpoint</code> or <code>ont:ObjectEndpopint</code>, as Prez uses different application code to render results for these two types of endpoint.
+    These are in <code>prez/reference_data/endpoints/endpoint_metadata.ttl</code>. An example is:
+<div class="highlight"><pre><span></span><code><span class="nn">ogce</span><span class="p">:</span><span class="nt">catalog-listing</span>  
+    <span class="kt">a</span> <span class="nn">ont</span><span class="p">:</span><span class="nt">ListingEndpoint</span> <span class="p">;</span>  
+    <span class="nn">ont</span><span class="p">:</span><span class="nt">relevantShapes</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">Catalogs</span> <span class="p">;</span>  
+<span class="p">.</span>
+</code></pre></div>
+3.  A NodeShape for the endpoint. This describes how nodes should be selected at the given endpoint. An example is:
+<div class="highlight"><pre><span></span><code><span class="nn">ex</span><span class="p">:</span><span class="nt">Catalogs</span>  
+    <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>  
+    <span class="nn">ont</span><span class="p">:</span><span class="nt">hierarchyLevel</span> <span class="mi">1</span> <span class="p">;</span>  
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">dcat</span><span class="p">:</span><span class="nt">Catalog</span> <span class="p">;</span>  
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span>  
+        <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">dcterms</span><span class="p">:</span><span class="nt">hasPart</span> <span class="p">;</span>  
+        <span class="nn">sh</span><span class="p">:</span><span class="nt">or</span> <span class="p">(</span>  
+            <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">dcat</span><span class="p">:</span><span class="nt">Resource</span> <span class="p">]</span>  
+            <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">geo</span><span class="p">:</span><span class="nt">FeatureCollection</span> <span class="p">]</span>  
+            <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">ConceptScheme</span> <span class="p">]</span>  
+            <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Collection</span> <span class="p">]</span>  
+        <span class="p">)</span> <span class="p">;</span>  
+    <span class="p">]</span> <span class="p">.</span>
+</code></pre></div></p>
+<p>This specifies the selection of focus nodes of class <code>dcat:Catalog</code> which have the relationship <code>dcterms:hasPart</code> to one or more of the listed classes.</p>
+<h2 id="query-generation">Query Generation</h2>
+<p>Prez utilises the sparql-grammar-pydantic library to generate SPARQL queries.</p>
+<h3 id="focus-nodes">Focus nodes</h3>
+<p>For objects, the focus node is specified in a query path as a curie, or in the case of the <code>/object</code> endpoint, as query parameter with the key "uri".</p>
+<p>For lists of objects, the focus node is a variable, fixed within prez to <code>?focus_node</code>.</p>
+<p><strong>Usage:</strong> The focus node is substituted into the main query.</p>
+<h3 id="main-query-generation">Main Query Generation</h3>
+<p>Prez creates a single main query to describe an object or listing of objects.</p>
+<p>The structure of the query is as follows:
+<div class="highlight"><pre><span></span><code><span class="k">CONSTRUCT</span> <span class="p">{</span>  
+    <span class="o">&lt;</span><span class="err">construct_triples</span> <span class="o">+</span> <span class="err">construct_tss_list</span><span class="o">&gt;</span>
+<span class="p">}</span>  
+<span class="k">WHERE</span> <span class="p">{</span>  
+    <span class="c"># for listing queries only:    </span>
+    <span class="p">{</span> 
+        <span class="k">SELECT</span> <span class="nv">?focus_node</span> <span class="nl">&lt;innser_select_vars&gt;</span>        
+        <span class="k">WHERE</span> <span class="p">{</span>            
+            <span class="nl">&lt;inner_select_tssp_list&gt;</span>            
+            <span class="nl">&lt;inner_select_gpnt&gt;</span>        
+            <span class="p">}</span>        
+        <span class="k">ORDER BY</span> <span class="nl">&lt;order_by_direction&gt;</span><span class="p">(</span><span class="nl">&lt;order_by&gt;</span><span class="p">)</span>        
+        <span class="k">LIMIT</span> <span class="nl">&lt;limit&gt;</span>        
+        <span class="k">OFFSET</span> <span class="nl">&lt;offset&gt;</span>    
+    <span class="p">}</span>
+    <span class="c"># for all queries:    </span>
+    <span class="nl">&lt;profile_triples&gt;</span>    
+    <span class="nl">&lt;profile_gpnt&gt;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h4 id="construct_triples-and-construct_tss_list">construct_triples and construct_tss_list</h4>
+<p>The triples to construct. This is taken from the union of:
+1. Profile_Triples (directly) - i.e. any triple specified in the where clause will be constructed
+2. Any triples within the Profile_GPNTs object. <em>Prez utilises a convenience function provided by the SPARQL Grammar library which recursively extracts all triples within a given SPARQL Grammar object.</em>
+3. Additional_Construct_Triples (directly) - these may come from a search query, such as the query result weights, etc. </p>
+<h4 id="profile_triples-and-profile_gpnts">profile_triples and profile_GPNTs</h4>
+<p>There is one source of profile triples and profile GPNTs - these are derived from SHACL node and property shapes associated with the selected profile (returned by ConnegP).</p>
+<p>At a conceptual level these profile shapes represent the "properties" or "attributes" to be returned for <em>each</em> focus node. At present the following SHACL expressions are covered:
+- minCount = 0 (optional property)
+- maxCount = 0 (exclude property)
+- path
+- sequence path
+- inverse path
+- class
+- blank nodes to a specified depth
+How to specify these is detailed in the Profile Design section.</p>
+<h4 id="inner_select_triples-and-inner_select_gpnts">Inner_Select_Triples and Inner_Select_GPNTs</h4>
+<p>Inner Select Triples and Inner Select GPNTs are taken from the union of:
+1. CQL
+2. Search queries
+3. Endpoint Nodeshapes
+These are detailed in the Focus Node Selection section.</p>
+<h3 id="annotations">Annotations</h3>
+<ul>
+<li>Where an annotated mediatype is requested, Prez returns any annotations it can find from all available repositories (data, systems, and annotations reposoitory).</li>
+<li>These annotations are then cached against the URI they are for.</li>
+<li>The caching utilises aiocache. <ul>
+<li>aiocache is currently set up with in memory caches. It could be extended to utilise Redis.</li>
+</ul>
+</li>
+</ul>
+<p>A sequence diagram is shown for annotation retrieval:
+<pre class="mermaid"><code>sequenceDiagram
+    Client -&gt;&gt; FastAPI: Request for data with annotated mediatype
+    FastAPI -&gt;&gt; Repo: send_queries(object/list query)
+    Repo --&gt;&gt; FastAPI: initial response graph
+    FastAPI -&gt;&gt; FastAPI: get URIs in initial response
+    FastAPI -&gt;&gt; Cache: check cache for annotations
+    Cache --&gt;&gt; FastAPI: return cached annotations (if any)
+    FastAPI -&gt;&gt; FastAPI: determine cached and uncached URIs
+    FastAPI -&gt;&gt; Repo: query for uncached annotations
+    Repo --&gt;&gt; FastAPI: return cached annotations (if any)
+    FastAPI -&gt;&gt; Cache: cache previously uncached annotations
+    FastAPI -&gt;&gt; Client: return initial response graph + annotations</code></pre></p>
+<p>Annotations are returned with one of the following mapped prez namespaced URIs.</p>
+<p>prez:label: skos:prefLabel,  dcterms:title,  rdfs:label,  sdo:name
+prez:description: skos:definition,  dcterms:description,  sdo:description
+prez:provenance: dcterms:provenance</p>
+<h3 id="repositories">Repositories</h3>
+<p>An abstraction over data providers is provided with "Repositories". Three types are supported; Pyoxigraph (in memory), Oxrdflib, and RemoteSparql. 
+1. Data repository - one of Pyoxigraph, Oxrdflib, or RemoteSparql
+2. System repository - Pyoxigraph
+3. Annotations repository - Pyoxygraph</p>
+<h2 id="startup-routine">Startup Routine</h2>
+<ol>
+<li>Check the SPARQL endpoints can be reached. A blank query (<code>ASK {}</code>) is used to test this. The SPARQL endpoints are not health checked post startup.</li>
+<li>Create in memory profile, prefix, and endpoint graphs, containing all profiles in the <code>prez/profiles</code> directory, and any additional profiles available in the triplestore (declared as a <code>http://www.w3.org/ns/dx/prof/Profile</code>)</li>
+<li>Look for predefined object counts in the triplestore.</li>
+</ol>
+<h2 id="high-level-sequence-object-endpoint">High Level Sequence <code>/object</code> endpoint</h2>
+<h3 id="prez-ui-or-similar-human-actionable-client">Prez UI or similar human-actionable client</h3>
+<p>Prez provides a <code>/object</code> endpoint as an endpoint that supplies any information known about a given URI. If an annotated mediatype is requested, prez will additionally provide all system links for endpoints which can render the object. The high level sequence for this endpoint is as follows:</p>
+<ol>
+<li>Get the URI for the object from the query string</li>
+<li>Get the class(es) of the object from the triplestore</li>
+<li>Use prez's reference data for endpoints to determine which endpoints can render this object, and, a template for these endpoints, specifying any variables that need to be substituted (such as parent URIs).</li>
+<li>Get the object information from the triplestore, using an open profile, and in parallel any system information needed to construct the system links.</li>
+<li>Return the response</li>
+</ol>
+<h2 id="high-level-sequence-listing-and-individual-object-endpoints">High Level Sequence listing and individual object endpoints</h2>
+<p>Prez follows the following logic to determine what information to return, based on a profile, and in what mediatype to return it.</p>
+<ol>
+<li>Determine the URI for an object or listing of objects:</li>
+<li>For objects:
+   Directly supplied through the /object?uri=<abc> query string argument</li>
+<li>From the URL path the object is requested from, for example /catalogs/<abc>. abc is a curie, which is expanded to a URI.</li>
+<li>Get all classes for the object or object listing</li>
+<li>Determine the profile and mediatype to use for the object. This is implemented as a SPARQL query and takes into account:</li>
+<li>The classes of the object</li>
+<li>Available profiles and mediatypes</li>
+<li>Requested profiles and mediatypes</li>
+<li>Default profiles and mediatypes
+The logic used to determine the profile and mediatype is detailed in section x.</li>
+<li>Build a SPARQL query.</li>
+<li>Execute the SPARQL query.</li>
+<li>If the mediatype requested is NOT annotated RDF (<code>text/anot+turtle</code>), return the results of 5, else retrieve the annotations:</li>
+<li>Check Prez cache for annotations</li>
+<li>For terms without annotations in the cache, query the triplestore for annotations</li>
+<li>Cache any annotations returned from the triplestore</li>
+<li>Return the annotations merged with the results of the SPARQL query in step 5.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; KurrawongAI, 2025
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.indexes", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
