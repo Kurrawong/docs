@@ -251,7 +251,7 @@ All concepts must have an IRI, and the IRI may be a completely opaque string bas
 
 ### Defining vocabulary IRI
 
-A Concept may be 'imported' from another vocabulary. We can assume that a Concept is imported if it shares the same or very similar metadata (such as a `skos:definition`) and labels. Such concepts should indicate the vocabulary from where they were imported with `rdfs:isDefinedBy` . Read more about [importing](#adoption) concepts and references. 
+A Concept may be 'imported' from another vocabulary. We can assume that a Concept is imported if it shares the same or very similar metadata (such as a `skos:definition`) and labels. Such concepts should indicate the vocabulary from where they were imported with `rdfs:isDefinedBy`. Read more about [importing](#adoption) concepts and references. 
 
 ### Citation
 
@@ -272,7 +272,7 @@ Example:
 	.
 ```
 
-... where the Citation indicates a policy definition originating from an external source. In this example the URL of the source is given so that it can be easily looked up and, if needed, verified and validated.
+... where the `sdo:citation` indicates a policy definition originating from an external source. In this example the URL of the source is given so that it can be easily looked up and, if needed, verified and validated.
 
 ### 🚧 Import a Concept
 
@@ -296,7 +296,7 @@ To import a Concept from another vocabulary:
    ```turtle
    PREFIX : <https://linked.data.gov.au/def/road-travel-direction/>
    PREFIX cs: <https://linked.data.gov.au/def/road-travel-direction>
-   PREFIX agldwgstatus: <linked.data.gov.au/def/reg-status/>
+   PREFIX regstatus: <linked.data.gov.au/def/reg-status/>
    PREFIX dcat:	<http://www.w3.org/ns/dcat#>	
    PREFIX dcterms: <http://purl.org/dc/terms/>
    PREFIX icsm: <https://linked.data.gov.au/org/icsm>
@@ -304,7 +304,6 @@ To import a Concept from another vocabulary:
    PREFIX prov: <http://www.w3.org/ns/prov#>
    PREFIX qsi: <https://linked.data.gov.au/org/qsi>
    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-   PREFIX reg:  <http://purl.org/linked-data/registry#>
    PREFIX sdo: <https://schema.org/>
    PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
    # add prefix srti:
@@ -334,7 +333,7 @@ To import a Concept from another vocabulary:
 # Date modified should be incremented:
     dcterms:modified "XXXX-XX-XX"^^xsd:date ;
     dcterms:publisher icsm: ;
-    reg:status agldwgstatus:experimental ;
+    sdo:status regstatus:experimental ;
 # Version information may be incremented
     owl:versionIRI :1.0 ;
     owl:versionInfo "1.0" ;
