@@ -8,26 +8,32 @@ This is the first in a series of modules that range from introductory guidance, 
 - Core properties
 - Exercise - start using VocEdit
 
-[Advanced Vocbulary Editing](https://docs.kurrawong.ai/concepts/vocabs/creation/)
+[Advanced Vocbulary Editing](/concepts/vocabs/creation/)
 
 - Mapping between vocabularies
 - Additional properties
 - Exercise (continued from _Introduction_)
 
-[Vocabulary Reuse](https://docs.kurrawong.ai/concepts/vocabs/vocab-reuse/)
+[Vocabulary Reuse](/concepts/vocabs/vocab-reuse/)
 
 - Reuse patterns
 - Importing concept from other vocabularies
 - Exercise (continued from _Advanced_)
 
-[Vocabulary systems](https://docs.kurrawong.ai/concepts/vocabs/vocab-systems/)
+[Vocabulary querying](/concepts/vocabs/querying/)
+
+- SPARQL querying
+- How to query
+- Common vocab queries
+
+[Vocabulary systems](/concepts/vocabs/vocab-systems/)
 
 - VocEdit + GitHub (with new exercise)
 - VocExcel
 - SHACL Validator
 - RDF Converter
 
-[Vocabulary patterns](https://docs.kurrawong.ai/concepts/vocabs/patterns/)
+[Vocabulary patterns](/concepts/vocabs/patterns/)
 
 - Handling special cases and advanced tips
 
