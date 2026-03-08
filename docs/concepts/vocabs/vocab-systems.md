@@ -167,7 +167,7 @@ A SHACL file can be used in various validation tools and services - here we'll d
 2. **Data to validate** > **Upload** > select `pestRiskPath_training.ttl` (*don't have the file? see the [first exercise](https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier) in Introduction to Vocabularies*) 
 3. **Data to validate** form > **Upload**
 4. Scroll down to **SHACL Shapes** form
-5. **Use Validators** > expand **VocPub > **Add** the most recent version > **Close**
+5. **Use Validators** > expand **VocPub** > **Add** the most recent version > **Close**
 6. **Validate**
 
 A page of Validation Results will launch. This report lets you know where your vocabulary does not conform to the VocPub profile. The messages are colour coded and indicate issues in your vocabulary that are:
