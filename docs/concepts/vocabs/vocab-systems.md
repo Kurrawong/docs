@@ -2,11 +2,10 @@
 # Vocabulary Systems
 
 
-
 >
 >***Scope***
 >
->This content is intended to provide guidance on the use of vocabulary systems that support editing and validation of vocabularies.
+>Provides guidance on the use of vocabulary systems that support editing and validation of vocabularies.
 >
 >***Audience***
 >
@@ -28,6 +27,8 @@
 Vocabularies are data, and data management inevitably requires application support. Vocabularies are no different! In this module we will step you through some vocabulary systems developed by KurrawongAI that will make the task of managing vocabularies easier.
 
 If you've been working through [_Introduction to Vocabularies_](/concepts/vocabs/introduction), [_Advanced Vocabulary Editing_](/concepts/vocabs/creation) or [_Vocabulary Reuse_](/concepts/vocabs/vocab-reuse), you will have already encountered a key tool in any vocabulary managers toolkit: an editor. In this module we will look again at _VocEdit_, but draw your attention to a _VocEdit > GitHub_ integration feature that helps you manage vocabulary review and versioning. We'll also introduce you to _VocExcel_, a spreadsheet-based tool for editing simple vocabularies. And we'll introduce tools that help you validate a vocabulary, and a tool that converts a vocabulary from one RDF format to another.
+
+> 💡 This module focuses on editing and validation tools. See also the [_Querying_](/concepts/vocabs/querying) module that demonstrates for how to use a KurrawongAI SPARQL Endpoint to query vocabularies.
 
 ## Vocabulary editing tools
 
@@ -167,7 +168,7 @@ A SHACL file can be used in various validation tools and services - here we'll d
 2. **Data to validate** > **Upload** > select `pestRiskPath_training.ttl` (*don't have the file? see the [first exercise](https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier) in Introduction to Vocabularies*) 
 3. **Data to validate** form > **Upload**
 4. Scroll down to **SHACL Shapes** form
-5. **Use Validators** > expand **VocPub > **Add** the most recent version > **Close**
+5. **Use Validators** > expand **VocPub** > **Add** the most recent version > **Close**
 6. **Validate**
 
 A page of Validation Results will launch. This report lets you know where your vocabulary does not conform to the VocPub profile. The messages are colour coded and indicate issues in your vocabulary that are:

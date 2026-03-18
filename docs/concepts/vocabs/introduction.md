@@ -156,139 +156,87 @@ We will look at SKOS properties in more detail in the [Properties](#vocabulary-p
 
 ### Vocabularies in knowledge graphs
 
-Thought of as an interconnected system of data classes, a knowledge graph may include vocabularies as additional classes that connect with some or all other classes. In a knowledge graph, a vocabulary concept can be modelled as just another class instance.
+Thought of as an interconnected system of data classes, a knowledge graph may include vocabularies as additional classes that connect with some or all other classes. In a knowledge graph, a vocabulary concept can be modelled as just another instance in the graph.
 
-One function that vocabularies serve is to supplement and fill semantic gaps in data relations. In the example below, classes A, B an C are each related to each other in some way. Class D is not related to other classes. A concept from a vocabulary is also included, and has relationships to classes A, B and C.
+One function that vocabularies serve is to supplement and fill semantic gaps in data relations. Data objects that are not directly related may still connect through shared vocabulary concepts.
 
-```mermaid
-graph LR;
-    classDef concept fill:#f9f1a5,stroke:#b59a00;
-    classDef default fill:#dae8fc,stroke:#6c8ebf;
-    
-    4["CLASS C"];
-    7["CONCEPT A"]:::concept;
-    8["CLASS B"];
-    9["CLASS A"];
-    10["CLASS D"];
-
-    4 -- "relation" --> 7;
-    4 -- "relation" --> 8;
-    8 -- "relation" --> 7;
-    9 -- "relation" --> 7;
-    9 -- "relation" --> 8;
-```
-
-The relationships between classes and concepts is often of a _subject_ nature - that is to say the class instance is _about_ the concept.
+In the diagram below, two datasets are linked through a concept drawn from a vocabulary. The relationship between a class instance and a concept is often a **subject relationship** — that is, the data is *about* the concept.
 
 ```mermaid
 graph LR;
     classDef concept fill:#f9f1a5,stroke:#b59a00;
     classDef default fill:#dae8fc,stroke:#6c8ebf;
-    
-    4["CLASS C"];
-    7["CONCEPT A"]:::concept;
-    8["CLASS B"];
-    9["CLASS A"];
-    10["CLASS D"];
 
-    4 -- "subject" --> 7;
-    4 -- "relation" --> 8;
-    8 -- "subject" --> 7;
-    9 -- "subject" --> 7;
-    9 -- "relation" --> 8;
+    A["Traffic counts dataset"];
+    B["Road closures dataset"];
+    C["One-way road"]:::concept;
+
+    A -- "subject" --> C;
+    B -- "subject" --> C;
 ```
 
-Now we will look at a domain example using possible interrelationships between spatial data classes, focusing on roads.
+Because both datasets reference the same concept, they become indirectly related through the vocabulary.
+
+#### Vocabulary relationships
+
+Vocabularies often include relationships between concepts. These relationships allow data tagged with different concepts to still be connected.
+
+For example, a vocabulary might define the concept `One-way road`, with a more specific concept `Reversible lane road`.
+
+```mermaid
+graph LR;
+    classDef concept fill:#f9f1a5,stroke:#b59a00;
+
+    A["One-way road"]:::concept;
+    B["Reversible lane road"]:::concept;
+
+    A -- "skos:narrower" --> B;
+```
+
+Now imagine that one dataset is tagged with the broader concept, while another dataset uses the narrower one.
 
 ```mermaid
 graph LR;
     classDef concept fill:#f9f1a5,stroke:#b59a00;
     classDef default fill:#dae8fc,stroke:#6c8ebf;
-    
-    4["Road types"];
-    7["One Way"]:::concept;
-    8["Maintainers"];
-    9["Lane counts"];
-    10["Seasonality"];
 
-    4 -- "subject" --> 7;
-    4 -- "relation" --> 8;
-    8 -- "subject" --> 7;
-    9 -- "subject" --> 7;
-    9 -- "relation" --> 8;
+    D["Traffic counts dataset"];
+    E["Road closure dataset"];
+
+    C["One-way road"]:::concept;
+    F["Reversible lane road"]:::concept;
+
+    D -- "subject" --> C;
+    E -- "subject" --> F;
+
+    C -- "skos:narrower" --> F;
 ```
 
-The concept ``One Way`` comes from ``Road directions`` vocabulary, where the concept ``One Way From To`` may be defined as a `skos:narrower` concept.
+Because `Reversible lane road` is defined as a type of `One-way road`, the knowledge graph can infer a relationship between the two datasets.
+
+Even though the datasets were originally tagged with different concepts, the vocabulary hierarchy connects them.
+
+
+#### Alternative labels
+
+SKOS also allows concepts to carry alternative labels (skos:altLabel). These capture common synonyms or variant terminology.
 
 ```mermaid
 graph LR;
     classDef concept fill:#f9f1a5,stroke:#b59a00;
-    classDef default fill:#dae8fc,stroke:#6c8ebf;
-    
-    4["Road types"];
-    7["One Way"]:::concept;
-    8["Maintainers"];
-    9["Lane counts"];
-    10["Seasonality"];
-    11["One Way From To"]:::concept;
 
-    4 -- "subject" --> 7;
-    4 -- "relation" --> 8;
-    8 -- "subject" --> 7;
-    9 -- "subject" --> 7;
-    9 -- "relation" --> 8;
-    7 -- "narrower" --> 11;
+    A["One-way road"]:::concept
+    B["single-direction road"]
+
+    A -- "skos:altLabel" --> B
 ```
 
-Let's assume that the ``Seasonality`` class contains data profiled with the ``One Way From To`` directional roads concepts. So there is also a relationship with the `skos:narrower` concept provided in the vocabulary. This hierarchy relationship in the vocabulary then provides a bridge between classes of information.
+This helps bridge datasets that use different terminology for the same concept. A dataset tagged with _single-direction road_ can still be recognised as referring to the concept `One-way road`.
 
-```mermaid
-graph LR;
-    classDef concept fill:#f9f1a5,stroke:#b59a00;
-    classDef default fill:#dae8fc,stroke:#6c8ebf;
-    
-    4["Road types"];
-    7["One Way"]:::concept;
-    8["Maintainers"];
-    9["Lane counts"];
-    10["Seasonality"];
-    11["One Way From To"]:::concept;
+Without vocabulary concepts, datasets often remain isolated because they use different terms or different levels of specificity. SKOS vocabularies introduce structured relationships between concepts that allow knowledge graphs to connect these datasets.
 
-    4 -- "subject" --> 7;
-    4 -- "relation" --> 8;
-    8 -- "subject" --> 7;
-    9 -- "subject" --> 7;
-    9 -- "relation" --> 8;
-    7 -- "narrower" --> 11;
-    10 -- "subject" --> 11;
-```
+Through relationships such as `skos:broader`, `skos:narrower`, and `skos:altLabel`, vocabulary concepts act as semantic bridges, enabling inferences and connections that would not otherwise be possible.
 
-Because of this relation between concepts in the vocabulary, it's possible to make an _inference_ that connects classes that were previously unrelated, such as between ``Lane counts`` data and ``Seasonality`` data.
-
-```mermaid
-graph LR;
-    classDef concept fill:#f9f1a5,stroke:#b59a00;
-    classDef default fill:#dae8fc,stroke:#6c8ebf;
-    
-    4["Road types"];
-    7["One Way"]:::concept;
-    8["Maintainers"];
-    9["Lane counts"];
-    10["Seasonality"];
-    11["One Way From To"]:::concept;
-
-    4 -- "subject" --> 7;
-    4 -- "relation" --> 8;
-    8 -- "subject" --> 7;
-    9 -- "subject" --> 7;
-    9 -- "relation" --> 8;
-    7 -- "narrower" --> 11;
-    10 -- "subject" --> 11;
-    9 -. "relation" .-> 10;
-```
-Let's put this into a narrative form:
-
-_We know that some roads are closed on a seasonal basis, but we don't know what portion of these are one lane roads. But we do have data about the seasonality of 'One Way From Two' roads, also called 'One way with vector' roads. Because these roads are defined as a type of One Way road (via `skos:narrower`), we can infer information about seasonal road closures for one lane roads._
 
 ## Vocabulary properties
 
