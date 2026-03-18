@@ -61,7 +61,9 @@ nav:
             - 'VocExcel': 'products/tools/vocexcel.md'
         - '3rd Party':
             - 'Fuseki': 'products/3rdparty/fuseki.md'
-    - Concepts:
+    - 'Modelling Concepts':
+        - 'Agents': 'concepts/agents/patterns.md'
+        - 'RDF': 'concepts/rdf.md'
         - 'Vocabs':
             - 'Introduction': 'concepts/vocabs/introduction.md'
             - 'Advanced': 'concepts/vocabs/creation.md'
@@ -69,8 +71,6 @@ nav:
             - 'Patterns': 'concepts/vocabs/patterns.md'
             - 'Querying': 'concepts/vocabs/querying.md'
             - 'Vocab systems': 'concepts/vocabs/vocab-systems.md'
-        - 'Agents':
-            - 'Patterns': 'concepts/agents/patterns.md'
 
 # SVG resizer: https://svg-converter.com/resize
 
