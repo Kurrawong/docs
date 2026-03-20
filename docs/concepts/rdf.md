@@ -58,6 +58,10 @@ A structured, instructor-led course covering RDF and SPARQL — ideal for those 
 
 ---
 
+## Image path test
+
+![test cover](semantic-web-for-the-working-ontologist.jpg)
+
 ## 📚 Textbook
 
 ### Semantic Web for the Working Ontologist (3rd ed.)
@@ -73,9 +77,6 @@ The definitive reference text for practitioners working with RDF, OWL, and the b
   loading="lazy"
 />
   </a>
-  ## Image path test
-
-![test cover](../assets/3rdparty/images/semantic-web-for-the-working-ontologist.jpg)
 
   <div>
     <strong>Semantic Web for the Working Ontologist</strong><br/>
