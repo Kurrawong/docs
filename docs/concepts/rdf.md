@@ -58,26 +58,15 @@ A structured, instructor-led course covering RDF and SPARQL — ideal for those 
 
 ---
 
-## Image path test
-
-![test cover](semantic-web-for-the-working-ontologist.jpg)
-
-## 📚 Textbook
-
-### Semantic Web for the Working Ontologist (3rd ed.)
-
-The definitive reference text for practitioners working with RDF, OWL, and the broader Semantic Web stack. Written by Dean Allemang, James Hendler, and Fabien Gandon, this book bridges theory and real-world application.
-
 <div style="display: flex; align-items: flex-start; gap: 1.5rem; margin: 1.5rem 0; padding: 1.25rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; background: rgba(255,255,255,0.03);">
   <a href="https://books.google.com/books?vid=ISBN9781450376143" target="_blank" style="flex-shrink: 0;">
     <img
-  src="../assets/3rdparty/images/semantic-web-for-the-working-ontologist.jpg"
-  alt="Semantic Web for the Working Ontologist (3rd Edition) book cover"
-  style="width: 100px; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);"
-  loading="lazy"
-/>
+      src="semantic-web-for-the-working-ontologist.jpg"
+      alt="Semantic Web for the Working Ontologist (3rd Edition) book cover"
+      style="width: 100px; height: auto; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); display: block;"
+      loading="lazy"
+    />
   </a>
-
   <div>
     <strong>Semantic Web for the Working Ontologist</strong><br/>
     <em>Dean Allemang, James Hendler &amp; Fabien Gandon — 3rd Edition (ACM, 2020)</em>
