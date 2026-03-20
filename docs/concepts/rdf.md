@@ -74,7 +74,7 @@ The definitive reference text for practitioners working with RDF, OWL, and the b
 />
   </a>
   <div>
-  ![test](../assets/3rdparty/images/semantic-web-for-the-working-ontologist.jpg)
+  ![test](/assets/3rdparty/images/semantic-web-for-the-working-ontologist.jpg)
     <strong>Semantic Web for the Working Ontologist</strong><br/>
     <em>Dean Allemang, James Hendler &amp; Fabien Gandon — 3rd Edition (ACM, 2020)</em>
     <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.85;">
