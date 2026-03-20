@@ -58,30 +58,20 @@ A structured, instructor-led course covering RDF and SPARQL — ideal for those 
 
 ---
 
-<div style="display: flex; align-items: flex-start; gap: 1.5rem; margin: 1.5rem 0; padding: 1.25rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; background: rgba(255,255,255,0.03);">
-  <a href="https://books.google.com/books?vid=ISBN9781450376143" target="_blank" style="flex-shrink: 0;">
-    <img
-      src="semantic-web-for-the-working-ontologist.jpg"
-      alt="Semantic Web for the Working Ontologist (3rd Edition) book cover"
-      style="width: 100px; height: auto; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); display: block;"
-      loading="lazy"
-    />
-  </a>
-  <div>
-    <strong>Semantic Web for the Working Ontologist</strong><br/>
-    <em>Dean Allemang, James Hendler &amp; Fabien Gandon — 3rd Edition (ACM, 2020)</em>
-    <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.85;">
-      Covers RDF, RDFS, OWL, SPARQL, and SKOS with worked examples drawn from real-world domains. Widely regarded as the standard reference for practitioners working with knowledge graphs and linked data.
-    </p>
-    <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.7;">
-      Available from major booksellers and ebook platforms — search by ISBN <strong>9781450376143</strong>.
-    </p>
-    <a href="https://books.google.com/books?vid=ISBN9781450376143" target="_blank">
-      View book details →
-    </a>
-  </div>
-</div>
+## 📚 Textbook
 
+### Semantic Web for the Working Ontologist (3rd ed.)
+
+|  |  |
+|---|---|
+| [![Semantic Web for the Working Ontologist (3rd Edition) book cover](semantic-web-for-the-working-ontologist.jpg)](https://books.google.com/books?vid=ISBN9781450376143) | **Semantic Web for the Working Ontologist**  
+*Dean Allemang, James Hendler & Fabien Gandon — 3rd Edition (ACM, 2020)*  
+
+Covers RDF, RDFS, OWL, SPARQL, and SKOS with worked examples drawn from real-world domains. Widely regarded as the standard reference for practitioners working with knowledge graphs and linked data. 
+
+Available from major booksellers and ebook platforms — search by ISBN **9781450376143**. 
+
+[View book details →](https://books.google.com/books?vid=ISBN9781450376143) |
 ---
 
 ## Summary
