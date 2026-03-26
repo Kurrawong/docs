@@ -4,70 +4,60 @@
 >
 >***Scope***
 >
->Provides guidance on building a complete SKOS vocabulary with common source materials.
+>Provides guidance on building a SKOS vocabulary with common source materials.
 >
 >***Audience***
 >
->_This module is primarily targeted to editors of draft and un-published vocabularies. It is assumed that learners have some experience with common productivity tools, including spreadsheet applications._
+>_Vocabulary editors and maintainers. It is assumed that learners have some experience with common office tools, such as spreadsheet applications._
 >
 >***Outcome***
 >
-> Learners should be able to transform a unstructured or semi-structured vocabulary in a publication-ready form that conforms to common vocabulary standards.
+> Learners should be able to transform a semi-structured vocabulary in a publication-ready form that conforms to common vocabulary standards.
 >
 >----------------
 
-> 💡 _Identifies troubleshooting tips, common errors and potential issues._
-
 > 🚧 _Exercises_
+
+> 💡 _Troubleshooting tips, common errors and potential issues._
+
+
 
 
 ## Introduction
-This module is a comprehensive exercise that progresses a simple, mid-sized list of terms in a single column table through to a publication-read controlled vocabulary featuring a wide range of SKOS semantics. Many of the steps precede use of vocabulary-specific editing and publishing tools, which are introduced only as the vocabulary evolves in complexity. This is NOT a short exercise - the steps below simulate a real-world scenario and provide an exhuastive account of issues enountered in vocabulary construction.
+This module is a comprehensive exercise that progresses a simple, mid-sized list of terms in a table through to a publication-ready vocabulary featuring a range of [SKOS](https://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System) semantics. Many of the steps precede use of vocabulary-specific editing and publishing tools, which are introduced only as the vocabulary evolves in complexity. This is _not a short exercise_ - the steps below simulate a realistic and tested  scenario and provide a comprehensive account of issues enountered during vocabulary construction.
 
-Throughout this module, references will be made back to other vocabulary modules for additional context - but this module stands alone as an activity that does not rely heavily on exernal references. If you do need to step back and learn first  what vocabularies are and used for, the  [_Introduction to Vocabularies_](/concepts/vocabs/introduction) module will help.
+Throughout this module, references will be made back to other vocabulary modules for additional context and guideance - but this module does not rely heavily on exernal references. If you _do_ need to step back and look at vocabularies basic concepts, the  [_Introduction to Vocabularies_](/concepts/vocabs/introduction) module will help.
 
-### 🚧 Raw Vocabulary Data
-Vocabularies often exist in semi-structured forms, such as in documents, spreadsheets or database tables. In this module a spreadsheet is provided - the Icecream Flavours spreadsheet includes a single column of terms. The spreadsheet is basically scraped from a [Wikipedia](https://en.wikipedia.org/wiki/List_of_ice_cream_flavors) page, with a little tidying up. 
+## 🚧 Raw vocabulary data
+Vocabularies often exist in semi-structured forms, such as in documents, spreadsheets or database tables. In this module a spreadsheet is provided - the Icecream Flavours spreadsheet includes a single column of terms. The spreadsheet is scraped from a [Wikipedia](https://en.wikipedia.org/wiki/List_of_ice_cream_flavors) page, with a little tidying up. 
 
-**Download** [docs/docs/assets/3rdparty/source/icecream-flavours.xlsx] to get started!
+**Download the sample file** <a href="../../assets/3rdparty/source/icecream-flavours.xlsx" download>
+  "icecream-flavors.xlsx"
+</a>
 
-> 💡 Should we be citing Wikipedia somehow? Don't worry, we will! In a later step well add some metadata to the vocbulary that indicates the source with a web link.
+> 💡 Should we be citing Wikipedia somehow? Don't worry, we will! In a later step we'll add some metadata to the vocbulary that indicates the source with a web link.
 
-In column A you will see a list of icecream flavors. Notice that these are separated into three groups (FRUIT FLAVORS; CHOCOLATE, NUTS AND OTHER SWEETS; SAVORY FLAVORS). We'll reflect these groupings in the transformed data.
+In column A you will see a list of icecream flavors. Notice that these are separated into three groups (FRUIT FLAVORS; CHOCOLATE, NUTS AND OTHER SWEETS; SAVORY FLAVORS). We'll reflect these groupings in the final vocabulary.
 
 You may also notice that some of the flavors include additional documentation - for example:
 
-> Neapolitan : composed of vanilla, chocolate and strawberry ice cream together side by side
+_Neapolitan : composed of vanilla, chocolate and strawberry ice cream together side by side_
 
 We will separate the label "Neapolitan" from "composed of vanilla, chocolate..." and retain both in different vocabulary fields. 
 
-You will notice that these terms are un-identified - that is, there is no identifier or code for each term. Identifiers are absolutely necessary for progressing the vocabulary through each stage through to publication. In many cases, term lists already have codes assigned - it's a good idea to reuse to reuse those codes if possible. In this exercise we assume that no codes exist, and we will implement these.
+You will notice that these terms are un-identified - that is, there is no identifier or code for each term. Identifiers are _absolutely necessary_ for progressing any vocabulary through each stage through to publication. In many cases, term lists already have codes assigned - it's a good idea to reuse existing codes if possible. In this exercise we assume that no codes exist, and we will implement, or 'mint' new identifiers.
 
-#### Separate labels from definitions
+### Add identifiers
 
-**Move the definitions into column B** 
-For a list this size, you could do this manually, or use MS Excel 'text to columns' method, using the ":" character as a delimiter. 
+The sample file does not include a codes column - _identifiers are necessary in a SKOS vocabulary that conforming to any standard or practice_. It's a good idea to use any identifiers that already exist for a draft vocabulary, but for this exercise we will need to mint new onces. We will add identifiers using the [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) scheme. 
 
-> 💡 Be careful to review data after using text to columns or other delimiting process. The delimiter you choose could also be in the definitions - you might end up with three or more colums wiht definitions split up. You won't need to worry about this in the icecream-flavours.xlsx example.
+> Why are we using the UUID scheme? If you want to learn more about identifier strategy, see [_Identifiers_](/concepts/vocabs/creation#identifiers) for a guideance.
 
-**Add header "Definition" to column B**
+- **Insert a a new "Identifiers" column before the Labels column**
 
-> 💡 Some of the column B data may not look like true definitions, but rather history or useage notes. Don't worry, we'll split these up further in a later step.
+ 
 
-After this step, the spreadsheet should resemble icecream-flavours-def.xlsx - save, and move on to the next step.
-
-#### Add identifiers
-
-The sample file does not include a codes column - _identifiers are necessary in a SKOS vocabulary that conforming to any standard or practice_. It's a good idea to use any identifiers that already exist for a draft vocabulary, but for this exercise we will need to mint new onces. We will add identifiers using the UUID scheme. 
-
-> Why are we using the UUID scheme? If you want to learn more about identifier strategy, see [creation#identifiers] for a guideance.
-
-**Insert a column before the labels**
-
-VocExcel is a spreadsheet based tool that allows you to easily import and transform large amounts of raw vocabulary data. Vocabularies often exist in static documents and tables - these can be pasted into the VocEdit template and transformed into a SKOS vocabulary using the VocExcel tranformation service. 
-
-**Generate UUIDs for new column**
-**Paste the following code** into Cell (A,1) and copy to the end of the list:
+- **Generate UUIDs for new column** - Paste the following code** into Cell (A,1) and copy to the end of the list:
 
 ```
 =LOWER(CONCAT(
@@ -85,18 +75,33 @@ Column A will not include values like "icf:0f8002df-64cd-4018-bfed-9f9f1c3d4fc5"
 
 > 💡 the prefix "icf:" is a based on the proposed vocabulary name "Icecream Flavors" - for readability, it's a good idea to choose prefixes that indicate, or give a hint on what the vocabulary elements are. When using the code above for a different vocabulary project, update the second line accordingly, so for example for a "Textured Vegetable Protein" vocabulary you might update this line to "tvp:" (the ":" colon character is mandatory).
 
-**Paste values into a new column**
+- **Paste values into a new column**
 Insert a new column, and use the copy and paste values option to transform the identifiers into absolute values (that won't get accidently recalculated with further steps).
 
-**Delete IDs** pasted for empty rows. **Keep** the Identifiers for the grouping terms (FRUIT FLAVORS, etc)
+- **Delete IDs** pasted for empty rows. - **Keep** the Identifiers for the grouping terms (FRUIT FLAVORS, etc)
 
-**Add column header** "Identifier". 
+- **Add column header** "Identifier". 
 
-**Delete the column with the formulas**, just keep the Identifier column with the pasted values.
+- **Delete the column with the formulas**, just keep the Identifier column with the pasted values.
+- **Save** your file.
 
-After this step, the spreadsheet should resemble icecream-flavours-ids.xlsx - save, and move on to the next step.
+After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdparty/source/icecream-flavours.xlsx" download> icecream-flavours.xlsx </a> - move on to the next step.
 
-#### Find synonyms
+### Separate labels from definitions
+
+- **Move the definitions into a new column** 
+For a list this size, you could do this manually, or use MS Excel 'text to columns' method, using the ":" character as a delimiter. 
+
+> 💡 Be careful to review data after using text to columns or other delimiting process. The delimiter you choose could also be in the definitions - you might end up with three or more colums wiht definitions split up. You won't need to worry about this in the icecream-flavours.xlsx example.
+
+- **Add column header** "Definition"
+- **Save** your file.
+
+> 💡 Some of the definitions data may not look like true definitions, but rather history or useage notes. Don't worry, we'll look at these again in [_Curate deinitions_](#curate-definitions).
+
+After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdparty/source/icecream-flavours-definitions.xlsx" download> icecream-flavours.xlsx </a> - move on to the next step.
+
+### Find synonyms
 
 We will add synonyms, or alternative labels, that exist in the file. There are two fields that synonyms can be found in:
 
@@ -105,14 +110,15 @@ We will add synonyms, or alternative labels, that exist in the file. There are t
 
 > 💡 Are the synonyms for Cherry really synonyms, or are they more specific flavor types? In this step, but don't worry, we'll treat them as synonyms now but look at promoting these to separate, identified vocabulary concepts in a later step. Want to know more about alternative labels now? see [introduction#alternative-labels] section in the Introduction module.
 
-**add column with header "Alternate Label"** to the right of the Definition column
-**remove "purple yam"** text from the "Ube" label and past in the Alternate Label column (same row). Delete the remaining parentheses ().
-**add "amaretto cherry" and "black cherry"** in the Alternate Label column in the same row as the Cherry label. 
-**delete "(e.g. Amaretto cherry, black cherry)"** from the Definition for Cherry.
+- **add column with header "Alternate Label"** to the right of the Definition column
+- **remove "purple yam"** text from the "Ube" label and past in the Alternate Label column (same row). Delete the remaining parentheses ().
+- **add "amaretto cherry" and "black cherry"** in the Alternate Label column in the same row as the Cherry label. 
+- **delete "(e.g. Amaretto cherry, black cherry)"** from the Definition for Cherry.
+- **Save** your file.
 
-After this step, the spreadsheet should resemble icecream-flavours-altLabels.xlsx - save, and move on to the next step.
+After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdparty/source/icecream-flavours-altLabels.xlsx" download> icecream-flavours.xlsx </a> - move on to the next step.
 
-#### Add remaining definitions
+### Add remaining definitions
 
 In the [Separate Labels From Definitions](#separate-labels-from-definitions) step, we extracted definitions from the source text. In this step we will add definitions for the remaining terms.
 
@@ -120,41 +126,47 @@ In the [Separate Labels From Definitions](#separate-labels-from-definitions) ste
 
 We will get definitions from the the Wikipedia page that the source list links to.
 
-**Open** [List of ice cream flavors](https://en.wikipedia.org/wiki/List_of_ice_cream_flavors) in your browser.
-**Select a flavour that needs a definition** - from the top, this is a link to "Banana split". 
-**Cut and paste** the first sentence from the [Banana split](https://en.wikipedia.org/wiki/Banana_split) page into the Definition column in the same row as Banana split.
+- **Open** [List of ice cream flavors](https://en.wikipedia.org/wiki/List_of_ice_cream_flavors) in your browser.
+- **Select a flavour that needs a definition** - from the top, this is a link to "Banana split". 
+- **Cut and paste** the first sentence from the [Banana split](https://en.wikipedia.org/wiki/Banana_split) page into the Definition column in the same row as Banana split.
 
 > 💡 The [List of ice cream flavors](https://en.wikipedia.org/wiki/List_of_ice_cream_flavors) page is a dynamic, user-contributed list and items may differ over time. 
 
-**Repeat** for remaining concepts that do not have definitions.
+- **Repeat** for remaining concepts that do not have definitions.
+- **Save** your file.
 
-> 💡 What if definitions are needed for hundreds, or even thousands of terms? Ideally, each term will have a carefully curated definition, requiring significant effort by vocabulary editors. That's great if possible! But that effort may not be possible the early stages of vocabulary development. As a work-around, copy the term label into the definition field - in this case prefixed with "... ice cream flavor". This may not seem like a very rich definition, but if the term is discovered out of context from the host vocabulary, it will give a strong hint about the semantics, e.g. "banana split" means _banana split ice cream flavor_, and not the stand-alone dessert (discussed furether below under Curate definitions)
+> 💡 What if definitions are needed for hundreds or thousands of terms? Ideally, each term will have a curated definition, requiring significant effort. That's great if possible! But that effort may not be possible the early stages of vocabulary development. As a work-around, copy the term label into the definition field - in this case prefixed with "... ice cream flavor". This may not seem like a very rich definition, but if the term is discovered out of context, it will give a strong hint about the semantics, e.g. "banana split" means _banana split ice cream flavor_, and not the stand-alone dessert (discussed further below under [Curate definitions](#curate-definitions))
 
-After this step, the spreadsheet should resemble icecream-flavours-all-definined.xlsx - save, and move on to the next step.
+After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdparty/source/icecream-flavours-altLabels.xlsx" download> icecream-flavours-all-defined.xlsx </a> - move on to the next step.
 
-#### Curate definitions
+### Curate definitions
 
 You may notice that the extracted definitions are mostly indicative but not always clear in context. For example:
 
 > A banana split is an American ice cream-based dessert consisting of a peeled banana cut in half lengthwise, and served with ice cream and sauce between the two pieces.
 
-This essentially defines a 'banana split', and not banana split flavored icecream. A simple edit can be made:
+This essentially defines a 'banana split', and not _banana split flavored icecream_. A simple edit can be made:
 
-> A flavour based on a banana split, an American ice cream-based dessert consisting of a peeled banana cut in half lengthwise, and served with ice cream and sauce between the two pieces.
+> **An ice cream flavour based on a banana split**, an American ice cream-based dessert consisting of a peeled banana cut in half lengthwise...
 
 In the case where a definition is determined to be unsuitable for a given concept, either:
-a. copy the labes into the definition field, suffixed with "ice cream flavor", e.g. the definition for Goody Goody Gum Drops changes from "unique to New Zealand" to "Goody Goody Gum Drops ice cream flavor". This can be done for a many terms at once using Excel `CONCATENATE` function; 
-b. do as above, but retain the original definition, resulting in "Goody Goody Gum Drops ice cream flavor, unique to New Zealand". Note that this requires manual edits and the 'CONCATENATE' option in (a) may not work well.
+- copy the labes into the definition field, suffixed with "ice cream flavor", e.g. the definition for Goody Goody Gum Drops changes from "unique to New Zealand" to "Goody Goody Gum Drops ice cream flavor". This can be done for a many terms at once using Excel `CONCATENATE` function, or
+- do as above, but retain the original definition, resulting in "Goody Goody Gum Drops ice cream flavor, unique to New Zealand". Note that this requires manual edits and the `CONCATENATE` option may not work easily.
 
 After this step, the spreadsheet should resemble icecream-flavours-all-curated-definitions.xlsx - save, and move on to the next step.
 
-### 🚧 Use a vocabulary editor
+## 🚧 Use a vocabulary editor
 
 By creating and separating out identifiers, labels, alternatie labels and definitions in the [Raw vocabulary data](#raw-vocabulary-data) step, you've been preparing the vocabulary for transformation into a publication-ready format. Well done! It's at this stage that we'll migrate (cut-and-paste) the raw data into a specialised vocabulary editor, where we will do a bit more editing - we're not far away now from creating a SKOS RDF file that can be readily integrated into common metadata systems.
 
-#### Get VocExcel
+Why move to a vocabulary editor? It will
 
-VocExcel is a vocabulary editor that is essentially a MS Excel template. We'll copy our raw data into this template, and then uploaded it to an online transformer that will result in a SKOS RDF file.
+- support creating _whole of vocabulary_ metadata,
+- ensure data is _transformation-ready_ before creating a SKOS RDF file.
+
+### Download VocExcel
+
+_VocExcel_ is a vocabulary editor that is essentially a _MS Excel_ template. We'll copy our raw data into VocExcel, and then upload it to an online SKOS RDF transformer.
 
 > 💡 You will need access to MS Excel to do this exercise.
 
@@ -165,7 +177,7 @@ VocExcel is a vocabulary editor that is essentially a MS Excel template. We'll c
 
 > VocExcel will open at the _Introduction_ tab. Note also the _Documentation_ tab, which gives you a rundown of the properties that you may be editing.
 
-#### Update Concept Scheme
+### Update Concept Scheme
 
 **Open** the _Concept Scheme_ tab
 
@@ -186,7 +198,7 @@ That's the mandatory fiels for describing a vocabulary completed. But wait, we s
 
 After this step, the spreadsheet should resemble "VocExcel-ice-cream-flavor-concept-scheme.xlsx" - save, and move on to the next step.
 
-#### Add concepts
+### Add concepts
 
 We will now copy the contents of the raw data file to the VocExcel template in the Concepts tab.
 
@@ -196,7 +208,7 @@ We will now copy the contents of the raw data file to the VocExcel template in t
 
 After this step, the spreadsheet should resemble "VocExcel-ice-cream-flavor-concepts.xlsx" - save, and move on to the next step.
 
-#### Create collections
+### Create collections
 
 We will use the grouping terms (FRUIT FLAVORS; CHOCOLATE, NUTS AND OTHER SWEETS; SAVORY FLAVORS) to create 'collections' of concepts. Collections are a standard way of grouping concepts by some category _within_ a vocabulary. 
 
@@ -208,7 +220,7 @@ We will use the grouping terms (FRUIT FLAVORS; CHOCOLATE, NUTS AND OTHER SWEETS;
 
 After this step, the spreadsheet should resemble "VocExcel-ice-cream-flavor-collections.xlsx" - save, and move on to the next step.
 
-#### Add prefixes
+### Add prefixes
 
 We added "icf:" to identifiers earlier. We need to add this prefix to the Prefixes tab. 
 
@@ -217,7 +229,7 @@ We added "icf:" to identifiers earlier. We need to add this prefix to the Prefix
 
 After this step, the spreadsheet should resemble "VocExcel-ice-cream-flavor-prefixed.xlsx" - save, and move on to the next step.
 
-#### Add broader relationships
+### Add broader relationships
 
 It's common practice to arrange vocabulary concetps in to hierarchies, where one concept is 'broader' than another in meaning. By doing so, a vocabulary supports inferences between datasetsthat are described with different concepts by using the hierarchal relationship. 
 
@@ -241,7 +253,7 @@ Repeat steps for Amaretto cherry - or not! Apply the same decision making steps 
 
 After this step, the spreadsheet should resemble "VocExcel-ice-cream-flavor-hierarchy.xlsx" - save, and move on to the next step.
 
-#### Transform to SKOS RDF
+### Transform to SKOS RDF
 
 The VocExcel spreadsheet is now ready to upload to the online transformer - well done! Follow the steps below:
 
@@ -254,7 +266,7 @@ You will be presented with a Result. From here you can view the Concept Scheme o
 Save the output...
 
 
-### 🚧 Publish the vocabulary
+## 🚧 Publish the vocabulary
 
 So far in this module you've taken an unstructured list from a single column and transformed it into a valid SKOS file. That file is compatible with many informaiton systems that use vocabualry data. But what about publishing the vocabulary? In this step you will upload your file to a vocabulary presentation system so that the vocabulary can be searched and browsed on the web. The data itself will also be available via an API in the publishing platform, allowing information systems to fetch the vocabulary data. 
 
