@@ -170,31 +170,31 @@ _VocExcel_ is a vocabulary editor that is essentially a _MS Excel_ template. We'
 
 > 💡 You will need access to MS Excel to do this exercise.
 
-**Go to** the KurrawongAI [VocExcel](https://tools.kurrawong.ai/vocexcel) in any browser.
-**Get VocExcel Template**
-**Open** the downloaded template (it may have opened automatically)
+- **Go to** the KurrawongAI [VocExcel](https://tools.kurrawong.ai/vocexcel) in any browser.
+- **Get VocExcel Template**
+- **Open** the downloaded template (it may have opened automatically)
 **Save As** a new file, e.g. "VocExcel-ice-cream-flavor.xlsx"
 
 > VocExcel will open at the _Introduction_ tab. Note also the _Documentation_ tab, which gives you a rundown of the properties that you may be editing.
 
 ### Update Concept Scheme
 
-**Open** the _Concept Scheme_ tab
+- **Open** the _Concept Scheme_ tab
 
 The Concept Scheme is a description, or metadata for the vocabulary as a whole. Some fields on this tab have an asterisk (*) and are mandatory - we'll help you fill these out as follows:
 
-**Vocabulary IRI** - this needs to be a web URL that indicates what vocabulary is hosted. For this exercise, enter `http://vocab.example.com/icecreamflavors`
-**Preferred Label** - the name of the Vocabulary. Add "Ice Cream Flavors Vocabulary".
-**Definition** - add "A vocabulary of ice cream flavors".
-**Creation Date** - add the day you first edit this file in yyyy-mm-dd format
-**Modified Date** - should be changed each day you make edits. Use the same vale for Creation date in the first instance
-**Creator** - that's you or your business! Here you can add just text OR an identifier if you have one - so `Jane Doe`, `Japan Ice Cream Association`, `https://orcid.org/0000-0002-1584-4316` or `https://ror.org/02hgxnr90` are all acceptable here
-**Publisher** - same as for Creator. Usually the Publisher is an organisation rather than a person - but either is valid
-**History Note** - add "Presented here for the first time as part of the KurrawongAI Vocabulary Full Exercise training module"
+- **Vocabulary IRI** - this needs to be a web URL that indicates what vocabulary is hosted. For this exercise, enter `http://vocab.example.com/icecreamflavors`
+- **Preferred Label** - the name of the Vocabulary. Add "Ice Cream Flavors Vocabulary".
+- **Definition** - add "A vocabulary of ice cream flavors".
+- **Creation Date** - add the day you first edit this file in yyyy-mm-dd format
+- **Modified Date** - should be changed each day you make edits. Use the same vale for Creation date in the first instance
+- **Creator** - that's you or your business! Here you can add just text OR an identifier if you have one - so `Jane Doe`, `Japan Ice Cream Association`, `https://orcid.org/0000-0002-1584-4316` or `https://ror.org/02hgxnr90` are all acceptable here
+- **Publisher** - same as for Creator. Usually the Publisher is an organisation rather than a person - but either is valid
+- **History Note** - add "Presented here for the first time as part of the KurrawongAI Vocabulary Full Exercise training module"
 
 That's the mandatory fiels for describing a vocabulary completed. But wait, we said we'd cite Wikipedia as the source of the raw data! Let's do that now:
 
-**Citation** - add `https://en.wikipedia.org/wiki/List_of_ice_cream_flavors` .
+- **Citation** - add `https://en.wikipedia.org/wiki/List_of_ice_cream_flavors` .
 
 After this step, the spreadsheet should resemble "VocExcel-ice-cream-flavor-concept-scheme.xlsx" - save, and move on to the next step.
 
@@ -202,7 +202,7 @@ After this step, the spreadsheet should resemble "VocExcel-ice-cream-flavor-conc
 
 We will now copy the contents of the raw data file to the VocExcel template in the Concepts tab.
 
-**Cut and paste** the first four columns from "icecream-flavours-all-curated-definitions.xlsx" to the first four columns in the VocExcel file. 
+- **Cut and paste** the first four columns from "icecream-flavours-all-curated-definitions.xlsx" to the first four columns in the VocExcel file. 
 
 > 💡 We have retained the "grouping" terms (FRUIT FLAVORS, etc), without definitions. We'll deal with these in the next step.
 
@@ -214,9 +214,9 @@ We will use the grouping terms (FRUIT FLAVORS; CHOCOLATE, NUTS AND OTHER SWEETS;
 
 > 💡 alternatively, these groupings could be used as 'broader concepts', so that a hierarchy is established. In this exercise we will use the collections method for grouping the ice cream flavors - don't worry, we'll create some broader concept hierarchy in a later step.
 
-**Cut just the three grouping terms** with identifers from the Concepts tab and past in Collection tab. _Keep these in the same rows_.
-**Copy the remaining identifiers** from the Concepts tab to the Collection tab "Member IRIs" column. 
-**Add a definition** for each collection, e.g. "Ice cream fruit flavors collection".
+- **Cut just the three grouping terms** with identifers from the Concepts tab and past in Collection tab. _Keep these in the same rows_.
+- **Copy the remaining identifiers** from the Concepts tab to the Collection tab "Member IRIs" column. 
+- **Add a definition** for each collection, e.g. "Ice cream fruit flavors collection".
 
 After this step, the spreadsheet should resemble "VocExcel-ice-cream-flavor-collections.xlsx" - save, and move on to the next step.
 
@@ -224,8 +224,8 @@ After this step, the spreadsheet should resemble "VocExcel-ice-cream-flavor-coll
 
 We added "icf:" to identifiers earlier. We need to add this prefix to the Prefixes tab. 
 
-**Open** the Prefixes tab
-**Add** "icf" in column A (without the colon ":")
+- **Open** the Prefixes tab
+- **Add** "icf" in column A (without the colon ":")
 
 After this step, the spreadsheet should resemble "VocExcel-ice-cream-flavor-prefixed.xlsx" - save, and move on to the next step.
 
@@ -235,19 +235,19 @@ It's common practice to arrange vocabulary concetps in to hierarchies, where one
 
 The Ice Cream Flavours Vocabulary is a mostly 'flat' list of concepts, but there are a couple of clear opportunities to implement some hierarchy. We'll just do this for "Vanilla" and "French vanilla", assuming that the latter concept is a specific type of the first.
 
-**Open** the Concepts tab
-**Copy** the Concept IRI for "French vanilla"
-**Paste** the IRI from "French vanilla" in the Narrower Concept IRIs column, in the same row as the "Vanilla" concept.
+- **Open** the Concepts tab
+- **Copy** the Concept IRI for "French vanilla"
+- **Paste** the IRI from "French vanilla" in the Narrower Concept IRIs column, in the same row as the "Vanilla" concept.
 
 Done! The Ice Cream Flavours Vocabulary is now a 'taxonomy' - at least in part. You might see other opportunities to add narrower relationships, for example "Strawberry / Strawberry cheesecake" - think about the decision this way: if I wanted to find all information about "Strawberry" ice cream, would I be happy to retrieve also information about "Strawberry cheesecake" ice cream? If the answer is yes, then add the latter as a narrower concept. If the answer is "no, strawberry cheesecake ice cream is nothing like strawberry ice cream" then leave these concepts unrelated. 
 
 What about the Cherry flavor and it's variants? Back in (#find-synonyms)[Find synonyms] step, we extracted synonyms from the definition and stored them as alternate labels. But let's decide that these 'variations' should be promoted to full concept status, with their own identifiers, definitions, collection membership and (potentially) relationships to still other concetps.
 
-**Cut** the term "Black cherry" from the Alternate Label column
-**Paste** "Black cherry" in a new row in the Preferred label column
-**Mint an identifier** in the Concept IRI column next to the new label using the Excel function from the [Add identifiers](#add-identifiers) step (or, just copy one from [UUID Generator](https://www.uuidgenerator.net))
-**Write a definition** for "Black cherry" - either research a definition, or just add "Black cherry ice cream flavor"
-**Copy** the new concept IRI to a new row in the Collections tab in the FRUIT FLAVORS collection group.
+- **Cut** the term "Black cherry" from the Alternate Label column
+- **Paste** "Black cherry" in a new row in the Preferred label column
+- **Mint an identifier** in the Concept IRI column next to the new label using the Excel function from the [Add identifiers](#add-identifiers) step (or, just copy one from [UUID Generator](https://www.uuidgenerator.net))
+- **Write a definition** for "Black cherry" - either research a definition, or just add "Black cherry ice cream flavor"
+- **Copy** the new concept IRI to a new row in the Collections tab in the FRUIT FLAVORS collection group.
 
 Repeat steps for Amaretto cherry - or not! Apply the same decision making steps for promoting Black cherry to full concept status. A concept can have alternative labels AND narrower relationships to other concepts.
 
@@ -257,19 +257,20 @@ After this step, the spreadsheet should resemble "VocExcel-ice-cream-flavor-hier
 
 The VocExcel spreadsheet is now ready to upload to the online transformer - well done! Follow the steps below:
 
-**Go to** [VocExcel](https://tools.kurrawong.ai/vocexcel) in any browser.
-**Upload an Excel or RDF file** > choose the VocExcel file you just saved
-**Upload**
+- **Go to** [VocExcel](https://tools.kurrawong.ai/vocexcel) in any browser.
+- **Upload an Excel or RDF file** > choose the VocExcel file you just saved
+- **Upload**
 
 You will be presented with a Result. From here you can view the Concept Scheme or any Concept in the file, or the Full RDF Turtle result. 
 
-Save the output...
+Save the output... [WIP]
 
 
 ## 🚧 Publish the vocabulary
 
 So far in this module you've taken an unstructured list from a single column and transformed it into a valid SKOS file. That file is compatible with many informaiton systems that use vocabualry data. But what about publishing the vocabulary? In this step you will upload your file to a vocabulary presentation system so that the vocabulary can be searched and browsed on the web. The data itself will also be available via an API in the publishing platform, allowing information systems to fetch the vocabulary data. 
 
+[WIP]
 
 
 
@@ -277,12 +278,8 @@ So far in this module you've taken an unstructured list from a single column and
 
 
 
-## References and Further Reading
+## References and further reading
 
-* AGLDWG (2025). VocPub profile specification. https://agldwg.github.io/vocpub-profile/specification
-* W3C (n.d.). QSKOS. Retrieved March 5, 2025. https://www.w3.org/2001/sw/wiki/QSKOS
-* W3C (2008). Extensible Markup Language (XML) 1.0 (W3C Recommendation). https://www.w3.org/TR/xml/
+* AGLDWG (2026). VocPub profile specification. https://agldwg.github.io/vocpub-profile/specification
 * W3C (2009). SKOS Simple Knowledge Organization System Reference (W3C Recommendation). https://www.w3.org/TR/skos-reference/
 * W3C (2014). Turtle: Terse RDF triple language (W3C Recommendation). https://www.w3.org/TR/turtle/
-* W3C (2017). Shapes Constraint Language (SHACL) (W3C Recommendation). https://www.w3.org/TR/shacl
-* W3C (2020). JSON-LD 1.1: A JSON-based serialization for Linked Data (W3C Recommendation). https://www.w3.org/TR/json-ld11/
