@@ -29,7 +29,7 @@ Throughout this module, references are made back to other vocabulary modules for
 
 Vocabularies often exist in semi-structured forms, such as documents, spreadsheets, or database tables. In this module, a spreadsheet is provided — the Ice Cream Flavours spreadsheet includes a single column of terms. The spreadsheet is scraped from a [Wikipedia](https://en.wikipedia.org/wiki/List_of_ice_cream_flavors) page, with a little tidying.
 
-**Download the sample file**  
+**Download** the sample file  
 <a href="../../assets/3rdparty/source/icecream-flavours.xlsx" download>
   icecream-flavours.xlsx
 </a>
@@ -69,9 +69,9 @@ The sample file does not include a codes column — _identifiers are necessary i
 
 > 💡 Why are we using the UUID scheme? If you want to learn more about identifier strategy, see [_Identifiers_](/concepts/vocabs/creation#identifiers) for guidance.
 
-- **Insert a new "Identifier" column before the Labels column**
+- **Insert** a new "Identifier" column before the Labels column
 
-- **Generate UUIDs for the new column** — paste the following formula into cell A1 and copy it to the end of the list:
+- **Generate** UUIDs for the new column — paste the following formula into cell A1 and copy it to the end of the list:
 
 ```excel
 =LOWER(CONCAT(
@@ -89,14 +89,14 @@ Column A will now include values like `icf:0f8002df-64cd-4018-bfed-9f9f1c3d4fc5`
 
 > 💡 The prefix `icf:` is based on the proposed vocabulary name "Ice Cream Flavors". For readability, it is a good idea to choose prefixes that indicate, or at least hint at, what the vocabulary elements are. When using the code above for a different vocabulary project, update the first line accordingly — for example, for a "Textured Vegetable Protein" vocabulary you might update it to `tvp:`. The colon (`:`) character is mandatory.
 
-- **Paste values into a new column**  
+- **Paste** values into a new column  
   Insert a new column, then use Excel's **Paste Values** option to transform the identifiers into fixed values that will not be accidentally recalculated in later steps.
 
-- **Delete identifiers pasted for empty rows** — but **keep** the identifiers for the grouping terms (**FRUIT FLAVORS**, etc.)
+- **Delete** identifiers pasted for empty rows — but **keep** the identifiers for the grouping terms (**FRUIT FLAVORS**, etc.)
 
-- **Add the column header** `Identifier`
+- **Add** the column header `Identifier`
 
-- **Delete the original formula column** and keep only the `Identifier` column with the pasted values
+- **Delete** the original column with the formulas and keep only the `Identifier` column with the pasted values
 
 - **Save** your file
 
@@ -117,12 +117,12 @@ After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdpart
 
 ### Separate labels from definitions
 
-- **Move the definitions into a new column**  
+- **Move** the definitions into a new column  
   For a list this size, you could do this manually, or use MS Excel’s **Text to Columns** method, using the `:` character as a delimiter.
 
 > 💡 Be careful to review the data after using a delimiter-based process. The delimiter you choose may also appear in the definitions, so you could end up with three or more columns with definitions split up. You won’t need to worry about this in the `icecream-flavours.xlsx` example.
 
-- **Add column header** `Definition`
+- **Add** column header `Definition`
 - **Save** your file
 
 > 💡 Some of the definition data may not look like true definitions, but rather history or usage notes. Don’t worry — we’ll look at these again in [_Curate definitions_](#curate-definitions).
@@ -144,10 +144,10 @@ We will add synonyms, or alternative labels, that exist in the file. There are t
 
 > 💡 Are the synonyms for Cherry really synonyms, or are they more specific flavour types? Don’t worry — in this step we’ll treat them as synonyms for now, but later we’ll consider promoting them to separate, identified concepts. If you want to know more about alternative labels now, see the [alternative labels section](/concepts/vocabs/introduction#alternative-labels) in the Introduction module.
 
-- **Add a column with header `Alternate Label`** to the right of the `Definition` column
-- **Remove `purple yam`** text from the `Ube` label and paste it into the `Alternate Label` column in the same row. Delete the remaining parentheses `()`.
-- **Add `amaretto cherry` and `black cherry`** in the `Alternate Label` column in the same row as the `Cherry` label
-- **Delete `(e.g. Amaretto cherry, black cherry)`** from the `Definition` for `Cherry`
+- **Add** a column with header `Alternate Label` to the right of the `Definition` column
+- **Remove** `purple yam` text from the `Ube` label and paste it into the `Alternate Label` column in the same row. Delete the remaining parentheses `()`.
+- **Add** `amaretto cherry` and `black cherry` in the `Alternate Label` column in the same row as the `Cherry` label
+- **Delete** `(e.g. Amaretto cherry, black cherry)` from the `Definition` for `Cherry`
 - **Save** your file
 
 After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdparty/source/icecream-flavours-altLabels.xlsx" download>icecream-flavours-altLabels.xlsx</a>. Move on to the next step.
@@ -169,7 +169,7 @@ In the [Separate labels from definitions](#separate-labels-from-definitions) ste
 We will get definitions from the Wikipedia page that the source list links to.
 
 - **Open** [List of ice cream flavors](https://en.wikipedia.org/wiki/List_of_ice_cream_flavors) in your browser
-- **Select a flavour that needs a definition** — from the top of the list, this is `Banana split`
+- **Select** a flavour that needs a definition — from the top of the list, this is `Banana split`
 - **Copy and paste** the first sentence from the [Banana split](https://en.wikipedia.org/wiki/Banana_split) page into the `Definition` column in the same row as `Banana split`
 
 > 💡 The [List of ice cream flavors](https://en.wikipedia.org/wiki/List_of_ice_cream_flavors) page is a dynamic, user-contributed list and items may differ over time.
@@ -234,7 +234,7 @@ _VocExcel_ is a vocabulary editor that is essentially an _MS Excel_ template. We
 > 💡 You will need access to MS Excel to complete this exercise.
 
 - **Go to** the KurrawongAI [VocExcel](https://tools.kurrawong.ai/vocexcel) page in any browser
-- **Get VocExcel Template**
+- **Get** VocExcel Template
 - **Open** the downloaded template (it may have opened automatically)
 - **Save As** a new file, e.g. `VocExcel-ice-cream-flavor.xlsx`
 
@@ -292,9 +292,9 @@ We will use the grouping terms (`FRUIT FLAVORS`; `CHOCOLATE, NUTS AND OTHER SWEE
 
 > 💡 Alternatively, these groupings could be used as broader concepts, so that a hierarchy is established. In this exercise we will use the collections method for grouping the ice cream flavors. Don’t worry — we’ll create some broader concept hierarchy in a later step.
 
-- **Cut just the three grouping terms** with identifiers from the `Concepts` tab and paste them into the `Collections` tab. _Keep these in the same rows._
-- **Copy the remaining identifiers** from the `Concepts` tab into the `Collections` tab `Member IRIs` column
-- **Add a definition** for each collection, e.g. `Ice cream fruit flavors collection`
+- **Cut** just the three grouping terms with identifiers from the `Concepts` tab and **paste** them into the `Collections` tab. _Keep these in the same rows._
+- **Copy** the remaining identifiers** from the `Concepts` tab and **paste** to the `Collections` tab `Member IRIs` column
+- **Add** a definition for each collection, e.g. `Ice cream fruit flavors collection`
 
 After this step, the spreadsheet should resemble `VocExcel-ice-cream-flavor-collections.xlsx`. Save, and move on to the next step.
 
@@ -334,8 +334,8 @@ What about the `Cherry` flavour and its variants? Back in the [Find synonyms](#f
 
 - **Cut** the term `Black cherry` from the `Alternate Label` column
 - **Paste** `Black cherry` in a new row in the `Preferred Label` column
-- **Mint an identifier** in the `Concept IRI` column next to the new label using the Excel function from the [Add identifiers](#add-identifiers) step, or copy one from [UUID Generator](https://www.uuidgenerator.net)
-- **Write a definition** for `Black cherry` — either research a definition, or add `Black cherry ice cream flavor`
+- **Mint** an identifier in the `Concept IRI` column next to the new label using the Excel function from the [Add identifiers](#add-identifiers) step, or copy one from [UUID Generator](https://www.uuidgenerator.net)
+- **Write** a definition for `Black cherry` — either research a definition, or add `Black cherry ice cream flavor`
 - **Copy** the new concept IRI to a new row in the `Collections` tab in the `FRUIT FLAVORS` collection group
 
 Repeat these steps for `Amaretto cherry` — or not. Apply the same decision-making logic for promoting `Black cherry` to full concept status. A concept can have alternative labels _and_ narrower relationships to other concepts.
@@ -353,8 +353,7 @@ After this step, the spreadsheet should resemble `VocExcel-ice-cream-flavor-hier
 The VocExcel spreadsheet is now ready to upload to the online transformer. Well done. Follow the steps below:
 
 - **Go to** [VocExcel](https://tools.kurrawong.ai/vocexcel) in any browser
-- **Upload an Excel or RDF file** > choose the VocExcel file you just saved
-- **Upload**
+- **Upload** an Excel file > choose the VocExcel file you just saved
 
 You will be presented with a result. From here you can view the Concept Scheme, any Concept in the file, or the full RDF Turtle result.
 

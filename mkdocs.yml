@@ -4,6 +4,8 @@ extra:
   generator: false
 extra_css:
   - stylesheets/extra.css
+extra_javascript:
+  - javascripts/external-links.js
 markdown_extensions:
   - md_in_html
   - admonition
