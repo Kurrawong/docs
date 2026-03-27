@@ -1,18 +1,20 @@
 # Vocabulary Full Exercise
 
 > **Scope**  
-> Provides guidance on building a SKOS vocabulary from common source materials.
+> _Provides guidance on building a SKOS vocabulary from common source materials._
 >
 > **Audience**  
 > _Vocabulary editors and maintainers. It is assumed that learners have some experience with common office tools, such as spreadsheet applications._
 >
 > **Outcome**  
-> Learners should be able to transform a semi-structured vocabulary into a publication-ready form that conforms to common vocabulary standards.
+> _Learners will transform a semi-structured vocabulary into a publication-ready form that conforms to common vocabulary standards._
 
 ---
 
 > 🚧 _Exercises_
+
 > 💡 _Troubleshooting tips, common errors and potential issues._
+
 > 🧑‍🏫 _Trainers notes_
 
 ## Introduction
@@ -205,6 +207,12 @@ In cases where a definition is determined to be unsuitable for a given concept, 
 
 - copy the **label** into the definition field, suffixed with `ice cream flavor`, e.g. the definition for `Goody Goody Gum Drops` changes from `unique to New Zealand` to `Goody Goody Gum Drops ice cream flavor`. This can be done for many terms at once using Excel’s `CONCAT` function, or
 - do as above, but retain the original definition, resulting in `Goody Goody Gum Drops ice cream flavor, unique to New Zealand`
+
+For extra clarity, other refinements might be made - for exmple:
+
+> [Spundekas] | based on the German cream cheese of the same name
+- _change to_:
+> [Spundekas] | **Ice cream flavor** based on the German cream cheese of the same name
 
 After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdparty/source/icecream-flavours-all-curated-definitions.xlsx" download>icecream-flavours-all-curated-definitions.xlsx</a>. Move on to the next exercise.
 
