@@ -12,8 +12,8 @@
 ---
 
 > 🚧 _Exercises_
->
 > 💡 _Troubleshooting tips, common errors and potential issues._
+> 🧑‍🏫 _Trainers notes_
 
 ## Introduction
 
