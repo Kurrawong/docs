@@ -153,7 +153,8 @@ In the case where a definition is determined to be unsuitable for a given concep
 - copy the labes into the definition field, suffixed with "ice cream flavor", e.g. the definition for Goody Goody Gum Drops changes from "unique to New Zealand" to "Goody Goody Gum Drops ice cream flavor". This can be done for a many terms at once using Excel `CONCATENATE` function, or
 - do as above, but retain the original definition, resulting in "Goody Goody Gum Drops ice cream flavor, unique to New Zealand". Note that this requires manual edits and the `CONCATENATE` option may not work easily.
 
-After this step, the spreadsheet should resemble icecream-flavours-all-curated-definitions.xlsx - save, and move on to the next step.
+After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdparty/source/icecream-flavours-altLabels.xlsx" download> icecream-flavours-all-curated-definitions.xlsx </a> - move on to the next exercise.
+
 
 ## 🚧 Use a vocabulary editor
 
@@ -192,7 +193,7 @@ The Concept Scheme is a description, or metadata for the vocabulary as a whole. 
 - **Publisher** - same as for Creator. Usually the Publisher is an organisation rather than a person - but either is valid
 - **History Note** - add "Presented here for the first time as part of the KurrawongAI Vocabulary Full Exercise training module"
 
-That's the mandatory fiels for describing a vocabulary completed. But wait, we said we'd cite Wikipedia as the source of the raw data! Let's do that now:
+That's the mandatory fields for describing a vocabulary completed. But wait, we said we'd cite Wikipedia as the source of the raw data! Let's do that now:
 
 - **Citation** - add `https://en.wikipedia.org/wiki/List_of_ice_cream_flavors` .
 
