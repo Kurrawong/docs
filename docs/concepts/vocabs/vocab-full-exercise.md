@@ -22,24 +22,11 @@
 This module is a comprehensive exercise that progresses a simple, mid-sized list of terms in a table through to a publication-ready vocabulary featuring a range of [SKOS](https://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System) semantics. 
 
 <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
-  <div style="text-align: center;">
-    <img src="../../assets/3rdparty/images/source-file.png" alt="Source file" style="max-width: 220px; height: auto;">
-    <div>Source file</div>
-  </div>
-
-  <div style="font-size: 2rem; line-height: 1;">→</div>
-
-  <div style="text-align: center;">
-    <img src="../../assets/3rdparty/images/turtle-output.png" alt="Turtle output" style="max-width: 220px; height: auto;">
-    <div>Turtle output</div>
-  </div>
-
-  <div style="font-size: 2rem; line-height: 1;">→</div>
-
-  <div style="text-align: center;">
-    <img src="../../assets/3rdparty/images/prez-lite-example.png" alt="Prez Lite example" style="max-width: 220px; height: auto;">
-    <div>Prez Lite example</div>
-  </div>
+  <img src="/assets/3rdparty/images/source-file.png" style="max-width: 220px;">
+  <div style="font-size: 2rem;">→</div>
+  <img src="/assets/3rdparty/images/turtle-output.png" style="max-width: 220px;">
+  <div style="font-size: 2rem;">→</div>
+  <img src="/assets/3rdparty/images/prez-lite-example.png" style="max-width: 220px;">
 </div>
 
 Many of the steps precede the use of vocabulary-specific editing and publishing tools, which are introduced only as the vocabulary evolves in complexity. This is _not a short exercise_ — the steps below simulate a realistic and tested scenario and provide a comprehensive account of issues encountered during vocabulary construction.
