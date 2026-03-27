@@ -1,19 +1,21 @@
 <h1>KurrawongAI Docs</h1>
 
-A central repository of information at KurrawongAI.
+<img src="/assets/scrolls2.png" alt="scrolls" style="width:50%; float:right; margin-left:20px;" />
 
-Here we document how to install, configure and use all of the KurrawongAI products and 3rd party products that we support.
+A central repository of information at [KurrawongAI](https://kurrawong.ai).
 
-We also provide user-tailored documentation for many clients too, just to them. These may be the information here, with organisation-specific additions visible only to them, or entirely custom information.
+Here we document how to install, configure and use KurrawongAI products and 3rd party products that we support. We also provide task and theme-based documentation, for example, how to model vocabularies.
+
+We deliver user-tailored documentation for many clients too, just to them. These may be the information here, with organisation-specific additions visible only to them, or entirely custom information.
 
 ## Getting Around
 
 Information in the knowledge base can be discovered in the two following ways:
 
-1. Using the Navigation Panel
-    - The navigation panel provides a familiar, tree-like structure from which the knowledge base can be explored.
-2. Using Search
-    - The Search bar, located at the top of the navigation panel, can be used to search for keywords or phrases in the knowledge base.
+1. **Using the Navigation Panel**, on the left
+    - The navigation panel provides a familiar, tree-like structure from which the knowledge base can be explored
+2. **Using Search**, top right
+    - Search for any keywords or phrases in the knowledge base
 
 ## About Us
 
