@@ -43,11 +43,11 @@ nav:
                 - 'Azure':
                   - 'App Service Deployment': 'products/prez/deploying/azure/appservice.md'
             - 'Developers': 'products/prez/developers.md'
+        #- 'K-Maker': 'products/k-maker.md'
         - 'Olis': 'products/olis.md'
         - 'KAI Tools':
             - 'products/tools/index.md'
             - 'Kurra': 'products/tools/kurra.md'
-            - 'Labelify': 'products/tools/labelify.md'
             - 'OGC Tests': 'products/tools/ogc-tests.md'
             - 'Prefix Lookup': 'products/tools/prefix-lookup.md'
             - 'Prez Manifest': 'products/tools/prezmanifest.md'
