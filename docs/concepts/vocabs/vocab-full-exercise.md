@@ -7,7 +7,7 @@
 > _Vocabulary editors and maintainers. It is assumed that learners have some experience with common office tools, such as spreadsheet applications._
 >
 > **Outcome**  
-> _Learners will transform a semi-structured vocabulary into a publication-ready form that conforms to common vocabulary standards._
+> _Learners will transform a semi-structured vocabulary into a publication-ready form._
 
 ---
 
@@ -19,7 +19,30 @@
 
 ## Introduction
 
-This module is a comprehensive exercise that progresses a simple, mid-sized list of terms in a table through to a publication-ready vocabulary featuring a range of [SKOS](https://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System) semantics. Many of the steps precede the use of vocabulary-specific editing and publishing tools, which are introduced only as the vocabulary evolves in complexity. This is _not a short exercise_ — the steps below simulate a realistic and tested scenario and provide a comprehensive account of issues encountered during vocabulary construction.
+This module is a comprehensive exercise that progresses a simple, mid-sized list of terms in a table through to a publication-ready vocabulary featuring a range of [SKOS](https://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System) semantics. 
+
+<div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
+  <div style="text-align: center;">
+    <img src="../../assets/3rdparty/images/source-file.png" alt="Source file" style="max-width: 220px; height: auto;">
+    <div>Source file</div>
+  </div>
+
+  <div style="font-size: 2rem; line-height: 1;">→</div>
+
+  <div style="text-align: center;">
+    <img src="../../assets/3rdparty/images/turtle-output.png" alt="Turtle output" style="max-width: 220px; height: auto;">
+    <div>Turtle output</div>
+  </div>
+
+  <div style="font-size: 2rem; line-height: 1;">→</div>
+
+  <div style="text-align: center;">
+    <img src="../../assets/3rdparty/images/prez-lite-example.png" alt="Prez Lite example" style="max-width: 220px; height: auto;">
+    <div>Prez Lite example</div>
+  </div>
+</div>
+
+Many of the steps precede the use of vocabulary-specific editing and publishing tools, which are introduced only as the vocabulary evolves in complexity. This is _not a short exercise_ — the steps below simulate a realistic and tested scenario and provide a comprehensive account of issues encountered during vocabulary construction.
 
 Throughout this module, references are made back to other vocabulary modules for additional context and guidance, but this module does not rely heavily on external references. If you _do_ need to step back and look at basic vocabulary concepts, the [_Introduction to Vocabularies_](/concepts/vocabs/introduction) module will help.
 
@@ -267,7 +290,7 @@ That completes the mandatory fields for describing a vocabulary. But we also sai
 
 - **Citation** — add `https://en.wikipedia.org/wiki/List_of_ice_cream_flavors`
 
-After this step, the spreadsheet should resemble `VocExcel-ice-cream-flavor-concept-scheme.xlsx`. Save, and move on to the next step.
+After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdparty/source/VocExcel-ice-cream-flavor-concept-scheme.xlsx" download>VocExcel-ice-cream-flavor-concept-scheme.xlsx</a>. Save, and move on to the next step.
 
 ??? info "🧑‍🏫 Trainer note"
     Slow learners down here.  
@@ -288,7 +311,7 @@ We will now copy the contents of the raw data file into the VocExcel template in
 
 > 💡 We have retained the grouping terms (`FRUIT FLAVORS`, etc.), without definitions. We’ll deal with these in the next step.
 
-After this step, the spreadsheet should resemble `VocExcel-ice-cream-flavor-concepts.xlsx`. Save, and move on to the next step.
+After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdparty/source/VocExcel-ice-cream-flavor-concepts.xlsx" download>VocExcel-ice-cream-flavor-concepts.xlsx</a>. Save, and move on to the next step.
 
 ??? info "🧑‍🏫 Trainer note"
     This step often feels “too easy” to learners.  
@@ -301,10 +324,12 @@ We will use the grouping terms (`FRUIT FLAVORS`; `CHOCOLATE, NUTS AND OTHER SWEE
 > 💡 Alternatively, these groupings could be used as broader concepts, so that a hierarchy is established. In this exercise we will use the collections method for grouping the ice cream flavors. Don’t worry — we’ll create some broader concept hierarchy in a later step.
 
 - **Cut** just the three grouping terms with identifiers from the `Concepts` tab and **paste** them into the `Collections` tab. _Keep these in the same rows._
-- **Copy** the remaining identifiers** from the `Concepts` tab and **paste** to the `Collections` tab `Member IRIs` column
+- **Copy** the remaining identifiers from the `Concepts` tab and **paste** to the `Collections` tab `Member IRIs` column
 - **Add** a definition for each collection, e.g. `Ice cream fruit flavors collection`
+- **Copy** the collection IRI, label and descriptions so they line up with each member concept
+- **Delete** any remaining empty **rows**, _including the first row(s) if empty_, on the `Concepts` tab.
 
-After this step, the spreadsheet should resemble `VocExcel-ice-cream-flavor-collections.xlsx`. Save, and move on to the next step.
+After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdparty/source/VocExcel-ice-cream-flavor-collections.xlsx" download>VocExcel-ice-cream-flavor-collections.xlsx</a>. Save, and move on to the next step.
 
 ??? info "🧑‍🏫 Trainer note"
     This is a key modelling fork.  
@@ -317,18 +342,19 @@ After this step, the spreadsheet should resemble `VocExcel-ice-cream-flavor-coll
 We added `icf:` to identifiers earlier. We now need to add this prefix to the `Prefixes` tab.
 
 - **Open** the `Prefixes` tab
-- **Add** `icf` in column A (without the colon `:`)
+- **Add** `icf` in column A 'Prefix' (_without_ the colon `:`)
+- **Add** `http://vocab.example.com/icecreamflavors/` in column B 'Namespace' (include the trailing "/")
 
-After this step, the spreadsheet should resemble `VocExcel-ice-cream-flavor-prefixed.xlsx`. Save, and move on to the next step.
+After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdparty/source/VocExcel-ice-cream-flavor-prefixed.xlsx" download>VocExcel-ice-cream-flavor-prefixed.xlsx</a>. Save, and move on to the next step.
 
 ??? info "🧑‍🏫 Trainer note"
     Reinforce that prefixes are not the identifiers themselves — they are shorthand for IRI stems.
 
-### Add broader relationships
+### Add narrower relationships
 
 It is common practice to arrange vocabulary concepts into hierarchies, where one concept is broader than another in meaning. By doing so, a vocabulary supports inferences between datasets described with different concepts by using the hierarchical relationship.
 
-The Ice Cream Flavours Vocabulary is mostly a flat list of concepts, but there are a couple of clear opportunities to implement hierarchy. We’ll do this for `Vanilla` and `French vanilla`, assuming that the latter concept is a more specific type of the former.
+The _Ice Cream Flavours Vocabulary_ is mostly a flat list of concepts, but there are a couple of clear opportunities to implement hierarchy. We’ll do this for `Vanilla` and `French vanilla`, assuming that the latter concept is a more specific type of the former.
 
 - **Open** the `Concepts` tab
 - **Copy** the Concept IRI for `French vanilla`
@@ -361,7 +387,7 @@ After this step, the spreadsheet should resemble `VocExcel-ice-cream-flavor-hier
 The VocExcel spreadsheet is now ready to upload to the online transformer. Well done. Follow the steps below:
 
 - **Go to** [VocExcel](https://tools.kurrawong.ai/vocexcel) in any browser
-- **Upload** an Excel file > choose the VocExcel file you just saved
+- **Upload** an Excel file > choose the `VocExcel-ice-cream-flavor-hierarchy.xlsx` file from the [Add narrower relationsnhips](#add-narrower-relationships) step.
 
 You will be presented with a result. From here you can view the Concept Scheme, any Concept in the file, or the full RDF Turtle result.
 
