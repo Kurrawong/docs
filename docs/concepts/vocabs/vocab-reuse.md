@@ -1,31 +1,30 @@
 
 # Vocabulary Reuse
 
-
 >
 >***Scope***
 >
->This content is intended to provide guidance on the effective reuse of vocabularies. It will explain the benefits of reuse; how to locate suitable existing vocabularies; how to make attributions and manage provenance in reused vocabularies and vocabulary segments. 
+>This content provides guidance on the effective reuse of vocabularies. It explains the benefits of reuse; how to locate suitable vocabularies; and how to manage provenance in reused vocabularies. 
 
 >
 >***Audience***
 >
->_This module is primarily targeted to managers and owners of established vocabularies. It is assumed that learners have some experience with using document management or version control systems, and general familiarity with data management in practice._
+>_Managers and owners of established vocabularies. It is assumed that learners have some experience with using document management or version control systems, and general familiarity with data management in practice._
 >
 >***Outcome***
 >
->_Learners should be able to adopt vocabularies in part or in whole into their local contexts, and understand implications for managing externally sourced vocabularies as part of local operations_
+>_Learners can adopt vocabularies in part or in whole into their local contexts, and understand implications for managing externally sourced vocabularies as part of local operations_
 >
 >----------------
 
-> 💡 _Identifies troubleshooting tips, common errors and potential issues._
+> 💡 _Troubleshooting tips, common errors, potential issues._
 
 > 📝 _Notes that summarise content at the end of a module._
 
 > 🚧 _Exercises_
 
 
-## An Introduction to vocabulary reuse
+## Introduction to vocabulary reuse
 
 Whatever domain we work in, there's a fair chance that useful vocabularies have already been developed by third parties. And as for any data management operation, it's a good idea to seek opportunities to reuse existing vocabularies. In this module we'll cover:
 - Weighing up the effort: reuse vs build from scratch.
@@ -76,17 +75,18 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX isorole: <https://standards.iso.org/iso/19115/-3/cit/1.0/>
 PREFIX sdo: <https://schema.org/>
 
-# sdo:license
-# dcterms:license - equivalent to sdo:license;
-# dcterms:accessRights - not really 'rights' as such, but if access rights restricted in some way, look further into what you allowed to do with the vocabulary;
-# dcterms:rights
-# sdo:copyrightHolder
-# isorole:rightsHolder - equivalent to sdo:rightsholder
+sdo:license
+dcterms:license # equivalent to sdo:license;
+dcterms:accessRights # if access is restricted in some way, look further at what is allowed
+dcterms:rights
+sdo:copyrightHolder
+sdo:copyrightNotice
+isorole:rightsHolder # equivalent to sdo:rightsholder
 ```
 
 ### Customise
 
-You may make minor changes to published vocabularies to meet local requirements. Vocabulary concepts may be added; labels may be updated (changes to spelling or swapping an `skos:altLabel` for `skos:prefLabel`). Changes will need to be acknowledged at both the Concept and concept scheme level - see [Add an imported concept](#add-an-imported-concept) for how to do this. 
+You may consider making minor changes to published vocabularies to meet local requirements. New concepts may be added; labels may be updated (changes to spelling or swapping an `skos:altLabel` for `skos:prefLabel`). Changes will need to be acknowledged at both the Concept and Concept scheme level - see [Add an imported Concept](#add-an-imported-concept) for how to do this. 
 
 ## Finding vocabularies
 
@@ -143,7 +143,7 @@ Where an existing vocabulary does not have any identifiers for concepts, you sho
 
 ## Language
 
-It is perhaps unnecessary to mention that a vocabulary fit for reuse needs to be comprehensible in the language of expected users. Optionally, a `skos:ConceptScheme` may indicate language codes used throughout a vocabulary `skos:Concept` labels, so that all labels do not need to be checked to identify multi-lingual patterns.
+A vocabulary fit for reuse needs to be comprehensible in the language of expected users. Optionally, a `skos:ConceptScheme` may indicate language codes used throughout a vocabulary `skos:Concept` labels, so that all labels do not need to be checked to identify multi-lingual patterns.
 
 ```turtle
 :myScheme a skos:ConceptScheme ;
@@ -151,16 +151,16 @@ It is perhaps unnecessary to mention that a vocabulary fit for reuse needs to be
     dcterms:language <http://id.loc.gov/vocabulary/iso639-1/fr> .
 ```
 
-If an existing vocabulary includes language labels that are not needed in a local context, consider whether this impacts your system requirements. This is a consideration for the  [Adoption](#adoption) or [Customisation](#customise) scenarios - whether or not to keep labels in languages that will not be used, or to retain them but configure your system to suppress them in search indexes or user interfaces. 
+If an existing vocabulary includes language labels that are not needed in a local context, consider whether this impacts your system requirements. This is a consideration for the [Adoption](#adoption) or [Customisation](#customise) scenarios - whether or not to keep labels in languages that will not be used, or to retain them but configure your system to suppress them in search indexes or user interfaces. 
 
 ### Regional language variations
 
 Even within a natural language, there may be _regional_ differences, such as Australian use of _Socioeconomic status_ and United States use of _Social status_:
 
 ```turtle
-@prefix fast: <http://id.worldcat.org/fast/> .
-@prefix policy: <https://linked.data.gov.au/def/policy/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+PREFIX fast: <http://id.worldcat.org/fast/>
+PREFIX policy: <https://linked.data.gov.au/def/policy/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 fast:1123359 a skos:Concept ;
 	skos:prefLabel "Social status"@en ;
@@ -175,8 +175,8 @@ policy:7353843a-9107-49af-bcd0-a8eac00bcd54 a skos:Concept ;
 When adopting a Concept and customising labels with the local context, consider retaining the regional variant as a `skos:altLabel`:
 
 ```turtle
-@prefix policy: <https://linked.data.gov.au/def/policy/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+PREFIX policy: <https://linked.data.gov.au/def/policy/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 policy:7353843a-9107-49af-bcd0-a8eac00bcd54 a skos:Concept ;
 	skos:prefLabel "Socioeconomic status"@en ;
@@ -215,7 +215,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 ## Mapping concepts with other vocabularies
 
-In the basic structure of a vocabulary, concepts may be related to other concepts via broader, narrower or related properties. Sometimes a Concept needs to be related to a Concept in a _different_ vocabulary. Concept matching across vocabularies is done in a similar way but with different properties: [Broad match](http://www.w3.org/2004/02/skos/core#broadMatch), [Narrower match](http://www.w3.org/2004/02/skos/core#narrowMatch), [Related match](http://www.w3.org/2004/02/skos/core#relatedMatch).
+Concepts may be related to other concepts via `skos:broader`, `skos:narrower` or `skos:related` properties. Sometimes a Concept needs to be related to a Concept in a _different_ vocabulary. Concept matching across vocabularies is done in a similar way but with different properties: [Broad match](http://www.w3.org/2004/02/skos/core#broadMatch), [Narrower match](http://www.w3.org/2004/02/skos/core#narrowMatch), [Related match](http://www.w3.org/2004/02/skos/core#relatedMatch).
 
 Broad match example:
 
@@ -230,7 +230,7 @@ Child support `skos:exactMatch` Child support
 
 ## Add an imported Concept
 
-When a vocabulary imports concepts from another vocabulary, you will need to both add the Concept and also update the concept scheme. Optionally, you might create a 'collection' that groups the imported concepts in to a manageable frame. See [Import a concept](#-import-a-concept) for detailed steps for importing a Concept into a vocabulary.
+When a vocabulary imports concepts from another vocabulary, you will need to add the Concept and also update the concept scheme. Optionally, you might create a `skos:collection` that groups the imported concepts in to a manageable frame. See [Import a concept](#-import-a-concept) for detailed steps for importing a Concept into a vocabulary.
 
 ## Additional elements
 You can add more metadata to your Concepts and Concept schemes that will improve the clarity, scope and provenance of your vocabulary. Consider the following additional elements:
@@ -306,7 +306,7 @@ To import a Concept from another vocabulary:
    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
    PREFIX sdo: <https://schema.org/>
    PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-   # add prefix srti:
+   # add PREFIX srti:
    PREFIX srti: <http://cef.uv.es/lodroadtran18/def/transporte/dtx_srti#>
    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
    ```
@@ -337,7 +337,7 @@ To import a Concept from another vocabulary:
 # Version information may be incremented
     owl:versionIRI :1.0 ;
     owl:versionInfo "1.0" ;
-    skos:definition "This vocabulary describes the travel direction assigned to a section of a road. "@en ;
+    skos:definition "This vocabulary describes the travel direction assigned to a section of a road."@en ;
     skos:hasTopConcept
         :bi-directional ,
 # Add new Concept "clockwise":
