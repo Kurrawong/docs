@@ -4,7 +4,7 @@
 >
 >***Scope***
 >
->This content provides guidance on the effective reuse of vocabularies. It explains the benefits of reuse; how to locate suitable vocabularies; and how to manage provenance in reused vocabularies. 
+>_This content provides guidance on the effective reuse of vocabularies. It explains the benefits of reuse; how to locate suitable vocabularies; and how to manage provenance._ 
 
 >
 >***Audience***
