@@ -26,7 +26,7 @@ This module is a comprehensive exercise that progresses a simple, mid-sized list
   <div style="font-size: 2rem;">→</div>
   <img src="/assets/3rdparty/images/turtle-output.png" style="max-width: 180px; height: auto;">
   <div style="font-size: 2rem;">→</div>
-  <img src="/assets/3rdparty/images/prez-lite-example.png" style="max-width: 160px; height: auto;">
+  <img src="/assets/3rdparty/images/prez-example.png" style="max-width: 160px; height: auto;">
 </div>
 
 Many of the steps precede the use of vocabulary-specific editing and publishing tools, which are introduced only as the vocabulary evolves in complexity. This is _not a short exercise_ — the steps below simulate a realistic and tested scenario and provide a comprehensive account of issues encountered during vocabulary construction.
