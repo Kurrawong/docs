@@ -1,0 +1,2354 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../patterns/">
+      
+      
+        <link rel="next" href="../vocab-systems/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon-32x32.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Querying - </title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="kai" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#querying" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="" class="md-header__button md-logo" aria-label="" data-md-component="logo">
+      
+  <img src="../../../assets/KurrawongAI-inverted.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Querying
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="" class="md-nav__button md-logo" aria-label="" data-md-component="logo">
+      
+  <img src="../../../assets/KurrawongAI-inverted.svg" alt="logo">
+
+    </a>
+    
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../products/prez/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prez
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prez
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/manifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manifest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/data-preparation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Preparation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploying
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deploying
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/deploying/aws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5_2" id="__nav_2_1_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/deploying/azure/appservice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    App Service Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/developers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/olis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Olis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../products/tools/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KAI Tools
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    KAI Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/kurra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kurra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/ogc-tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OGC Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/prefix-lookup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prefix Lookup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/prezmanifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prez Manifest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/provworkflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ProvWorkflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/pylode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pyLODE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/rdf-converter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RDF Converter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/rdf-merger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RDF Merger
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/shacl-validator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SHACL Validator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/sparql-parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPARQL Parser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/vocedit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VocEdit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/vocexcel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VocExcel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3rd Party
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3rd Party
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/3rdparty/fuseki/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fuseki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelling Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Modelling Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RDF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocabs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vocabs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vocab-reuse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocab reuse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Querying
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Querying
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sparql-querying" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SPARQL querying
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SPARQL querying">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sparql-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SPARQL introduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to query
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to query">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#query-a-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query a system
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-a-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use a UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-an-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use an API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-vocab-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common vocab queries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common vocab queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-all-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List all Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filter Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-top-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List Top Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-children-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List Children Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concepts-within-collections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts within Collections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-the-top-2-levels-of-a-vocab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get the top 2 levels of a vocab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-concepts-that-have-null-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get concepts that have null values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-all-vocabularies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List all vocabularies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vocab-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocab systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sparql-querying" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SPARQL querying
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SPARQL querying">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sparql-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SPARQL introduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to query
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to query">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#query-a-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query a system
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-a-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use a UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-an-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use an API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-vocab-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common vocab queries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common vocab queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-all-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List all Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filter Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-top-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List Top Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-children-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List Children Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concepts-within-collections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts within Collections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-the-top-2-levels-of-a-vocab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get the top 2 levels of a vocab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-concepts-that-have-null-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get concepts that have null values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-all-vocabularies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List all vocabularies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="querying">Querying</h1>
+<blockquote>
+<p><strong><em>Scope</em></strong></p>
+<p>Querying vocabularies stored in RDF using the SPARQL query language</p>
+<p><strong><em>Audience</em></strong></p>
+<p>Technical vocabulary users: programmers and analysts tasked with providing sophisticated extracts from vocabularies.</p>
+<p><strong><em>Outcome</em></strong></p>
+<p>Technical vocabulary users should get a feel for how to query vocabularies using SPARQL and have a list of some of the common queries to draw on.</p>
+<hr />
+</blockquote>
+<h2 id="sparql-querying">SPARQL querying</h2>
+<p>Vocabularies using RDF as the data structure can be queried with <a href="https://www.w3.org/TR/sparql12-query/">SPARQL</a> which is an SQL-like query language.</p>
+<p>SPARQL can access any part of RDF data so it can be used to filter, join, reorder and convert vocabularies - everything.</p>
+<h3 id="sparql-introduction">SPARQL introduction</h3>
+<p>If you are unfamiliar with SPARQL, why not work through some of our SPARQL training:</p>
+<ul>
+<li><a href="https://github.com/Kurrawong/sparql-training-live">https://github.com/Kurrawong/sparql-training-live</a></li>
+</ul>
+<p>That training is a series of 4 modules that will take you right through all aspects of SPARQL.</p>
+<p>It is also available for delivery as a paid course, see <a href="https://kurrawong.ai/services/training">https://kurrawong.ai/services/training</a>.</p>
+<p>Example queries for SKOS vocabularies are given below.</p>
+<h2 id="how-to-query">How to query</h2>
+<p>If you are familiar enough with SPARQL to want to start querying vocabularies, you can apply the queries below, or write your own, and apply them to vocabularies in two main ways:</p>
+<ol>
+<li><a href="#query-a-system">Query a system</a></li>
+<li><a href="#query-files">Query files</a></li>
+</ol>
+<h3 id="query-a-system">Query a system</h3>
+<h3 id="use-a-ui">Use a UI</h3>
+<p>If your vocabularies are delivered online via system like <a href="https://prez.dev/">Prez</a>, it will have a "SPARQL Endpoint" User Interface which will allow you to lodge queries against the content.</p>
+<p>Here is the KurrawongAI demo Prez instance's SPARQL Endpoint:</p>
+<ul>
+<li><a href="https://data.kurrawong.ai/sparql">https://data.kurrawong.ai/sparql</a></li>
+</ul>
+<p>Try running this query to list all vocabularies:</p>
+<div class="highlight"><pre><span></span><code><span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span><span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?cs</span> <span class="nv">?label</span> 
+<span class="k">WHERE</span> <span class="p">{</span>
+  <span class="nv">?cs</span> 
+    <span class="k">a</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">ConceptScheme</span> <span class="p">;</span>
+    <span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="nv">?label</span> 
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?label</span>
+</code></pre></div>
+<p>You should see quite a few vocabularies (250+) that we've worked on listed, something like this:</p>
+<p><img alt="" src="../../../assets/vocabs/sparql-results.png" /></p>
+<p>Another option is to load all your vocabulary files into an RDF database system such as <a href="https://graphwise.ai/components/graphdb/">GraphDB</a> or, if using cloud computing, <a href="https://aws.amazon.com/neptune/">AWS' Neptune</a>. These all offer SPARQL endpoints. </p>
+<h3 id="use-an-api">Use an API</h3>
+<p>Most systems that provide a SPARQL Endpoint also make that endpoint available as an Application Programming Interface for automated use.</p>
+<p>For the system at <a href="https://data.kurrawong.ai/sparql">https://data.kurrawong.ai/sparql</a>, the API endpoint is indicated per-query:</p>
+<p><img alt="" src="../../../assets/vocabs/sparql-api.png" /></p>
+<p>With the query above loaded, as per the image above, the Encoded Query Link will give you options to call that query directly as a URL or as a <a href="https://curl.se/">cURL</a> command, both with the query URL-encoded:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>https://api.data.kurrawong.ai/sparql<span class="w"> </span>--data<span class="w"> </span><span class="nv">query</span><span class="o">=</span>PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT%20%3Fcs%20%3Flabel%20%0AWHERE%20%7B%0A%20%20%3Fcs%20%0A%20%20%09a%20skos%3AConceptScheme%20%3B%0A%09skos%3AprefLabel%20%3Flabel%20%0A%7D%0AORDER%20BY%20%3Flabel<span class="w"> </span>-X<span class="w"> </span>POST
+</code></pre></div>
+<p>Prez systems, and many others featuring SPARQL endpoints, also indicate their API endpoints using OpenAPI methods:</p>
+<p><img alt="" src="../../../assets/vocabs/sparql-open-api.png" /></p>
+<h3 id="query-files">Query files</h3>
+<p>To query a collection of files containing vocabularies, you will need to either put the file content in a query system, such as <a href="https://tools.kurrawong.ai/query">our online SPARQL query facility</a>, or use a desktop tool that allows queries to be run against files.</p>
+<p>Our <a href="https://github.com/Kurrawong/kurra">kurra Python package</a> can be used as a command line application that allows queries in files to be posed to RDF data in files:</p>
+<div class="highlight"><pre><span></span><code>kurra sparql DATA_FILE.ttl QUERY_FILE.sparql
+</code></pre></div>
+<h2 id="common-vocab-queries">Common vocab queries</h2>
+<p>Some common SPARQL queries for SKOS vocabularies are:</p>
+<h3 id="list-all-concepts">List all Concepts</h3>
+<p>This query lists all the Concepts in the Concept Scheme (vocabulary) "FSDF Themes", identified by the IRI <code>&lt;https://linked.data.gov.au/def/fsdf/themes&gt;</code> by the relation <code>skos:inScheme</code> and selects their IRI and label.</p>
+<div class="highlight"><pre><span></span><code><span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?c</span> <span class="nv">?label</span> 
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?c</span> 
+        <span class="k">a</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Concept</span> <span class="p">;</span>
+        <span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="nv">?label</span> <span class="p">;</span>
+        <span class="nn">skos</span><span class="p">:</span><span class="nt">inScheme</span> <span class="nl">&lt;https://linked.data.gov.au/def/fsdf/themes&gt;</span> <span class="p">;</span>
+    <span class="p">.</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?label</span>
+</code></pre></div>
+<p>If you leave out the line <code>skos:inScheme &lt;https://linked.data.gov.au/def/fsdf/themes&gt; ;</code>, you will get all the concepts stored in a system, from all vocabularies, which may or may not be helpful.</p>
+<h3 id="filter-concepts">Filter Concepts</h3>
+<p>Get all the concepts containing 'Parcel' in their preferred label:</p>
+<div class="highlight"><pre><span></span><code><span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?c</span> <span class="nv">?label</span> 
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?c</span> 
+        <span class="k">a</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Concept</span> <span class="p">;</span>
+        <span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="nv">?label</span> <span class="p">;</span>
+        <span class="nn">skos</span><span class="p">:</span><span class="nt">inScheme</span> <span class="nl">&lt;https://linked.data.gov.au/def/fsdf/themes&gt;</span> <span class="p">;</span>
+    <span class="p">.</span>
+
+    <span class="k">FILTER</span> <span class="p">(</span><span class="nf">CONTAINS</span><span class="p">(</span><span class="nv">?label</span><span class="p">,</span> <span class="s">&quot;Parcel&quot;</span><span class="p">))</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?label</span>
+</code></pre></div>
+<p>When run at <a href="https://data.kurrawong.ai/sparql">https://data.kurrawong.ai/sparql</a>, this query should return two results: "Land Parcel Boundaries" and "Land Parcel and Property".</p>
+<h3 id="list-top-concepts">List Top Concepts</h3>
+<p>Top Concepts are the top elements in a vocabulary's Concept Hierarchy. All vocabs worked on by KurrawongAI list Top Concepts directly from the vocabulary:</p>
+<div class="highlight"><pre><span></span><code><span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?c</span> <span class="nv">?label</span> 
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?cs</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">hasTopConcept</span> <span class="nv">?c</span> <span class="p">.</span>
+
+    <span class="nv">?c</span> 
+        <span class="k">a</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Concept</span> <span class="p">;</span>
+        <span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="nv">?label</span> <span class="p">;</span>
+        <span class="nn">skos</span><span class="p">:</span><span class="nt">inScheme</span> <span class="nl">&lt;https://linked.data.gov.au/def/fsdf/themes&gt;</span> <span class="p">;</span>
+    <span class="p">.</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?label</span>
+</code></pre></div>
+<p>When run at <a href="https://data.kurrawong.ai/sparql">https://data.kurrawong.ai/sparql</a>, this query should return just one result: "Spatial".</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all SKOS vocabularies indicate Top Concepts directly as a property of the vocabulary (<code>?cs skos:hasTopConcept ?c</code>). 
+Some indicate it per-Concept (<code>?c skos:topConceptOf ?cs</code>). If this is the case - perhaps the query above returns no values -
+then use this variant:</p>
+<div class="highlight"><pre><span></span><code><span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?c</span> <span class="nv">?label</span> 
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?cs</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">hasTopConcept</span> <span class="nv">?c</span> <span class="p">.</span>
+
+    <span class="nv">?c</span> 
+        <span class="k">a</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Concept</span> <span class="p">;</span>
+        <span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="nv">?label</span> <span class="p">;</span>
+        <span class="nn">skos</span><span class="p">:</span><span class="nt">inScheme</span> <span class="nl">&lt;https://linked.data.gov.au/def/fsdf/themes&gt;</span> <span class="p">;</span>
+        <span class="nn">skos</span><span class="p">:</span><span class="nt">topConceptOf</span> <span class="nv">?cs</span> <span class="p">;</span>
+    <span class="p">.</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?label</span>
+</code></pre></div>
+<p>This will also vield the same results as above when run at <a href="https://data.kurrawong.ai/sparql">https://data.kurrawong.ai/sparql</a>.</p>
+</div>
+<h3 id="list-children-concepts">List Children Concepts</h3>
+<p>There are two possible ways concepts may be indicated as being children of a particular concept:</p>
+<ol>
+<li>children are <em>narrower</em> than the parent</li>
+<li>the parent is <em>broader</em> than the children</li>
+</ol>
+<p>Different vocabularies prefer one or the other approach and some vocabulary systems implement both. The following query will check both:</p>
+<div class="highlight"><pre><span></span><code><span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+
+<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?c</span> <span class="nv">?label</span> 
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="k">BIND</span> <span class="p">(</span><span class="nl">&lt;https://linked.data.gov.au/def/fsdf/themes&gt;</span> <span class="k">AS</span> <span class="nv">?vocab</span><span class="p">)</span>
+    <span class="k">BIND</span> <span class="p">(</span><span class="nl">&lt;https://linked.data.gov.au/def/fsdf/themes/spatial&gt;</span> <span class="k">AS</span> <span class="nv">?parent</span><span class="p">)</span>
+
+    <span class="p">{</span> <span class="nv">?parent</span>  <span class="nn">skos</span><span class="p">:</span><span class="nt">narrower</span> <span class="nv">?c</span> <span class="p">}</span>
+    <span class="k">UNION</span>
+    <span class="p">{</span> <span class="nv">?c</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">broader</span> <span class="nv">?parent</span> <span class="p">}</span>
+
+    <span class="nv">?c</span> 
+        <span class="k">a</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Concept</span> <span class="p">;</span>
+        <span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="nv">?label</span> <span class="p">;</span>
+        <span class="nn">skos</span><span class="p">:</span><span class="nt">inScheme</span> <span class="nv">?vocab</span> <span class="p">;</span>        
+    <span class="p">.</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?label</span>
+</code></pre></div>
+<p>Just replace the values for the Vocab and the parent Concept as needed.</p>
+<h3 id="concepts-within-collections">Concepts within Collections</h3>
+<p>Sometimes vocabularies rgroup Concepts within Collections. To do this, the Collection indicates Concepts via the <code>skos:member</code> predicate:</p>
+<div class="highlight"><pre><span></span><code><span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?c</span> <span class="nv">?label</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nl">&lt;http://resource.geosciml.org/classifier/cgi/waste-storage&gt;</span>
+        <span class="nn">skos</span><span class="p">:</span><span class="nt">member</span> <span class="nv">?c</span> <span class="p">.</span>
+
+    <span class="nv">?c</span> 
+        <span class="k">a</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Concept</span> <span class="p">;</span>
+        <span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="nv">?label</span> <span class="p">;</span>
+        <span class="nn">skos</span><span class="p">:</span><span class="nt">inScheme</span> <span class="nv">?vocab</span> <span class="p">;</span>        
+    <span class="p">.</span>  
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?label</span>
+</code></pre></div>
+<h3 id="get-the-top-2-levels-of-a-vocab">Get the top 2 levels of a vocab</h3>
+<p>Some vocabs have "levels" that mean something, that is Concepts in a hierarchy where the hierarchy distance, counting from the top, is significant. Some other vocabs are large, and sometimes we only want the top parts. </p>
+<p>To retrieve Concepts in the top 2 levels of a vocab, but not those in levels 3+:</p>
+<div class="highlight"><pre><span></span><code><span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+
+<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?c</span> <span class="nv">?label</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="k">BIND</span> <span class="p">(</span><span class="nl">&lt;http://resource.geosciml.org/classifierscheme/cgi/2023.11/mineral-deposit-model&gt;</span> <span class="k">AS</span> <span class="nv">?vocab</span><span class="p">)</span>
+
+    <span class="p">{</span> <span class="nv">?c</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">topConceptOf</span> <span class="nv">?vocab</span> <span class="p">}</span>  
+    <span class="k">UNION</span>
+    <span class="p">{</span> <span class="nv">?c</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">broader</span><span class="o">/</span><span class="nn">skos</span><span class="p">:</span><span class="nt">topConceptOf</span> <span class="nv">?vocab</span> <span class="p">}</span> 
+
+    <span class="nv">?c</span> 
+      <span class="k">a</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Concept</span> <span class="p">;</span>
+         <span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="nv">?label</span> <span class="p">;</span>
+         <span class="nn">skos</span><span class="p">:</span><span class="nt">inScheme</span> <span class="nv">?vocab</span> <span class="p">;</span>   
+    <span class="p">.</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?label</span>
+</code></pre></div>
+<p>This query asks for all Concepts that are Top Concepts of the vocabulary and all those that have those Top Concepts as direct parents. If we wanted 3 levels, we could do this:</p>
+<div class="highlight"><pre><span></span><code><span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+
+<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?c</span> <span class="nv">?label</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="k">BIND</span> <span class="p">(</span><span class="nl">&lt;http://resource.geosciml.org/classifierscheme/cgi/2023.11/mineral-deposit-model&gt;</span> <span class="k">AS</span> <span class="nv">?vocab</span><span class="p">)</span>
+
+    <span class="p">{</span> <span class="nv">?c</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">topConceptOf</span> <span class="nv">?vocab</span> <span class="p">}</span>  
+    <span class="k">UNION</span>
+    <span class="p">{</span> <span class="nv">?c</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">broader</span><span class="o">/</span><span class="nn">skos</span><span class="p">:</span><span class="nt">topConceptOf</span> <span class="nv">?vocab</span> <span class="p">}</span> 
+      <span class="k">UNION</span>
+    <span class="p">{</span> <span class="nv">?c</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">broader</span><span class="o">/</span><span class="nn">skos</span><span class="p">:</span><span class="nt">broader</span><span class="o">/</span><span class="nn">skos</span><span class="p">:</span><span class="nt">topConceptOf</span> <span class="nv">?vocab</span> <span class="p">}</span> 
+
+    <span class="nv">?c</span> 
+      <span class="k">a</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Concept</span> <span class="p">;</span>
+         <span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="nv">?label</span> <span class="p">;</span>
+         <span class="nn">skos</span><span class="p">:</span><span class="nt">inScheme</span> <span class="nv">?vocab</span> <span class="p">;</span>   
+    <span class="p">.</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?label</span>
+</code></pre></div>
+<p>This just adds in an ask for those Concepts that have the Top Concepts as grandparents.</p>
+<p>There is a method to search for Concepts at a given hierarchy level too, but it's tricky! Just <a href="https://kurrawong.ai/contact">Contact Us</a> if you really need to do this!</p>
+<h3 id="get-concepts-that-have-null-values">Get concepts that have null values</h3>
+<p>Some Concepts don't have values for all possible properties, for example <code>skos:altLabel</code>. To get all those Concepts that do as well as those that don't we use an <code>OPTIONAL</code> clause:</p>
+<div class="highlight"><pre><span></span><code><span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+
+<span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?c</span> 
+        <span class="k">a</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Concept</span> <span class="p">;</span>
+        <span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="nv">?label</span> <span class="p">;</span>
+        <span class="nn">skos</span><span class="p">:</span><span class="nt">inScheme</span> <span class="nl">&lt;https://data.idnau.org/pid/glossary&gt;</span> <span class="p">;</span>
+    <span class="p">.</span>
+
+    <span class="k">OPTIONAL</span> <span class="p">{</span>
+      <span class="nv">?c</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">altLabel</span> <span class="nv">?alt_label</span> <span class="p">.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?label</span>
+</code></pre></div>
+<p>If run at <a href="https://data.kurrawong.ai/sparql">https://data.kurrawong.ai/sparql</a>, the above query will return 34 Concepts, some of which have alt labels, some of which don't.</p>
+<h3 id="list-all-vocabularies">List all vocabularies</h3>
+<p>If you have a system that stores multiple vocabularies, characterised as SKOS Concept Schemes, this query will list them all:</p>
+<div class="highlight"><pre><span></span><code><span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?c</span> <span class="nv">?label</span> 
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?c</span> 
+        <span class="k">a</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">ConceptScheme</span> <span class="p">;</span>
+        <span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="nv">?label</span> <span class="p">;</span>
+    <span class="p">.</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?label</span>
+</code></pre></div>
+<p>Try this on the KurrawongAI Prez server: <a href="https://data.kurrawong.ai/sparql">https://data.kurrawong.ai/sparql</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; KurrawongAI, 2025
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.indexes", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/external-links.js"></script>
+      
+    
+  </body>
+</html>
