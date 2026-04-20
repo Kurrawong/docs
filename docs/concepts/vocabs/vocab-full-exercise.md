@@ -79,7 +79,7 @@ You will notice that these terms are unidentified — that is, there is no ident
 
 The sample file does not include a codes column — _identifiers are necessary in a SKOS vocabulary conforming to common standards or practice_. It is a good idea to reuse any identifiers that already exist for a draft vocabulary, but for this exercise we will need to mint new ones. We will add identifiers using the [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) scheme.
 
-> 💡 Why are we using the UUID scheme? If you want to learn more about identifier strategy, see [_Identifiers_](/concepts/vocabs/creation#identifiers) for guidance.
+> 💡 Why are we using the UUID scheme? If you want to learn more about identifier strategy, see [_Identifier suffix patterns_](/concepts/vocabs/patterns#suffix-patterns) for guidance.
 
 - **Insert** a new "Identifier" column before the Labels column
 
