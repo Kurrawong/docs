@@ -5,20 +5,20 @@ This is the first in a series of modules that range from introductory guidance, 
 [Introduction to Vocabularies](#introduction-to-vocabularies) (this module)
 
 - Vocabulary types
-- Core properties
-- Exercise - start using VocEdit
+- Minimum properties
+- Exercises (using VocEdit)
 
 [Advanced Vocbulary Editing](/concepts/vocabs/creation/)
 
 - Mapping between vocabularies
 - Additional properties
-- Exercise (continued from _Introduction_)
+- Exercises (continued from _Introduction_)
 
 [Vocabulary Reuse](/concepts/vocabs/vocab-reuse/)
 
 - Reuse patterns
-- Importing concept from other vocabularies
-- Exercise (continued from _Advanced_)
+- Importing concepts from other vocabularies
+- Exercises (continued from _Advanced_)
 
 [Vocabulary querying](/concepts/vocabs/querying/)
 
@@ -237,18 +237,64 @@ Without vocabulary concepts, datasets often remain isolated because they use dif
 
 Through relationships such as `skos:broader`, `skos:narrower`, and `skos:altLabel`, vocabulary concepts act as semantic bridges, enabling inferences and connections that would not otherwise be possible.
 
+## Minimum vocabulary properties
 
-## Vocabulary properties
+Before a vocabulary can satisfy ANY definition or quality standards, it must have:
 
-Vocabularies contain, as a minimum: _preferred labels_, _definitions_ and _identifiers_. We have already introduced concepts relations with other concepts. In this section we will look at more concept properties, including properties that are required for validation in vocabulary quality standards.
+- **concepts** - these are the 'things', or individually named entities that make up the contents of a vocabulary. By _concept_ we mean a `skos:Concept` ;
+- **preferred label** - the human readable label for each concept is a `skos:prefLabel` and is the most widely used or preferred label for a concept ;
+- **identifier** - all concepts must be indicated by a unique identifier.
+- **concept scheme** - some information about the vocabulary as a whole, such as title, publisher, creation date etc, indicated with skos:ConceptScheme.
 
-### Minimum properties: prefLabel, definition and identifier
+Furthermore, _VocPub Profile_ ([AGLDWG, n.d.](#references-and-further-reading)) requires other properties to be present before a vocabulary is valid, including:
 
-To comply with VocPub profile ([AGLDWG, n.d.](#references-and-further-reading)), each concept must have at least:
+- **definition**, indicated with `skos:definition` - a notation property that describes or defines the concept ;
+- **in scheme** membership - an indication that the concept is in the concept scheme that it is contained in, _or_
+- **is defined by** - indicates that the concept in the containing concept scheme is defined in a different **concept scheme**.
 
-- a `skos:prefLabel` which is the main way that we say and understand the concept;
-- a `skos:definition` - a short note that describes the concept;
-- an _Identifier_ - a unique way of distinguishing the concept from other concepts
+### Preferred Label
+
+Each concept must have at least one _Preferred label_ (`skos:prefLabel`), based on the word or phrase that best describes the concept. We often use different terms to mean the same thing - the `skos:prefLabel` should be the term that is used most frequently, or understood and used by most expected users of a system or catalogue.
+
+In addition, each concept may have one ore more _Alternate labels_ (``skos:altLabel``). It's a good idea to add one or more alternative labels to a concept so that it can be found in different ways, provided they are similar enough to the common understanding of the concept.
+
+> 💡 when adding a `skos:altLabel`, ask this question: _If I searched with a preferred label, and found some information matching an alternative label in the text, would I be satisfied by the search result?_
+
+Here are some common scenarios where we might need to **choose between preferred and alternative labels**:
+
+#### Common vs Scientific terms
+
+Connect scientific or technical names with common names. For example:
+
+- Red imported fire ant ``skos:altLabel`` Solenopsis invicta
+- Boghead Coal ``skos:altLabel`` Torbanite
+- Spore dispersal `skos:altLabel` Sporulation
+
+#### Superseded terms
+
+Even if a term is no longer used in recent content, users may still search a catalogue using superseded language. Storing superseded terms as alternative labels helps to group content that contains antiquated language with content written in current language. For example:
+
+- Aeolian Sand ``skos:altLabel`` Eskimo Sand
+- Utility hole ``skos:altLabel`` Manhole
+
+#### Acronyms vs phrases
+
+In general, an acronym or initialism should be managed as an ``skos:altLabel``; example: 
+
+- Greenhouse gasses ``skos:altLabel`` GHG 
+
+An exception is when the acronym is better known or more frequently used. For example:
+
+- TNT ``skos:altLabel`` Trinitrotoluene
+- CSIRO ``skos:altLabel`` Commonwealth Scientific and Industrial Research Organisation
+
+#### Official vs common language
+
+Use an ``altLabel`` to connect official or technical language with natural language. For example:
+
+- Bi-directional ``skos:altLabel`` Two way
+- Alcohol-impaired driving ``skos:altLabel`` Drink-driving
+
 
 #### 🚧 Exercise: 0pen, edit and save a vocabulary
 
@@ -280,7 +326,7 @@ These modules will include a number of editing exercises that use the VocEdit to
 24. **Select a value** > select _pestRiskPath_
 26. **Save**
 
-The pestRiskPathway.ttl will now be updated in your local directory, with the new concept _Wind dispersal_ added.
+The `pestRiskPathway.ttl` will now be updated in your local directory, with the new concept _Wind dispersal_ added.
 
 ## Broader / Narrower
 
@@ -323,50 +369,8 @@ In this exercise we will add a `skos:broader` relationship between two concepts.
 
 This change optimises the SKOS model by applying a broader relationship between concepts that are conceptually broader and narrower. In a retrieval system we might expect a query for resources about host plants as pest vectors to return a resource about _Spore dispersal_. The `skos:broader` relation support such an inference.
 
-### Alternative labels
 
-Each concept must have at least one _Preferred label_ (`skos:prefLabel`), based on the word or phrase that best describes the concept. We often use different terms to mean the same thing - the `skos:prefLabel` should be the term that is used most frequently, or understood and used by most expected users of a system or catalogue.
-
-In addition, each concept may have one ore more _Alternate labels_ (``skos:altLabel``). It's a good idea to add one or more ``altLabel`` to a concept so that it can be found in different ways. A concept can have any number of alternate labels, provided they are similar enough to the common understanding of the concept.
-
-💡 **Tip:** when adding a `skos:altLabel`, ask this question: _If I searched with a preferred label, and found some information matching an alternative label in the text, would I be satisfied by the search result?_
-
-Here are some common scenarios where we might need to choose between preferred and alternative labels:
-
-#### Common vs Scientific terms
-
-Connect scientific or technical names with common names. For example:
-
-- Red imported fire ant ``skos:altLabel`` Solenopsis invicta
-- Boghead Coal ``skos:altLabel`` Torbanite
-- Spore dispersal `skos:altLabel` Sporulation
-
-#### Superseded terms
-
-Even if a term is no longer used in recent content, users may still search a catalogue using superseded language. Storing superseded terms as alternative labels helps to group content that contains antiquated language with content written in current language. For example:
-
-- Aeolian Sand ``skos:altLabel`` Eskimo Sand
-- Utility hole ``skos:altLabel`` Manhole
-
-#### Acronyms vs phrases
-
-In general, an acronym or initialism should be managed as an ``skos:altLabel``; example: 
-
-- Greenhouse gasses ``skos:altLabel`` GHG 
-
-An exception is when the acronym is better known or more frequently used. For example:
-
-- TNT ``skos:altLabel`` Trinitrotoluene
-- CSIRO ``skos:altLabel`` Commonwealth Scientific and Industrial Research Organisation
-
-#### Official vs common language
-
-Use an ``altLabel`` to connect official or technical language with natural language. For example:
-
-- Bi-directional ``skos:altLabel`` Two way
-- Alcohol-impaired driving ``skos:altLabel`` Drink-driving
-
-#### 🚧 Exercise: add alternative labels
+#### 🚧 Add alternative labels
 
 In this exercise we will add an alternative label to a concept. 
 
@@ -400,7 +404,7 @@ A Concept Scheme is some metadata about the vocabulary as a whole - the vocabula
 - a [Created](http://purl.org/dc/terms/created) date. When the Concept Scheme was first created. This might be automatically created by a vocabulary editor
 - a [History](http://www.w3.org/2004/02/skos/core#historyNote) note - a note on the origin or history of a vocabulary - such as how or from what it was generated.
 
-#### 🚧 Exercise: edit a concept scheme
+#### 🚧 Edit a Concept Scheme
 
 We will continue to edit the Pest Risk Pathway vocabulary, but this time we will edit the concept scheme which is the metadata about the vocabulary as a whole.
 

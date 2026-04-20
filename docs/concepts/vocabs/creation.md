@@ -38,11 +38,11 @@ Child support `skos:exactMatch` Child support
 
 ... where _Child support_ is a concept in both [Public Policy Taxonomy](https://linked.data.gov.au/def/policy/0acd51d0-a4a3-48eb-b6f4-aa086f966057) and [FAST](http://id.worldcat.org/fast/854679).
 
-### 🚧 Exercise: match a concept with a concept in another vocabulary. 
+### 🚧 Match a concept with a concept in another vocabulary. 
 
 In some cases there may be concepts in a vocabulary that we can reliably say represent the same thing in the world. To promote interoperability between vocabularies (and therefore datasets, catalogues and collections) it's a good idea to _match_ these concepts. 
 
-💡 use one of the SKOS _match_ properties to reference another `skos:Concept` or to a similar semantic category such as an `owl:NamedIndividual`. Do not use any of the SKOS _match_ properties to match to non-semantic resources.
+💡 Use one of the SKOS _match_ properties to reference another `skos:Concept` or to a similar semantic category such as an `owl:NamedIndividual`. Do not use any of the SKOS _match_ properties to match to non-semantic resources.
 
 In this exercise we will use `skos:exactMatch` to link _Animal dispersal_ with the concept _Zoochory_ from the [National Agriculture Library Thesaurus](https://lod.nal.usda.gov/nalt/en/).
 
@@ -70,7 +70,7 @@ Now let's add a `skos:broadMatch`. Like `skos:broader`, the `skos:broadMatch` pr
 ## Images
 Associating a `skos:Concept` with an image that illustrates meaning is a powerful and, perhaps obviously, language-neutral way of clarifying the meaning and scope of a concept. There are various different ways of modelling an image reference within a skos vocabulary. The skos model does mention image references within the context of _documentation_ properties (e.g. `skos:example`; `skos:scopeNote`). While using documentation properties to refer to an image may be syntactically correct, most systems will be expecting textual data in these fields. In the exercise below we will add an image reference using a schema.org property `schema:image`.
 
-💡 **Tip:** There are a number of approaches to adding an image to a vocabulary concept - the exercise below illustrates one valid approach. See other approaches in our [Patterns](https://docs.kurrawong.ai/concepts/vocabs/patterns/#images) document.
+💡 There are a number of approaches to adding an image to a vocabulary concept - the exercise below illustrates one valid approach. See other approaches in our [Patterns](https://docs.kurrawong.ai/concepts/vocabs/patterns/#images) document.
 
 ### 🚧 Exercise: add an image to a concept
 
@@ -121,7 +121,6 @@ skos:related <http://vocabulary.curriculum.edu.au/scot/10141>
 
 💡 When writing notes, use plain text only and limit paragraph breaks where possible.
 
-
 ## Collections
 
 There may be a need to define a group of concepts within a vocabulary that share certain characteristics. A vocabulary may contain a `skos:Collection`, or even many collections of concepts.
@@ -130,86 +129,6 @@ Collections are like a non-hierarchical means of gathering concepts. So for exam
 
 💡 `skos:Collection` indicates a `skos:Concept` using the `skos:member` property.
 
-## Identifiers
-
-Each Concept must have a unique identifier that can be looked up in an application or on the web. An IRI, or _Internationalized Resource Identifier_, is a recommended identifier type for vocabulary concepts.
-
-IRIs are web page URLs that:
-
-- can be used in data to identify things without necessarily resolving to a web page
-- can be managed with domain name ownership
-- allow for a specified range of characters, e.g. non-English alphabets
-- have validation rules similar to web address (URL) rules, e.g. no spaces
-
-An IRI typically follows a pattern such as:
-
-- http://[vocab subdomain] . [authority / domain] . [vocabulary name] . [concept ID]
-
-Here's a real example from a published vocabulary:
-
-``http://vocabulary.curriculum.edu.au/scot/15326``
-
-... where:
-
-    _vocabulary_ is a subdomain
-    _curriculum.edu.au_ is a managed or owned domain
-    _scot_ is an identifier for the vocabulary, and
-    _15326_ is a concept ID
-
-### IRI patterns
-
-What is the name of the Concept above that has _15326_ as an identifier? You need to look it up on the web! The whole point of using `http` identifiers is so that the concepts can be looked up on the web by anyone, anywhere (and by anything - humans, browsers, bots etc.).
-
-Note that this example IRI uses an increment method for generating a Concept ID - the next Concept IRI added to this vocabulary would have the suffix _15327_. This incremented number doesn't mean anything - we can't tell what the Concept is about just by looking at this number. Any vocabulary could use this same increment method, and therefore this ID could be used for a Concept in different vocabulary. The IRI as a whole, however, is unique.
-
-Here's another type of IRI suffix:
-
-> `http://vocabulary.curriculum.edu.au/crossCurriculum/f7f47140-a85e-498b-9367-0d468082fc2b`
-
-The suffix here is a UUID, or a _Universally Unique Identifier_. Note that if we took the UUID out of context (away from the whole IRI), we could consider it to be unique on its own terms - UUIDs are designed that way.
-
-💡 A UUID is not registered and can be freely generated by anyone using [online tools](https://www.uuidgenerator.net).
-
-A third _NOT RECOMMENDED_ method for constructing a Concept ID is to base the ID on whatever `skos:prefLabel` has been chosen. This has the advantage of making the IRI itself readable and understandable by humans - but there are several disadvantages also and the preferred label method should be avoided if possible.
-
-> `https://data.idnau.org/pid/vocab/org-indigeneity/run-by-indigenous-persons`
-
-... where:
-"/org-indigeneity/" is the ID for the vocabulary, and
-"/run-by-indigenous-persons/" is the ID for the concept
-
-The preferred label method is not recommended. Why? What if the `skos:prefLabel` for this concept changes to _Managed by indigenous persons_? The IRI stays the same (they should be persistent), and now doesn't match (exactly) the `skos:prefLabel`, which could cause some confusion. A similar problem is encountered if the concept has multiple labels in different languages - which one should be used as an IRI suffix? IRIs are more robust if the Concept ID suffix is opaque (meaning non-semantic: they don't say anything about the concept itself).
-
-Another mixup that can result from semantic IRI patterns is when a suffix indicates a level or position in a vocabulary hierarchy. Here's a hypothetical example:
-
-```turtle
-<https://vocab/mydomain/termid/111633> a skos:Concept ;
-skos:prefLabel "Work Health and Safety Manager"@en ;
-skos:broader <https://vocab/mydomain/termid/1116>
-```
-
-... where the suffix `1111633` implies membership within the broader concept `<.../1116>`. What if a decision is made to move this concept to another part of the vocabulary (that is, to remove this `skos:broader` relationship and replace with a new one (such as "<.../26>")? Like the re-labelled example above, the mis-match between the IRI and the change in position could cause confusion.
-
-### Version IRI
-
-A supplementary IRI may be added that indicates the version of a `skos:ConceptScheme`, e.g. "1.1". A [version IRI](https://www.w3.org/2002/07/owl#versionIRI) may be used, for example:
-
-```turtle
-PREFIX cs: <https://data.idnau.org/pid/licenses>
-PREFIX org: <https://linked.data.gov.au/org/>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX schema: <https://schema.org/>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-
-cs:
-    a skos:ConceptScheme ;
-    schema:creator org:idn ;
-    owl:versionIRI :1 ;
-    skos:prefLabel "Data Licenses"@en .
-
-```
-
-## References and Further Reading
 
 * AGLDWG. (n.d.). VocPub profile specification. Retrieved April 17, 2025, https://linked.data.gov.au/def/vocpub
 * International Organization for Standardization. (2011). Information and documentation — Thesauri and interoperability with other vocabularies — Part 1: Thesauri for information retrieval (ISO Standard No. 25964-1:2011). https://www.iso.org/standard/53657.html
