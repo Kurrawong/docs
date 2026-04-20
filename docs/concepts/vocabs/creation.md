@@ -4,12 +4,12 @@
 >
 >***Scope***
 >
->This content is intended to provide guidance on the creation of optional vocabulary elements that will enrich and optimise semantics, provenance and interoperability. 
+>_This content provides guidance on the creation of optional vocabulary elements that will enrich and optimise semantics, provenance and interoperability_. 
 
 >
 >***Prerequisite***
 >
->_It is recommended that [Introduction to Vocabularies](https://docs.kurrawong.ai/concepts/vocabs/introduction/) module is completed prior to Advanced vocabulary editing. Note that some of the exercises in this module will build on changes implemented in the introductory module_
+>_Some of the exercises in this module will build on changes implemented in the [Introduction to Vocabularies](https://docs.kurrawong.ai/concepts/vocabs/introduction/) module_
 >
 >***Outcome***
 >
@@ -18,8 +18,6 @@
 >----------------
 
 💡 _Identifies troubleshooting tips, common errors and potential issues._
-
-> 📝 _Notes that summarise content at the end of a module._
 
 ## Introduction
 
