@@ -2,23 +2,23 @@
 
 This is the first in a series of modules that range from introductory guidance, tips for experienced vocabulary practitioners and lessons in using innovative vocabulary tooling. These modules needn't be approached in series order, but note the step-by-step exercise that continues through out other modules. In summary, the modules are:
 
-[Introduction to Vocabularies](#introduction-to-vocabularies) (this module)
+[Introduction to Vocabularies](#introduction-to-vocabularies) (_this module_)
 
 - Vocabulary types
 - Minimum properties
-- Exercises (using VocEdit)
-
-[Advanced Vocbulary Editing](/concepts/vocabs/creation/)
-
-- Mapping between vocabularies
 - Additional properties
-- Exercises (continued from _Introduction_)
+- Exercises (using VocEdit)
 
 [Vocabulary Reuse](/concepts/vocabs/vocab-reuse/)
 
 - Reuse patterns
 - Importing concepts from other vocabularies
-- Exercises (continued from _Advanced_)
+- Mapping between vocabularies
+- Exercises (continued from _Introduction_)
+
+[Vocabulary patterns](/concepts/vocabs/patterns/)
+
+- Handling special cases and advanced tips
 
 [Vocabulary querying](/concepts/vocabs/querying/)
 
@@ -32,10 +32,6 @@ This is the first in a series of modules that range from introductory guidance, 
 - VocExcel
 - SHACL Validator
 - RDF Converter
-
-[Vocabulary patterns](/concepts/vocabs/patterns/)
-
-- Handling special cases and advanced tips
 
 <br>
 
@@ -295,8 +291,7 @@ Use an ``altLabel`` to connect official or technical language with natural langu
 - Bi-directional ``skos:altLabel`` Two way
 - Alcohol-impaired driving ``skos:altLabel`` Drink-driving
 
-
-#### 🚧 Exercise: 0pen, edit and save a vocabulary
+## 🚧 0pen, edit and save a vocabulary
 
 These modules will include a number of editing exercises that use the VocEdit tool and the _Pest Risk Pathway_ vocabulary (PRP). The PRP is un-published and hosted by KurrawongAI for training purposes. In this exercise we will add a new concept; a concept preferred label; a concept definition; and a concept identifier.
 
@@ -356,7 +351,15 @@ In a vocabulary, it's possible to keep adding narrower relationships by creating
 
 💡 Only add narrower concepts that you would expect to be used to describe content in a catalogue, and distinguish that content from others, with that concept. Don't make a vocabulary hierarchy very deep with specific concepts just because you can!
 
-#### 🚧 Exercise: add broader concept relations
+### Top Concepts
+
+If a `skos:Concept` does not have a `skos:narrower` relationship, it is automatically assumed to be a `skos:topConceptOf` a `skos:ConceptScheme` and must be declared as such.
+
+### Related (associated) concepts
+
+SKOS supports non-hierarchical relationships between concepts using `skos:related` property. This is based on the _associative relationship_ defined in standards such as ISO 25964-1, which states that related terms are "semantically or conceptually associated to such an extent that the link between the two needs to be made explicit... and it is important to do this for concepts that overlap in scope" (International Organization for Standardization, 2011, p.63).
+
+### 🚧 Add Broader concept relations
 
 In this exercise we will add a `skos:broader` relationship between two concepts. Note that once a concept has a broader relationship, it is no longer indicated by `skos:topConceptOf` and and 'top concept' status is removed.
 
@@ -369,8 +372,7 @@ In this exercise we will add a `skos:broader` relationship between two concepts.
 
 This change optimises the SKOS model by applying a broader relationship between concepts that are conceptually broader and narrower. In a retrieval system we might expect a query for resources about host plants as pest vectors to return a resource about _Spore dispersal_. The `skos:broader` relation support such an inference.
 
-
-#### 🚧 Add alternative labels
+### 🚧 Add Alternative labels
 
 In this exercise we will add an alternative label to a concept. 
 
@@ -386,11 +388,6 @@ In this exercise we will add an alternative label to a concept.
 8. **Add** "en" to _lang_ field
 9. **Save**
 
-###  Top Concepts
-
-If a `skos:Concept` does not have a `skos:narrower` relationship, it is automatically assumed to be a `skos:topConceptOf` a `skos:ConceptScheme` and must be declared as such.
-
-A concept may be moved out of the 
 
 ## Concept Scheme
 
@@ -404,7 +401,7 @@ A Concept Scheme is some metadata about the vocabulary as a whole - the vocabula
 - a [Created](http://purl.org/dc/terms/created) date. When the Concept Scheme was first created. This might be automatically created by a vocabulary editor
 - a [History](http://www.w3.org/2004/02/skos/core#historyNote) note - a note on the origin or history of a vocabulary - such as how or from what it was generated.
 
-#### 🚧 Edit a Concept Scheme
+### 🚧 Edit a Concept Scheme
 
 We will continue to edit the Pest Risk Pathway vocabulary, but this time we will edit the concept scheme which is the metadata about the vocabulary as a whole.
 
@@ -416,6 +413,33 @@ We will continue to edit the Pest Risk Pathway vocabulary, but this time we will
 6. **Add** "en" to _lang_ field
 7. **Save**
 
+## Documentation properties
+
+In SKOS, _documentation_ properties, or 'note fields' include:
+
+- `skos:note` - a note can say anything! If appropriate, use the following properties instead that have clearer semantics: `skos:changeNote`, `skos:definition`, `skos:editorialNote`, `skos:example`, or `skos:historyNote`
+- `skos:changeNote` - you can indicate a change to a label, or even a changed relationship to another concept.
+- `skos:definition` - this field is mandatory in VocPub for all `skos:Concept`, `skos:ConceptScheme` and `skos:Collection` instances.
+
+> 💡 If you're used to using a 'description' field, such as `dcterms:description` or `schema:description`, don't panic! 
+
+- `skos:editorialNote` - similar to `skos:changeNote` but perhaps for internal use only, such as "Fixed typo [date]" or "review by [date]".
+- `skos:example` - indicate some thing in the world that exemplifies the concept - this might be any kind of information resource, but references to images are not usually expected in Documentation properties (see [#images] to do this).
+- `skos:historyNote` - this property must be used to indicate the origins of a `skos:ConceptScheme` or a `skos:Collection`, where the origin cannot be indicated with an IRI (so with a textual reference, e.g. (this vocabulary / collection was created for purpose X by project Y on behalf of agency Z"). For a skos:Concept, the same rules apply if the concept origin is NOT from within its `skos:ConceptScheme`, e.g. "this Concept originated in Vocabulary X, added here [date]".  
+- `skos:scopeNote` - use a Scope note to say what kinds of things are included in the concept and what is not included. It may be useful to indicate another concept that should be used instead to describe or catalogue certain kinds of things. For example:
+
+```turtle
+<http://vocabulary.curriculum.edu.au/scot/10109> a skos:Concept ;
+skos:prefLabel "Educational publications"@en ;
+skos:scopeNote "Use for resources about development, distribution or management of industry publications relevant across the education sector. For resources about publications generated by individual schools USE School publications."@en ;
+skos:related <http://vocabulary.curriculum.edu.au/scot/10141>
+```
+
+> 💡 When a `skos:scopeNote` refers to another `skos:Concept`, use a `skos:related` property also to indicate that concept with an IRI.
+
+> 💡 When writing notes, use plain text only and limit paragraph breaks where possible.
+
+
 ## Summary
 
 In this module we have introduced vocabularies - different types and how they are useful. We have also used a vocabulary editing tool to create the minimum elements for a concept and a concept scheme. 
@@ -423,6 +447,7 @@ In this module we have introduced vocabularies - different types and how they ar
 ## References and Further Reading
 
 * AGLDWG. (n.d.). VocPub profile specification. Retrieved April 17, 2025, from <https://linked.data.gov.au/def/vocpub>
+* International Organization for Standardization. (2011). Information and documentation — Thesauri and interoperability with other vocabularies — Part 1: Thesauri for information retrieval (ISO Standard No. 25964-1:2011). https://www.iso.org/standard/53657.html
 * W3C (n.d.). QSKOS. Retrieved March 5, 2025, from <https://www.w3.org/2001/sw/wiki/QSKOS>
 * W3C (2009). SKOS reference. <https://www.w3.org/TR/skos-reference/>
 * W3C (2014). Turtle: Terse RDF triple language (W3C Recommendation). Retrieved from <https://www.w3.org/TR/turtle/>
