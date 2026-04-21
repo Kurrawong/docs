@@ -398,3 +398,11 @@ So far in this module you have taken an unstructured list from a single column a
 * AGLDWG (2026). _VocPub profile specification_. https://agldwg.github.io/vocpub-profile/specification
 * W3C (2009). _SKOS Simple Knowledge Organization System Reference_ (W3C Recommendation). https://www.w3.org/TR/skos-reference/
 * W3C (2014). _Turtle: Terse RDF triple language_ (W3C Recommendation). https://www.w3.org/TR/turtle/
+
+## License
+
+The documentation and files in this exercise are licensed for reuse under the [Creative Commons BY 4.0](https://creativecommons.org/licenses/by/4.0/) license with the following copyright notice:
+
+&copy; KurrawongAI, 2026
+
+> Please do _not_ present commercial training with this material without first contacting KurrawongAI
