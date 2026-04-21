@@ -4,22 +4,20 @@
 >
 >***Scope***
 >
->_This content provides guidance on the effective reuse of vocabularies. It explains the benefits of reuse; how to locate suitable vocabularies; and how to manage provenance._ 
+>_Guidance on effective reuse of vocabularies; benefits of reuse; how to locate suitable vocabularies; and managing provenance._ 
 
 >
 >***Audience***
 >
->_Managers and owners of established vocabularies. It is assumed that learners have some experience with using document management or version control systems, and general familiarity with data management in practice._
+>_Managers and owners of established vocabularies; learners have some experience with using document management or version control systems, and general familiarity with data management._
 >
 >***Outcome***
 >
->_Learners can adopt vocabularies in part or in whole into their local contexts, and understand implications for managing externally sourced vocabularies as part of local operations_
+>_Learners can adopt vocabularies in part or in whole into their local contexts, and understand implications for managing externally sourced vocabularies_
 >
 >----------------
 
 > 💡 _Troubleshooting tips, common errors, potential issues._
-
-> 📝 _Notes that summarise content at the end of a module._
 
 > 🚧 _Exercises_
 
@@ -209,7 +207,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
         "Vegetation fires"@en-GB
 .
 ```
-> 💡This example Concept has a combination of ISO 639-1 language tags (e.g. "@en") and BCP 47 (e.g. "@en-AU"). It's valid SKOS and RDF! But a downstream system may be expecting the locale-free ISO 639-1 scheme, so we recommend including at least one `skos:prefLabel` encoded as ISO 639-1.
+> 💡 This example Concept has a combination of ISO 639-1 language tags (e.g. "@en") and BCP 47 (e.g. "@en-AU"). It's valid SKOS and RDF! But a downstream system may be expecting the locale-free ISO 639-1 scheme, so we recommend including at least one `skos:prefLabel` encoded as ISO 639-1.
 
 > 💡 Multiple `skos:prefLabel` instances per `skos:Concept` with different language tags is _not compliant_ with VocPub Specification (AGLDWG, n.d.), but valid in SKOS.
 
