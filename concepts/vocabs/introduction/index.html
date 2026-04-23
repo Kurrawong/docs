@@ -1,0 +1,2518 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../rdf/">
+      
+      
+        <link rel="next" href="../vocab-reuse/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon-32x32.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Introduction - </title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="kai" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="" class="md-header__button md-logo" aria-label="" data-md-component="logo">
+      
+  <img src="../../../assets/KurrawongAI-inverted.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="" class="md-nav__button md-logo" aria-label="" data-md-component="logo">
+      
+  <img src="../../../assets/KurrawongAI-inverted.svg" alt="logo">
+
+    </a>
+    
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../products/prez/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prez
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prez
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/manifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manifest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/data-preparation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Preparation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploying
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deploying
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/deploying/aws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5_2" id="__nav_2_1_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Azure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/deploying/azure/appservice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    App Service Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prez/developers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/olis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Olis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../products/tools/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KAI Tools
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    KAI Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/kurra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kurra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/ogc-tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OGC Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/prefix-lookup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prefix Lookup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/prezmanifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prez Manifest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/provworkflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ProvWorkflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/pylode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pyLODE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/rdf-converter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RDF Converter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/rdf-merger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RDF Merger
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/shacl-validator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SHACL Validator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/sparql-parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPARQL Parser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/vocedit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VocEdit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tools/vocexcel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VocExcel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3rd Party
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3rd Party
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/3rdparty/fuseki/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fuseki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelling Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Modelling Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RDF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocabs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vocabs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-vocabularies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction to Vocabularies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vocabulary-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vocabulary types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vocabulary types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Glossary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#taxonomies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Taxonomies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thesaurus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thesaurus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vocabularies-in-knowledge-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vocabularies in knowledge graphs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimum-vocabulary-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum vocabulary properties
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Minimum vocabulary properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preferred-label" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preferred Label
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0pen-edit-and-save-a-vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚧 0pen, edit and save a vocabulary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#broader-narrower" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Broader / Narrower
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Broader / Narrower">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related-associated-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related (associated) concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-broader-concept-relations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚧 Add Broader concept relations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-alternative-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚧 Add Alternative labels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-scheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept Scheme
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concept Scheme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edit-a-concept-scheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚧 Edit a Concept Scheme
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation properties
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references-and-further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References and Further Reading
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vocab-reuse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocab reuse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../querying/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Querying
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vocab-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocab systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-vocabularies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction to Vocabularies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vocabulary-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vocabulary types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vocabulary types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Glossary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#taxonomies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Taxonomies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thesaurus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thesaurus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vocabularies-in-knowledge-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vocabularies in knowledge graphs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimum-vocabulary-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum vocabulary properties
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Minimum vocabulary properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preferred-label" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preferred Label
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0pen-edit-and-save-a-vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚧 0pen, edit and save a vocabulary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#broader-narrower" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Broader / Narrower
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Broader / Narrower">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related-associated-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related (associated) concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-broader-concept-relations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚧 Add Broader concept relations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-alternative-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚧 Add Alternative labels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-scheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept Scheme
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concept Scheme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edit-a-concept-scheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚧 Edit a Concept Scheme
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation properties
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references-and-further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References and Further Reading
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="overview">Overview</h1>
+<p>This is the first in a series of modules that range from introductory guidance, tips for experienced vocabulary practitioners and lessons in using innovative vocabulary tooling. These modules needn't be approached in series order, but note the step-by-step exercise that continues through out other modules. In summary, the modules are:</p>
+<p><a href="#introduction-to-vocabularies">Introduction to Vocabularies</a> (<em>this module</em>)</p>
+<ul>
+<li>Vocabulary types</li>
+<li>Minimum properties</li>
+<li>Additional properties</li>
+<li>Exercises (using VocEdit)</li>
+</ul>
+<p><a href="/concepts/vocabs/vocab-reuse/">Vocabulary Reuse</a></p>
+<ul>
+<li>Reuse patterns</li>
+<li>Importing concepts from other vocabularies</li>
+<li>Mapping between vocabularies</li>
+<li>Exercises (continued from <em>Introduction</em>)</li>
+</ul>
+<p><a href="/concepts/vocabs/patterns/">Vocabulary patterns</a></p>
+<ul>
+<li>Handling special cases and advanced tips</li>
+</ul>
+<p><a href="/concepts/vocabs/querying/">Vocabulary querying</a></p>
+<ul>
+<li>SPARQL querying</li>
+<li>How to query</li>
+<li>Common vocab queries</li>
+</ul>
+<p><a href="/concepts/vocabs/vocab-systems/">Vocabulary systems</a></p>
+<ul>
+<li>VocEdit + GitHub (with new exercise)</li>
+<li>VocExcel</li>
+<li>SHACL Validator</li>
+<li>RDF Converter</li>
+</ul>
+<p><br></p>
+<blockquote>
+<ul>
+<li>💡 <em>Identifies troubleshooting tips, common errors and potential issues.</em></li>
+<li>🚧 <em>Exercises</em></li>
+<li>🎬 <em>Videos</em></li>
+</ul>
+</blockquote>
+<h2 id="introduction-to-vocabularies">Introduction to Vocabularies</h2>
+<p>As languages speakers, we have developed the categorization of "things" to both understand and communicate our experience of the world. The sheer volume of data that we interact with has necessitated a shared understanding of naming and definition. In large-scale data holdings, standardisation and disambiguation through vocabularies becomes a necessity.</p>
+<p>When sharing information across diverse groups, catalogues or software applications, there is need for a common understanding of exactly what is being referred to. This is where controlled vocabularies provide terminology applied to information, driving agreed understanding of concepts. Vocabularies provide both textual labels and definitions for human understanding, and machine-readable unique identifier for machine processing.</p>
+<p>Whatever size and shape, the vocabularies mentioned in these modules are designed for describing data and content. Vocabularies can be used to describe (or catalogue) content in information systems. Vocabularies can also optimise search engines and provide the basis for navigation in information systems, making it easier for users to find content and data.</p>
+<h2 id="vocabulary-types">Vocabulary types</h2>
+<p>In this section we will introduce some common vocabulary types. By introducing simple and more complex vocabulary examples we will introduce some important vocabulary features.</p>
+<h3 id="glossary">Glossary</h3>
+<p>... <em>defining terms</em></p>
+<p>Glossaries are a very common form of vocabulary found in many print and web resources. A glossary is a list of concepts, expressed by natural language terms (we will refer to <em>terms</em> and <em>labels</em> interchangeably) with added definitions.</p>
+<p><img src="../../../assets/vocabs/glossaryPic.png" alt="Glossary Picture" style="width:75%;"></p>
+<p>Each concept in a Glossary has at least one label and one definition. Some glossaries include <em>see</em> references that direct a user to a preferred term. This <em>equivalence</em> mapping is a common feature in more complex vocabulary types such as a <strong>thesaurus</strong> (see below). But first we will look at vocabularies that include hierarchy relationships.</p>
+<h3 id="taxonomies">Taxonomies</h3>
+<p>... <em>a very short history</em></p>
+<p>Taxonomies are vocabularies with hierarchical relationships between concepts. Conventionally, we might say that concept A is <em>broader</em> than concept B, when the <em>all-some</em> rule apples: All B's are A, and some A's are B. For example, <em>all apples are fruit, and some fruit are applies</em>. Therefore, <em>fruit</em> is broader than <em>apples</em>.</p>
+<p>Modern taxonomies that are used to organise and retrieve data owe their heritage largely to two disciplines: biology, or the taxonomy of living things, featuring familiar concepts of class, family, genus, species etc..., and financial classifications, where concepts are typically categorised as either function, activity of transaction.</p>
+<p><pre class="mermaid"><code>%% Title: **Financial classification**
+graph TD
+subgraph "Financial classification"
+    F[Function]
+    T1[Transaction A]
+    T2[Transaction B]
+    A1[Activity 1]
+    A2[Activity 2]
+    A3[Activity 3]
+
+    F --&gt; T1
+    F --&gt; T2
+    T1 --&gt; A1
+    T1 --&gt; A2
+    T2 --&gt; A3
+end</code></pre>
+The definition, or meaning of a given term is given, in part, by its relationship to broader and narrower terms. For example, we have a clearer understanding of what <em>crane</em> means if it has a broader relationship with <em>birds</em> (and not <em>construction equipment</em>).</p>
+<p><br></p>
+<pre class="mermaid"><code>%% Title: Taxonomy of living things
+graph TD
+subgraph "Taxonomy of living things"
+    F[Family]
+    G1[Genus A]
+    G2[Genus B]
+    S1[Species 1]
+    S2[Species 2]
+    S3[Species 3]
+
+    F --&gt; G1
+    F --&gt; G2
+    G1 --&gt; S1
+    G1 --&gt; S2
+    G2 --&gt; S3
+end
+    classDef green fill:#90ee90,stroke:#333,stroke-width:2px;
+class F,G1,G2,S1,S2,S3 green;</code></pre>
+<p>We will see below in <a href="#vocabularies-in-knowledge-graphs">Vocabularies in the context of knowledge graphs</a> how the broader / narrower relationship between concepts can improve search and extraction functions in data where vocabularies are used to enrich data.</p>
+<p><br></p>
+<h3 id="thesaurus">Thesaurus</h3>
+<p>... <em>a (more) complete picture</em></p>
+<p>The modern retrieval thesaurus combines the structure of a taxonomy with additional non-hierarchical relationships and also synonym control. Thesauri establish <em>hierarchy</em>, <em>association</em> and <em>equivalence</em> between terms. Each can be expressed using the Simple Knowledge Organization System (SKOS) properties <code>skos:broader</code> / <code>skos:narrower</code>; <code>skos:relation</code>; and <code>skos:prefLabel</code> / <code>skos:altLabel</code> (<a href="#references-and-further-reading">W3C, 2009</a>).</p>
+<pre class="mermaid"><code>graph TD
+    A[Concept A] 
+    B[Concept B]
+    C[Concept C]
+    D[Concept D]
+    S[Synonym of A]
+
+    %% Broader / Narrower relationships
+    A -- "skos:narrower" --&gt; B
+    B -- "skos:broader" --&gt; A
+
+    %% Associative (related) relationship
+    A &lt;-- "skos:related" --&gt; C
+
+    %% Synonym relationship (using skos:altLabel)
+    A -- "skos:altLabel" --&gt; S
+
+
+    %% Additional hierarchical relationship for illustration
+    C -- "skos:narrower" --&gt; D
+    D -- "skos:broader" --&gt; C</code></pre>
+<blockquote>
+<p>💡 <strong>Tip:</strong> the <code>skos:related</code> property is most useful for relating disparate concepts in deep, complex hierarchies. Use <code>skos:related</code> sparingly - don't relate everything to everything! </p>
+</blockquote>
+<p>We will look at SKOS properties in more detail in the <a href="#minimum-vocabulary-properties">Properties</a> section.</p>
+<h3 id="vocabularies-in-knowledge-graphs">Vocabularies in knowledge graphs</h3>
+<p>Thought of as an interconnected system of data classes, a knowledge graph may include vocabularies as additional classes that connect with some or all other classes. In a knowledge graph, a vocabulary concept can be modelled as just another instance in the graph.</p>
+<p>One function that vocabularies serve is to supplement and fill semantic gaps in data relations. Data objects that are not directly related may still connect through shared vocabulary concepts.</p>
+<p>In the diagram below, two datasets are linked through a concept drawn from a vocabulary. The relationship between a class instance and a concept is often a <strong>subject relationship</strong> — that is, the data is <em>about</em> the concept.</p>
+<pre class="mermaid"><code>graph LR;
+    classDef concept fill:#f9f1a5,stroke:#b59a00;
+    classDef default fill:#dae8fc,stroke:#6c8ebf;
+
+    A["Traffic counts dataset"];
+    B["Road closures dataset"];
+    C["One-way road"]:::concept;
+
+    A -- "subject" --&gt; C;
+    B -- "subject" --&gt; C;</code></pre>
+<p>Because both datasets reference the same concept, they become indirectly related through the vocabulary.</p>
+<h4 id="vocabulary-relationships">Vocabulary relationships</h4>
+<p>Vocabularies often include relationships between concepts. These relationships allow data tagged with different concepts to still be connected.</p>
+<p>For example, a vocabulary might define the concept <code>One-way road</code>, with a more specific concept <code>Reversible lane road</code>.</p>
+<pre class="mermaid"><code>graph LR;
+    classDef concept fill:#f9f1a5,stroke:#b59a00;
+
+    A["One-way road"]:::concept;
+    B["Reversible lane road"]:::concept;
+
+    A -- "skos:narrower" --&gt; B;</code></pre>
+<p>Now imagine that one dataset is tagged with the broader concept, while another dataset uses the narrower one.</p>
+<pre class="mermaid"><code>graph LR;
+    classDef concept fill:#f9f1a5,stroke:#b59a00;
+    classDef default fill:#dae8fc,stroke:#6c8ebf;
+
+    D["Traffic counts dataset"];
+    E["Road closure dataset"];
+
+    C["One-way road"]:::concept;
+    F["Reversible lane road"]:::concept;
+
+    D -- "subject" --&gt; C;
+    E -- "subject" --&gt; F;
+
+    C -- "skos:narrower" --&gt; F;</code></pre>
+<p>Because <code>Reversible lane road</code> is defined as a type of <code>One-way road</code>, the knowledge graph can infer a relationship between the two datasets.</p>
+<p>Even though the datasets were originally tagged with different concepts, the vocabulary hierarchy connects them.</p>
+<h4 id="alternative-labels">Alternative labels</h4>
+<p>SKOS also allows concepts to carry alternative labels (skos:altLabel). These capture common synonyms or variant terminology.</p>
+<pre class="mermaid"><code>graph LR;
+    classDef concept fill:#f9f1a5,stroke:#b59a00;
+
+    A["One-way road"]:::concept
+    B["single-direction road"]
+
+    A -- "skos:altLabel" --&gt; B</code></pre>
+<p>This helps bridge datasets that use different terminology for the same concept. A dataset tagged with <em>single-direction road</em> can still be recognised as referring to the concept <code>One-way road</code>.</p>
+<p>Without vocabulary concepts, datasets often remain isolated because they use different terms or different levels of specificity. SKOS vocabularies introduce structured relationships between concepts that allow knowledge graphs to connect these datasets.</p>
+<p>Through relationships such as <code>skos:broader</code>, <code>skos:narrower</code>, and <code>skos:altLabel</code>, vocabulary concepts act as semantic bridges, enabling inferences and connections that would not otherwise be possible.</p>
+<h2 id="minimum-vocabulary-properties">Minimum vocabulary properties</h2>
+<p>Before a vocabulary can satisfy ANY definition or quality standards, it must have:</p>
+<ul>
+<li><strong>concepts</strong> - these are the 'things', or individually named entities that make up the contents of a vocabulary. By <em>concept</em> we mean a <code>skos:Concept</code> ;</li>
+<li><strong>preferred label</strong> - the human readable label for each concept is a <code>skos:prefLabel</code> and is the most widely used or preferred label for a concept ;</li>
+<li><strong>identifier</strong> - all concepts must be indicated by a unique identifier.</li>
+<li><strong>concept scheme</strong> - some information about the vocabulary as a whole, such as title, publisher, creation date etc, indicated with skos:ConceptScheme.</li>
+</ul>
+<p>Furthermore, <em>VocPub Profile</em> (<a href="#references-and-further-reading">AGLDWG, n.d.</a>) requires other properties to be present before a vocabulary is valid, including:</p>
+<ul>
+<li><strong>definition</strong>, indicated with <code>skos:definition</code> - a notation property that describes or defines the concept ;</li>
+<li><strong>in scheme</strong> membership - an indication that the concept is in the concept scheme that it is contained in, <em>or</em></li>
+<li><strong>is defined by</strong> - indicates that the concept in the containing concept scheme is defined in a different <strong>concept scheme</strong>.</li>
+</ul>
+<h3 id="preferred-label">Preferred Label</h3>
+<p>Each concept must have at least one <em>Preferred label</em> (<code>skos:prefLabel</code>), based on the word or phrase that best describes the concept. We often use different terms to mean the same thing - the <code>skos:prefLabel</code> should be the term that is used most frequently, or understood and used by most expected users of a system or catalogue.</p>
+<p>In addition, each concept may have one ore more <em>Alternate labels</em> (<code>skos:altLabel</code>). It's a good idea to add one or more alternative labels to a concept so that it can be found in different ways, provided they are similar enough to the common understanding of the concept.</p>
+<blockquote>
+<p>💡 when adding a <code>skos:altLabel</code>, ask this question: <em>If I searched with a preferred label, and found some information matching an alternative label in the text, would I be satisfied by the search result?</em></p>
+</blockquote>
+<p>Here are some common scenarios where we might need to <strong>choose between preferred and alternative labels</strong>:</p>
+<h4 id="common-vs-scientific-terms">Common vs Scientific terms</h4>
+<p>Connect scientific or technical names with common names. For example:</p>
+<ul>
+<li>Red imported fire ant <code>skos:altLabel</code> Solenopsis invicta</li>
+<li>Boghead Coal <code>skos:altLabel</code> Torbanite</li>
+<li>Spore dispersal <code>skos:altLabel</code> Sporulation</li>
+</ul>
+<h4 id="superseded-terms">Superseded terms</h4>
+<p>Even if a term is no longer used in recent content, users may still search a catalogue using superseded language. Storing superseded terms as alternative labels helps to group content that contains antiquated language with content written in current language. For example:</p>
+<ul>
+<li>Aeolian Sand <code>skos:altLabel</code> Eskimo Sand</li>
+<li>Utility hole <code>skos:altLabel</code> Manhole</li>
+</ul>
+<h4 id="acronyms-vs-phrases">Acronyms vs phrases</h4>
+<p>In general, an acronym or initialism should be managed as an <code>skos:altLabel</code>; example: </p>
+<ul>
+<li>Greenhouse gasses <code>skos:altLabel</code> GHG </li>
+</ul>
+<p>An exception is when the acronym is better known or more frequently used. For example:</p>
+<ul>
+<li>TNT <code>skos:altLabel</code> Trinitrotoluene</li>
+<li>CSIRO <code>skos:altLabel</code> Commonwealth Scientific and Industrial Research Organisation</li>
+</ul>
+<h4 id="official-vs-common-language">Official vs common language</h4>
+<p>Use an <code>altLabel</code> to connect official or technical language with natural language. For example:</p>
+<ul>
+<li>Bi-directional <code>skos:altLabel</code> Two way</li>
+<li>Alcohol-impaired driving <code>skos:altLabel</code> Drink-driving</li>
+</ul>
+<h2 id="0pen-edit-and-save-a-vocabulary">🚧 0pen, edit and save a vocabulary</h2>
+<p>These modules will include a number of editing exercises that use the VocEdit tool and the <em>Pest Risk Pathway</em> vocabulary (PRP). The PRP is un-published and hosted by KurrawongAI for training purposes. In this exercise we will add a new concept; a concept preferred label; a concept definition; and a concept identifier.</p>
+<p>💡 <em>Chrome browser is needed to use the VocEdit tool.</em></p>
+<ol>
+<li><strong>Go to</strong> <a href="https://raw.githubusercontent.com/Kurrawong/demo-vocabs/main/vocabs/pestRiskPath_training.ttl">Download TTL</a><br />
+<em>(Right-click and choose “Save link as...” to download)</em></li>
+<li><strong>Save</strong> the file to your local directory  </li>
+<li><strong>Open</strong> Chrome (if not already)  </li>
+<li><strong>Go to</strong> <a href="https://vocedit.kurrawong.ai">VocEdit</a>  </li>
+<li><strong>Select</strong> <strong>Project</strong> &gt; <strong>Open</strong> &gt; <strong>Local file</strong></li>
+<li><strong>Select</strong> <em>pestRiskPath_training.ttl</em> from your local directory  </li>
+<li><strong>Select</strong> <strong>Resource</strong> &gt; <strong>Create new</strong></li>
+<li><strong>Resource type</strong> &gt; <strong>Concept</strong></li>
+<li><strong>Add</strong> <em>http://example.com/pestRiskPath/</em></li>
+<li><strong>Open a new tab</strong> and go to <a href="https://www.uuidgenerator.net">UUID Generator</a>  </li>
+<li><strong>Copy</strong> the UUID  </li>
+<li><strong>Paste</strong> the UUID in the <strong>IRI</strong> field and after the stem <em>http://example.com/pestRiskPath/</em>. So the full IRI should look be: <em>http://example.com/pestRiskPath/[UUID]</em></li>
+<li><strong>Select Create</strong> </li>
+<li><strong>Edit</strong> &gt; <strong>prefLabel</strong> &gt; <strong>"+"</strong> &gt; <strong>Literal string with language</strong></li>
+<li><strong>Add</strong> <em>Wind dispersal</em></li>
+<li>In Lang box, <strong>Add</strong>* "en"</li>
+<li><strong>definition</strong> &gt; <strong>Add a literal with language</strong>  </li>
+<li><strong>Add</strong> <em>Dispersal of pests by wind</em></li>
+<li>In Lang box, <strong>Add</strong>* "en"</li>
+<li><strong>Concept scheme relationships - topConceptOf</strong> &gt; <strong>Select</strong> <strong>"+"</strong> &gt; <em>IRI</em></li>
+<li><strong>Select a value</strong> &gt; select <em>pestRiskPath</em></li>
+<li><strong>Save</strong></li>
+</ol>
+<p>The <code>pestRiskPathway.ttl</code> will now be updated in your local directory, with the new concept <em>Wind dispersal</em> added.</p>
+<h2 id="broader-narrower">Broader / Narrower</h2>
+<p>We have already introduced the <code>skos:broader</code> and <code>skos:narrower</code> relationships in the sections on <em>taxonomies</em> and <em>thesaurus</em> vocabularies. </p>
+<p>Depending on the type and complexity of a vocabulary, there may be a requirement that all concepts are related to another concept via <code>skos:broader</code> property. In a taxonomy or thesaurus vocabulary project, a concept that does not have a <code>skos:broader</code> concept may be considered an <em>orphan</em>, unless it is a <em>top concept</em>, indicated with the <code>skos:topConceptOf</code> property. The SKOS standard does not require concepts to be arranged in a hierarchy. Some vocabularies will be mostly flat with only selected concepts in narrower relationships to broader concepts.</p>
+<p>If a <code>skos:Concept</code> does not have a <code>skos:broader</code> property, the VocPub profile requires that it must reference the relevant <code>skos:ConceptScheme</code> IRI with the <code>skos:topConceptOf</code> property. </p>
+<p><strong>Tip:</strong> Broader and narrower relationships are reciprocal - that is, if A is broader than B, then B is narrower than A. For example:</p>
+<ul>
+<li>Dynamic land cover <code>skos:broader</code> Land cover and land use</li>
+<li>
+<p>Land cover and land use <code>skos:narrower</code> Dynamic land cover</p>
+</li>
+<li>
+<p>Apples <code>skos:broader</code> Pomme fruit</p>
+</li>
+<li>
+<p>Pomme fruit <code>skos:narrower</code> Apples</p>
+</li>
+<li>
+<p>Hospitals <code>skos:narrower</code> Private hospitals</p>
+</li>
+<li>Private hospitals <code>skos:broader</code> Hospitals</li>
+</ul>
+<p>Arranging concepts into a hierarchy supports discovery via:</p>
+<ul>
+<li><em>Search expansion</em> - a system can expand results by matching any narrower concepts of a search term, e.g. a search for <em>Granitoid</em> returns resources about <em>granitoid</em> OR <em>granite</em></li>
+<li><em>Navigation</em> - top-down navigation or breadcrumb links can be launched in an interface using broader / narrower relationships. For example, clicking on <em>Pomme fruit</em> launches a list of links to apples, pears and quinces</li>
+</ul>
+<p>In a vocabulary, it's possible to keep adding narrower relationships by creating more and more specific concepts. For example, a catalogue that is about horticulture probably needs a vocabulary with more specific (narrower) concepts than just <em>apples</em> (e.g. <em>Kiku Fuji</em>).</p>
+<p>💡 Only add narrower concepts that you would expect to be used to describe content in a catalogue, and distinguish that content from others, with that concept. Don't make a vocabulary hierarchy very deep with specific concepts just because you can!</p>
+<h3 id="top-concepts">Top Concepts</h3>
+<p>If a <code>skos:Concept</code> does not have a <code>skos:narrower</code> relationship, it is automatically assumed to be a <code>skos:topConceptOf</code> a <code>skos:ConceptScheme</code> and must be declared as such.</p>
+<h3 id="related-associated-concepts">Related (associated) concepts</h3>
+<p>SKOS supports non-hierarchical relationships between concepts using <code>skos:related</code> property. This is based on the <em>associative relationship</em> defined in standards such as ISO 25964-1, which states that related terms are "semantically or conceptually associated to such an extent that the link between the two needs to be made explicit... and it is important to do this for concepts that overlap in scope" (International Organization for Standardization, 2011, p.63).</p>
+<h3 id="add-broader-concept-relations">🚧 Add Broader concept relations</h3>
+<p>In this exercise we will add a <code>skos:broader</code> relationship between two concepts. Note that once a concept has a broader relationship, it is no longer indicated by <code>skos:topConceptOf</code> and and 'top concept' status is removed.</p>
+<ol>
+<li><strong>Go to</strong> <a href="https://vocedit.kurrawong.ai">VocEdit</a> in Chrome  </li>
+<li><strong>Project</strong> &gt; <strong>Open</strong> <code>pestRiskPath_training.ttl</code> from your local directory  </li>
+<li><strong>Select</strong> <em>Spore dispersal</em> from the left-hand list of concepts  </li>
+<li><strong>Concept relationships</strong> &gt; <strong>Broader</strong> &gt; <strong>Add a new value</strong> &gt; <strong>IRI</strong></li>
+<li>From the Select a value dropdown, search for or select <em>Host plants</em> &gt; <strong>select</strong></li>
+<li><strong>Save</strong></li>
+</ol>
+<p>This change optimises the SKOS model by applying a broader relationship between concepts that are conceptually broader and narrower. In a retrieval system we might expect a query for resources about host plants as pest vectors to return a resource about <em>Spore dispersal</em>. The <code>skos:broader</code> relation support such an inference.</p>
+<h3 id="add-alternative-labels">🚧 Add Alternative labels</h3>
+<p>In this exercise we will add an alternative label to a concept. </p>
+<p>💡 <strong>Tip:</strong> You will need to first add the <code>skos:altLabel</code> property to VocEdit as it is not required by <a href="https://linked.data.gov.au/def/vocpub">VocPub</a>.</p>
+<ol>
+<li><strong>Go to</strong> <a href="https://vocedit.kurrawong.ai">VocEdit</a> in Chrome  </li>
+<li><strong>Project</strong> &gt; <strong>Open</strong> <code>pestRiskPath_training.ttl</code> from your local directory  </li>
+<li><strong>Select</strong> <em>Spore dispersal</em> from the left-hand list of concepts  </li>
+<li><strong>Other Properties</strong> &gt; <strong>Add property</strong>  </li>
+<li><strong>Add</strong> <em>http://www.w3.org/2004/02/skos/core#altLabel</em> &gt; <strong>Add property</strong>  </li>
+<li>in the <em>altLabel</em> field you just created &gt; <strong>"+"</strong> &gt; <strong>Add new value</strong> &gt; <strong>Literal with language</strong></li>
+<li><strong>Add</strong> <em>Sporulation</em></li>
+<li><strong>Add</strong> "en" to <em>lang</em> field</li>
+<li><strong>Save</strong></li>
+</ol>
+<h2 id="concept-scheme">Concept Scheme</h2>
+<p>A Concept Scheme is some metadata about the vocabulary as a whole - the vocabulary title (<code>skos:prefLabel</code>), a definition (<code>skos:definition</code>), and a unique identifier are minimum requirements. All vocabularies must have a Concept Scheme, and it should include:</p>
+<ul>
+<li>
+<p>an Identifier - create an IRI following the same pattern as the IRIs for concepts. For the suffix, instead of a concept ID, add a Concept scheme ID. This may be the name of the Concept scheme (the vocabulary), e.g.: - <code>https://linked.data.gov.au/def/road-types</code>
+  ... <em>where Road types</em> is the name of the concept scheme.</p>
+</li>
+<li>
+<p>a <a href="http://www.w3.org/2004/02/skos/core#prefLabel">Preferred label</a> - the same property that is used for a Concept. Use a Preferred label for the name or title of the vocabulary (this may also be used for the Concept Scheme ID)</p>
+</li>
+<li>a <a href="http://www.w3.org/2004/02/skos/core#definition">Definition</a> - a definition of the Concept Scheme. Use plain text only but paragraphs may be separated by newlines. Also used for Concepts</li>
+<li>a <a href="http://purl.org/dc/terms/created">Created</a> date. When the Concept Scheme was first created. This might be automatically created by a vocabulary editor</li>
+<li>a <a href="http://www.w3.org/2004/02/skos/core#historyNote">History</a> note - a note on the origin or history of a vocabulary - such as how or from what it was generated.</li>
+</ul>
+<h3 id="edit-a-concept-scheme">🚧 Edit a Concept Scheme</h3>
+<p>We will continue to edit the Pest Risk Pathway vocabulary, but this time we will edit the concept scheme which is the metadata about the vocabulary as a whole.</p>
+<ol>
+<li><strong>Go to</strong> <a href="https://vocedit.kurrawong.ai">VocEdit</a> in Chrome    </li>
+<li><strong>Project</strong> &gt; <strong>Open</strong> <code>pestRiskPath.ttl</code> from your local directory  </li>
+<li><strong>Select</strong> <strong>Pest Risk Pathway</strong> from under <strong>Vocabularies</strong> in the left-hand panel  </li>
+<li><strong>Annotations</strong> &gt; <strong>definition</strong> &gt; <strong>"+"</strong> &gt; <strong>Add a new value</strong> &gt; <strong>literal with language</strong>  </li>
+<li><strong>Add</strong> <em>A vocabulary describing various structures, modes and activities that introduce unwanted pests, weeds and diseases.</em></li>
+<li><strong>Add</strong> "en" to <em>lang</em> field</li>
+<li><strong>Save</strong></li>
+</ol>
+<h2 id="documentation-properties">Documentation properties</h2>
+<p>In SKOS, <em>documentation</em> properties, or 'note fields' include:</p>
+<ul>
+<li><code>skos:note</code> - a note can say anything! If appropriate, use the following properties instead that have clearer semantics: <code>skos:changeNote</code>, <code>skos:definition</code>, <code>skos:editorialNote</code>, <code>skos:example</code>, or <code>skos:historyNote</code></li>
+<li><code>skos:changeNote</code> - you can indicate a change to a label, or even a changed relationship to another concept.</li>
+<li><code>skos:definition</code> - this field is mandatory in VocPub for all <code>skos:Concept</code>, <code>skos:ConceptScheme</code> and <code>skos:Collection</code> instances.</li>
+</ul>
+<blockquote>
+<p>💡 If you're used to using a 'description' field, such as <code>dcterms:description</code> or <code>schema:description</code>, don't panic! </p>
+</blockquote>
+<ul>
+<li><code>skos:editorialNote</code> - similar to <code>skos:changeNote</code> but perhaps for internal use only, such as "Fixed typo [date]" or "review by [date]".</li>
+<li><code>skos:example</code> - indicate some thing in the world that exemplifies the concept - this might be any kind of information resource, but references to images are not usually expected in Documentation properties (see [#images] to do this).</li>
+<li><code>skos:historyNote</code> - this property must be used to indicate the origins of a <code>skos:ConceptScheme</code> or a <code>skos:Collection</code>, where the origin cannot be indicated with an IRI (so with a textual reference, e.g. (this vocabulary / collection was created for purpose X by project Y on behalf of agency Z"). For a skos:Concept, the same rules apply if the concept origin is NOT from within its <code>skos:ConceptScheme</code>, e.g. "this Concept originated in Vocabulary X, added here [date]".  </li>
+<li><code>skos:scopeNote</code> - use a Scope note to say what kinds of things are included in the concept and what is not included. It may be useful to indicate another concept that should be used instead to describe or catalogue certain kinds of things. For example:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nv">&lt;http://vocabulary.curriculum.edu.au/scot/10109&gt;</span> <span class="kt">a</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Concept</span> <span class="p">;</span>
+<span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="s">&quot;Educational publications&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+<span class="nn">skos</span><span class="p">:</span><span class="nt">scopeNote</span> <span class="s">&quot;Use for resources about development, distribution or management of industry publications relevant across the education sector. For resources about publications generated by individual schools USE School publications.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+<span class="nn">skos</span><span class="p">:</span><span class="nt">related</span> <span class="nv">&lt;http://vocabulary.curriculum.edu.au/scot/10141&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>💡 When a <code>skos:scopeNote</code> refers to another <code>skos:Concept</code>, use a <code>skos:related</code> property also to indicate that concept with an IRI.</p>
+<p>💡 When writing notes, use plain text only and limit paragraph breaks where possible.</p>
+</blockquote>
+<h2 id="summary">Summary</h2>
+<p>In this module we have introduced vocabularies - different types and how they are useful. We have also used a vocabulary editing tool to create the minimum elements for a concept and a concept scheme. </p>
+<h2 id="references-and-further-reading">References and Further Reading</h2>
+<ul>
+<li>AGLDWG. (n.d.). VocPub profile specification. Retrieved April 17, 2025, from <a href="https://linked.data.gov.au/def/vocpub">https://linked.data.gov.au/def/vocpub</a></li>
+<li>International Organization for Standardization. (2011). Information and documentation — Thesauri and interoperability with other vocabularies — Part 1: Thesauri for information retrieval (ISO Standard No. 25964-1:2011). https://www.iso.org/standard/53657.html</li>
+<li>W3C (n.d.). QSKOS. Retrieved March 5, 2025, from <a href="https://www.w3.org/2001/sw/wiki/QSKOS">https://www.w3.org/2001/sw/wiki/QSKOS</a></li>
+<li>W3C (2009). SKOS reference. <a href="https://www.w3.org/TR/skos-reference/">https://www.w3.org/TR/skos-reference/</a></li>
+<li>W3C (2014). Turtle: Terse RDF triple language (W3C Recommendation). Retrieved from <a href="https://www.w3.org/TR/turtle/">https://www.w3.org/TR/turtle/</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; KurrawongAI, 2025
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.indexes", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/external-links.js"></script>
+      
+    
+  </body>
+</html>
