@@ -148,7 +148,7 @@ graph TD
 
 > 💡 **Tip:** the ``skos:related`` property is most useful for relating disparate concepts in deep, complex hierarchies. Use ``skos:related`` sparingly - don't relate everything to everything! 
 
-We will look at SKOS properties in more detail in the [Properties](#vocabulary-properties) section.
+We will look at SKOS properties in more detail in the [Properties](#minimum-vocabulary-properties) section.
 
 ### Vocabularies in knowledge graphs
 
