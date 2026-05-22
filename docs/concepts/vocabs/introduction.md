@@ -2,23 +2,23 @@
 
 This is the first in a series of modules that range from introductory guidance, tips for experienced vocabulary practitioners and lessons in using innovative vocabulary tooling. These modules needn't be approached in series order, but note the step-by-step exercise that continues through out other modules. In summary, the modules are:
 
-[Introduction to Vocabularies](#introduction-to-vocabularies) (this module)
+[Introduction to Vocabularies](#introduction-to-vocabularies) (_this module_)
 
 - Vocabulary types
-- Core properties
-- Exercise - start using VocEdit
-
-[Advanced Vocbulary Editing](/concepts/vocabs/creation/)
-
-- Mapping between vocabularies
+- Minimum properties
 - Additional properties
-- Exercise (continued from _Introduction_)
+- Exercises (using VocEdit)
 
 [Vocabulary Reuse](/concepts/vocabs/vocab-reuse/)
 
 - Reuse patterns
-- Importing concept from other vocabularies
-- Exercise (continued from _Advanced_)
+- Importing concepts from other vocabularies
+- Mapping between vocabularies
+- Exercises (continued from _Introduction_)
+
+[Vocabulary patterns](/concepts/vocabs/patterns/)
+
+- Handling special cases and advanced tips
 
 [Vocabulary querying](/concepts/vocabs/querying/)
 
@@ -32,10 +32,6 @@ This is the first in a series of modules that range from introductory guidance, 
 - VocExcel
 - SHACL Validator
 - RDF Converter
-
-[Vocabulary patterns](/concepts/vocabs/patterns/)
-
-- Handling special cases and advanced tips
 
 <br>
 
@@ -152,7 +148,7 @@ graph TD
 
 > 💡 **Tip:** the ``skos:related`` property is most useful for relating disparate concepts in deep, complex hierarchies. Use ``skos:related`` sparingly - don't relate everything to everything! 
 
-We will look at SKOS properties in more detail in the [Properties](#vocabulary-properties) section.
+We will look at SKOS properties in more detail in the [Properties](#minimum-vocabulary-properties) section.
 
 ### Vocabularies in knowledge graphs
 
@@ -237,101 +233,30 @@ Without vocabulary concepts, datasets often remain isolated because they use dif
 
 Through relationships such as `skos:broader`, `skos:narrower`, and `skos:altLabel`, vocabulary concepts act as semantic bridges, enabling inferences and connections that would not otherwise be possible.
 
+## Minimum vocabulary properties
 
-## Vocabulary properties
+Before a vocabulary can satisfy ANY definition or quality standards, it must have:
 
-Vocabularies contain, as a minimum: _preferred labels_, _definitions_ and _identifiers_. We have already introduced concepts relations with other concepts. In this section we will look at more concept properties, including properties that are required for validation in vocabulary quality standards.
+- **concepts** - these are the 'things', or individually named entities that make up the contents of a vocabulary. By _concept_ we mean a `skos:Concept` ;
+- **preferred label** - the human readable label for each concept is a `skos:prefLabel` and is the most widely used or preferred label for a concept ;
+- **identifier** - all concepts must be indicated by a unique identifier.
+- **concept scheme** - some information about the vocabulary as a whole, such as title, publisher, creation date etc, indicated with skos:ConceptScheme.
 
-### Minimum properties: prefLabel, definition and identifier
+Furthermore, _VocPub Profile_ ([AGLDWG, n.d.](#references-and-further-reading)) requires other properties to be present before a vocabulary is valid, including:
 
-To comply with VocPub profile ([AGLDWG, n.d.](#references-and-further-reading)), each concept must have at least:
+- **definition**, indicated with `skos:definition` - a notation property that describes or defines the concept ;
+- **in scheme** membership - an indication that the concept is in the concept scheme that it is contained in, _or_
+- **is defined by** - indicates that the concept in the containing concept scheme is defined in a different **concept scheme**.
 
-- a `skos:prefLabel` which is the main way that we say and understand the concept;
-- a `skos:definition` - a short note that describes the concept;
-- an _Identifier_ - a unique way of distinguishing the concept from other concepts
-
-#### 🚧 Exercise: 0pen, edit and save a vocabulary
-
-These modules will include a number of editing exercises that use the VocEdit tool and the _Pest Risk Pathway_ vocabulary (PRP). The PRP is un-published and hosted by KurrawongAI for training purposes. In this exercise we will add a new concept; a concept preferred label; a concept definition; and a concept identifier.
-
-💡 _Chrome browser is needed to use the VocEdit tool._
-
-1. **Go to** [Download TTL](https://raw.githubusercontent.com/Kurrawong/demo-vocabs/main/vocabs/pestRiskPath_training.ttl)  
-  *(Right-click and choose “Save link as...” to download)*
-2. **Save** the file to your local directory  
-3. **Open** Chrome (if not already)  
-4. **Go to** [VocEdit](https://vocedit.kurrawong.ai)  
-5. **Select** **Project** > **Open** > **Local file**
-6. **Select** _pestRiskPath_training.ttl_ from your local directory  
-7. **Select** **Resource** > **Create new**
-8. **Resource type** > **Concept**
-9. **Add** _http://example.com/pestRiskPath/_
-10. **Open a new tab** and go to [UUID Generator](https://www.uuidgenerator.net)  
-11. **Copy** the UUID  
-12. **Paste** the UUID in the **IRI** field and after the stem _http://example.com/pestRiskPath/_. So the full IRI should look be: _http://example.com/pestRiskPath/[UUID]_
-13. **Select Create** 
-14. **Edit** > **prefLabel** > **"+"** > **Literal string with language**
-15. **Add** _Wind dispersal_
-16. In Lang box, **Add*** "en"
-17. **definition** > **Add a literal with language**  
-18. **Add** _Dispersal of pests by wind_
-19. In Lang box, **Add*** "en"
-23. **Concept scheme relationships - topConceptOf** > **Select** **"+"** > _IRI_
-24. **Select a value** > select _pestRiskPath_
-26. **Save**
-
-The pestRiskPathway.ttl will now be updated in your local directory, with the new concept _Wind dispersal_ added.
-
-## Broader / Narrower
-
-We have already introduced the ``skos:broader`` and ``skos:narrower`` relationships in the sections on _taxonomies_ and _thesaurus_ vocabularies. 
-
-Depending on the type and complexity of a vocabulary, there may be a requirement that all concepts are related to another concept via ``skos:broader`` property. In a taxonomy or thesaurus vocabulary project, a concept that does not have a `skos:broader` concept may be considered an _orphan_, unless it is a _top concept_, indicated with the `skos:topConceptOf` property. The SKOS standard does not require concepts to be arranged in a hierarchy. Some vocabularies will be mostly flat with only selected concepts in narrower relationships to broader concepts.
-
-If a `skos:Concept` does not have a `skos:broader` property, the VocPub profile requires that it must reference the relevant `skos:ConceptScheme` IRI with the `skos:topConceptOf` property. 
-
-**Tip:** Broader and narrower relationships are reciprocal - that is, if A is broader than B, then B is narrower than A. For example:
-
-- Dynamic land cover `skos:broader` Land cover and land use
-- Land cover and land use `skos:narrower` Dynamic land cover
-
-- Apples `skos:broader` Pomme fruit
-- Pomme fruit `skos:narrower` Apples
-
-- Hospitals `skos:narrower` Private hospitals
-- Private hospitals `skos:broader` Hospitals
-
-Arranging concepts into a hierarchy supports discovery via:
-
-- _Search expansion_ - a system can expand results by matching any narrower concepts of a search term, e.g. a search for _Granitoid_ returns resources about _granitoid_ OR _granite_
-- _Navigation_ - top-down navigation or breadcrumb links can be launched in an interface using broader / narrower relationships. For example, clicking on _Pomme fruit_ launches a list of links to apples, pears and quinces
-
-In a vocabulary, it's possible to keep adding narrower relationships by creating more and more specific concepts. For example, a catalogue that is about horticulture probably needs a vocabulary with more specific (narrower) concepts than just _apples_ (e.g. _Kiku Fuji_).
-
-💡 Only add narrower concepts that you would expect to be used to describe content in a catalogue, and distinguish that content from others, with that concept. Don't make a vocabulary hierarchy very deep with specific concepts just because you can!
-
-#### 🚧 Exercise: add broader concept relations
-
-In this exercise we will add a `skos:broader` relationship between two concepts. Note that once a concept has a broader relationship, it is no longer indicated by `skos:topConceptOf` and and 'top concept' status is removed.
-
-1. **Go to** [VocEdit](https://vocedit.kurrawong.ai) in Chrome  
-2. **Project** > **Open** `pestRiskPath_training.ttl` from your local directory  
-3. **Select** _Spore dispersal_ from the left-hand list of concepts  
-4. **Concept relationships** > **Broader** > **Add a new value** > **IRI**
-5. From the Select a value dropdown, search for or select _Host plants_ > **select**
-6. **Save**
-
-This change optimises the SKOS model by applying a broader relationship between concepts that are conceptually broader and narrower. In a retrieval system we might expect a query for resources about host plants as pest vectors to return a resource about _Spore dispersal_. The `skos:broader` relation support such an inference.
-
-### Alternative labels
+### Preferred Label
 
 Each concept must have at least one _Preferred label_ (`skos:prefLabel`), based on the word or phrase that best describes the concept. We often use different terms to mean the same thing - the `skos:prefLabel` should be the term that is used most frequently, or understood and used by most expected users of a system or catalogue.
 
-In addition, each concept may have one ore more _Alternate labels_ (``skos:altLabel``). It's a good idea to add one or more ``altLabel`` to a concept so that it can be found in different ways. A concept can have any number of alternate labels, provided they are similar enough to the common understanding of the concept.
+In addition, each concept may have one ore more _Alternate labels_ (``skos:altLabel``). It's a good idea to add one or more alternative labels to a concept so that it can be found in different ways, provided they are similar enough to the common understanding of the concept.
 
-💡 **Tip:** when adding a `skos:altLabel`, ask this question: _If I searched with a preferred label, and found some information matching an alternative label in the text, would I be satisfied by the search result?_
+> 💡 when adding a `skos:altLabel`, ask this question: _If I searched with a preferred label, and found some information matching an alternative label in the text, would I be satisfied by the search result?_
 
-Here are some common scenarios where we might need to choose between preferred and alternative labels:
+Here are some common scenarios where we might need to **choose between preferred and alternative labels**:
 
 #### Common vs Scientific terms
 
@@ -366,7 +291,88 @@ Use an ``altLabel`` to connect official or technical language with natural langu
 - Bi-directional ``skos:altLabel`` Two way
 - Alcohol-impaired driving ``skos:altLabel`` Drink-driving
 
-#### 🚧 Exercise: add alternative labels
+## 🚧 0pen, edit and save a vocabulary
+
+These modules will include a number of editing exercises that use the VocEdit tool and the _Pest Risk Pathway_ vocabulary (PRP). The PRP is un-published and hosted by KurrawongAI for training purposes. In this exercise we will add a new concept; a concept preferred label; a concept definition; and a concept identifier.
+
+💡 _Chrome browser is needed to use the VocEdit tool._
+
+1. **Go to** [Download TTL](https://raw.githubusercontent.com/Kurrawong/demo-vocabs/main/vocabs/pestRiskPath_training.ttl)  
+  *(Right-click and choose “Save link as...” to download)*
+2. **Save** the file to your local directory  
+3. **Open** Chrome (if not already)  
+4. **Go to** [VocEdit](https://vocedit.kurrawong.ai)  
+5. **Select** **Project** > **Open** > **Local file**
+6. **Select** _pestRiskPath_training.ttl_ from your local directory  
+7. **Select** **Resource** > **Create new**
+8. **Resource type** > **Concept**
+9. **Add** _http://example.com/pestRiskPath/_
+10. **Open a new tab** and go to [UUID Generator](https://www.uuidgenerator.net)  
+11. **Copy** the UUID  
+12. **Paste** the UUID in the **IRI** field and after the stem _http://example.com/pestRiskPath/_. So the full IRI should look be: _http://example.com/pestRiskPath/[UUID]_
+13. **Select Create** 
+14. **Edit** > **prefLabel** > **"+"** > **Literal string with language**
+15. **Add** _Wind dispersal_
+16. In Lang box, **Add*** "en"
+17. **definition** > **Add a literal with language**  
+18. **Add** _Dispersal of pests by wind_
+19. In Lang box, **Add*** "en"
+23. **Concept scheme relationships - topConceptOf** > **Select** **"+"** > _IRI_
+24. **Select a value** > select _pestRiskPath_
+26. **Save**
+
+The `pestRiskPathway.ttl` will now be updated in your local directory, with the new concept _Wind dispersal_ added.
+
+## Broader / Narrower
+
+We have already introduced the ``skos:broader`` and ``skos:narrower`` relationships in the sections on _taxonomies_ and _thesaurus_ vocabularies. 
+
+Depending on the type and complexity of a vocabulary, there may be a requirement that all concepts are related to another concept via ``skos:broader`` property. In a taxonomy or thesaurus vocabulary project, a concept that does not have a `skos:broader` concept may be considered an _orphan_, unless it is a _top concept_, indicated with the `skos:topConceptOf` property. The SKOS standard does not require concepts to be arranged in a hierarchy. Some vocabularies will be mostly flat with only selected concepts in narrower relationships to broader concepts.
+
+If a `skos:Concept` does not have a `skos:broader` property, the VocPub profile requires that it must reference the relevant `skos:ConceptScheme` IRI with the `skos:topConceptOf` property. 
+
+**Tip:** Broader and narrower relationships are reciprocal - that is, if A is broader than B, then B is narrower than A. For example:
+
+- Dynamic land cover `skos:broader` Land cover and land use
+- Land cover and land use `skos:narrower` Dynamic land cover
+
+- Apples `skos:broader` Pomme fruit
+- Pomme fruit `skos:narrower` Apples
+
+- Hospitals `skos:narrower` Private hospitals
+- Private hospitals `skos:broader` Hospitals
+
+Arranging concepts into a hierarchy supports discovery via:
+
+- _Search expansion_ - a system can expand results by matching any narrower concepts of a search term, e.g. a search for _Granitoid_ returns resources about _granitoid_ OR _granite_
+- _Navigation_ - top-down navigation or breadcrumb links can be launched in an interface using broader / narrower relationships. For example, clicking on _Pomme fruit_ launches a list of links to apples, pears and quinces
+
+In a vocabulary, it's possible to keep adding narrower relationships by creating more and more specific concepts. For example, a catalogue that is about horticulture probably needs a vocabulary with more specific (narrower) concepts than just _apples_ (e.g. _Kiku Fuji_).
+
+💡 Only add narrower concepts that you would expect to be used to describe content in a catalogue, and distinguish that content from others, with that concept. Don't make a vocabulary hierarchy very deep with specific concepts just because you can!
+
+### Top Concepts
+
+If a `skos:Concept` does not have a `skos:narrower` relationship, it is automatically assumed to be a `skos:topConceptOf` a `skos:ConceptScheme` and must be declared as such.
+
+### Related (associated) concepts
+
+SKOS supports non-hierarchical relationships between concepts using `skos:related` property. This is based on the _associative relationship_ defined in standards such as ISO 25964-1, which states that related terms are "semantically or conceptually associated to such an extent that the link between the two needs to be made explicit... and it is important to do this for concepts that overlap in scope" (International Organization for Standardization, 2011, p.63).
+
+### 🚧 Add Broader concept relations
+
+In this exercise we will add a `skos:broader` relationship between two concepts. Note that once a concept has a broader relationship, it is no longer indicated by `skos:topConceptOf` and and 'top concept' status is removed.
+
+1. **Go to** [VocEdit](https://vocedit.kurrawong.ai) in Chrome  
+2. **Project** > **Open** `pestRiskPath_training.ttl` from your local directory  
+3. **Select** _Spore dispersal_ from the left-hand list of concepts  
+4. **Concept relationships** > **Broader** > **Add a new value** > **IRI**
+5. From the Select a value dropdown, search for or select _Host plants_ > **select**
+6. **Save**
+
+This change optimises the SKOS model by applying a broader relationship between concepts that are conceptually broader and narrower. In a retrieval system we might expect a query for resources about host plants as pest vectors to return a resource about _Spore dispersal_. The `skos:broader` relation support such an inference.
+
+### 🚧 Add Alternative labels
 
 In this exercise we will add an alternative label to a concept. 
 
@@ -382,11 +388,6 @@ In this exercise we will add an alternative label to a concept.
 8. **Add** "en" to _lang_ field
 9. **Save**
 
-###  Top Concepts
-
-If a `skos:Concept` does not have a `skos:narrower` relationship, it is automatically assumed to be a `skos:topConceptOf` a `skos:ConceptScheme` and must be declared as such.
-
-A concept may be moved out of the 
 
 ## Concept Scheme
 
@@ -400,7 +401,7 @@ A Concept Scheme is some metadata about the vocabulary as a whole - the vocabula
 - a [Created](http://purl.org/dc/terms/created) date. When the Concept Scheme was first created. This might be automatically created by a vocabulary editor
 - a [History](http://www.w3.org/2004/02/skos/core#historyNote) note - a note on the origin or history of a vocabulary - such as how or from what it was generated.
 
-#### 🚧 Exercise: edit a concept scheme
+### 🚧 Edit a Concept Scheme
 
 We will continue to edit the Pest Risk Pathway vocabulary, but this time we will edit the concept scheme which is the metadata about the vocabulary as a whole.
 
@@ -412,6 +413,33 @@ We will continue to edit the Pest Risk Pathway vocabulary, but this time we will
 6. **Add** "en" to _lang_ field
 7. **Save**
 
+## Documentation properties
+
+In SKOS, _documentation_ properties, or 'note fields' include:
+
+- `skos:note` - a note can say anything! If appropriate, use the following properties instead that have clearer semantics: `skos:changeNote`, `skos:definition`, `skos:editorialNote`, `skos:example`, or `skos:historyNote`
+- `skos:changeNote` - you can indicate a change to a label, or even a changed relationship to another concept.
+- `skos:definition` - this field is mandatory in VocPub for all `skos:Concept`, `skos:ConceptScheme` and `skos:Collection` instances.
+
+> 💡 If you're used to using a 'description' field, such as `dcterms:description` or `schema:description`, don't panic! 
+
+- `skos:editorialNote` - similar to `skos:changeNote` but perhaps for internal use only, such as "Fixed typo [date]" or "review by [date]".
+- `skos:example` - indicate some thing in the world that exemplifies the concept - this might be any kind of information resource, but references to images are not usually expected in Documentation properties (see [#images] to do this).
+- `skos:historyNote` - this property must be used to indicate the origins of a `skos:ConceptScheme` or a `skos:Collection`, where the origin cannot be indicated with an IRI (so with a textual reference, e.g. (this vocabulary / collection was created for purpose X by project Y on behalf of agency Z"). For a skos:Concept, the same rules apply if the concept origin is NOT from within its `skos:ConceptScheme`, e.g. "this Concept originated in Vocabulary X, added here [date]".  
+- `skos:scopeNote` - use a Scope note to say what kinds of things are included in the concept and what is not included. It may be useful to indicate another concept that should be used instead to describe or catalogue certain kinds of things. For example:
+
+```turtle
+<http://vocabulary.curriculum.edu.au/scot/10109> a skos:Concept ;
+skos:prefLabel "Educational publications"@en ;
+skos:scopeNote "Use for resources about development, distribution or management of industry publications relevant across the education sector. For resources about publications generated by individual schools USE School publications."@en ;
+skos:related <http://vocabulary.curriculum.edu.au/scot/10141>
+```
+
+> 💡 When a `skos:scopeNote` refers to another `skos:Concept`, use a `skos:related` property also to indicate that concept with an IRI.
+
+> 💡 When writing notes, use plain text only and limit paragraph breaks where possible.
+
+
 ## Summary
 
 In this module we have introduced vocabularies - different types and how they are useful. We have also used a vocabulary editing tool to create the minimum elements for a concept and a concept scheme. 
@@ -419,6 +447,7 @@ In this module we have introduced vocabularies - different types and how they ar
 ## References and Further Reading
 
 * AGLDWG. (n.d.). VocPub profile specification. Retrieved April 17, 2025, from <https://linked.data.gov.au/def/vocpub>
+* International Organization for Standardization. (2011). Information and documentation — Thesauri and interoperability with other vocabularies — Part 1: Thesauri for information retrieval (ISO Standard No. 25964-1:2011). https://www.iso.org/standard/53657.html
 * W3C (n.d.). QSKOS. Retrieved March 5, 2025, from <https://www.w3.org/2001/sw/wiki/QSKOS>
 * W3C (2009). SKOS reference. <https://www.w3.org/TR/skos-reference/>
 * W3C (2014). Turtle: Terse RDF triple language (W3C Recommendation). Retrieved from <https://www.w3.org/TR/turtle/>

@@ -1,31 +1,28 @@
 
 # Vocabulary Reuse
 
-
 >
 >***Scope***
 >
->This content is intended to provide guidance on the effective reuse of vocabularies. It will explain the benefits of reuse; how to locate suitable existing vocabularies; how to make attributions and manage provenance in reused vocabularies and vocabulary segments. 
+>_Guidance on effective reuse of vocabularies; benefits of reuse; how to locate suitable vocabularies; and managing provenance._ 
 
 >
 >***Audience***
 >
->_This module is primarily targeted to managers and owners of established vocabularies. It is assumed that learners have some experience with using document management or version control systems, and general familiarity with data management in practice._
+>_Managers and owners of established vocabularies; learners have some experience with using document management or version control systems, and general familiarity with data management._
 >
 >***Outcome***
 >
->_Learners should be able to adopt vocabularies in part or in whole into their local contexts, and understand implications for managing externally sourced vocabularies as part of local operations_
+>_Learners can adopt vocabularies in part or in whole into their local contexts, and understand implications for managing externally sourced vocabularies_
 >
 >----------------
 
-> 💡 _Identifies troubleshooting tips, common errors and potential issues._
-
-> 📝 _Notes that summarise content at the end of a module._
+> 💡 _Troubleshooting tips, common errors, potential issues._
 
 > 🚧 _Exercises_
 
 
-## An Introduction to vocabulary reuse
+## Introduction to vocabulary reuse
 
 Whatever domain we work in, there's a fair chance that useful vocabularies have already been developed by third parties. And as for any data management operation, it's a good idea to seek opportunities to reuse existing vocabularies. In this module we'll cover:
 - Weighing up the effort: reuse vs build from scratch.
@@ -35,62 +32,9 @@ Whatever domain we work in, there's a fair chance that useful vocabularies have 
 - Adopting parts vs whole vocabularies
 - Attribution and provenance: representing and preserving primary sources.
 
-## Reuse patterns
-
-Is it worth reusing existing vocabularies in part or whole? There are various patterns that can be followed:
-
-- **Build from scratch** - just make a vocabulary based on familiar resources
-- **Adoption** - Importing concepts from some or perhaps most of your vocabulary comprises concepts sourced from existing vocabularies, faithfully retaining and presenting definitions and other metadata from the source;
-- **Verbatim** - access and reuse a vocabulary as is
-- **Customise** Verbatim, with minor changes, such as to labels
-
-
-### Build from scratch 
-Why not develop a vocabulary from scratch, with sources of warrant that you know are relevant to your community and use case?
-
-Even if you build from scratch, you might consider developing a vocabulary that is itself reuse-able in your industry, sector or in other regions. The more use your vocabulary gets, the more interoperability you have with other systems and catalogues. If you want your vocabulary reused, ensure:
-
-- clear rights and licensing are declared, within the vocabulary concept scheme and in surrounding web context
-- governance arrangements for the vocabulary are stated somewhere - build trust by declaring the update history and cycle, and commitments to persisting Concept IRIs
-- distributions: ensure your vocabulary can be accessed in standard formats and over standard APIs
-
-> 💡 see _VocPub Specification_, sections 2.1.13 / 2.1.14, about declaring [licenses and rights](https://agldwg.github.io/vocpub-profile/specification.html#vocabulary).
-
-Even if you build from scratch, you can match home-grown concepts with concepts in external vocabularies - see [Mapping concepts with other vocabularies](#mapping-concepts-with-other-vocabularies).
-
-### Adoption
-You might import a cluster of concepts from an existing vocabulary into a local vocabulary project. There are a number of things you should do to indicate provenance of such concepts, and to support ongoing management of imported concepts, including:
-
-- adding a `prov:wasDerivedFrom` statement for an imported Concept
-- adding a `rdfs:isDefinedBy` statement indicating an IRI of a Concept scheme where the Concept is from
-- creating a `skos:Collection`, specifically for grouping concepts derived from some other vocabulary
-
-See [Import a concept](#-import-a-concept) for details.
-
-### Verbatim
-
-While using an existing vocabulary as-is requires no editing work, there will usually be a need to attribute the creator or publisher within your local business context. Also ensure rights information is checked, even if you have no plans to extend or remix the vocabulary - look out for these properties:
-
-```turtle
-PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX isorole: <https://standards.iso.org/iso/19115/-3/cit/1.0/>
-PREFIX sdo: <https://schema.org/>
-
-# sdo:license
-# dcterms:license - equivalent to sdo:license;
-# dcterms:accessRights - not really 'rights' as such, but if access rights restricted in some way, look further into what you allowed to do with the vocabulary;
-# dcterms:rights
-# sdo:copyrightHolder
-# isorole:rightsHolder - equivalent to sdo:rightsholder
-```
-
-### Customise
-
-You may make minor changes to published vocabularies to meet local requirements. Vocabulary concepts may be added; labels may be updated (changes to spelling or swapping an `skos:altLabel` for `skos:prefLabel`). Changes will need to be acknowledged at both the Concept and concept scheme level - see [Add an imported concept](#add-an-imported-concept) for how to do this. 
-
 ## Finding vocabularies
 
-If you are going to **Adopt**, use **Verbatim** or **Customise** a vocabulary, you'll need to find relevant vocabularies to do so with. Even if you **Build from scratch**, it's a good idea to know about other vocabulary work already done in your domain. There may already be vocabularies that meet your requirements, such as enriching the semantics of a metadata catalogue. They may exist in a nearby knowledge domain, industry or sector, and may originate in other global regions.
+Whether you are planning to **Adopt** existing vocabularies, use them **Verbatim** or **Customise** for local requirements, you'll need to find them first! Even if you plan to **Build from scratch**, it's a good idea to know about other vocabulary work already done in your domain. There may already be vocabularies that meet your requirements, such as enriching the semantics of a metadata catalogue. They may exist in a nearby knowledge domain, industry or sector, and may originate in other global regions.
 
 Look for vocabularies available for reuse listed in vocabulary registries and discovery services, such as:
 
@@ -115,6 +59,105 @@ flowchart TD
     Query -->|Find all thesauruses or thesauri in philosophy that include English and French labels| Thesaurus
     Query -->|Find all medical vocabularies used in the Asia-Pacific region.| SubjectHeadings
 ```
+
+## Reuse patterns
+
+Is it worth reusing existing vocabularies in part or whole? There are various patterns that can be followed:
+
+- **Build from scratch** - just make a vocabulary based on familiar resources;
+- **Adoption** - Importing concepts from some or perhaps most of your vocabulary comprises concepts sourced from existing vocabularies, faithfully retaining and presenting definitions and other metadata from the source;
+- **Verbatim** - access and reuse a vocabulary as is;
+- **Customise** - adopt with minor changes, such as to labels but not semantic relationships;
+- **Matching** - with other vocabularies. Not really 'reuse' but still relevant here.
+
+### Build from scratch 
+Why not develop a vocabulary from scratch, with sources of warrant that you know are relevant to your community and use case?
+
+Even if you build from scratch, you might consider developing a vocabulary that is itself reuse-able in your industry, sector or in other regions. The more use your vocabulary gets, the more interoperability you have with other systems and catalogues. If you want your vocabulary reused, ensure:
+
+- clear rights and licensing are declared, within the vocabulary concept scheme and in surrounding web context
+- governance arrangements for the vocabulary are stated somewhere - build trust by declaring the update history and cycle, and commitments to persisting Concept IRIs
+- distributions: ensure your vocabulary can be accessed in standard formats and over standard APIs
+
+> 💡 see _VocPub Specification_, sections 2.1.13 / 2.1.14, about declaring [licenses and rights](https://agldwg.github.io/vocpub-profile/specification.html#vocabulary).
+
+Even if you build from scratch, you can match home-grown concepts with concepts in external vocabularies - see [Matching with other vocabularies](#matching-with-other-vocabularies).
+
+### Adoption
+You might import a cluster of concepts from an existing vocabulary into a local vocabulary project. There are a number of things you should do to indicate provenance of such concepts, and to support ongoing management of imported concepts, including:
+
+- adding a `prov:wasDerivedFrom` statement for an imported Concept
+- adding a `rdfs:isDefinedBy` statement indicating an IRI of a Concept scheme where the Concept is from
+- creating a `skos:Collection`, specifically for grouping concepts derived from some other vocabulary
+
+See [Import a concept](#-import-a-concept) for details.
+
+### Verbatim
+
+While using an existing vocabulary as-is requires no editing work, there will usually be a need to attribute the creator or publisher within your local business context. Also ensure rights information is checked, even if you have no plans to extend or remix the vocabulary - look out for these properties:
+
+```turtle
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX isorole: <https://standards.iso.org/iso/19115/-3/cit/1.0/>
+PREFIX sdo: <https://schema.org/>
+
+sdo:license
+dcterms:license # equivalent to sdo:license;
+dcterms:accessRights # if access is restricted in some way, look further at what is allowed
+dcterms:rights
+sdo:copyrightHolder
+sdo:copyrightNotice
+isorole:rightsHolder # equivalent to sdo:rightsholder
+```
+
+### Customise
+
+You may consider making minor changes to published vocabularies to meet local requirements. New concepts may be added; labels may be updated (changes to spelling or swapping an `skos:altLabel` for `skos:prefLabel`). Changes will need to be acknowledged at both the Concept and Concept scheme level - see [Add an imported Concept](#add-an-imported-concept) for how to do this. 
+
+### Matching with other vocabularies
+
+Concepts may be related to other concepts via `skos:broader`, `skos:narrower` or `skos:related` properties. Sometimes a Concept needs to be related to a Concept in a _different_ vocabulary. Concept matching across vocabularies is done in a similar way but with different properties: [Broad match](http://www.w3.org/2004/02/skos/core#broadMatch), [Narrower match](http://www.w3.org/2004/02/skos/core#narrowMatch), [Related match](http://www.w3.org/2004/02/skos/core#relatedMatch).
+
+**Broad Match** example:
+
+_Limestone packstone_ `skos:broadMatch` _Packstone_
+... where _Limestone packstone_ is a Concept in the [GSWA rock classification scheme](https://linked.data.gov.au/def/gswa-rock-classification-scheme), and _Packstone_ is a Concept in the [INSPIRE code list register](http://inspire.ec.europa.eu/codelist).
+
+**Exact Match** example:
+
+Child support `skos:exactMatch` Child support
+... where _Child support_ is a Concept in both [Public Policy Taxonomy](https://linked.data.gov.au/def/policy/0acd51d0-a4a3-48eb-b6f4-aa086f966057) and [FAST](http://id.worldcat.org/fast/854679).
+
+
+### 🚧 Match a Concept with another vocabulary 
+
+In some cases there may be concepts in a vocabulary that we can reliably say represent the same thing in the world. To promote interoperability between vocabularies (and therefore datasets, catalogues and collections) it's a good idea to _match_ these concepts. 
+
+💡 Use one of the SKOS _match_ properties to reference another `skos:Concept` or to a similar semantic category such as an `owl:NamedIndividual`. Do not use any of the SKOS _match_ properties to match to non-semantic resources.
+
+In this exercise we will use `skos:exactMatch` to link _Animal dispersal_ with the concept _Zoochory_ from the [National Agriculture Library Thesaurus](https://lod.nal.usda.gov/nalt/en/).
+
+1. **Go to** [VocEdit](https://vocedit.kurrawong.ai) in Chrome  
+2. **Project** > **Open** `pestRiskPath_training.ttl` from your local directory (*don't have the file? see the [first exercise](https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier) in Introduction to Vocabularies*)  
+3. **Select** **Animal dispersal** from under **Concepts** in the left-hand panel  
+4. **Edit** > **Other Properties** > **Add property**  
+5. **Add** > `http://www.w3.org/2004/02/skos/core#exactMatch` > **Add**  
+6. **Other Properties** > **exactMatch** (the field you just created)  > **Add new value** > **IRI**
+7. **[...]** > **Widget** > **URIEditor** > **Add** `https://lod.nal.usda.gov/nalt/332111`  
+8. **Save**
+
+💡 strictly speaking, you should only use `skos:exactMatch` when you know that the other vocabulary does, or plans to make a match back to the concept in your vocabulary. Why not get in touch? Notify the external vocabulary managers that you're matching with their vocabulary and you might get matched back! Otherwise, the looser semantics of `skos:closeMatch` may be more suitable.
+
+Now let's add a `skos:broadMatch`. Like `skos:broader`, the `skos:broadMatch` property matches a concept with another broader concept that is in a different concept scheme. We will add a `skos:broadMatch` from _Wildlife trafficking_ to _Crime_ in the _Centre for Agriculture and Bioscience International (CABI) Thesaurus_.
+
+9.  **Select** **Wildlife trafficking** from under **Concepts** in the left-hand panel  
+10. **Edit** > **Other Properties** > **Add property**  
+11. **Add** > `http://www.w3.org/2004/02/skos/core#broadMatch` > **Add**  
+12. **Other Properties** > **broadMatch** (the field you just created)  > **Add new value** > **IRI**
+13. **[...]** > **Widget** > **URIEditor** > **Add** `https://id.cabi.org/cabt/33618` 
+14. **Save**
+
+
 ## Reuse non-semantic vocabularies
 
 Building a vocabulary from scratch is an easy win for ensuring vocabularies are well-formed and presented. Existing vocabularies published in other contexts may not be so well-formed! Existing vocabularies, including those found via vocabulary registries, will vary in their conformance with data standards such as RDF and SKOS, before even considering quality standards like VocPub and qSKOS [(W3C, n.d)](#references-and-further-reading). Here are a couple of challenges to consider:
@@ -143,7 +186,7 @@ Where an existing vocabulary does not have any identifiers for concepts, you sho
 
 ## Language
 
-It is perhaps unnecessary to mention that a vocabulary fit for reuse needs to be comprehensible in the language of expected users. Optionally, a `skos:ConceptScheme` may indicate language codes used throughout a vocabulary `skos:Concept` labels, so that all labels do not need to be checked to identify multi-lingual patterns.
+A vocabulary fit for reuse needs to be comprehensible in the language of expected users. Optionally, a `skos:ConceptScheme` may indicate language codes used throughout a vocabulary `skos:Concept` labels, so that all labels do not need to be checked to identify multi-lingual patterns.
 
 ```turtle
 :myScheme a skos:ConceptScheme ;
@@ -151,16 +194,16 @@ It is perhaps unnecessary to mention that a vocabulary fit for reuse needs to be
     dcterms:language <http://id.loc.gov/vocabulary/iso639-1/fr> .
 ```
 
-If an existing vocabulary includes language labels that are not needed in a local context, consider whether this impacts your system requirements. This is a consideration for the  [Adoption](#adoption) or [Customisation](#customise) scenarios - whether or not to keep labels in languages that will not be used, or to retain them but configure your system to suppress them in search indexes or user interfaces. 
+If an existing vocabulary includes language labels that are not needed in a local context, consider whether this impacts your system requirements. This is a consideration for the [Adoption](#adoption) or [Customisation](#customise) scenarios - whether or not to keep labels in languages that will not be used, or to retain them but configure your system to suppress them in search indexes or user interfaces. 
 
 ### Regional language variations
 
 Even within a natural language, there may be _regional_ differences, such as Australian use of _Socioeconomic status_ and United States use of _Social status_:
 
 ```turtle
-@prefix fast: <http://id.worldcat.org/fast/> .
-@prefix policy: <https://linked.data.gov.au/def/policy/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+PREFIX fast: <http://id.worldcat.org/fast/>
+PREFIX policy: <https://linked.data.gov.au/def/policy/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 fast:1123359 a skos:Concept ;
 	skos:prefLabel "Social status"@en ;
@@ -175,8 +218,8 @@ policy:7353843a-9107-49af-bcd0-a8eac00bcd54 a skos:Concept ;
 When adopting a Concept and customising labels with the local context, consider retaining the regional variant as a `skos:altLabel`:
 
 ```turtle
-@prefix policy: <https://linked.data.gov.au/def/policy/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+PREFIX policy: <https://linked.data.gov.au/def/policy/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 policy:7353843a-9107-49af-bcd0-a8eac00bcd54 a skos:Concept ;
 	skos:prefLabel "Socioeconomic status"@en ;
@@ -209,31 +252,33 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
         "Vegetation fires"@en-GB
 .
 ```
-> 💡This example Concept has a combination of ISO 639-1 language tags (e.g. "@en") and BCP 47 (e.g. "@en-AU"). It's valid SKOS and RDF! But a downstream system may be expecting the locale-free ISO 639-1 scheme, so we recommend including at least one `skos:prefLabel` encoded as ISO 639-1.
+> 💡 This example Concept has a combination of ISO 639-1 language tags (e.g. "@en") and BCP 47 (e.g. "@en-AU"). It's valid SKOS and RDF! But a downstream system may be expecting the locale-free ISO 639-1 scheme, so we recommend including at least one `skos:prefLabel` encoded as ISO 639-1.
 
 > 💡 Multiple `skos:prefLabel` instances per `skos:Concept` with different language tags is _not compliant_ with VocPub Specification (AGLDWG, n.d.), but valid in SKOS.
-
-## Mapping concepts with other vocabularies
-
-In the basic structure of a vocabulary, concepts may be related to other concepts via broader, narrower or related properties. Sometimes a Concept needs to be related to a Concept in a _different_ vocabulary. Concept matching across vocabularies is done in a similar way but with different properties: [Broad match](http://www.w3.org/2004/02/skos/core#broadMatch), [Narrower match](http://www.w3.org/2004/02/skos/core#narrowMatch), [Related match](http://www.w3.org/2004/02/skos/core#relatedMatch).
-
-Broad match example:
-
-_Limestone packstone_ `skos:broadMatch` _Packstone_
-... where _Limestone packstone_ is a Concept in the [GSWA rock classification scheme](https://linked.data.gov.au/def/gswa-rock-classification-scheme), and _Packstone_ is a Concept in the [INSPIRE code list register](http://inspire.ec.europa.eu/codelist).
-
-Exact match example:
-
-Child support `skos:exactMatch` Child support
-... where _Child support_ is a Concept in both [Public Policy Taxonomy](https://linked.data.gov.au/def/policy/0acd51d0-a4a3-48eb-b6f4-aa086f966057) and [FAST](http://id.worldcat.org/fast/854679).
 
 
 ## Add an imported Concept
 
-When a vocabulary imports concepts from another vocabulary, you will need to both add the Concept and also update the concept scheme. Optionally, you might create a 'collection' that groups the imported concepts in to a manageable frame. See [Import a concept](#-import-a-concept) for detailed steps for importing a Concept into a vocabulary.
+When a vocabulary imports concepts from another vocabulary, you will need to add the Concept and also update the concept scheme. Optionally, you might create a `skos:collection` that groups the imported concepts in to a manageable frame. See [Import a concept](#-import-a-concept) for detailed steps for importing a Concept into a vocabulary.
+
+### Collections
+
+There may be a need to define a group of concepts within a vocabulary that share certain characteristics. A vocabulary may contain a `skos:Collection`, or even many collections of concepts.
+
+Collections are like a non-hierarchical means of gathering concepts. So for example concepts that are members of a `skos:Collection` may be from different parts of a vocabulary hierarchy (and not all from within the same broader-narrower parts of a hierarchy branch). One use case for creating a `skos:Collection` is to clearly represent concepts that have been **imported** from another `skos:ConceptScheme`. For more about using collections in this way see the [Import a concept](#add-an-imported-concept) exercise.
+
+> 💡 `skos:Collection` indicates a `skos:Concept` using the `skos:member` property.
+
 
 ## Additional elements
 You can add more metadata to your Concepts and Concept schemes that will improve the clarity, scope and provenance of your vocabulary. Consider the following additional elements:
+
+### Images
+Associating a `skos:Concept` with an image that illustrates meaning is a powerful and, perhaps obviously, language-neutral way of indicating the meaning and scope of a concept. There are various different ways of modelling an image reference within a skos vocabulary. The skos model does mention image references within the context of _documentation_ properties (e.g. `skos:example`; `skos:scopeNote`). While using documentation properties to refer to an image may be syntactically correct, most systems will be expecting textual data in these fields. 
+
+In the [add an image exercise](#-add-an-image-to-a-concept) you can add an image using a `schema.org` property `schema:image`.
+
+💡 There are a number of approaches to adding an image to a vocabulary concept - see other approaches in our [Patterns](https://docs.kurrawong.ai/concepts/vocabs/patterns/#images) document.
 
 ### Derived from
 
@@ -306,7 +351,7 @@ To import a Concept from another vocabulary:
    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
    PREFIX sdo: <https://schema.org/>
    PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-   # add prefix srti:
+   # add PREFIX srti:
    PREFIX srti: <http://cef.uv.es/lodroadtran18/def/transporte/dtx_srti#>
    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
    ```
@@ -337,7 +382,7 @@ To import a Concept from another vocabulary:
 # Version information may be incremented
     owl:versionIRI :1.0 ;
     owl:versionInfo "1.0" ;
-    skos:definition "This vocabulary describes the travel direction assigned to a section of a road. "@en ;
+    skos:definition "This vocabulary describes the travel direction assigned to a section of a road."@en ;
     skos:hasTopConcept
         :bi-directional ,
 # Add new Concept "clockwise":
@@ -372,6 +417,21 @@ To import a Concept from another vocabulary:
 .
 ```
 Save your changes.
+
+
+### 🚧 Add an image to a concept
+
+We will add an image reference with a URL from Wikipedia Commons to the Concept _Storm water_.
+
+1. **Go to** [VocEdit](https://vocedit.kurrawong.ai) in Chrome
+2. **Project** > **Open** `pestRiskPath_training.ttl` from your local directory (*don't have the file? see the [first exercise](https://docs.kurrawong.ai/concepts/vocabs/introduction/#minimum-properties-preflabel-definition-and-identifier) in Introduction to Vocabularies*)  
+3. **Select** _Storm water_ from under **Concepts** in the left-hand panel
+4. **Edit** > **Other Properties** > **Add property** 
+5. **Add** > `https://schema.org/image` > **Add**
+6. **Other Properties** > **exactMatch** (the field you just created)  > **Add new value** > **IRI**  
+7. **[...]** > **Widget** > **URIEditor** > **Add** `https://commons.wikimedia.org/wiki/File:2019-07-29_172052_Rain_in_Berlin.jpg`
+8. **Save**
+
 
 ## References and Further Reading
 

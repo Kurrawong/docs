@@ -4,10 +4,13 @@ extra:
   generator: false
 extra_css:
   - stylesheets/extra.css
+extra_javascript:
+  - javascripts/external-links.js
 markdown_extensions:
   - md_in_html
   - admonition
   - attr_list
+  - pymdownx.details
   - pymdownx.snippets
   - pymdownx.superfences:
       custom_fences:
@@ -66,7 +69,6 @@ nav:
         - 'RDF': 'concepts/rdf.md'
         - 'Vocabs':
             - 'Introduction': 'concepts/vocabs/introduction.md'
-            - 'Advanced': 'concepts/vocabs/creation.md'
             - 'Vocab reuse': 'concepts/vocabs/vocab-reuse.md'
             - 'Patterns': 'concepts/vocabs/patterns.md'
             - 'Querying': 'concepts/vocabs/querying.md'
