@@ -1,6 +1,6 @@
 # Prez Overview
 
-![](../assets/prez.png)
+![](/assets/prez/prez-logo.png)
 
 Prez is a data-configurable Linked Data API that delivers _profiles_ of Knowledge Graph data according to the [Content Negotiation by Profile](https://w3c.github.io/dx-connegp/connegp/) standard.
 
@@ -9,8 +9,11 @@ Prez is used to publish:
 - lists of managed vocabularies
 - catalogues of digital resources - highly configurable
 - spatial reference datasets
+- anything else you can think of stored in a Knowledge Graph!
 
 While being open source, Prez is mostly maintained by [KurrawongAI](https://kurrawong.ai) who provide professional services to assist with its use.
+
+![](/assets/prez/prez-overview.svg)
 
 >**Where's the UI?**
 >
@@ -33,6 +36,8 @@ While being open source, Prez is mostly maintained by [KurrawongAI](https://kurr
 - [License](#license)
 
 ## Demo
+
+<a href="https://demo.dev.kurrawong.ai"><img src="/assets/prez/prez-demo.png" alt="Prez Demo Screenshot" style="width:55%; border:solid 2px #eeeeee;" /></a>
 
 We maintain a demonstration instance of Prez + PrezUI online at:
 
@@ -266,7 +271,7 @@ To generate a coverage report:
 poetry run coverage report
 ```
 
-## Redirect Service
+### Redirect Service
 
 As a Linked Data server, Prez provides a redirect service at `/identifier/redirect` that accepts a query parameter `iri`, looks up the `iri` in the database for a `foaf:homepage` predicate with a value, and if it exists, return a redirect response to the value.
 
@@ -274,11 +279,9 @@ This functionality is useful for institutions who issue their own persistent ide
 
 This is an alternative solution to persistent identifier services such as the [w3id.org](https://w3id.org/). In some cases, it can be used together with such persistent identifier services to avoid the need to provide the redirect mapping in webserver config (NGINX, Apache HTTP, etc.) and instead, define the config as RDF data.
 
-## Data Validation
+### Data Validation
 
-For Prez to deliver data via its various subsystems, the data needs to conform to some minimum requirements: you can't, for instance, run VocPrez without any SKOS ConceptSchemes defined!
-
-### Validation
+For Prez to deliver data via its various subsystems, the data needs to conform to some minimum requirements: you can't, for instance, run Prez in vocabs mode without any SKOS ConceptSchemes defined!
 
 All the profiles listed above provide validators that can be used with RDF data to test to see if it's valid. If it is, Prez will be just fine with it.
 
@@ -288,6 +291,32 @@ The profiles' validators are all available from the profiles themselves (navigat
 
 Look for the _VocPrez Compounded_ and similar validators. The 'compounded' bit means that validator will validate data against all VocPrez and inherited requirements.
 
+## Data Management
+
+There are many options regarding data management for the data Prez provides access to.
+
+Fundamentally, the data mush conform to _profiles_ that Prez understands for Prez to be able to work with it, as per [Data Validation](#data-validation) above, but Prez imposes no constraints on how you organise and maintain the data within the Database it draws from.
+
+If you are stating from scratch, we recomment managing your data with _PrezManifest_:
+
+### PrezManifest
+
+[Prez Manifest](/products/tools/prezmanifest/) - "pm" - is a tool that performs data management functions, such as synchronising between RDF files in a version control repository and an RDF DB, and also a data model that provides the scaffolding for data to be managed by the tool.
+
+If data is not too large (multiple files but non more than ~50MB) you may be able to store all the content of your Prez instance in version control like GitHub or DevOps and use a pm _Manifest_ file to describe what it is and now the pm tool can synchronise it with your RDF DB.
+
+For larger data, you may still want to synchronise some of your data from version control, such as background vocabularies and models, but deal with large data files/graph separately.
+
+pm can be used within workflows such as GitHub Actions so, for example, RDF files could be maintained in GitHub and then, on reciept of new data, pm is run to synchornise it with the RDF DB. This is the setup for Geosciecne Australia's vocabularies, see:
+
+* [GA's GitHub synch action file](https://github.com/GeoscienceAustralia/ga-vocabs/blob/master/.github/workflows/sync_on_merge.yml)
+
+### Per-tool management
+
+Most RDF DBs have some form of User Interface for data management when can be used directly to manage the data they hold. If data management is carried out through such a UI for a Prez instance, we suggest graphs are used to contain files or groupings of data and, if they are, the union graph feature needs to be enabled, so Prez can query across graphs.
+
+KurrawongAI supports several RDF DB products, including [GraphDB](https://graphwise.ai/components/graphdb/) & [Fuseki](/products/3rdparty/fuseki/) and can help with data management using their UIs.
+
 ## Contact
 
 > **NOTE**: This open source tool is actively developed and supported by [KurrawongAI](https://kurrawong.net), a small Australian Knowledge Graph company, developers at the [University of Melbourne](https://www.unimelb.edu.au) and by open source contributors too.
@@ -296,12 +325,14 @@ Look for the _VocPrez Compounded_ and similar validators. The 'compounded' bit m
 
 Here are the lead developers:
 
-**KurrawongAI**
+**KurrawongAI**:
+
 - _David Habgood_ - <david@kurrawong.ai>
 - _Nicholas Car_ - <nick@kurrawong.ai>
 - _Edmond Chuc_ - <edmond@kurrawong.ai>
 
 **University of Melbourne** - Prez UI mainly
+
 - _Jamie Feiss_ - <jamie.feiss@unimelb.edu.au>
 
 ## Contributing

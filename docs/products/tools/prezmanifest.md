@@ -1,21 +1,11 @@
-# prezmanifest
+# PrezmManifest
 
-_A Prez Manifest is an RDF file that describes and links to a set of resources that can be loaded into an RDF database 
-for [Prez](../prez) to provide access to._
+PrezManifest - pm - is a tool that performs data management functions, such as synchronising between RDF files in a version control repository and an RDF DB, and also a data model that provides the scaffolding for data to be managed by the tool.
 
-To support the use of Prez Manifests, we supply a Python library and command line tool called _prezmanifest_ that 
-provides a series of functions to work with them. The functions provided are:
+pm is often used with for [Prez](../prez) but doesn't have to be: it can be used for RDF data management in general.
 
-* documentation
-* validation
-* loading - into aggregated data files or databases
-* labeller
+pm is built on the very general-purpose [kurra](/products/tools/kurra) toolkit which performs lower-level functions like adding and removing graphs from an RDF DB.
 
-prezmanifest has detailed documentation for installation and use at its repository's home page:
+pm has detailed documentation for installation and use at its repository's home page:
 
 * **<https://github.com/Kurrawong/prezmanifest>**
-
-### More info
-
-* [KurrawongAI Service > Tools](https://kurrawong.ai/services/tools) 
-    * for more information on our specialised Knowledge Graph tooling support. 
