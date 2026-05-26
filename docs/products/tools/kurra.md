@@ -16,10 +16,5 @@ kurra has detailed documentation for installation and use at its repository's ho
 
 !!! note
 
-    kurra is a dependency of other KurrawongAI tooling, such as [labelify](labelify.md) & 
-	[prez-manifest](../prez/manifest.md).
-
-### More info
-
-* [KurrawongAI Service > Tools](https://kurrawong.ai/services/tools) 
-    * for more information on our specialised Knowledge Graph tooling support. 
+    kurra is a dependency of other KurrawongAI tooling, in particular
+	[PrezManifest](../prez/manifest.md).
