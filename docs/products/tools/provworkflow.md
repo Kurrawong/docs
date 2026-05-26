@@ -1,6 +1,10 @@
 # ProvWorkflow
 
-ProvWorkflow records the provenance of Python workflows in RDF according to the Prov Workflow Ontology and the Prov Data Model.
+ProvWorkflow is a Python library that records the provenance of Python workflows in RDF according to a specialised form of [The Provenance Ontology, PROV-O](https://www.w3.org/TR/prov-o/). 
+
+ProvWorkflow can be built into Python-based tools and acts as an advanced logging module which produces PROV-O RDF outputs.
+
+The specialised form of PROV-O used is a simple model of `Workflow` and `Block` kinds of `Activity` which then consume and produce data and instructions characterised as PROV-O `Entity` or `Plan` objects.
 
 ## Installation
 
@@ -21,7 +25,7 @@ It also records the generation of some local and remote entities.
 
 The workflow is done in two Blocks, each having its own recorded inputs and outputs.
 
-Finally the workflow is serialised as RDF in the turtle format and printed to the console.
+Finally, the workflow is serialised as RDF in the turtle format and printed to the console.
 
 ```python
 from provworkflow import Workflow, Block, Entity
@@ -53,7 +57,7 @@ print(w.prov_to_graph().serialize(format="turtle"))
 
 ```
 
-Currently provworkflow is only documented in the source code. But a public repository and accompanying tool documentation is on the way.
+Currently, provworkflow is only documented in the source code. But a public repository and accompanying tool documentation is on the way.
 
 If you would like to see some of our tools in use, we provide an online GUI with some of our most useful tools [here](https://tools.kurrawong.ai/).
 

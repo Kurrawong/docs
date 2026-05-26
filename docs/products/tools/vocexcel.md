@@ -5,7 +5,7 @@ VocExcel is a Python library that converts Excel workbooks into [SKOS](https://w
 Features:
 
 * uses fixed templates to keep it simple
-* meets particular SKOS profile outcomes ([VocPub](https://w3id.org/profile/vocpub))
+* meets particular SKOS profile outcomes ([VocPub](https://linked.data.gov.au/def/vocpub))
 * is under active development, production use, and is commercially supported
 
 An online version of VocExcel is available at [https://tools.kurrawong.ai/vocexcel](https://tools.kurrawong.ai/tools/vocexcel). For other applications, access the GitHub repository [here](https://github.com/Kurrawong/VocExcel).

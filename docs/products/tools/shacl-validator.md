@@ -1,6 +1,9 @@
-# RDF data SHACL validator
+# SHACL validator
 
+Our RDF data validation too uses the [Shapes Constraint Language, SHACL](https://www.w3.org/TR/shacl/), validate RDF against either rules. The rules can be supplied by the user or selected from a number of preloaded validators we have collected from our work.
 
-Our RDF [SHACL](https://www.w3.org/TR/shacl/) validation tools allows users to validate RDF against either their own specific SHACL validation rules, or select from a pre-loaded set of validators selected from commonly used profiles.
+The tool is built on top of the [pySHACL](https://pypi.org/project/pyshacl/) open source validation tool and is available online at:
 
-If you have RDF that you would like to validate using SHACL inputs, we provide an online GUI with some of our other useful tools [here](https://tools.kurrawong.ai/). To find out more about other ways KurrawongAI could provide Knowledge Graph tools that solve *your* data problems, visit the KurrawongAI [tools](https://kurrawong.ai/services/tools) page for more information on our specialised Knowledge Graph Tooling Support. 
+* <https://tools.kurrawong.ai/validate>.
+
+The preloaded validators it contains are sourced from a list of validators in our [Semantic Background](https://github.com/Kurrawong/semantic-background/tree/main/resources/validators/items), a reference set of semantic resources we maintain.
