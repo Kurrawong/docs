@@ -19,7 +19,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-          cache: poetry
       - run: python -m pip install --upgrade pip
       - run: python -m pip install poetry==2.0.1
       - run: poetry install --only main --no-root
