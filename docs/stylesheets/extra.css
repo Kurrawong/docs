@@ -37,21 +37,36 @@ a.external-link::after {
   border: 1px solid var(--md-default-fg-color--lightest);
   border-radius: 8px;
   display: grid;
-  gap: 0.4rem;
-  grid-template-rows: auto auto 1fr;
+  gap: 0.45rem;
+  grid-template-rows: auto auto auto 1fr;
   padding: 0.9rem;
+  position: relative;
 }
 
-.vocab-phase__icon {
+.vocab-phase__step {
   align-items: center;
   background: var(--md-primary-fg-color);
   border-radius: 999px;
   color: var(--md-primary-bg-color);
   display: inline-flex;
+  font-size: 0.8rem;
   font-weight: 700;
-  height: 2rem;
+  height: 1.6rem;
   justify-content: center;
-  width: 2rem;
+  position: absolute;
+  right: 0.75rem;
+  top: 0.75rem;
+  width: 1.6rem;
+}
+
+.vocab-phase__icon {
+  fill: none;
+  height: 3.25rem;
+  stroke: var(--md-primary-fg-color);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  width: 3.25rem;
 }
 
 .vocab-phase span {

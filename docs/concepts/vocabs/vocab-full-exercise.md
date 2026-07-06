@@ -17,19 +17,34 @@ This module is a comprehensive exercise that progresses a simple, mid-sized list
 
 <div class="vocab-phase-diagram" aria-label="Vocabulary exercise workflow">
   <div class="vocab-phase">
-    <div class="vocab-phase__icon">1</div>
+    <div class="vocab-phase__step">1</div>
+    <svg class="vocab-phase__icon" viewBox="0 0 48 48" aria-hidden="true">
+      <rect x="8" y="10" width="32" height="28" rx="2"></rect>
+      <path d="M8 18h32M8 26h32M8 34h32M18 10v28M29 10v28"></path>
+    </svg>
     <strong>Raw source data</strong>
     <span>Start with a simple list of terms in a spreadsheet.</span>
   </div>
   <div class="vocab-phase__arrow">→</div>
   <div class="vocab-phase">
-    <div class="vocab-phase__icon">2</div>
+    <div class="vocab-phase__step">2</div>
+    <svg class="vocab-phase__icon" viewBox="0 0 48 48" aria-hidden="true">
+      <circle cx="24" cy="10" r="4"></circle>
+      <circle cx="13" cy="31" r="4"></circle>
+      <circle cx="35" cy="31" r="4"></circle>
+      <path d="M22 13 15 28M26 13l7 15M17 31h14"></path>
+    </svg>
     <strong>Structured vocabulary</strong>
     <span>Add identifiers, labels, definitions, collections, and hierarchy.</span>
   </div>
   <div class="vocab-phase__arrow">→</div>
   <div class="vocab-phase">
-    <div class="vocab-phase__icon">3</div>
+    <div class="vocab-phase__step">3</div>
+    <svg class="vocab-phase__icon" viewBox="0 0 48 48" aria-hidden="true">
+      <path d="M14 6h15l7 7v29H14z"></path>
+      <path d="M29 6v8h7M20 24h16M20 31h16M20 38h10"></path>
+      <path d="M12 26 6 32l6 6M36 26l6 6-6 6"></path>
+    </svg>
     <strong>Publication-ready RDF</strong>
     <span>Transform the curated vocabulary into SKOS Turtle.</span>
   </div>
