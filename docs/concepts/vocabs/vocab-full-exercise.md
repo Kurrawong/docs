@@ -11,27 +11,39 @@
 
 ---
 
-> 🚧 _Exercises_
-
-> 💡 _Troubleshooting tips, common errors and potential issues._
-
-> 🧑‍🏫 _Trainers notes_
-
 ## Introduction
 
 This module is a comprehensive exercise that progresses a simple, mid-sized list of terms in a table through to a publication-ready vocabulary featuring a range of [SKOS](https://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System) semantics. 
 
-<div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
-  <img src="/assets/3rdparty/images/source-file.png" style="max-width: 180px; height: auto;">
-  <div style="font-size: 2rem;">→</div>
-  <img src="/assets/3rdparty/images/turtle-output.png" style="max-width: 180px; height: auto;">
-  <div style="font-size: 2rem;">→</div>
-  <img src="/assets/3rdparty/images/prez-example.png" style="max-width: 160px; height: auto;">
+<div class="vocab-phase-diagram" aria-label="Vocabulary exercise workflow">
+  <div class="vocab-phase">
+    <div class="vocab-phase__icon">1</div>
+    <strong>Raw source data</strong>
+    <span>Start with a simple list of terms in a spreadsheet.</span>
+  </div>
+  <div class="vocab-phase__arrow">→</div>
+  <div class="vocab-phase">
+    <div class="vocab-phase__icon">2</div>
+    <strong>Structured vocabulary</strong>
+    <span>Add identifiers, labels, definitions, collections, and hierarchy.</span>
+  </div>
+  <div class="vocab-phase__arrow">→</div>
+  <div class="vocab-phase">
+    <div class="vocab-phase__icon">3</div>
+    <strong>Publication-ready RDF</strong>
+    <span>Transform the curated vocabulary into SKOS Turtle.</span>
+  </div>
 </div>
 
 Many of the steps precede the use of vocabulary-specific editing and publishing tools, which are introduced only as the vocabulary evolves in complexity. This is _not a short exercise_ — the steps below simulate a realistic and tested scenario and provide a comprehensive account of issues encountered during vocabulary construction.
 
 Throughout this module, references are made back to other vocabulary modules for additional context and guidance, but this module does not rely heavily on external references. If you _do_ need to step back and look at basic vocabulary concepts, the [_Introduction to Vocabularies_](/concepts/vocabs/introduction) module will help.
+
+> 🚧 _Exercises_
+
+> 💡 _Troubleshooting tips, common errors and potential issues._
+
+> 🧑‍🏫 _Trainers notes_
 
 ??? info "🧑‍🏫 Trainer note"
     Emphasise that this is a **pipeline exercise**, not just a SKOS exercise.  
@@ -42,7 +54,7 @@ Throughout this module, references are made back to other vocabulary modules for
 Vocabularies often exist in semi-structured forms, such as documents, spreadsheets, or database tables. In this module, a spreadsheet is provided — the Ice Cream Flavours spreadsheet includes a single column of terms. The spreadsheet is scraped from a [Wikipedia](https://en.wikipedia.org/wiki/List_of_ice_cream_flavors) page, with a little tidying.
 
 **Download** the sample file  
-<a href="../../assets/3rdparty/source/icecream-flavours.xlsx" download>
+<a href="/assets/3rdparty/source/icecream-flavours.xlsx" download>
   icecream-flavours.xlsx
 </a>
 
@@ -214,7 +226,7 @@ For extra clarity, other refinements might be made - for exmple:
 - _change to_:
 > [Spundekas] | **Ice cream flavor** based on the German cream cheese of the same name
 
-After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdparty/source/icecream-flavours-all-curated-definitions.xlsx" download>icecream-flavours-all-curated-definitions.xlsx</a>. Move on to the next step.
+After this step, the spreadsheet should _resemble_ <a href="/assets/3rdparty/source/icecream-flavours-all-curated-definitions.xlsx" download>icecream-flavours-all-curated-definitions.xlsx</a>. Move on to the next step.
 
 > 💡 The checkpoint spreadsheets in this exercise are examples, not answer keys. If you download one to check your progress, it does not matter if your identifiers, term order, or some concepts differ from the example. Use the checkpoint files to confirm that the data is in the correct fields and is ready for the next formatting or transformation step.
 
@@ -345,7 +357,7 @@ What about the `Cherry` flavour and its variants? Back in the [Find synonyms](#f
 
 Repeat these steps for `Amaretto cherry` — or not. Apply the same decision-making logic for promoting `Black cherry` to full concept status. A concept can have alternative labels _and_ narrower relationships to other concepts.
 
-There is a finished file that you can download here: <a href="../../assets/3rdparty/source/VocExcel-ice-cream-flavor-hierarchy.xlsx" download>VocExcel-ice-cream-flavor-hierarchy.xlsx</a>. This is the file that we are going to upload into a transformer application.
+There is a finished file that you can download here: <a href="/assets/3rdparty/source/VocExcel-ice-cream-flavor-hierarchy.xlsx" download>VocExcel-ice-cream-flavor-hierarchy.xlsx</a>. This is the file that we are going to upload into a transformer application.
 
 ??? info "🧑‍🏫 Trainer note"
     This section closes the earlier ambiguity around synonyms vs full concepts.

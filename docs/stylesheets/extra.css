@@ -24,3 +24,55 @@ a.external-link::after {
   opacity: 0.7;
   margin-left: 0.15em;
 }
+
+.vocab-phase-diagram {
+  align-items: stretch;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  margin: 1.5rem 0;
+}
+
+.vocab-phase {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  display: grid;
+  gap: 0.4rem;
+  grid-template-rows: auto auto 1fr;
+  padding: 0.9rem;
+}
+
+.vocab-phase__icon {
+  align-items: center;
+  background: var(--md-primary-fg-color);
+  border-radius: 999px;
+  color: var(--md-primary-bg-color);
+  display: inline-flex;
+  font-weight: 700;
+  height: 2rem;
+  justify-content: center;
+  width: 2rem;
+}
+
+.vocab-phase span {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.85rem;
+  line-height: 1.35;
+}
+
+.vocab-phase__arrow {
+  align-self: center;
+  color: var(--md-default-fg-color--light);
+  font-size: 1.4rem;
+}
+
+@media screen and (max-width: 700px) {
+  .vocab-phase-diagram {
+    grid-template-columns: 1fr;
+  }
+
+  .vocab-phase__arrow {
+    justify-self: center;
+    transform: rotate(90deg);
+  }
+}
