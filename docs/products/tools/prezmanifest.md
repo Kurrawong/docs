@@ -1,11 +1,11 @@
 # PrezmManifest
 
-PrezManifest - pm - is a tool that performs data management functions, such as synchronising between RDF files in a version control repository and an RDF DB, and also a data model that provides the scaffolding for data to be managed by the tool.
+Prez Manifest - `pm` - is a tool that performs data management functions, such as synchronising between RDF files in a 
+version control repository and an RDF DB, and also a data model that provides the scaffolding for data to be managed by 
+the tool. The tool is implemented as a Python application and library.
 
-pm is often used with for [Prez](../prez) but doesn't have to be: it can be used for RDF data management in general.
+`pm` works nicely with [Prez](../prez/index.md) but can and is used without it, just to manage content in RDF databases.
 
-pm is built on the very general-purpose [kurra](/products/tools/kurra) toolkit which performs lower-level functions like adding and removing graphs from an RDF DB.
+See `pm`'s repository home page for all its documentation:
 
-pm has detailed documentation for installation and use at its repository's home page:
-
-* **<https://github.com/Kurrawong/prezmanifest>**
+* <https://github.com/Kurrawong/prezmanifest>
