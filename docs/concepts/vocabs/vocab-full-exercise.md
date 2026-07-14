@@ -11,27 +11,54 @@
 
 ---
 
-> 🚧 _Exercises_
-
-> 💡 _Troubleshooting tips, common errors and potential issues._
-
-> 🧑‍🏫 _Trainers notes_
-
 ## Introduction
 
 This module is a comprehensive exercise that progresses a simple, mid-sized list of terms in a table through to a publication-ready vocabulary featuring a range of [SKOS](https://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System) semantics. 
 
-<div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
-  <img src="/assets/3rdparty/images/source-file.png" style="max-width: 180px; height: auto;">
-  <div style="font-size: 2rem;">→</div>
-  <img src="/assets/3rdparty/images/turtle-output.png" style="max-width: 180px; height: auto;">
-  <div style="font-size: 2rem;">→</div>
-  <img src="/assets/3rdparty/images/prez-example.png" style="max-width: 160px; height: auto;">
+<div class="vocab-phase-diagram" aria-label="Vocabulary exercise workflow">
+  <div class="vocab-phase">
+    <div class="vocab-phase__step">1</div>
+    <svg class="vocab-phase__icon" viewBox="0 0 48 48" aria-hidden="true">
+      <rect x="8" y="10" width="32" height="28" rx="2"></rect>
+      <path d="M8 18h32M8 26h32M8 34h32M18 10v28M29 10v28"></path>
+    </svg>
+    <strong>Raw source data</strong>
+    <span>Start with a simple list of terms in a spreadsheet.</span>
+  </div>
+  <div class="vocab-phase__arrow">→</div>
+  <div class="vocab-phase">
+    <div class="vocab-phase__step">2</div>
+    <svg class="vocab-phase__icon" viewBox="0 0 48 48" aria-hidden="true">
+      <circle cx="24" cy="10" r="4"></circle>
+      <circle cx="13" cy="31" r="4"></circle>
+      <circle cx="35" cy="31" r="4"></circle>
+      <path d="M22 13 15 28M26 13l7 15M17 31h14"></path>
+    </svg>
+    <strong>Structured vocabulary</strong>
+    <span>Add identifiers, labels, definitions, collections, and hierarchy.</span>
+  </div>
+  <div class="vocab-phase__arrow">→</div>
+  <div class="vocab-phase">
+    <div class="vocab-phase__step">3</div>
+    <svg class="vocab-phase__icon" viewBox="0 0 48 48" aria-hidden="true">
+      <path d="M14 6h15l7 7v29H14z"></path>
+      <path d="M29 6v8h7M20 24h16M20 31h16M20 38h10"></path>
+      <path d="M12 26 6 32l6 6M36 26l6 6-6 6"></path>
+    </svg>
+    <strong>Publication-ready RDF</strong>
+    <span>Transform the curated vocabulary into SKOS Turtle.</span>
+  </div>
 </div>
 
 Many of the steps precede the use of vocabulary-specific editing and publishing tools, which are introduced only as the vocabulary evolves in complexity. This is _not a short exercise_ — the steps below simulate a realistic and tested scenario and provide a comprehensive account of issues encountered during vocabulary construction.
 
 Throughout this module, references are made back to other vocabulary modules for additional context and guidance, but this module does not rely heavily on external references. If you _do_ need to step back and look at basic vocabulary concepts, the [_Introduction to Vocabularies_](/concepts/vocabs/introduction) module will help.
+
+> 🚧 _Exercises_
+
+> 💡 _Troubleshooting tips, common errors and potential issues._
+
+> 🧑‍🏫 _Trainers notes_
 
 ??? info "🧑‍🏫 Trainer note"
     Emphasise that this is a **pipeline exercise**, not just a SKOS exercise.  
@@ -42,7 +69,7 @@ Throughout this module, references are made back to other vocabulary modules for
 Vocabularies often exist in semi-structured forms, such as documents, spreadsheets, or database tables. In this module, a spreadsheet is provided — the Ice Cream Flavours spreadsheet includes a single column of terms. The spreadsheet is scraped from a [Wikipedia](https://en.wikipedia.org/wiki/List_of_ice_cream_flavors) page, with a little tidying.
 
 **Download** the sample file  
-<a href="../../assets/3rdparty/source/icecream-flavours.xlsx" download>
+<a href="/assets/3rdparty/source/icecream-flavours.xlsx" download>
   icecream-flavours.xlsx
 </a>
 
@@ -77,42 +104,38 @@ You will notice that these terms are unidentified — that is, there is no ident
 
 ### Add identifiers
 
-The sample file does not include a codes column — _identifiers are necessary in a SKOS vocabulary conforming to common standards or practice_. It is a good idea to reuse any identifiers that already exist for a draft vocabulary, but for this exercise we will need to mint new ones. We will add identifiers using the [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) scheme.
+The sample file does not include a codes column — _identifiers are necessary in a SKOS vocabulary conforming to common standards or practice_. It is a good idea to reuse any identifiers that already exist for a draft vocabulary, but for this exercise we will need to mint new ones.
 
-> 💡 Why are we using the UUID scheme? If you want to learn more about identifier strategy, see [_Identifier suffix patterns_](/concepts/vocabs/patterns#suffix-patterns) for guidance.
+There are several ways to create identifiers:
+
+- You can use the preferred label as the identifier, but this is not recommended. Labels often change, and identifiers should remain persistent. If the label changes later, a label-based identifier can become misleading, or worse, may tempt someone to change the identifier too.
+- You can use simple incrementing identifiers such as `1`, `2`, `3`, and so on. This is easy to create and easy to read.
+- You can use [UUIDs](https://en.wikipedia.org/wiki/Universally_unique_identifier), which are long randomly generated identifiers that are extremely unlikely to collide. UUIDs are a strong best-practice option, especially when multiple people or systems may mint identifiers independently.
+
+For this exercise, we will use incrementing identifiers. UUIDs are ideal from a pure identifier-design perspective, but they add friction for learners and are hard to read in spreadsheets. In practice, a simple incrementing method usually works well for a small vocabulary like this, especially when new identifiers are managed carefully.
+
+> 💡 If you want to learn more about identifier strategy, see [_Identifier suffix patterns_](/concepts/vocabs/patterns#suffix-patterns) for guidance.
 
 - **Insert** a new "Identifier" column before the Labels column
 
-- **Generate** UUIDs for the new column — paste the following formula into cell A1 and copy it to the end of the list:
+- **Add** `icf:1` to the first row of the new column
 
-```excel
-=LOWER(CONCAT(
-"icf:",
-DEC2HEX(RANDBETWEEN(0,POWER(16,8)-1),8),"-",
-DEC2HEX(RANDBETWEEN(0,POWER(16,4)-1),4),"-",
-"4",DEC2HEX(RANDBETWEEN(0,POWER(16,3)-1),3),"-",
-DEC2HEX(RANDBETWEEN(8,11)),DEC2HEX(RANDBETWEEN(0,POWER(16,3)-1),3),"-",
-DEC2HEX(RANDBETWEEN(0,POWER(16,8)-1),8),
-DEC2HEX(RANDBETWEEN(0,POWER(16,4)-1),4)
-))
-```
+- **Continue** the incrementing pattern to the end of the list, so the next rows have identifiers such as `icf:2`, `icf:3`, and so on. In Excel, you can usually do this by dragging the fill handle down the column.
 
-Column A will now include values like `icf:0f8002df-64cd-4018-bfed-9f9f1c3d4fc5` (the exact identifier will differ in each case, as the UUID is random).
+Column A will now include values like `icf:1`, `icf:2`, and so on.
 
-> 💡 The prefix `icf:` is based on the proposed vocabulary name "Ice Cream Flavors". For readability, it is a good idea to choose prefixes that indicate, or at least hint at, what the vocabulary elements are. When using the code above for a different vocabulary project, update the first line accordingly — for example, for a "Textured Vegetable Protein" vocabulary you might update it to `tvp:`. The colon (`:`) character is mandatory.
+> 💡 The prefix `icf:` is based on the proposed vocabulary name "Ice Cream Flavors". For readability, it is a good idea to choose prefixes that indicate, or at least hint at, what the vocabulary elements are. If you use this approach for a different vocabulary project, update the prefix accordingly — for example, for a "Textured Vegetable Protein" vocabulary you might use `tvp:`. The colon (`:`) character is mandatory.
 
-- **Paste** values into a new column  
-  Insert a new column, then use Excel's **Paste Values** option to transform the identifiers into fixed values that will not be accidentally recalculated in later steps.
+- **Paste** values into a new column if needed  
+  If you used a formula or fill method that may update later, insert a new column, then use Excel's **Paste Values** option to transform the identifiers into fixed values.
 
 - **Delete** identifiers pasted for empty rows — but **keep** the identifiers for the grouping terms (**FRUIT FLAVORS**, etc.)
 
 - **Add** the column header `Identifier`
 
-- **Delete** the original column with the formulas and keep only the `Identifier` column with the pasted values
+- **Delete** the original column with the formulas or generated values, if you created a pasted-values column
 
 - **Save** your file
-
-After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdparty/source/icecream-flavours.xlsx" download>icecream-flavours.xlsx</a>. Move on to the next step.
 
 ??? info "🧑‍🏫 Trainer note"
     This is a **critical conceptual step**, not just a mechanical one.
@@ -125,7 +148,7 @@ After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdpart
 
 ??? info "🧑‍🏫 Trainer note"
     Ask: **“Why do we paste values?”**  
-    Expected answer: because formula-generated IDs are volatile and can recalculate.
+    Expected answer: because generated IDs should be fixed values, not formulas or spreadsheet behaviour that may change unexpectedly.
 
 ### Separate labels from definitions
 
@@ -138,8 +161,6 @@ After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdpart
 - **Save** your file
 
 > 💡 Some of the definition data may not look like true definitions, but rather history or usage notes. Don’t worry — we’ll look at these again in [_Curate definitions_](#curate-definitions).
-
-After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdparty/source/icecream-flavours-definitions.xlsx" download>icecream-flavours-definitions.xlsx</a>. Move on to the next step.
 
 ??? info "🧑‍🏫 Trainer note"
     This is the first real **modelling step disguised as Excel work**.
@@ -161,8 +182,6 @@ We will add synonyms, or alternative labels, that exist in the file. There are t
 - **Add** `amaretto cherry` and `black cherry` in the `Alternate Label` column in the same row as the `Cherry` label
 - **Delete** `(e.g. Amaretto cherry, black cherry)` from the `Definition` for `Cherry`
 - **Save** your file
-
-After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdparty/source/icecream-flavours-altLabels.xlsx" download>icecream-flavours-altLabels.xlsx</a>. Move on to the next step.
 
 ??? info "🧑‍🏫 Trainer note"
     This section is **intentionally ambiguous**.  
@@ -190,8 +209,6 @@ We will get definitions from the Wikipedia page that the source list links to.
 - **Save** your file
 
 > 💡 What if definitions are needed for hundreds or thousands of terms? Ideally, each term will have a curated definition, which requires significant effort. That is great if possible — but it may not be practical in the early stages of vocabulary development. As a workaround, copy the term label into the definition field, in this case suffixed with `ice cream flavor`. This may not seem like a rich definition, but if the term is discovered out of context it will give a strong hint about the intended semantics, e.g. `banana split ice cream flavor`, and not the stand-alone dessert.
-
-After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdparty/source/icecream-flavours-all-defined.xlsx" download>icecream-flavours-all-defined.xlsx</a>. Move on to the next step.
 
 ??? info "🧑‍🏫 Trainer note"
     This step is intentionally labour-intensive.  
@@ -224,7 +241,9 @@ For extra clarity, other refinements might be made - for exmple:
 - _change to_:
 > [Spundekas] | **Ice cream flavor** based on the German cream cheese of the same name
 
-After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdparty/source/icecream-flavours-all-curated-definitions.xlsx" download>icecream-flavours-all-curated-definitions.xlsx</a>. Move on to the next exercise.
+After this step, the spreadsheet should _resemble_ <a href="/assets/3rdparty/source/icecream-flavours-all-curated-definitions.xlsx" download>icecream-flavours-all-curated-definitions.xlsx</a>. Move on to the next step.
+
+> 💡 The checkpoint spreadsheets in this exercise are examples, not answer keys. If you download one to check your progress, it does not matter if your identifiers, term order, or some concepts differ from the example. Use the checkpoint files to confirm that the data is in the correct fields and is ready for the next formatting or transformation step.
 
 ??? info "🧑‍🏫 Trainer note"
     This is a **semantic correction** step, not just an editing step.  
@@ -277,8 +296,6 @@ That completes the mandatory fields for describing a vocabulary. But we also sai
 
 - **Citation** — add `https://en.wikipedia.org/wiki/List_of_ice_cream_flavors`
 
-After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdparty/source/VocExcel-ice-cream-flavor-concept-scheme.xlsx" download>VocExcel-ice-cream-flavor-concept-scheme.xlsx</a>. Save, and move on to the next step.
-
 ??? info "🧑‍🏫 Trainer note"
     Slow learners down here.  
     Many people rush straight to concepts and treat scheme-level metadata as an afterthought.
@@ -298,8 +315,6 @@ We will now copy the contents of the raw data file into the VocExcel template in
 
 > 💡 We have retained the grouping terms (`FRUIT FLAVORS`, etc.), without definitions. We’ll deal with these in the next step.
 
-After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdparty/source/VocExcel-ice-cream-flavor-concepts.xlsx" download>VocExcel-ice-cream-flavor-concepts.xlsx</a>. Save, and move on to the next step.
-
 ??? info "🧑‍🏫 Trainer note"
     This step often feels “too easy” to learners.  
     Reassure them that the difficult part was the preparation.
@@ -316,8 +331,6 @@ We will use the grouping terms (`FRUIT FLAVORS`; `CHOCOLATE, NUTS AND OTHER SWEE
 - **Copy** the collection IRI, label and descriptions so they line up with each member concept
 - **Delete** any remaining empty **rows**, _including the first row(s) if empty_, on the `Concepts` tab.
 
-After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdparty/source/VocExcel-ice-cream-flavor-collections.xlsx" download>VocExcel-ice-cream-flavor-collections.xlsx</a>. Save, and move on to the next step.
-
 ??? info "🧑‍🏫 Trainer note"
     This is a key modelling fork.  
     Ask explicitly: **“Why collections and not broader concepts?”**
@@ -331,8 +344,6 @@ We added `icf:` to identifiers earlier. We now need to add this prefix to the `P
 - **Open** the `Prefixes` tab
 - **Add** `icf` in column A 'Prefix' (_without_ the colon `:`)
 - **Add** `http://vocab.example.com/icecreamflavors/` in column B 'Namespace' (include the trailing "/")
-
-After this step, the spreadsheet should _resemble_ <a href="../../assets/3rdparty/source/VocExcel-ice-cream-flavor-prefixed.xlsx" download>VocExcel-ice-cream-flavor-prefixed.xlsx</a>. Save, and move on to the next step.
 
 ??? info "🧑‍🏫 Trainer note"
     Reinforce that prefixes are not the identifiers themselves — they are shorthand for IRI stems.
@@ -355,13 +366,13 @@ What about the `Cherry` flavour and its variants? Back in the [Find synonyms](#f
 
 - **Cut** the term `Black cherry` from the `Alternate Label` column
 - **Paste** `Black cherry` in a new row in the `Preferred Label` column
-- **Mint** an identifier in the `Concept IRI` column next to the new label using the Excel function from the [Add identifiers](#add-identifiers) step, or copy one from [UUID Generator](https://www.uuidgenerator.net)
+- **Mint** an identifier in the `Concept IRI` column next to the new label using the next available increment from the [Add identifiers](#add-identifiers) step
 - **Write** a definition for `Black cherry` — either research a definition, or add `Black cherry ice cream flavor`
 - **Copy** the new concept IRI to a new row in the `Collections` tab in the `FRUIT FLAVORS` collection group
 
 Repeat these steps for `Amaretto cherry` — or not. Apply the same decision-making logic for promoting `Black cherry` to full concept status. A concept can have alternative labels _and_ narrower relationships to other concepts.
 
-After this step, the spreadsheet should resemble `VocExcel-ice-cream-flavor-hierarchy.xlsx`. Save, and move on to the next step.
+There is a finished file that you can download here: <a href="/assets/3rdparty/source/VocExcel-ice-cream-flavor-hierarchy.xlsx" download>VocExcel-ice-cream-flavor-hierarchy.xlsx</a>. This is the file that we are going to upload into a transformer application.
 
 ??? info "🧑‍🏫 Trainer note"
     This section closes the earlier ambiguity around synonyms vs full concepts.
@@ -374,7 +385,7 @@ After this step, the spreadsheet should resemble `VocExcel-ice-cream-flavor-hier
 The VocExcel spreadsheet is now ready to upload to the online transformer. Well done. Follow the steps below:
 
 - **Go to** [VocExcel](https://tools.kurrawong.ai/vocexcel) in any browser
-- **Upload** an Excel file > choose the `VocExcel-ice-cream-flavor-hierarchy.xlsx` file from the [Add narrower relationsnhips](#add-narrower-relationships) step.
+- **Upload** an Excel file > choose the file saved or downloaded in the previous step.
 
 You will be presented with a result. From here you can view the Concept Scheme, any Concept in the file, or the full RDF Turtle result.
 
@@ -386,9 +397,11 @@ You will be presented with a result. From here you can view the Concept Scheme, 
 
 ## 🚧 Publish the vocabulary
 
-So far in this module you have taken an unstructured list from a single column and transformed it into a valid SKOS file. That file is compatible with many information systems that use vocabulary data. But what about publishing the vocabulary? In this step you would upload your file to a vocabulary presentation system so that the vocabulary can be searched and browsed on the web. The data itself would also be available via an API in the publishing platform, allowing information systems to fetch the vocabulary data.
+So far in this module you have taken an unstructured list from a single column and transformed it into a valid SKOS file. That file is compatible with many information systems that use vocabulary data.
 
-[WIP]
+The next step is publication: making the vocabulary available so people and systems can search it, browse it, cite it, and retrieve it in useful formats. Publishing may involve a vocabulary presentation system, a static site, a managed reference-data platform, or integration into a larger data catalogue.
+
+KurrawongAI is actively developing tooling and guidance for these publication workflows. For now, this exercise stops at the point where you have produced a valid RDF vocabulary file. That file is the key handoff point: it can be reviewed, stored, shared, loaded into vocabulary systems, or used as the source for future publication steps.
 
 ??? info "🧑‍🏫 Trainer note"
     Frame publication as **making vocabularies usable**, not just valid.
