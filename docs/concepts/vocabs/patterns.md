@@ -3,7 +3,7 @@
 > ***Scope***
 >
 > This content is in intended to convey Best Practice patterns in vocabulary content
-
+>
 >
 > ***Audience***
 >
@@ -61,6 +61,24 @@ A _local file path_ will only work if any tool publishing the vocabulary can acc
 
 An _embedded image_ stays within the vocab's source data file, which means it can't ever be lost, but could be large: the JPG image linked to in the web address bullet above is 7.5MB as a JPEG but 137MB when converted to HEX which is a form of text encoding that can be used in an RDF file. This may only be appropriate for small vector images such as icons of map symbols.
 
+!!! note
+  
+    **SVG creation**: Since SVG is an open standard, many SVG authoring tools exist, such as Adobe products or the widely use, mature, free and open source [Inkscape](https://gitlab.com/inkscape/inkscape). Any of these tools can be used to create stand-alone SVG files which are just XML text files starting `<svg...`, like this:
+
+    ```xml
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" 
+      ...>
+      <g ...>
+        ...
+      </g>
+    </svg>
+    ```
+    The contents of SVG files can then be embedded into a vocabulary's RDF file, as per the _Embedded SVG image_ example below.
+
+    An example of a stand-alone SVG file created for a vocabulary is [here](https://github.com/GeoscienceAustralia/ga-vocabs/blob/master/source/SeabedMorphology/Apron.s.svg) - click on the "Download raw file" downward arrow, top right, to download the underlying source which can then be opened in a text editor.
+
 If we want to provide more information about the image than either just its embedded content or a link to its location, we can qualify it by linking to a Blank Node from which we can then link to remote content via a URL or local file path or to embedded content. From the same Blank Node, we can then also link to other information such as captions, copyright info, etc. See Examples below.
 
 ### Examples
@@ -68,6 +86,7 @@ If we want to provide more information about the image than either just its embe
 #### URL using `schema:image`
 
 ```turtle
+PREFIX : <http://example.com/>
 PREFIX schema: <https://schema.org/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -86,6 +105,7 @@ Note here the use of `xsd:anyURI` for a typed literal for the image link, as opp
 #### Local file path using `skos:example`
 
 ```turtle
+PREFIX : <http://example.com/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
@@ -100,8 +120,16 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 #### Embedded SVG image
 
+In this example, the content of the [Apron.s.svg file](https://github.com/GeoscienceAustralia/ga-vocabs/blob/master/source/SeabedMorphology/Apron.s.svg) is stored as an XML literal value for the `schema:image` predicate in this Concept's RDF, i.e. 
+
+```:apron schema:image ""LONG-SVG-CONTENT"""^^rdf:XMLLiteral .```
+
+like this:
+
 ```turtle
+PREFIX : <http://example.com/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX schema: <https://schema.org/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
@@ -117,13 +145,13 @@ This example embeds the following simple image and yet the [SVG](https://en.wiki
 
 ![](../../assets/vocabs/apron.png)
 
-Note also that the literal value used for the SVG encoding of the image is XML, indicated using the `rdf:XMLLiteral` custom datatype.
+#### Image Object
 
-#### Blank Node
-
-Here an image at a local file path is given a caption and a copyright notice via a Blank Node of type [`schema:ImageObject`](https://schema.org/ImageObject) using other [schema.org](https://schema.org) predicates:
+Here a whole image object with multiple properties given to include a caption and a copyright notice as well as the link to the stored image file. The image object is indicated with use of a schema.org's [`schema:ImageObject`](https://schema.org/ImageObject) class and other [schema.org](https://schema.org) predicates are used for the other information:
 
 ```turtle
+PREFIX : <http://example.com/>
+PREFIX schema: <https://schema.org/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
@@ -253,12 +281,16 @@ The preferred label method is not recommended. Why? What if the `skos:prefLabel`
 An IRI pattern that indicates a level or position in a vocabulary hierarchy is sometimes adopted. Here's a hypothetical example:
 
 ```turtle
-<https://vocab/mydomain/termid/111633> a skos:Concept ;
-skos:prefLabel "Work Health and Safety Manager"@en ;
-skos:broader <https://vocab/mydomain/termid/1116>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+<https://vocab/mydomain/termid/111633> 
+    a skos:Concept ;
+    skos:prefLabel "Work Health and Safety Manager"@en ;
+    skos:broader <https://vocab/mydomain/termid/1116> ;
+.
 ```
 
-... where the suffix `1111633` implies membership within the broader concept `<.../1116>`. What if a decision is made to move this concept to another part of the vocabulary (that is, to remove this `skos:broader` relationship and replace with a new one (such as "<.../26>")? Like the re-labelled example above, the mis-match between the IRI and the change in position could cause confusion.
+... where the suffix `1111633` implies membership within the broader concept `<.../1116>`. What if a decision is made to move this concept to another part of the vocabulary (that is, to remove this `skos:broader` relationship and replace with a new one (such as "<.../26>")? Like the re-labelled example above, the mismatch between the IRI and the change in position could cause confusion.
 
 ### Version IRI
 
@@ -270,7 +302,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 <https://data.idnau.org/pid/licenses>
     a skos:ConceptScheme ;
-    [...]
+    # [...]
     owl:versionIRI <https://data.idnau.org/pid/licenses/1> ;
     skos:prefLabel "Data Licenses"@en .
 ```
