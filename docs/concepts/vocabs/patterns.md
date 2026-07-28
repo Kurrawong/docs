@@ -122,7 +122,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 In this example, the content of the [Apron.s.svg file](https://github.com/GeoscienceAustralia/ga-vocabs/blob/master/source/SeabedMorphology/Apron.s.svg) is stored as an XML literal value for the `schema:image` predicate in this Concept's RDF, i.e. 
 
-```:apron schema:image ""LONG-SVG-CONTENT"""^^rdf:XMLLiteral .```
+```:apron schema:image """LONG-SVG-CONTENT"""^^rdf:XMLLiteral .```
 
 like this:
 
