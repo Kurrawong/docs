@@ -64,6 +64,7 @@ nav:
             - 'VocExcel': 'products/tools/vocexcel.md'
         - '3rd Party':
             - 'Fuseki': 'products/3rdparty/fuseki.md'
+            - 'RDFLib': 'products/3rdparty/rdflib.md'
     - 'Modelling Concepts':
         - 'Agents': 'concepts/agents/patterns.md'
         - 'RDF': 'concepts/rdf.md'

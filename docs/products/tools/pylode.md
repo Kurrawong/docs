@@ -1,4 +1,4 @@
-# pyLODE tool
+# pyLODE
 
 pyLODE is a Python-based OWL ontology documentation tool based on the Live OWL Documentation Environment tool ([LODE](https://github.com/essepuntato/LODE)) used to generate human-readable HTML documentation for ontologies. 
 
