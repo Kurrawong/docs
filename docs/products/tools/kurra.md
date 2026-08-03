@@ -1,18 +1,21 @@
 # kurra Python Library
 
-kurra is a Python library and command line application that provides commonly-required functionality when working with 
-RDF files and databases.
+kurra is a Python package and command-line application for working with Knowledge Graph ([RDF](https://www.w3.org/RDF/)) 
+data. It provides file conversion and hierarchy tools, label handling, SPARQL access, SHACL validation, Graph Store 
+Protocol operations, and database helpers.
 
-This library uses the [RDFLib](https://pypi.org/project/rdflib/) under-the-hood to process 
-[RDF](https://www.w3.org/RDF/) data. It supplies functions to:
+It is built on top of [RDFLib](/products/3rdparty/rdflib/) and, over time, some of its functionality is likely to be 
+absorbed into RDFLib.
+
+It supplies functions to:
 
 * manipulate local RDF files
 * send commands to RDF databases - "triplestores"
-* SPARQL query files or databases
+* query files or databases using the [SPARQL](https://en.wikipedia.org/wiki/SPARQL) query language
 
 kurra has detailed documentation for installation and use at its repository's home page:
 
-* **<https://github.com/Kurrawong/kurra>**
+* **<https://kurrawong.github.io/kurra/>**
 
 !!! note
 
