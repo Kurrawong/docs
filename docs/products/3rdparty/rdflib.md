@@ -17,7 +17,7 @@ KurrawongAI staff have been core contributors to RDFLib for 8 years and currentl
 
 !!! note
 
-    We maintain the [kurra](/products/tools/kurra/) toolkit we use for many manual and infracode RDF management tasks. It is built on top of RDFLib, as is [PrezManifest](/products/tools/prezmanifest), our RDF DB management tool and [pyLODE](/products/tools/pylode) the opne source ontology/vocabulary documentation tool we use
+    We maintain the [kurra](/products/tools/kurra/) toolkit we use for many manual and infracode RDF management tasks. It is built on top of RDFLib, as is [KGM](/products/tools/kgm), our RDF DB management tool and [pyLODE](/products/tools/pylode) the opne source ontology/vocabulary documentation tool we use
 
 * training for the [ICSM ANZ Address Model](https://kurrawong.ai/services/training#address-model-training) which used RDFLib to manipulate RDF data
 * lectures over several years at the Australian National University for the IT Masters course [COMP 7230](https://github.com/nicholascar/comp7230-training/) on Semantic Web / Linked Data creation and use

@@ -39,7 +39,6 @@ nav:
         - 'Prez':
             - 'products/prez/index.md'
             - 'UI': 'products/prez/ui.md'
-            - 'Manifest': 'products/prez/manifest.md'
             - 'Data Preparation': 'products/prez/data-preparation.md'
             - 'Deploying':
                 - 'AWS': 'products/prez/deploying/aws.md'
@@ -51,9 +50,9 @@ nav:
         - 'KAI Tools':
             - 'products/tools/index.md'
             - 'Kurra': 'products/tools/kurra.md'
+            - 'KGM': 'products/tools/kgm.md'
             - 'OGC Tests': 'products/tools/ogc-tests.md'
             - 'Prefix Lookup': 'products/tools/prefix-lookup.md'
-            - 'Prez Manifest': 'products/tools/prezmanifest.md'
             - 'ProvWorkflow': 'products/tools/provworkflow.md'
             - 'pyLODE': 'products/tools/pylode.md'
             - 'RDF Converter': 'products/tools/rdf-converter.md'

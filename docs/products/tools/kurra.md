@@ -1,4 +1,6 @@
-# kurra Python Library
+# kurra
+
+![](/assets/logo-kurra.svg){width="750"}
 
 kurra is a Python package and command-line application for working with Knowledge Graph ([RDF](https://www.w3.org/RDF/)) 
 data. It provides file conversion and hierarchy tools, label handling, SPARQL access, SHACL validation, Graph Store 
@@ -20,4 +22,4 @@ kurra has detailed documentation for installation and use at its repository's ho
 !!! note
 
     kurra is a dependency of other KurrawongAI tooling, in particular
-	[PrezManifest](../prez/manifest.md).
+	[KGM](kgm.md).

@@ -297,29 +297,38 @@ There are many options regarding data management for the data Prez provides acce
 
 Fundamentally, the data mush conform to _profiles_ that Prez understands for Prez to be able to work with it, as per [Data Validation](#data-validation) above, but Prez imposes no constraints on how you organise and maintain the data within the Database it draws from.
 
-If you are stating from scratch, we recomment managing your data with _PrezManifest_:
+If you are stating from scratch, we recomment managing your data with [KGM](../tools/kgm.md).
 
-### PrezManifest
+### KGM
 
-[Prez Manifest](/products/tools/prezmanifest/) - "pm" - is a tool that performs data management functions, such as synchronising between RDF files in a version control repository and an RDF DB, and also a data model that provides the scaffolding for data to be managed by the tool.
+[KGM](../tools/kgm.md) is a tool that performs data management functions, such as synchronising between RDF files in a 
+version control repository and an RDF DB and retrieving labels for IRIs in data from common ontologies and vocabularies. 
 
-If data is not too large (multiple files but non more than ~50MB) you may be able to store all the content of your Prez instance in version control like GitHub or DevOps and use a pm _Manifest_ file to describe what it is and now the pm tool can synchronise it with your RDF DB.
+If data is not too large (multiple files but non more than ~50MB) you may be able to store all the content of your Prez 
+instance in version control like GitHub or DevOps and use a [KGM _Manifest_](https://kurrawong.github.io/kgm/guide/manifests/) 
+file to describe what it is and now the KGM tool can synchronise it with your RDF DB.
 
-For larger data, you may still want to synchronise some of your data from version control, such as background vocabularies and models, but deal with large data files/graph separately. You can still use pm when doing this as you can indicate if a resource pm identifies is to be considered for synchronisation or not.
+For larger data, you may still want to synchronise some of your data from version control, such as background vocabularies 
+and models, but deal with large data files/graph separately. You can still use KGM when doing this as you can indicate 
+if a resource KGM identifies is to be considered for synchronisation or not.
 
-pm can be used within workflows such as GitHub Actions so, for example, RDF files could be maintained in GitHub and then, on reciept of new data, pm is run to synchornise it with the RDF DB. This is the setup for Geosciecne Australia's vocabularies, see:
+KGM can be used within workflows such as GitHub Actions so, for example, RDF files could be maintained in GitHub and 
+then, on reciept of new data, `kgm sync` is run to synchornise it with the RDF DB. This is the setup for Geosciecne 
+Australia's vocabularies, see:
 
 * [GA's GitHub synch action file](https://github.com/GeoscienceAustralia/ga-vocabs/blob/master/.github/workflows/sync_on_merge.yml)
 
 ### kurra
 
-Under the hood, pm uses the more fundamental RDF data management tool [kurra](products/tools/kurra). You can use kurra to perform more direct data actions such as adding to or replacing the contents of a Named Graph in an RDF DB with the contents of a local RDF file, like this:
+Under the hood, KGM uses the more fundamental RDF data management tool [kurra](../tools/kurra.md). You can use kurra to perform more 
+direct data actions such as adding to or replacing the contents of a Named Graph in an RDF DB with the contents of a 
+local RDF file, like this:
 
 ```bash
 kurra db gsp put {FILE} {SPARQL-ENDPOINT} -g {GRAPH-IRI}
 ```
 
-This will replace the content of the graph {GRAPH-IRI} with {FILE} and can be used in cases where pm's sync functionality isn't operating as desired, such as winding back to an older version of a resource.
+This will replace the content of the graph {GRAPH-IRI} with {FILE} and can be used in cases where KGM's sync functionality isn't operating as desired, such as winding back to an older version of a resource.
 
 ### Per-tool management
 
