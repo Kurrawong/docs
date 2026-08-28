@@ -77,7 +77,7 @@ PREFIX sdo: <https://schema.org/>
     a sdo:Person ;
     dcat:qualifiedRelation [
     a dcat:Relationship ;
-       dcat:hadRole aarr:memberOf ;
+       sdo:roleName aarr:memberOf ;
        sdo:agent <https://data.idnau.org/pid/org/dewr> 
     ] ;
     sdo:name "Les Kneebone" ;
@@ -103,7 +103,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 .
 ```
 
-In the ROR example, and ROR ID has been used as the IRI. Additionally, an ID from both https://ror.org and https://isni.oclc.org is also expressed as sdo:identifier.
+In the ROR example, and ROR ID has been used as the IRI. Additionally, an ID from both https://ror.org and https://isni.oclc.org is also expressed as `sdo:identifier`.
 
 ### PID Suffix for a Pre-structured Identifier
 
@@ -136,7 +136,7 @@ If using a Pre-structured identifier patter, there may be options for minting a 
     sdo:honorificTitle "PhD Scholar" ;
     dcat:qualifiedRelation [
     a dcat:Relationship ;
-       dcat:hadRole aarr:memberOf ;
+       schema:roleName aarr:memberOf ;
        sdo:agent <https://data.idnau.org/pid/org/fses> 
     ] ;
     sdo:url "https://www.researchgate.net/profile/Sandra-Potter"^^xsd:anyURI ;
@@ -155,7 +155,7 @@ A relationship between agents may be expressed using qualified relations pattern
 
     The DCAT profile includes patterns for qualified relationships between datasets and agents, and between datasets and other resources, but DCAT does not explicitiy state a pattern for qualified relationships between agents and agents. The the agent to agent pattern in this section follows the DCAT approach with some customaisation.
 
-To express a relationship between agents, the `dcat:qualifiedRelation` property identifies a `dcat:Relationship`, which is refined with `dcat:hadRole` and a concept from the [Agent to Agent Relationship Roles](https://data.idnau.org/pid/vocab/aarr) vocabulary. The object of the statement is expressed as an sdo:agent.
+To express a relationship between agents, the `dcat:qualifiedRelation` property identifies a `dcat:Relationship`, which is refined with `schema:roleName` and a concept from the [Agent to Agent Relationship Roles](https://data.idnau.org/pid/vocab/aarr) vocabulary. The object of the statement is expressed as an sdo:agent.
 
 ***Example: Organisation to Organisation relations***
 
@@ -169,11 +169,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <https://data.idnau.org/pid/org/abs-coatsis>
     a sdo:Organization ;
-    dcterms:type <https://data.idnau.org/pid/vocab/org-indigeneity/run-by-indigenous-persons> ;
+    sdo:additionalType <https://data.idnau.org/pid/vocab/org-indigeneity/run-by-indigenous-persons> ;
     sdo:description "The Centre of Aboriginal and Torres Strait Islander Statistics (CoATSIS) has a leadership and coordination role for national statistical activity about Aboriginal and Torres Strait Islander peoples. They engage with communities across a range of statistical activities and outputs such as the Aboriginal and Torres Strait Islander health and social surveys, the five-yearly Census, administrative data, and data integration projects."@en ;
     dcat:qualifiedRelation [
        a dcat:Relationship ;
-            dcat:hadRole aarr:partOf ;
+            schema:roleName aarr:partOf ;
             sdo:agent <https://linked.data.gov.au/org/abs>
         ] ;
     sdo:name "Australian Bureau of Statistics Centre of Aboriginal and Torres Strait Islander Statistics" ;
@@ -192,12 +192,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <https://orcid.org/0000-0002-8742-7730>
     a sdo:Person ;
-    dcterms:type
-        sdo:Person ,
-        <https://data.idnau.org/pid/vocab/org-indigeneity/non-indigenous> ;
+    sdo:additionalType <https://data.idnau.org/pid/vocab/org-indigeneity/non-indigenous> ;
     dcat:qualifiedRelation [
          a dcat:Relationship ;
-            dcat:hadRole aarr:affiliateOf ;
+            schema:roleName aarr:affiliateOf ;
             sdo:agent <https://kurrawong.ai>
         ] ;
     sdo:email "nick@kurrawong.ai"^^xsd:anyURI ;
@@ -218,7 +216,7 @@ PREFIX sdo: <https://schema.org/>
     a sdo:Person ;
     dcat:qualifiedRelation [
        a dcat:Relationship ;
-          dcat:hadRole aarr:proxyOf ;
+          schema:roleName aarr:proxyOf ;
           sdo:agent <https://orcid.org/0000-0002-8742-7730>
     ] ;
     sdo:name "Les Kneebone" ;
