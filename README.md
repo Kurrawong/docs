@@ -10,7 +10,7 @@ This repository's content is available for reuse according to the [Creative Comm
 
 This content is copyright as follows:
 
-&copy; KurrawongAI, 2024
+&copy; KurrawongAI, 2026
 
 ## Contacts
 
