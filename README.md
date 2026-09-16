@@ -19,12 +19,32 @@ For all matters, please contact:
 **KurrawongAI**  
 <info@kurrawong.ai>
 
-# Technical Operations
+## Local Development
 
-This repository uses the [MkDocs](https://www.mkdocs.org/) tool to build a static website - just HTML pages, no database etc. - from simple [Markdown](https://www.markdownguide.org/) text files and images.
+This is a [Zensical](https://zensical.org) static site, with dependencies managed by [uv](https://docs.astral.sh/uv/).
 
-MkDocs uses [Python](https://www.python.org/) scripting to compile the Markdown files, images etc. into HTML. It can be run locally - on a desktop/laptop - to test documentation changes, and pushed to GitHub to be auto-deployed.
+### Install dependencies and preview
 
-To serve this content as a static site locally, run:
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then run from the repository root:
 
-`mkdocs serve`
+```bash
+uv sync --locked
+uv run zensical serve
+```
+
+uv manages the project's Python environment automatically. Python 3.12 or newer is required; deployment uses Python 3.14.
+
+Open http://localhost:8000 to preview the site. Edit Markdown files in `docs/`; the preview updates when you save.
+
+Site navigation, theme settings, and Markdown extensions are configured in `zensical.toml`.
+Restart the preview server after changing configuration if the changes are not reflected.
+
+To build the static site into `site/`:
+
+```bash
+uv run --locked zensical build
+```
+
+### Deployment
+
+Deployment is automatically triggered on push to `main` using the [deploy.yml](.github/workflows/deploy.yml) workflow, or manually through GitHub Actions. The workflow installs dependencies with `uv sync --locked`, builds with `uv run --locked zensical build`, and publishes `site/` to the `gh-pages` branch using the automatic `GITHUB_TOKEN`. GitHub Pages serves that branch at the custom domain configured in `docs/CNAME`.
