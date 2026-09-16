@@ -145,7 +145,7 @@ To walk you through VocExcel features, we'll create a vocabulary from scratch.
 
 You will be presented with a Result. From here you can view the Concept Scheme or any Concept in the file, or the Full RDF Turtle result.
 
-> 💡 Why not try downloading the RDF, uploading it to a GitHub repository, and continuing on with the [VocEdit + GitHub](#vocedit-+-github) steps above? Both VocEdit and VocExcel generate vocabulary data in the same format - you can switch between the tools if you like!
+> 💡 Why not try downloading the RDF, uploading it to a GitHub repository, and continuing on with the [VocEdit + GitHub](#vocedit-github) steps above? Both VocEdit and VocExcel generate vocabulary data in the same format - you can switch between the tools if you like!
 
 ## SHACL Validator
 You can check that your vocabulary is valid by using a SHACL validator. What does _valid_ mean, and what is SHACL? 

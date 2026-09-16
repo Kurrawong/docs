@@ -1,0 +1,86 @@
+[project]
+site_name = ""
+copyright = "Copyright &copy; KurrawongAI, 2025"
+extra_css = [
+    "stylesheets/extra.css",
+]
+extra_javascript = [
+    "javascripts/external-links.js",
+]
+nav = [
+    "index.md",
+    { "Products" = [
+        { "Prez" = [
+            "products/prez/index.md",
+            { "UI" = "products/prez/ui.md" },
+            { "Data Preparation" = "products/prez/data-preparation.md" },
+            { "Deploying" = [
+                { "AWS" = "products/prez/deploying/aws.md" },
+                { "Azure" = [
+                    { "App Service Deployment" = "products/prez/deploying/azure/appservice.md" },
+                ] },
+            ] },
+            { "Developers" = "products/prez/developers.md" },
+        ] },
+        { "Olis" = "products/olis.md" },
+        { "KAI Tools" = [
+            "products/tools/index.md",
+            { "Kurra" = "products/tools/kurra.md" },
+            { "KGM" = "products/tools/kgm.md" },
+            { "OGC Tests" = "products/tools/ogc-tests.md" },
+            { "Prefix Lookup" = "products/tools/prefix-lookup.md" },
+            { "ProvWorkflow" = "products/tools/provworkflow.md" },
+            { "pyLODE" = "products/tools/pylode.md" },
+            { "RDF Converter" = "products/tools/rdf-converter.md" },
+            { "RDF Merger" = "products/tools/rdf-merger.md" },
+            { "SHACL Validator" = "products/tools/shacl-validator.md" },
+            { "SPARQL Parser" = "products/tools/sparql-parser.md" },
+            { "VocEdit" = "products/tools/vocedit.md" },
+            { "VocExcel" = "products/tools/vocexcel.md" },
+        ] },
+        { "3rd Party" = [
+            { "Fuseki" = "products/3rdparty/fuseki.md" },
+            { "RDFLib" = "products/3rdparty/rdflib.md" },
+        ] },
+    ] },
+    { "Modelling Concepts" = [
+        { "Agents" = "concepts/agents/patterns.md" },
+        { "RDF" = "concepts/rdf.md" },
+        { "Vocabs" = [
+            { "Introduction" = "concepts/vocabs/introduction.md" },
+            { "Vocab reuse" = "concepts/vocabs/vocab-reuse.md" },
+            { "Patterns" = "concepts/vocabs/patterns.md" },
+            { "Querying" = "concepts/vocabs/querying.md" },
+            { "Vocab systems" = "concepts/vocabs/vocab-systems.md" },
+        ] },
+    ] },
+]
+
+[project.extra]
+generator = false
+
+[project.theme]
+favicon = "assets/favicon-32x32.png"
+logo = "assets/KurrawongAI-inverted.svg"
+features = [
+    "navigation.indexes",
+    "toc.follow",
+]
+
+[project.theme.palette]
+scheme = "kai"
+
+[project.markdown_extensions.md_in_html]
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.attr_list]
+[project.markdown_extensions.pymdownx.details]
+[project.markdown_extensions.pymdownx.snippets]
+[project.markdown_extensions.pymdownx.superfences]
+custom_fences = [
+    { "name" = "mermaid", "class" = "mermaid", "format" = "pymdownx.superfences.fence_code_format" },
+]
+[project.markdown_extensions.pymdownx.caret]
+[project.markdown_extensions.pymdownx.mark]
+[project.markdown_extensions.pymdownx.tilde]
+[project.markdown_extensions.toc]
+toc_depth = 3

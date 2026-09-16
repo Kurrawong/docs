@@ -61,7 +61,7 @@ To see something like [the Demo prez instance](#demo) running, you will need to 
 
 #### Fuseki
 
-See [running Fuseki](../3rdparty/fuseki.md#running).
+See the Apache Jena guide to [running Fuseki](https://jena.apache.org/documentation/fuseki2/fuseki-server.html).
 
 #### Prez
 
@@ -87,7 +87,7 @@ You will need to configure Prez to "see" the SPARQL Endpoint delivered by Fuseki
 
 #### PrezUI
 
-See the [PrezUI Installation section](ui.md#installation).
+See the [PrezUI documentation](ui.md) for links to installation and usage information.
 
 ### Running Containers
 

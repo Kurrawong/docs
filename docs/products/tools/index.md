@@ -5,7 +5,7 @@ This section of the knowledge base has information about a number of [RDF](https
 Some of these tools are open source, others are developed and owned by KurrawongAI. All are free to use!
 
 1. [kurra](kurra.md) - A command line tool for interactions with Fuseki databases
-2. [labelify](labelify.md) - Tests RDF graph elements to see if they have labels
+2. [labelify](https://github.com/Kurrawong/labelify) - Tests RDF graph elements to see if they have labels; its functionality is now part of [kurra](kurra.md)
 3. [ogctests](ogc-tests.md) - An unofficial, open source, Python implementation of the Open GeoSpatial Consortium's \[OGC] Java-based test suite
 4. [Prefix Lookup](prefix-lookup.md) - Get RDF Namespaces from Prefixes
 5. [ProvWorkflow](provworkflow.md) - Records the provenance of Python workflows in RDF 

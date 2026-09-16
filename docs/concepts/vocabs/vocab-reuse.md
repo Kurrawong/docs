@@ -90,7 +90,7 @@ You might import a cluster of concepts from an existing vocabulary into a local 
 - adding a `rdfs:isDefinedBy` statement indicating an IRI of a Concept scheme where the Concept is from
 - creating a `skos:Collection`, specifically for grouping concepts derived from some other vocabulary
 
-See [Import a concept](#-import-a-concept) for details.
+See [Import a concept](#import-a-concept) for details.
 
 ### Verbatim
 
@@ -259,13 +259,13 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 ## Add an imported Concept
 
-When a vocabulary imports concepts from another vocabulary, you will need to add the Concept and also update the concept scheme. Optionally, you might create a `skos:collection` that groups the imported concepts in to a manageable frame. See [Import a concept](#-import-a-concept) for detailed steps for importing a Concept into a vocabulary.
+When a vocabulary imports concepts from another vocabulary, you will need to add the Concept and also update the concept scheme. Optionally, you might create a `skos:collection` that groups the imported concepts in to a manageable frame. See [Import a concept](#import-a-concept) for detailed steps for importing a Concept into a vocabulary.
 
 ### Collections
 
 There may be a need to define a group of concepts within a vocabulary that share certain characteristics. A vocabulary may contain a `skos:Collection`, or even many collections of concepts.
 
-Collections are like a non-hierarchical means of gathering concepts. So for example concepts that are members of a `skos:Collection` may be from different parts of a vocabulary hierarchy (and not all from within the same broader-narrower parts of a hierarchy branch). One use case for creating a `skos:Collection` is to clearly represent concepts that have been **imported** from another `skos:ConceptScheme`. For more about using collections in this way see the [Import a concept](#add-an-imported-concept) exercise.
+Collections are like a non-hierarchical means of gathering concepts. So for example concepts that are members of a `skos:Collection` may be from different parts of a vocabulary hierarchy (and not all from within the same broader-narrower parts of a hierarchy branch). One use case for creating a `skos:Collection` is to clearly represent concepts that have been **imported** from another `skos:ConceptScheme`. For more about using collections in this way see the [Import a concept](#import-a-concept) exercise.
 
 > 💡 `skos:Collection` indicates a `skos:Concept` using the `skos:member` property.
 
@@ -276,7 +276,7 @@ You can add more metadata to your Concepts and Concept schemes that will improve
 ### Images
 Associating a `skos:Concept` with an image that illustrates meaning is a powerful and, perhaps obviously, language-neutral way of indicating the meaning and scope of a concept. There are various different ways of modelling an image reference within a skos vocabulary. The skos model does mention image references within the context of _documentation_ properties (e.g. `skos:example`; `skos:scopeNote`). While using documentation properties to refer to an image may be syntactically correct, most systems will be expecting textual data in these fields. 
 
-In the [add an image exercise](#-add-an-image-to-a-concept) you can add an image using a `schema.org` property `schema:image`.
+In the [add an image exercise](#add-an-image-to-a-concept) you can add an image using a `schema.org` property `schema:image`.
 
 💡 There are a number of approaches to adding an image to a vocabulary concept - see other approaches in our [Patterns](https://docs.kurrawong.ai/concepts/vocabs/patterns/#images) document.
 
