@@ -3,7 +3,32 @@
   --md-primary-fg-color--light: grey;
   --md-primary-fg-color--dark:  lightgrey;
 }
-/* #1B1B1B */
+.md-header,
+.md-footer,
+.md-footer-meta {
+  background-color: #000;
+  color: #fff;
+}
+
+.md-header a {
+  color: #fff!important;
+}
+
+.md-header .md-search__button {
+  background-color: #222;
+  color: #fff;
+}
+
+.md-header .md-search__button:hover {
+  background-color: #333;
+}
+
+.md-footer {
+  --md-default-fg-color: #fff;
+  --md-default-fg-color--light: #ccc;
+  --md-default-fg-color--lighter: #aaa;
+  --md-default-fg-color--lightest: #333;
+}
 
 
 #kurrawongai-docs {
