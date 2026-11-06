@@ -1,5 +1,7 @@
 # Olis Overview
 
+![](/assets/olis-logo.png)
+
 Olis is a graph management application. Its job is to help administrators of [Knowledge Graphs](https://en.wikipedia.org/wiki/Knowledge_graph) manage them as a series of sub-graphs. Olis uses the [Olis Ontology](https://olis.dev/ont/) as its data model.
 
 Data in a Knowledge Graph can be segmented into sub-graphs in a manner similar to the way in which _schemas_ in some relational database systems can segment data. Multiple graphs can then be used together to form the total Knowledge Graph but managed separately, if required.

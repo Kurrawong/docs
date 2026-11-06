@@ -23,6 +23,7 @@ nav = [
             { "Developers" = "products/prez/developers.md" },
         ] },
         { "Olis" = "products/olis.md" },
+        { "Semantic Background" = "products/semback.md" },
         { "KAI Tools" = [
             "products/tools/index.md",
             { "Kurra" = "products/tools/kurra.md" },
