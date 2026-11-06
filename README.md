@@ -32,7 +32,7 @@ uv sync --locked
 uv run zensical serve
 ```
 
-uv manages the project's Python environment automatically. Python 3.12 or newer is required; deployment uses Python 3.14.
+uv manages the project's Python environment automatically. Python 3.15 or newer is required; deployment uses Python 3.15.
 
 Open http://localhost:8000 to preview the site. Edit Markdown files in `docs/`; the preview updates when you save.
 
